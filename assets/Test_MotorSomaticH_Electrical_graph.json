@@ -1,0 +1,1775 @@
+{
+  "data": [
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "spline",
+        "width": 1
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.016833,
+        -0.08287935,
+        -0.01640445,
+        0.016833
+      ],
+      "y": [
+        -0.830939,
+        -0.79770155,
+        -0.73122665,
+        -0.830939
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "spline",
+        "width": 1
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.016833,
+        -0.08287935,
+        -0.01640445,
+        0.016833
+      ],
+      "y": [
+        -0.830939,
+        -0.79770155,
+        -0.73122665,
+        -0.830939
+      ]
+    },
+    {
+      "hoverinfo": "text",
+      "hovertext": [
+        "<b>AS1</b><br>Ventral cord motor neuron",
+        "<b>AS10</b><br>Ventral cord motor neuron",
+        "<b>AS11</b><br>Ventral cord motor neuron",
+        "<b>AS2</b><br>Ventral cord motor neuron",
+        "<b>AS3</b><br>Ventral cord motor neuron",
+        "<b>AS4</b><br>Ventral cord motor neuron",
+        "<b>AS5</b><br>Ventral cord motor neuron",
+        "<b>AS6</b><br>Ventral cord motor neuron",
+        "<b>AS7</b><br>Ventral cord motor neuron",
+        "<b>AS8</b><br>Ventral cord motor neuron",
+        "<b>AS9</b><br>Ventral cord motor neuron",
+        "<b>DA1</b><br>Ventral cord motor neuron",
+        "<b>DA2</b><br>Ventral cord motor neuron",
+        "<b>DA3</b><br>Ventral cord motor neuron",
+        "<b>DA4</b><br>Ventral cord motor neuron",
+        "<b>DA5</b><br>Ventral cord motor neuron",
+        "<b>DA6</b><br>Ventral cord motor neuron",
+        "<b>DA7</b><br>Ventral cord motor neuron",
+        "<b>DA8</b><br>Ventral cord motor neuron",
+        "<b>DA9</b><br>Ventral cord motor neuron",
+        "<b>DB1</b><br>Ventral cord motor neuron",
+        "<b>DB2</b><br>Ventral cord motor neuron",
+        "<b>DB3</b><br>Ventral cord motor neuron",
+        "<b>DB4</b><br>Ventral cord motor neuron",
+        "<b>DB5</b><br>Ventral cord motor neuron",
+        "<b>DB6</b><br>Ventral cord motor neuron",
+        "<b>DB7</b><br>Ventral cord motor neuron",
+        "<b>DD1</b><br>Ventral cord motor neuron",
+        "<b>DD2</b><br>Ventral cord motor neuron",
+        "<b>DD3</b><br>Ventral cord motor neuron",
+        "<b>DD4</b><br>Ventral cord motor neuron",
+        "<b>DD5</b><br>Ventral cord motor neuron",
+        "<b>DD6</b><br>Ventral cord motor neuron",
+        "<b>HSNL</b><br>Hermaphrodite specific motor neuron",
+        "<b>HSNR</b><br>Hermaphrodite specific motor neuron",
+        "<b>PDA</b><br>Ventral cord motor neuron",
+        "<b>PDB</b><br>Ventral cord motor neuron",
+        "<b>RIVL</b><br>Head motor neuron",
+        "<b>RIVR</b><br>Head motor neuron",
+        "<b>RMDDL</b><br>Head motor neuron",
+        "<b>RMDDR</b><br>Head motor neuron",
+        "<b>RMDL</b><br>Head motor neuron",
+        "<b>RMDR</b><br>Head motor neuron",
+        "<b>RMDVL</b><br>Head motor neuron",
+        "<b>RMDVR</b><br>Head motor neuron",
+        "<b>RMED</b><br>Head motor neuron",
+        "<b>RMEL</b><br>Head motor neuron",
+        "<b>RMER</b><br>Head motor neuron",
+        "<b>RMEV</b><br>Head motor neuron",
+        "<b>RMHL</b><br>Head motor neuron",
+        "<b>RMHR</b><br>Head motor neuron",
+        "<b>SABD</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SABVL</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SABVR</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SIADL</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SIADR</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SIAVL</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SIAVR</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SIBDL</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SIBDR</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SIBVL</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SIBVR</b><br>Sublateral motor neuron; interneuron in White et al., 1986",
+        "<b>SMBDL</b><br>Sublateral motor neuron",
+        "<b>SMBDR</b><br>Sublateral motor neuron",
+        "<b>SMBVL</b><br>Sublateral motor neuron",
+        "<b>SMBVR</b><br>Sublateral motor neuron",
+        "<b>SMDDL</b><br>Sublateral motor neuron",
+        "<b>SMDDR</b><br>Sublateral motor neuron",
+        "<b>SMDVL</b><br>Sublateral motor neuron",
+        "<b>SMDVR</b><br>Sublateral motor neuron",
+        "<b>URADL</b><br>Head motor neuron",
+        "<b>URADR</b><br>Head motor neuron",
+        "<b>URAVL</b><br>Head motor neuron",
+        "<b>URAVR</b><br>Head motor neuron",
+        "<b>VA1</b><br>Ventral cord motor neuron",
+        "<b>VA10</b><br>Ventral cord motor neuron",
+        "<b>VA11</b><br>Ventral cord motor neuron",
+        "<b>VA12</b><br>Ventral cord motor neuron",
+        "<b>VA2</b><br>Ventral cord motor neuron",
+        "<b>VA3</b><br>Ventral cord motor neuron",
+        "<b>VA4</b><br>Ventral cord motor neuron",
+        "<b>VA5</b><br>Ventral cord motor neuron",
+        "<b>VA6</b><br>Ventral cord motor neuron",
+        "<b>VA7</b><br>Ventral cord motor neuron",
+        "<b>VA8</b><br>Ventral cord motor neuron",
+        "<b>VA9</b><br>Ventral cord motor neuron",
+        "<b>VB1</b><br>Ventral cord motor neuron",
+        "<b>VB10</b><br>Ventral cord motor neuron",
+        "<b>VB11</b><br>Ventral cord motor neuron",
+        "<b>VB2</b><br>Ventral cord motor neuron",
+        "<b>VB3</b><br>Ventral cord motor neuron",
+        "<b>VB4</b><br>Ventral cord motor neuron",
+        "<b>VB5</b><br>Ventral cord motor neuron",
+        "<b>VB6</b><br>Ventral cord motor neuron<br>Conns in: <b>VB6</b>: 3<br>Conns out: <b>VB6</b>: 3",
+        "<b>VB7</b><br>Ventral cord motor neuron",
+        "<b>VB8</b><br>Ventral cord motor neuron",
+        "<b>VB9</b><br>Ventral cord motor neuron",
+        "<b>VC1</b><br>Hermaphrodite specific motor neuron",
+        "<b>VC2</b><br>Hermaphrodite specific motor neuron",
+        "<b>VC3</b><br>Hermaphrodite specific motor neuron",
+        "<b>VC4</b><br>Hermaphrodite specific motor neuron",
+        "<b>VC5</b><br>Hermaphrodite specific motor neuron",
+        "<b>VC6</b><br>Hermaphrodite specific motor neuron",
+        "<b>VD1</b><br>Ventral cord motor neuron",
+        "<b>VD10</b><br>Ventral cord motor neuron",
+        "<b>VD11</b><br>Ventral cord motor neuron",
+        "<b>VD12</b><br>Ventral cord motor neuron",
+        "<b>VD13</b><br>Ventral cord motor neuron",
+        "<b>VD2</b><br>Ventral cord motor neuron",
+        "<b>VD3</b><br>Ventral cord motor neuron",
+        "<b>VD4</b><br>Ventral cord motor neuron",
+        "<b>VD5</b><br>Ventral cord motor neuron",
+        "<b>VD6</b><br>Ventral cord motor neuron",
+        "<b>VD7</b><br>Ventral cord motor neuron",
+        "<b>VD8</b><br>Ventral cord motor neuron",
+        "<b>VD9</b><br>Ventral cord motor neuron"
+      ],
+      "marker": {
+        "color": [
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc",
+          "#9966cc"
+        ],
+        "colorbar": {
+          "thickness": 15,
+          "title": {
+            "text": "Node Connections"
+          },
+          "xanchor": "left"
+        },
+        "colorscale": [
+          [
+            0.0,
+            "rgb(255,255,217)"
+          ],
+          [
+            0.125,
+            "rgb(237,248,177)"
+          ],
+          [
+            0.25,
+            "rgb(199,233,180)"
+          ],
+          [
+            0.375,
+            "rgb(127,205,187)"
+          ],
+          [
+            0.5,
+            "rgb(65,182,196)"
+          ],
+          [
+            0.625,
+            "rgb(29,145,192)"
+          ],
+          [
+            0.75,
+            "rgb(34,94,168)"
+          ],
+          [
+            0.875,
+            "rgb(37,52,148)"
+          ],
+          [
+            1.0,
+            "rgb(8,29,88)"
+          ]
+        ],
+        "line": {
+          "width": 1
+        },
+        "reversescale": true,
+        "showscale": false,
+        "size": [
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "symbol": [
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle"
+        ]
+      },
+      "mode": "markers",
+      "opacity": 1,
+      "text": [
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS1</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS10</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS11</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS2</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS3</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS5</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS6</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS7</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS8</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AS9</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DA1</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DA2</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DA3</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DA4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DA5</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DA6</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DA7</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DA8</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DA9</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DB1</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DB2</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DB3</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DB4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DB5</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DB6</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DB7</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DD1</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DD2</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DD3</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DD4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DD5</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DD6</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>HSNL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>HSNR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PDA</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PDB</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RIVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RIVR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMDDL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMDDR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMDL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMDR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMDVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMDVR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMED</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMEL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMER</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMEV</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMHL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>RMHR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SABD</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SABVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SABVR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SIADL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SIADR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SIAVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SIAVR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SIBDL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SIBDR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SIBVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SIBVR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SMBDL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SMBDR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SMBVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SMBVR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SMDDL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SMDDR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SMDVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SMDVR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>URADL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>URADR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>URAVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>URAVR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA1</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA10</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA11</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA12</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA2</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA3</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA5</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA6</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA7</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA8</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VA9</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB1</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB10</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB11</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB2</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB3</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB5</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB6</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB7</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB8</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VB9</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VC1</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VC2</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VC3</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VC4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VC5</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VC6</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD1</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD10</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD11</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD12</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD13</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD2</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD3</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD5</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD6</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD7</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD8</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>VD9</b></span>"
+      ],
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.856382,
+        -0.898865,
+        0.829747,
+        -0.396767,
+        -0.297888,
+        -0.803619,
+        -0.361075,
+        -0.007836,
+        0.135097,
+        0.917093,
+        0.543745,
+        0.768977,
+        0.278857,
+        0.917123,
+        0.573557,
+        0.561434,
+        0.403497,
+        -0.348102,
+        0.099123,
+        0.211357,
+        -0.444842,
+        -0.766789,
+        -0.039047,
+        -0.110115,
+        0.799709,
+        0.593156,
+        -0.664989,
+        -0.743607,
+        0.465797,
+        -0.159605,
+        0.777198,
+        -0.196245,
+        0.55698,
+        -0.817601,
+        -0.960139,
+        -0.572454,
+        0.856828,
+        0.876504,
+        -0.77568,
+        -0.928254,
+        0.84686,
+        0.916649,
+        0.780257,
+        -0.673569,
+        -0.106,
+        -0.771907,
+        -0.740157,
+        -0.59585,
+        0.994247,
+        -0.278264,
+        0.397757,
+        0.675728,
+        0.457748,
+        -0.526823,
+        -0.460579,
+        0.905742,
+        0.87701,
+        -0.891048,
+        0.792933,
+        -0.933836,
+        0.314285,
+        0.701957,
+        0.059368,
+        -0.690932,
+        -0.492604,
+        -0.885547,
+        -0.117195,
+        0.330369,
+        0.603885,
+        -0.139136,
+        -0.229292,
+        0.280457,
+        0.43859,
+        -0.508997,
+        0.522371,
+        0.052754,
+        0.799006,
+        -0.977947,
+        0.597611,
+        -0.861377,
+        -0.549032,
+        0.224662,
+        -0.778729,
+        -0.354425,
+        0.73519,
+        0.226125,
+        0.181504,
+        -0.56082,
+        -0.892257,
+        0.426668,
+        0.151029,
+        0.930654,
+        -1.0,
+        0.016833,
+        0.655354,
+        0.903732,
+        0.956408,
+        -0.928055,
+        0.926237,
+        0.740584,
+        0.666856,
+        -0.817285,
+        0.813191,
+        -0.796833,
+        -0.652864,
+        -0.682633,
+        -0.074364,
+        -0.990774,
+        -0.606045,
+        0.726018,
+        -0.655513,
+        -0.267527,
+        -0.896035,
+        -0.960302,
+        0.717155,
+        0.98489
+      ],
+      "y": [
+        0.601946,
+        -0.296573,
+        0.246326,
+        -0.692118,
+        -0.930864,
+        0.199904,
+        0.719702,
+        -0.968147,
+        -0.925719,
+        0.410961,
+        -0.609172,
+        0.720286,
+        0.78917,
+        -0.205562,
+        -0.889431,
+        0.739777,
+        -0.831684,
+        0.919318,
+        -0.979568,
+        0.681545,
+        -0.842088,
+        -0.489963,
+        0.703021,
+        -0.884956,
+        -0.718205,
+        -0.746549,
+        -0.831314,
+        0.317857,
+        -0.742061,
+        0.887464,
+        -0.567571,
+        -0.924058,
+        0.937237,
+        -0.742687,
+        -0.42512,
+        0.774493,
+        0.598214,
+        -0.406588,
+        -0.583447,
+        0.354305,
+        0.040281,
+        0.205439,
+        0.398191,
+        0.611639,
+        -0.706205,
+        0.644507,
+        -0.172368,
+        -0.305378,
+        0.280659,
+        0.877474,
+        0.909665,
+        -0.369465,
+        0.839044,
+        0.675797,
+        0.787583,
+        0.106435,
+        -0.139542,
+        0.122144,
+        -0.469287,
+        0.031754,
+        -0.901366,
+        0.282696,
+        0.841459,
+        0.467329,
+        0.960844,
+        -0.177453,
+        -0.986272,
+        -0.706552,
+        0.777854,
+        0.991169,
+        0.719864,
+        0.94211,
+        -0.940357,
+        -0.766658,
+        0.333217,
+        0.925534,
+        0.515335,
+        -0.143966,
+        0.564655,
+        -0.414359,
+        0.534867,
+        0.87562,
+        0.763319,
+        -0.85789,
+        -0.102418,
+        -0.89434,
+        -0.793017,
+        -0.623373,
+        -0.5653,
+        0.638359,
+        0.994931,
+        -0.302926,
+        0.152521,
+        -0.830939,
+        -0.800756,
+        -0.050142,
+        0.484424,
+        0.246413,
+        -0.466526,
+        0.875594,
+        -0.558533,
+        0.412091,
+        -0.28955,
+        0.000795,
+        -0.449472,
+        -0.66054,
+        0.836088,
+        -0.282662,
+        -0.766393,
+        -0.683528,
+        0.868993,
+        -0.803522,
+        0.477328,
+        -0.050673,
+        0.645892,
+        0.003731
+      ]
+    }
+  ],
+  "layout": {
+    "height": 800,
+    "hovermode": "closest",
+    "margin": {
+      "b": 20,
+      "l": 5,
+      "r": 5,
+      "t": 40
+    },
+    "showlegend": false,
+    "template": {
+      "data": {
+        "bar": [
+          {
+            "error_x": {
+              "color": "#2a3f5f"
+            },
+            "error_y": {
+              "color": "#2a3f5f"
+            },
+            "marker": {
+              "line": {
+                "color": "white",
+                "width": 0.5
+              },
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "bar"
+          }
+        ],
+        "barpolar": [
+          {
+            "marker": {
+              "line": {
+                "color": "white",
+                "width": 0.5
+              },
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "barpolar"
+          }
+        ],
+        "carpet": [
+          {
+            "aaxis": {
+              "endlinecolor": "#2a3f5f",
+              "gridcolor": "#C8D4E3",
+              "linecolor": "#C8D4E3",
+              "minorgridcolor": "#C8D4E3",
+              "startlinecolor": "#2a3f5f"
+            },
+            "baxis": {
+              "endlinecolor": "#2a3f5f",
+              "gridcolor": "#C8D4E3",
+              "linecolor": "#C8D4E3",
+              "minorgridcolor": "#C8D4E3",
+              "startlinecolor": "#2a3f5f"
+            },
+            "type": "carpet"
+          }
+        ],
+        "choropleth": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "type": "choropleth"
+          }
+        ],
+        "contour": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "contour"
+          }
+        ],
+        "contourcarpet": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "type": "contourcarpet"
+          }
+        ],
+        "heatmap": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "heatmap"
+          }
+        ],
+        "heatmapgl": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "heatmapgl"
+          }
+        ],
+        "histogram": [
+          {
+            "marker": {
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "histogram"
+          }
+        ],
+        "histogram2d": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "histogram2d"
+          }
+        ],
+        "histogram2dcontour": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "histogram2dcontour"
+          }
+        ],
+        "mesh3d": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "type": "mesh3d"
+          }
+        ],
+        "parcoords": [
+          {
+            "line": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "parcoords"
+          }
+        ],
+        "pie": [
+          {
+            "automargin": true,
+            "type": "pie"
+          }
+        ],
+        "scatter": [
+          {
+            "fillpattern": {
+              "fillmode": "overlay",
+              "size": 10,
+              "solidity": 0.2
+            },
+            "type": "scatter"
+          }
+        ],
+        "scatter3d": [
+          {
+            "line": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatter3d"
+          }
+        ],
+        "scattercarpet": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattercarpet"
+          }
+        ],
+        "scattergeo": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattergeo"
+          }
+        ],
+        "scattergl": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattergl"
+          }
+        ],
+        "scattermapbox": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattermapbox"
+          }
+        ],
+        "scatterpolar": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatterpolar"
+          }
+        ],
+        "scatterpolargl": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatterpolargl"
+          }
+        ],
+        "scatterternary": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatterternary"
+          }
+        ],
+        "surface": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "surface"
+          }
+        ],
+        "table": [
+          {
+            "cells": {
+              "fill": {
+                "color": "#EBF0F8"
+              },
+              "line": {
+                "color": "white"
+              }
+            },
+            "header": {
+              "fill": {
+                "color": "#C8D4E3"
+              },
+              "line": {
+                "color": "white"
+              }
+            },
+            "type": "table"
+          }
+        ]
+      },
+      "layout": {
+        "annotationdefaults": {
+          "arrowcolor": "#2a3f5f",
+          "arrowhead": 0,
+          "arrowwidth": 1
+        },
+        "autotypenumbers": "strict",
+        "coloraxis": {
+          "colorbar": {
+            "outlinewidth": 0,
+            "ticks": ""
+          }
+        },
+        "colorscale": {
+          "diverging": [
+            [
+              0,
+              "#8e0152"
+            ],
+            [
+              0.1,
+              "#c51b7d"
+            ],
+            [
+              0.2,
+              "#de77ae"
+            ],
+            [
+              0.3,
+              "#f1b6da"
+            ],
+            [
+              0.4,
+              "#fde0ef"
+            ],
+            [
+              0.5,
+              "#f7f7f7"
+            ],
+            [
+              0.6,
+              "#e6f5d0"
+            ],
+            [
+              0.7,
+              "#b8e186"
+            ],
+            [
+              0.8,
+              "#7fbc41"
+            ],
+            [
+              0.9,
+              "#4d9221"
+            ],
+            [
+              1,
+              "#276419"
+            ]
+          ],
+          "sequential": [
+            [
+              0.0,
+              "#0d0887"
+            ],
+            [
+              0.1111111111111111,
+              "#46039f"
+            ],
+            [
+              0.2222222222222222,
+              "#7201a8"
+            ],
+            [
+              0.3333333333333333,
+              "#9c179e"
+            ],
+            [
+              0.4444444444444444,
+              "#bd3786"
+            ],
+            [
+              0.5555555555555556,
+              "#d8576b"
+            ],
+            [
+              0.6666666666666666,
+              "#ed7953"
+            ],
+            [
+              0.7777777777777778,
+              "#fb9f3a"
+            ],
+            [
+              0.8888888888888888,
+              "#fdca26"
+            ],
+            [
+              1.0,
+              "#f0f921"
+            ]
+          ],
+          "sequentialminus": [
+            [
+              0.0,
+              "#0d0887"
+            ],
+            [
+              0.1111111111111111,
+              "#46039f"
+            ],
+            [
+              0.2222222222222222,
+              "#7201a8"
+            ],
+            [
+              0.3333333333333333,
+              "#9c179e"
+            ],
+            [
+              0.4444444444444444,
+              "#bd3786"
+            ],
+            [
+              0.5555555555555556,
+              "#d8576b"
+            ],
+            [
+              0.6666666666666666,
+              "#ed7953"
+            ],
+            [
+              0.7777777777777778,
+              "#fb9f3a"
+            ],
+            [
+              0.8888888888888888,
+              "#fdca26"
+            ],
+            [
+              1.0,
+              "#f0f921"
+            ]
+          ]
+        },
+        "colorway": [
+          "#636efa",
+          "#EF553B",
+          "#00cc96",
+          "#ab63fa",
+          "#FFA15A",
+          "#19d3f3",
+          "#FF6692",
+          "#B6E880",
+          "#FF97FF",
+          "#FECB52"
+        ],
+        "font": {
+          "color": "#2a3f5f"
+        },
+        "geo": {
+          "bgcolor": "white",
+          "lakecolor": "white",
+          "landcolor": "white",
+          "showlakes": true,
+          "showland": true,
+          "subunitcolor": "#C8D4E3"
+        },
+        "hoverlabel": {
+          "align": "left"
+        },
+        "hovermode": "closest",
+        "mapbox": {
+          "style": "light"
+        },
+        "paper_bgcolor": "white",
+        "plot_bgcolor": "white",
+        "polar": {
+          "angularaxis": {
+            "gridcolor": "#EBF0F8",
+            "linecolor": "#EBF0F8",
+            "ticks": ""
+          },
+          "bgcolor": "white",
+          "radialaxis": {
+            "gridcolor": "#EBF0F8",
+            "linecolor": "#EBF0F8",
+            "ticks": ""
+          }
+        },
+        "scene": {
+          "xaxis": {
+            "backgroundcolor": "white",
+            "gridcolor": "#DFE8F3",
+            "gridwidth": 2,
+            "linecolor": "#EBF0F8",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "#EBF0F8"
+          },
+          "yaxis": {
+            "backgroundcolor": "white",
+            "gridcolor": "#DFE8F3",
+            "gridwidth": 2,
+            "linecolor": "#EBF0F8",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "#EBF0F8"
+          },
+          "zaxis": {
+            "backgroundcolor": "white",
+            "gridcolor": "#DFE8F3",
+            "gridwidth": 2,
+            "linecolor": "#EBF0F8",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "#EBF0F8"
+          }
+        },
+        "shapedefaults": {
+          "line": {
+            "color": "#2a3f5f"
+          }
+        },
+        "ternary": {
+          "aaxis": {
+            "gridcolor": "#DFE8F3",
+            "linecolor": "#A2B1C6",
+            "ticks": ""
+          },
+          "baxis": {
+            "gridcolor": "#DFE8F3",
+            "linecolor": "#A2B1C6",
+            "ticks": ""
+          },
+          "bgcolor": "white",
+          "caxis": {
+            "gridcolor": "#DFE8F3",
+            "linecolor": "#A2B1C6",
+            "ticks": ""
+          }
+        },
+        "title": {
+          "x": 0.05
+        },
+        "xaxis": {
+          "automargin": true,
+          "gridcolor": "#EBF0F8",
+          "linecolor": "#EBF0F8",
+          "ticks": "",
+          "title": {
+            "standoff": 15
+          },
+          "zerolinecolor": "#EBF0F8",
+          "zerolinewidth": 2
+        },
+        "yaxis": {
+          "automargin": true,
+          "gridcolor": "#EBF0F8",
+          "linecolor": "#EBF0F8",
+          "ticks": "",
+          "title": {
+            "standoff": 15
+          },
+          "zerolinecolor": "#EBF0F8",
+          "zerolinewidth": 2
+        }
+      }
+    },
+    "width": 800,
+    "xaxis": {
+      "showgrid": false,
+      "visible": false,
+      "zeroline": false
+    },
+    "yaxis": {
+      "scaleanchor": "x",
+      "scaleratio": 1,
+      "showgrid": false,
+      "visible": false,
+      "zeroline": false
+    }
+  }
+}

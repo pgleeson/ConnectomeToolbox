@@ -1,0 +1,5105 @@
+{
+  "data": [
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 10.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.745621,
+        -0.962626
+      ],
+      "y": [
+        -0.757865,
+        -0.243536
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.858816,
+        -0.962626
+      ],
+      "y": [
+        -0.552778,
+        -0.243536
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 3.0454545454545454
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.175853,
+        -0.962626
+      ],
+      "y": [
+        -0.887299,
+        -0.243536
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.6363636363636367
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.952663,
+        0.821613
+      ],
+      "y": [
+        0.003283,
+        -0.434097
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.745621,
+        0.821613
+      ],
+      "y": [
+        -0.757865,
+        -0.434097
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 3.4545454545454546
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.448718,
+        0.821613
+      ],
+      "y": [
+        -0.908558,
+        -0.434097
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.67227,
+        0.821613
+      ],
+      "y": [
+        -0.667926,
+        -0.434097
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 3.4545454545454546
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.088024,
+        -0.786925
+      ],
+      "y": [
+        0.938332,
+        -0.150985
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.909975,
+        0.701275
+      ],
+      "y": [
+        0.560121,
+        0.069374
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.940022,
+        0.701275
+      ],
+      "y": [
+        -0.009769,
+        0.069374
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.707615,
+        0.701275
+      ],
+      "y": [
+        -0.582848,
+        0.069374
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.041563,
+        -0.909975
+      ],
+      "y": [
+        -0.976287,
+        0.560121
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 5.909090909090909
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.041563,
+        -0.006875233692066664,
+        0.039397
+      ],
+      "y": [
+        -0.976287,
+        -0.9436388202986667,
+        -0.932324
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.6363636363636367
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.039397,
+        0.004709233692066663,
+        -0.041563
+      ],
+      "y": [
+        -0.932324,
+        -0.9649721797013333,
+        -0.976287
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.041563,
+        -0.433936
+      ],
+      "y": [
+        -0.976287,
+        0.858532
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 3.4545454545454546
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.041563,
+        -0.3170492759768667,
+        -0.088024
+      ],
+      "y": [
+        -0.976287,
+        -0.02509885135379998,
+        0.938332
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 3.4545454545454546
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.088024,
+        0.1874622759768667,
+        -0.041563
+      ],
+      "y": [
+        0.938332,
+        -0.01285614864619998,
+        -0.976287
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.041563,
+        -0.201598
+      ],
+      "y": [
+        -0.976287,
+        0.877844
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.041563,
+        0.471032
+      ],
+      "y": [
+        -0.976287,
+        0.793768
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.041563,
+        -0.985358
+      ],
+      "y": [
+        -0.976287,
+        -0.113424
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.041563,
+        -0.988242
+      ],
+      "y": [
+        -0.976287,
+        0.194416
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.788059,
+        -0.88687335,
+        -0.8209971166666666,
+        -0.788059
+      ],
+      "y": [
+        0.609615,
+        0.6425531166666667,
+        0.7084293500000001,
+        0.609615
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.788059,
+        -0.88687335,
+        -0.8209971166666666,
+        -0.788059
+      ],
+      "y": [
+        0.609615,
+        0.6425531166666667,
+        0.7084293500000001,
+        0.609615
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.788059,
+        -0.1711767333004666,
+        0.039397
+      ],
+      "y": [
+        0.609615,
+        -0.052335130941866675,
+        -0.932324
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.039397,
+        -0.5774852666995334,
+        -0.788059
+      ],
+      "y": [
+        -0.932324,
+        -0.2703738690581333,
+        0.609615
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.6363636363636367
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.788059,
+        -0.7824351301861333,
+        -0.940022
+      ],
+      "y": [
+        0.609615,
+        0.27990149990793334,
+        -0.009769
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 6.318181818181818
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.940022,
+        -0.9456458698138667,
+        -0.788059
+      ],
+      "y": [
+        -0.009769,
+        0.31994450009206665,
+        0.609615
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 3.8636363636363638
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.788059,
+        0.635042
+      ],
+      "y": [
+        0.609615,
+        0.75476
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.788059,
+        -0.840873
+      ],
+      "y": [
+        0.609615,
+        -0.562134
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.788059,
+        0.67227
+      ],
+      "y": [
+        0.609615,
+        -0.667926
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.788059,
+        -0.632156
+      ],
+      "y": [
+        0.609615,
+        0.783477
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 4.272727272727273
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.788059,
+        -0.925312
+      ],
+      "y": [
+        0.609615,
+        0.443323
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.306072,
+        -0.788059
+      ],
+      "y": [
+        -0.827998,
+        0.609615
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.926828,
+        0.8280136499999999,
+        0.8938898833333333,
+        0.926828
+      ],
+      "y": [
+        0.185269,
+        0.21820711666666665,
+        0.28408335,
+        0.185269
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.926828,
+        0.8280136499999999,
+        0.8938898833333333,
+        0.926828
+      ],
+      "y": [
+        0.185269,
+        0.21820711666666665,
+        0.28408335,
+        0.185269
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.926828,
+        -0.909975
+      ],
+      "y": [
+        0.185269,
+        0.560121
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.926828,
+        0.6303581344794,
+        0.039397
+      ],
+      "y": [
+        0.185269,
+        -0.4904487232464667,
+        -0.932324
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.039397,
+        0.33586686552059997,
+        0.926828
+      ],
+      "y": [
+        -0.932324,
+        -0.2566062767535333,
+        0.185269
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.6363636363636367
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.926828,
+        0.471032
+      ],
+      "y": [
+        0.185269,
+        0.793768
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.939869,
+        0.926828
+      ],
+      "y": [
+        0.293267,
+        0.185269
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.939869,
+        -0.020211672739866682,
+        -0.909975
+      ],
+      "y": [
+        0.293267,
+        0.18297249005146665,
+        0.560121
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.909975,
+        0.05010567273986666,
+        0.939869
+      ],
+      "y": [
+        0.560121,
+        0.6704155099485334,
+        0.293267
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.6363636363636367
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.939869,
+        0.6511076373744666,
+        0.039397
+      ],
+      "y": [
+        0.293267,
+        -0.4381679071642667,
+        -0.932324
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.039397,
+        0.32815836262553333,
+        0.939869
+      ],
+      "y": [
+        -0.932324,
+        -0.2008890928357333,
+        0.293267
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.901648,
+        -1.00046235,
+        -0.9345861166666667,
+        -0.901648
+      ],
+      "y": [
+        0.116975,
+        0.14991311666666668,
+        0.21578935,
+        0.116975
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.901648,
+        -1.00046235,
+        -0.9345861166666667,
+        -0.901648
+      ],
+      "y": [
+        0.116975,
+        0.14991311666666668,
+        0.21578935,
+        0.116975
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.901648,
+        -0.001575
+      ],
+      "y": [
+        0.116975,
+        1.0
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.901648,
+        0.723124
+      ],
+      "y": [
+        0.116975,
+        -0.514175
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.901648,
+        0.073481
+      ],
+      "y": [
+        0.116975,
+        0.863094
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.136079,
+        -0.69305
+      ],
+      "y": [
+        -0.937499,
+        -0.692085
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.136079,
+        -0.840873
+      ],
+      "y": [
+        -0.937499,
+        -0.562134
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 4.272727272727273
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.905703,
+        -0.707615
+      ],
+      "y": [
+        -0.384788,
+        -0.582848
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 3.0454545454545454
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.905703,
+        0.33879009907893326,
+        0.131553
+      ],
+      "y": [
+        -0.384788,
+        0.19569982793000001,
+        0.98018
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.131553,
+        0.6984659009210668,
+        0.905703
+      ],
+      "y": [
+        0.98018,
+        0.39969217207,
+        -0.384788
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 3.4545454545454546
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.905703,
+        0.737834
+      ],
+      "y": [
+        -0.384788,
+        0.440448
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 3.0454545454545454
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.905703,
+        0.571865
+      ],
+      "y": [
+        -0.384788,
+        0.862836
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.909975,
+        -0.23865568988566663,
+        0.039397
+      ],
+      "y": [
+        0.560121,
+        -0.06101939721573335,
+        -0.932324
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.039397,
+        -0.6319223101143333,
+        -0.909975
+      ],
+      "y": [
+        -0.932324,
+        -0.3111836027842667,
+        0.560121
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.909975,
+        -0.925294
+      ],
+      "y": [
+        0.560121,
+        0.328474
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.909975,
+        0.471032
+      ],
+      "y": [
+        0.560121,
+        0.793768
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 7.545454545454546
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.909975,
+        -0.985358
+      ],
+      "y": [
+        0.560121,
+        -0.113424
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 5.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.909975,
+        0.635042
+      ],
+      "y": [
+        0.560121,
+        0.75476
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.909975,
+        0.584666
+      ],
+      "y": [
+        0.560121,
+        0.662515
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.909975,
+        0.67227
+      ],
+      "y": [
+        0.560121,
+        -0.667926
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.039397,
+        -0.940022
+      ],
+      "y": [
+        -0.932324,
+        -0.009769
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.039397,
+        -0.04209668194480001,
+        0.306807
+      ],
+      "y": [
+        -0.932324,
+        -0.0804140728886667,
+        0.701032
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.6363636363636367
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.306807,
+        0.38830068194480005,
+        0.039397
+      ],
+      "y": [
+        0.701032,
+        -0.15087792711133335,
+        -0.932324
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.039397,
+        0.929775
+      ],
+      "y": [
+        -0.932324,
+        -0.254215
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.039397,
+        -0.985358
+      ],
+      "y": [
+        -0.932324,
+        -0.113424
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.039397,
+        0.635042
+      ],
+      "y": [
+        -0.932324,
+        0.75476
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.409416,
+        0.039397
+      ],
+      "y": [
+        0.88231,
+        -0.932324
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.306072,
+        0.039397
+      ],
+      "y": [
+        -0.827998,
+        -0.932324
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.433936,
+        0.306807
+      ],
+      "y": [
+        0.858532,
+        0.701032
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.306072,
+        0.409416
+      ],
+      "y": [
+        -0.827998,
+        0.88231
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.088024,
+        0.306807
+      ],
+      "y": [
+        0.938332,
+        0.701032
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.088024,
+        0.571865
+      ],
+      "y": [
+        0.938332,
+        0.862836
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.940022,
+        -1.03883635,
+        -0.9729601166666667,
+        -0.940022
+      ],
+      "y": [
+        -0.009769,
+        0.02316911666666667,
+        0.08904535000000001,
+        -0.009769
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.940022,
+        -1.03883635,
+        -0.9729601166666667,
+        -0.940022
+      ],
+      "y": [
+        -0.009769,
+        0.02316911666666667,
+        0.08904535000000001,
+        -0.009769
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.940022,
+        0.929775
+      ],
+      "y": [
+        -0.009769,
+        -0.254215
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.940022,
+        0.471032
+      ],
+      "y": [
+        -0.009769,
+        0.793768
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.306807,
+        -0.925294
+      ],
+      "y": [
+        0.701032,
+        0.328474
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.306072,
+        0.929775
+      ],
+      "y": [
+        -0.827998,
+        -0.254215
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.306072,
+        -0.840873
+      ],
+      "y": [
+        -0.827998,
+        -0.562134
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.907584,
+        0.952663
+      ],
+      "y": [
+        0.415774,
+        0.003283
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.625429,
+        -0.985358
+      ],
+      "y": [
+        0.554045,
+        -0.113424
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.707615,
+        -0.4939637944690667,
+        0.131553
+      ],
+      "y": [
+        -0.582848,
+        0.30922845394773335,
+        0.98018
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.131553,
+        -0.08209820553093328,
+        -0.707615
+      ],
+      "y": [
+        0.98018,
+        0.08810354605226667,
+        -0.582848
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.707615,
+        -0.840873
+      ],
+      "y": [
+        -0.582848,
+        -0.562134
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.707615,
+        -0.925312
+      ],
+      "y": [
+        -0.582848,
+        0.443323
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.131553,
+        -0.988242
+      ],
+      "y": [
+        0.98018,
+        0.194416
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 3.0454545454545454
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.175853,
+        -0.001575
+      ],
+      "y": [
+        -0.887299,
+        1.0
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.695324,
+        -0.001575
+      ],
+      "y": [
+        -0.307895,
+        1.0
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.6363636363636367
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.67227,
+        -0.69305
+      ],
+      "y": [
+        -0.667926,
+        -0.692085
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.625429,
+        -0.69305
+      ],
+      "y": [
+        0.554045,
+        -0.692085
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 6.7272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.175853,
+        0.723124
+      ],
+      "y": [
+        -0.887299,
+        -0.514175
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.251384,
+        0.723124
+      ],
+      "y": [
+        0.92415,
+        -0.514175
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 7.545454545454546
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.67227,
+        -0.840873
+      ],
+      "y": [
+        -0.667926,
+        -0.562134
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.924091,
+        -0.840873
+      ],
+      "y": [
+        0.090702,
+        -0.562134
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.745621,
+        0.737834
+      ],
+      "y": [
+        -0.757865,
+        0.440448
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 3.4545454545454546
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.448718,
+        0.737834
+      ],
+      "y": [
+        -0.908558,
+        0.440448
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.770808,
+        0.737834
+      ],
+      "y": [
+        0.228091,
+        0.440448
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 3.4545454545454546
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.14116,
+        0.737834
+      ],
+      "y": [
+        -0.958616,
+        0.440448
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 5.909090909090909
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.223859,
+        0.737834
+      ],
+      "y": [
+        0.9076,
+        0.440448
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 10.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.988195,
+        0.737834
+      ],
+      "y": [
+        -0.376942,
+        0.440448
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 4.681818181818182
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.760646,
+        0.737834
+      ],
+      "y": [
+        -0.626236,
+        0.440448
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 8.772727272727273
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.73,
+        0.737834
+      ],
+      "y": [
+        0.733844,
+        0.440448
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 3.0454545454545454
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.413377,
+        0.737834
+      ],
+      "y": [
+        -0.70615,
+        0.440448
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.907584,
+        0.737834
+      ],
+      "y": [
+        0.415774,
+        0.440448
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.745621,
+        -0.1285973255406,
+        0.448718
+      ],
+      "y": [
+        -0.757865,
+        -0.6758543907137999,
+        -0.908558
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 6.7272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.448718,
+        -0.16830567445939998,
+        -0.745621
+      ],
+      "y": [
+        -0.908558,
+        -0.9905686092862,
+        -0.757865
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.663465,
+        0.312582
+      ],
+      "y": [
+        0.388741,
+        0.943945
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.417137,
+        -0.663465
+      ],
+      "y": [
+        0.627138,
+        0.388741
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.235592,
+        -0.33440635,
+        -0.26853011666666665,
+        -0.235592
+      ],
+      "y": [
+        -0.936938,
+        -0.9039998833333334,
+        -0.83812365,
+        -0.936938
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.235592,
+        -0.33440635,
+        -0.26853011666666665,
+        -0.235592
+      ],
+      "y": [
+        -0.936938,
+        -0.9039998833333334,
+        -0.83812365,
+        -0.936938
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.235592,
+        -0.411531
+      ],
+      "y": [
+        -0.936938,
+        -0.851587
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 3.0454545454545454
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.235592,
+        0.454559
+      ],
+      "y": [
+        -0.936938,
+        -0.5678
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.235592,
+        0.18289600543706666,
+        0.67227
+      ],
+      "y": [
+        -0.936938,
+        -0.6828189421070667,
+        -0.667926
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.67227,
+        0.2537819945629333,
+        -0.235592
+      ],
+      "y": [
+        -0.667926,
+        -0.9220450578929333,
+        -0.936938
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.235592,
+        -0.6269511880080667,
+        -0.625429
+      ],
+      "y": [
+        -0.936938,
+        -0.24280848634793334,
+        0.554045
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 3.0454545454545454
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.625429,
+        -0.23406981199193333,
+        -0.235592
+      ],
+      "y": [
+        0.554045,
+        -0.1400845136520667,
+        -0.936938
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.841225,
+        -0.235592
+      ],
+      "y": [
+        0.517169,
+        -0.936938
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.858816,
+        -0.58164
+      ],
+      "y": [
+        -0.552778,
+        -0.760592
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.858816,
+        0.175853
+      ],
+      "y": [
+        -0.552778,
+        -0.887299
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.848175,
+        0.858816
+      ],
+      "y": [
+        -0.276142,
+        -0.552778
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.411531,
+        0.67227
+      ],
+      "y": [
+        -0.851587,
+        -0.667926
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.411531,
+        -0.925312
+      ],
+      "y": [
+        -0.851587,
+        0.443323
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.6363636363636367
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.898943,
+        -0.411531
+      ],
+      "y": [
+        -0.426934,
+        -0.851587
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 3.0454545454545454
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.848175,
+        0.74936065,
+        0.8152368833333333,
+        0.848175
+      ],
+      "y": [
+        -0.276142,
+        -0.24320388333333331,
+        -0.17732765,
+        -0.276142
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 3.0454545454545454
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.848175,
+        0.74936065,
+        0.8152368833333333,
+        0.848175
+      ],
+      "y": [
+        -0.276142,
+        -0.24320388333333331,
+        -0.17732765,
+        -0.276142
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.848175,
+        -0.988242
+      ],
+      "y": [
+        -0.276142,
+        0.194416
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.6363636363636367
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.848175,
+        0.14025406827973333,
+        -0.251384
+      ],
+      "y": [
+        -0.276142,
+        0.17913438950446667,
+        0.92415
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.251384,
+        0.45653693172026677,
+        0.848175
+      ],
+      "y": [
+        0.92415,
+        0.46887361049553333,
+        -0.276142
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.175853,
+        0.848175
+      ],
+      "y": [
+        -0.887299,
+        -0.276142
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.898943,
+        -0.370259
+      ],
+      "y": [
+        -0.426934,
+        0.944191
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.898943,
+        -0.08158520955306667,
+        0.67227
+      ],
+      "y": [
+        -0.426934,
+        -0.34041881159126663,
+        -0.667926
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.67227,
+        -0.14508779044693335,
+        -0.898943
+      ],
+      "y": [
+        -0.667926,
+        -0.7544411884087333,
+        -0.426934
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 3.0454545454545454
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.898943,
+        -0.9250241349304668,
+        -0.632156
+      ],
+      "y": [
+        -0.426934,
+        0.2134213453246,
+        0.783477
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.632156,
+        -0.6060748650695335,
+        -0.898943
+      ],
+      "y": [
+        0.783477,
+        0.1431216546754,
+        -0.426934
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.924091,
+        -0.898943
+      ],
+      "y": [
+        0.090702,
+        -0.426934
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.988242,
+        -0.58164
+      ],
+      "y": [
+        0.194416,
+        -0.760592
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.67227,
+        0.584666
+      ],
+      "y": [
+        -0.667926,
+        0.662515
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.6363636363636367
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.175853,
+        0.07703865,
+        0.14291488333333335,
+        0.175853
+      ],
+      "y": [
+        -0.887299,
+        -0.8543608833333333,
+        -0.7884846499999999,
+        -0.887299
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.6363636363636367
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.175853,
+        0.07703865,
+        0.14291488333333335,
+        0.175853
+      ],
+      "y": [
+        -0.887299,
+        -0.8543608833333333,
+        -0.7884846499999999,
+        -0.887299
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.175853,
+        -0.32017281036126666,
+        -0.417137
+      ],
+      "y": [
+        -0.887299,
+        -0.20820839520866666,
+        0.627138
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.417137,
+        0.0788888103612667,
+        0.175853
+      ],
+      "y": [
+        0.627138,
+        -0.05195260479133332,
+        -0.887299
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.175853,
+        -0.27642837399086667,
+        -0.251384
+      ],
+      "y": [
+        -0.887299,
+        -0.03786402860126663,
+        0.92415
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 4.681818181818182
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.251384,
+        0.2008973739908667,
+        0.175853
+      ],
+      "y": [
+        0.92415,
+        0.0747150286012667,
+        -0.887299
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.6363636363636367
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.67227,
+        0.57345565,
+        0.6393318833333334,
+        0.67227
+      ],
+      "y": [
+        -0.667926,
+        -0.6349878833333333,
+        -0.56911165,
+        -0.667926
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.6363636363636367
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.67227,
+        0.57345565,
+        0.6393318833333334,
+        0.67227
+      ],
+      "y": [
+        -0.667926,
+        -0.6349878833333333,
+        -0.56911165,
+        -0.667926
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.67227,
+        0.841225
+      ],
+      "y": [
+        -0.667926,
+        0.517169
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.695324,
+        -0.6794234041647335,
+        -0.417137
+      ],
+      "y": [
+        -0.307895,
+        0.19627332344460002,
+        0.627138
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.417137,
+        -0.43303759583526674,
+        -0.695324
+      ],
+      "y": [
+        0.627138,
+        0.12296967655539999,
+        -0.307895
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.625429,
+        0.841225
+      ],
+      "y": [
+        0.554045,
+        0.517169
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 4.681818181818182
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.251384,
+        -0.988242
+      ],
+      "y": [
+        0.92415,
+        0.194416
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 7.545454545454546
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.760646,
+        -0.530919
+      ],
+      "y": [
+        -0.626236,
+        0.816197
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 8.363636363636363
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.73,
+        -0.530919
+      ],
+      "y": [
+        0.733844,
+        0.816197
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 5.090909090909091
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.907584,
+        -0.530919
+      ],
+      "y": [
+        0.415774,
+        0.816197
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 8.772727272727273
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.760646,
+        -0.121014
+      ],
+      "y": [
+        -0.626236,
+        -0.807912
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 5.090909090909091
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.73,
+        -0.121014
+      ],
+      "y": [
+        0.733844,
+        -0.807912
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 3.8636363636363638
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.907584,
+        -0.121014
+      ],
+      "y": [
+        0.415774,
+        -0.807912
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 6.318181818181818
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.770808,
+        -0.1584724255394,
+        0.14116
+      ],
+      "y": [
+        0.228091,
+        -0.24510846647893336,
+        -0.958616
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 5.5
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.14116,
+        -0.4711755744606,
+        -0.770808
+      ],
+      "y": [
+        -0.958616,
+        -0.48541653352106673,
+        0.228091
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 3.8636363636363638
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.770808,
+        0.52831
+      ],
+      "y": [
+        0.228091,
+        -0.774884
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 5.090909090909091
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.770808,
+        0.29351
+      ],
+      "y": [
+        0.228091,
+        -0.913218
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.14116,
+        0.52831
+      ],
+      "y": [
+        -0.958616,
+        -0.774884
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 4.272727272727273
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.14116,
+        0.29351
+      ],
+      "y": [
+        -0.958616,
+        -0.913218
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.223859,
+        0.14116
+      ],
+      "y": [
+        0.9076,
+        -0.958616
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.988195,
+        0.14116
+      ],
+      "y": [
+        -0.376942,
+        -0.958616
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.6363636363636367
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.52831,
+        0.42913584572386665,
+        0.29351
+      ],
+      "y": [
+        -0.774884,
+        -0.8749864791733333,
+        -0.913218
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.29351,
+        0.39268415427613335,
+        0.52831
+      ],
+      "y": [
+        -0.913218,
+        -0.8131155208266667,
+        -0.774884
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.735126,
+        0.52831
+      ],
+      "y": [
+        0.668532,
+        -0.774884
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.29351,
+        0.223859
+      ],
+      "y": [
+        -0.913218,
+        0.9076
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 2.2272727272727275
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.29351,
+        -0.988195
+      ],
+      "y": [
+        -0.913218,
+        -0.376942
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.223859,
+        -0.21292642296306666,
+        -0.988195
+      ],
+      "y": [
+        0.9076,
+        0.10563789576679997,
+        -0.376942
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 2.6363636363636367
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.988195,
+        -0.5514095770369334,
+        0.223859
+      ],
+      "y": [
+        -0.376942,
+        0.4250201042332,
+        0.9076
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 5.090909090909091
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.426351,
+        -0.004937783394533336,
+        -0.413377
+      ],
+      "y": [
+        -0.792864,
+        -0.8601432353290667,
+        -0.70615
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.413377,
+        0.017911783394533323,
+        0.426351
+      ],
+      "y": [
+        -0.70615,
+        -0.6388707646709334,
+        -0.792864
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 3.4545454545454546
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.907584,
+        0.8087696499999999,
+        0.8746458833333333,
+        0.907584
+      ],
+      "y": [
+        0.415774,
+        0.44871211666666666,
+        0.51458835,
+        0.415774
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "spline",
+        "width": 3.4545454545454546
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.907584,
+        0.8087696499999999,
+        0.8746458833333333,
+        0.907584
+      ],
+      "y": [
+        0.415774,
+        0.44871211666666666,
+        0.51458835,
+        0.415774
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.8181818181818183
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.251384,
+        0.571865
+      ],
+      "y": [
+        0.92415,
+        0.862836
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff66cc",
+        "shape": "linear",
+        "width": 1.4090909090909092
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.625429,
+        -0.925312
+      ],
+      "y": [
+        0.554045,
+        0.443323
+      ]
+    },
+    {
+      "hoverinfo": "text",
+      "hovertext": [
+        "<b>ADEL</b><br>Sensory neuron (mechanosensory)<br>Conns in: <b>FLPL</b>: 22, <b>OLLL</b>: 5, <b>IL1L</b>: 3",
+        "<b>ADER</b><br>Sensory neuron (mechanosensory)<br>Conns in: <b>FLPR</b>: 6, <b>AVM</b>: 4, <b>FLPL</b>: 3, <b>OLLR</b>: 2",
+        "<b>ADFL</b><br>Sensory neuron (amphid)<br>Conns in: <b>ASHL</b>: 6",
+        "<b>ADFR</b><br>Sensory neuron (amphid)<br>Conns in: <b>ASHR</b>: 3, <b>ASEL</b>: 1, <b>BAGL</b>: 1",
+        "<b>ADLL</b><br>Sensory neuron (amphid, nociceptive)<br>Conns in: <b>ASHL</b>: 6, <b>ASER</b>: 4<br>Conns out: <b>ASER</b>: 12, <b>ASHL</b>: 6, <b>AWBL</b>: 3, <b>ASGL</b>: 2, <b>AWCL</b>: 2, <br><b>OLQVL</b>: 2, <b>ASEL</b>: 1, <b>AWAL</b>: 1",
+        "<b>ADLR</b><br>Sensory neuron (amphid, nociceptive)<br>Conns in: <b>ASHR</b>: 13, <b>ADLR</b>: 3, <b>ASKR</b>: 3, <b>ASER</b>: 1<br>Conns out: <b>URXR</b>: 8, <b>AWCR</b>: 7, <b>ASHR</b>: 4, <b>ADLR</b>: 3, <b>ASER</b>: 2, <b>CEPVR</b>: 1, <br><b>OLLR</b>: 1, <b>OLQVR</b>: 1",
+        "<b>AFDL</b><br>Sensory neuron (amphid)<br>Conns in: <b>ASER</b>: 2, <b>AFDL</b>: 1, <b>AFDR</b>: 1<br>Conns out: <b>AWBL</b>: 4, <b>AFDL</b>: 1, <b>ASEL</b>: 1, <b>ASER</b>: 1",
+        "<b>AFDR</b><br>Sensory neuron (amphid)<br>Conns in: <b>ASEL</b>: 3, <b>ASER</b>: 3<br>Conns out: <b>ASER</b>: 4, <b>AFDL</b>: 1, <b>ASEL</b>: 1",
+        "<b>ALML</b><br>Sensory neuron (mechanosensory)<br>Conns in: <b>ALML</b>: 1<br>Conns out: <b>CEPVL</b>: 3, <b>CEPDL</b>: 2, <b>SDQL</b>: 2, <b>ALML</b>: 1",
+        "<b>ALMR</b><br>Sensory neuron (mechanosensory)<br>Conns out: <b>CEPVR</b>: 3, <b>CEPDR</b>: 1",
+        "<b>ALNL</b><br>Sensory neuron (touch)",
+        "<b>ALNR</b><br>Sensory neuron (touch)",
+        "<b>AQR</b><br>Sensory neuron (touch)<br>Conns in: <b>BAGR</b>: 3<br>Conns out: <b>BAGL</b>: 8, <b>DVA</b>: 6, <b>BAGR</b>: 5, <b>URXL</b>: 5",
+        "<b>ASEL</b><br>Sensory neuron (amphid)<br>Conns in: <b>ASER</b>: 3, <b>ADLL</b>: 1, <b>AFDL</b>: 1, <b>AFDR</b>: 1<br>Conns out: <b>AWCL</b>: 16, <b>AWCR</b>: 11, <b>AFDR</b>: 3, <b>ASER</b>: 2, <b>ADFR</b>: 1, <br><b>ASJL</b>: 1, <b>AWBL</b>: 1, <b>IL2R</b>: 1, <b>OLLR</b>: 1",
+        "<b>ASER</b><br>Sensory neuron (amphid)<br>Conns in: <b>ADLL</b>: 12, <b>AFDR</b>: 4, <b>ASKL</b>: 4, <b>ASGR</b>: 3, <b>ADLR</b>: 2, <br><b>ASEL</b>: 2, <b>AFDL</b>: 1, <b>ASKR</b>: 1<br>Conns out: <b>ADLL</b>: 4, <b>AFDR</b>: 3, <b>ASEL</b>: 3, <b>AFDL</b>: 2, <b>ASHR</b>: 2, <b>ADLR</b>: 1, <br><b>ASKL</b>: 1, <b>AWAR</b>: 1, <b>AWCL</b>: 1, <b>AWCR</b>: 1",
+        "<b>ASGL</b><br>Sensory neuron (amphid)<br>Conns in: <b>ADLL</b>: 2<br>Conns out: <b>ASKL</b>: 2",
+        "<b>ASGR</b><br>Sensory neuron (amphid)<br>Conns in: <b>ASKR</b>: 1<br>Conns out: <b>ASER</b>: 3",
+        "<b>ASHL</b><br>Sensory neuron (amphid, nociceptive)<br>Conns in: <b>ADLL</b>: 6<br>Conns out: <b>ADFL</b>: 6, <b>ADLL</b>: 6, <b>URXL</b>: 2, <b>ASKL</b>: 1",
+        "<b>ASHR</b><br>Sensory neuron (amphid, nociceptive)<br>Conns in: <b>ADLR</b>: 4, <b>ASER</b>: 2, <b>ASHR</b>: 2<br>Conns out: <b>ADLR</b>: 13, <b>ADFR</b>: 3, <b>ASHR</b>: 2, <b>AWAR</b>: 1, <b>AWBL</b>: 1",
+        "<b>ASIL</b><br>Sensory neuron (amphid)",
+        "<b>ASIR</b><br>Sensory neuron (amphid)",
+        "<b>ASJL</b><br>Sensory neuron (amphid)<br>Conns in: <b>ASEL</b>: 1, <b>ASKL</b>: 1",
+        "<b>ASJR</b><br>Sensory neuron (amphid)",
+        "<b>ASKL</b><br>Sensory neuron (amphid)<br>Conns in: <b>ASGL</b>: 2, <b>ASER</b>: 1, <b>ASHL</b>: 1<br>Conns out: <b>ASER</b>: 4, <b>ASJL</b>: 1",
+        "<b>ASKR</b><br>Sensory neuron (amphid)<br>Conns out: <b>ADLR</b>: 3, <b>AWAR</b>: 2, <b>CEPVR</b>: 2, <b>ASER</b>: 1, <b>ASGR</b>: 1",
+        "<b>AVM</b><br>Sensory neuron (mechanosensory)<br>Conns in: <b>PVM</b>: 2<br>Conns out: <b>ADER</b>: 4",
+        "<b>AWAL</b><br>Sensory neuron (amphid)<br>Conns in: <b>ADLL</b>: 1",
+        "<b>AWAR</b><br>Sensory neuron (amphid)<br>Conns in: <b>ASKR</b>: 2, <b>ASER</b>: 1, <b>ASHR</b>: 1",
+        "<b>AWBL</b><br>Sensory neuron (amphid)<br>Conns in: <b>AFDL</b>: 4, <b>ADLL</b>: 3, <b>ASEL</b>: 1, <b>ASHR</b>: 1",
+        "<b>AWBR</b><br>Sensory neuron (amphid)",
+        "<b>AWCL</b><br>Sensory neuron (amphid)<br>Conns in: <b>ASEL</b>: 16, <b>ADLL</b>: 2, <b>ASER</b>: 1, <b>URYDR</b>: 1",
+        "<b>AWCR</b><br>Sensory neuron (amphid)<br>Conns in: <b>ASEL</b>: 11, <b>ADLR</b>: 7, <b>ASER</b>: 1",
+        "<b>BAGL</b><br>Sensory neuron (O2, CO2, social signals, touch)<br>Conns in: <b>AQR</b>: 8, <b>BAGR</b>: 3<br>Conns out: <b>CEPVR</b>: 2, <b>ADFR</b>: 1, <b>BAGR</b>: 1, <b>URXR</b>: 1",
+        "<b>BAGR</b><br>Sensory neuron (O2, CO2, social signals, touch)<br>Conns in: <b>AQR</b>: 5, <b>BAGL</b>: 1<br>Conns out: <b>AQR</b>: 3, <b>BAGL</b>: 3, <b>OLQVL</b>: 2",
+        "<b>CEPDL</b><br>Sensory neuron (cephalic)<br>Conns in: <b>OLLL</b>: 5, <b>OLQDL</b>: 3, <b>ALML</b>: 2",
+        "<b>CEPDR</b><br>Sensory neuron (cephalic)<br>Conns in: <b>OLLR</b>: 4, <b>URYDR</b>: 3, <b>ALMR</b>: 1",
+        "<b>CEPVL</b><br>Sensory neuron (cephalic)<br>Conns in: <b>OLLL</b>: 14, <b>ALML</b>: 3, <b>URYVL</b>: 3",
+        "<b>CEPVR</b><br>Sensory neuron (cephalic)<br>Conns in: <b>OLLR</b>: 16, <b>ALMR</b>: 3, <b>ASKR</b>: 2, <b>BAGL</b>: 2, <b>ADLR</b>: 1, <br><b>URYVR</b>: 1",
+        "<b>DVA</b><br>Sensory neuron (mechanosensory)<br>Conns in: <b>PHCR</b>: 22, <b>PLMR</b>: 19, <b>PHCL</b>: 12, <b>PLML</b>: 9, <b>AQR</b>: 6, <br><b>FLPR</b>: 6, <b>PHAR</b>: 6, <b>PVDR</b>: 5, <b>PVM</b>: 3, <b>PHAL</b>: 2, <b>FLPL</b>: 1",
+        "<b>FLPL</b><br>Sensory neuron (mechanosensory)<br>Conns in: <b>FLPR</b>: 14<br>Conns out: <b>ADEL</b>: 22, <b>ADER</b>: 3, <b>FLPR</b>: 2, <b>DVA</b>: 1",
+        "<b>FLPR</b><br>Sensory neuron (mechanosensory)<br>Conns in: <b>FLPL</b>: 2<br>Conns out: <b>FLPL</b>: 14, <b>ADER</b>: 6, <b>DVA</b>: 6",
+        "<b>IL1DL</b><br>Sensory neuron (cephalic)<br>Conns in: <b>URYDL</b>: 3<br>Conns out: <b>IL2DL</b>: 1",
+        "<b>IL1DR</b><br>Sensory neuron (cephalic)<br>Conns in: <b>URYDR</b>: 5, <b>IL1DR</b>: 1, <b>OLLR</b>: 1, <b>OLQDR</b>: 1<br>Conns out: <b>IL2DR</b>: 5, <b>IL1R</b>: 2, <b>URYDR</b>: 2, <b>IL1DR</b>: 1, <b>OLLR</b>: 1",
+        "<b>IL1L</b><br>Sensory neuron (cephalic)<br>Conns in: <b>IL1VL</b>: 3<br>Conns out: <b>ADEL</b>: 3, <b>IL2L</b>: 1, <b>OLLL</b>: 1",
+        "<b>IL1R</b><br>Sensory neuron (cephalic)<br>Conns in: <b>IL1VR</b>: 4, <b>IL1DR</b>: 2<br>Conns out: <b>OLLR</b>: 1, <b>URXR</b>: 1",
+        "<b>IL1VL</b><br>Sensory neuron (cephalic)<br>Conns in: <b>IL1VL</b>: 5, <b>OLLL</b>: 3, <b>URYVL</b>: 1<br>Conns out: <b>IL1VL</b>: 5, <b>URYVL</b>: 4, <b>IL1L</b>: 3, <b>OLQVL</b>: 2",
+        "<b>IL1VR</b><br>Sensory neuron (cephalic)<br>Conns in: <b>URYVR</b>: 3, <b>OLLR</b>: 2, <b>OLQVR</b>: 2<br>Conns out: <b>OLQVR</b>: 5, <b>IL1R</b>: 4, <b>IL2VR</b>: 2, <b>OLLR</b>: 1",
+        "<b>IL2DL</b><br>Sensory neuron (cephalic)<br>Conns in: <b>IL1DL</b>: 1",
+        "<b>IL2DR</b><br>Sensory neuron (cephalic)<br>Conns in: <b>IL1DR</b>: 5",
+        "<b>IL2L</b><br>Sensory neuron (cephalic)<br>Conns in: <b>IL1L</b>: 1, <b>OLQVL</b>: 1",
+        "<b>IL2R</b><br>Sensory neuron (cephalic)<br>Conns in: <b>ASEL</b>: 1, <b>OLLR</b>: 1",
+        "<b>IL2VL</b><br>Sensory neuron (cephalic)",
+        "<b>IL2VR</b><br>Sensory neuron (cephalic)<br>Conns in: <b>IL1VR</b>: 2",
+        "<b>OLLL</b><br>Sensory neuron (cephalic)<br>Conns in: <b>URYVL</b>: 9, <b>OLLL</b>: 4, <b>URYDL</b>: 3, <b>IL1L</b>: 1<br>Conns out: <b>CEPVL</b>: 14, <b>ADEL</b>: 5, <b>CEPDL</b>: 5, <b>OLLL</b>: 4, <b>IL1VL</b>: 3, <br><b>URYDL</b>: 2, <b>URYVL</b>: 1",
+        "<b>OLLR</b><br>Sensory neuron (cephalic)<br>Conns in: <b>OLLR</b>: 4, <b>ADLR</b>: 1, <b>ASEL</b>: 1, <b>IL1DR</b>: 1, <b>IL1R</b>: 1, <br><b>IL1VR</b>: 1<br>Conns out: <b>CEPVR</b>: 16, <b>CEPDR</b>: 4, <b>OLLR</b>: 4, <b>ADER</b>: 2, <b>IL1VR</b>: 2, <br><b>IL1DR</b>: 1, <b>IL2R</b>: 1, <b>OLQDR</b>: 1",
+        "<b>OLQDL</b><br>Sensory neuron (cephalic)<br>Conns in: <b>URYDL</b>: 2<br>Conns out: <b>CEPDL</b>: 3, <b>URYDL</b>: 3",
+        "<b>OLQDR</b><br>Sensory neuron (cephalic)<br>Conns in: <b>OLLR</b>: 1, <b>URYDR</b>: 1<br>Conns out: <b>IL1DR</b>: 1",
+        "<b>OLQVL</b><br>Sensory neuron (cephalic)<br>Conns in: <b>URYVL</b>: 9, <b>ADLL</b>: 2, <b>BAGR</b>: 2, <b>IL1VL</b>: 2<br>Conns out: <b>IL2L</b>: 1",
+        "<b>OLQVR</b><br>Sensory neuron (cephalic)<br>Conns in: <b>IL1VR</b>: 5, <b>ADLR</b>: 1<br>Conns out: <b>IL1VR</b>: 2",
+        "<b>PDEL</b><br>Sensory neuron (mechanosensory)<br>Conns in: <b>PLMR</b>: 18, <b>PLML</b>: 16, <b>PVM</b>: 10",
+        "<b>PDER</b><br>Sensory neuron (mechanosensory)<br>Conns in: <b>PLML</b>: 19, <b>PLMR</b>: 10, <b>PVM</b>: 7",
+        "<b>PHAL</b><br>Sensory neuron (phasmid)<br>Conns in: <b>PHAR</b>: 11<br>Conns out: <b>PHAR</b>: 13, <b>PHBR</b>: 10, <b>PHBL</b>: 7, <b>DVA</b>: 2",
+        "<b>PHAR</b><br>Sensory neuron (phasmid)<br>Conns in: <b>PHAL</b>: 13, <b>PHCR</b>: 2, <b>PHCL</b>: 1<br>Conns out: <b>PHAL</b>: 11, <b>PHBR</b>: 8, <b>DVA</b>: 6, <b>PHBL</b>: 3",
+        "<b>PHBL</b><br>Sensory neuron (phasmid)<br>Conns in: <b>PHAL</b>: 7, <b>PHAR</b>: 3, <b>PHBR</b>: 3, <b>PQR</b>: 2<br>Conns out: <b>PHBR</b>: 4",
+        "<b>PHBR</b><br>Sensory neuron (phasmid)<br>Conns in: <b>PHAL</b>: 10, <b>PHAR</b>: 8, <b>PHBL</b>: 4<br>Conns out: <b>PHBL</b>: 3, <b>PHCR</b>: 3, <b>PHCL</b>: 1",
+        "<b>PHCL</b><br>Sensory neuron (phasmid)<br>Conns in: <b>PHCR</b>: 4, <b>PHBR</b>: 1<br>Conns out: <b>DVA</b>: 12, <b>PHCR</b>: 2, <b>PHAR</b>: 1",
+        "<b>PHCR</b><br>Sensory neuron (phasmid)<br>Conns in: <b>PHBR</b>: 3, <b>PHCL</b>: 2<br>Conns out: <b>DVA</b>: 22, <b>PHCL</b>: 4, <b>PHAR</b>: 2",
+        "<b>PLML</b><br>Sensory neuron (mechanosensory)<br>Conns out: <b>PDER</b>: 19, <b>PDEL</b>: 16, <b>DVA</b>: 9",
+        "<b>PLMR</b><br>Sensory neuron (mechanosensory)<br>Conns out: <b>DVA</b>: 19, <b>PDEL</b>: 18, <b>PDER</b>: 10",
+        "<b>PLNL</b><br>Sensory neuron (touch)",
+        "<b>PLNR</b><br>Sensory neuron (touch)",
+        "<b>PQR</b><br>Sensory neuron (touch)<br>Conns out: <b>PHBL</b>: 2",
+        "<b>PVDL</b><br>Sensory neuron (mechanosensory)<br>Conns in: <b>PVDR</b>: 2<br>Conns out: <b>PVDR</b>: 10",
+        "<b>PVDR</b><br>Sensory neuron (mechanosensory)<br>Conns in: <b>PVDL</b>: 10<br>Conns out: <b>DVA</b>: 5, <b>PVDL</b>: 2",
+        "<b>PVM</b><br>Sensory neuron (mechanosensory)<br>Conns in: <b>PVM</b>: 6<br>Conns out: <b>PDEL</b>: 10, <b>PDER</b>: 7, <b>PVM</b>: 6, <b>DVA</b>: 3, <b>AVM</b>: 2",
+        "<b>SDQL</b><br>Sensory neuron (touch)<br>Conns in: <b>ALML</b>: 2",
+        "<b>SDQR</b><br>Sensory neuron (touch)",
+        "<b>URXL</b><br>Sensory neuron (O2, CO2, social signals, touch)<br>Conns in: <b>AQR</b>: 5, <b>ASHL</b>: 2, <b>URYVL</b>: 2",
+        "<b>URXR</b><br>Sensory neuron (O2, CO2, social signals, touch)<br>Conns in: <b>ADLR</b>: 8, <b>BAGL</b>: 1, <b>IL1R</b>: 1, <b>URYDR</b>: 1",
+        "<b>URYDL</b><br>Sensory neuron (cephalic)<br>Conns in: <b>OLQDL</b>: 3, <b>OLLL</b>: 2<br>Conns out: <b>IL1DL</b>: 3, <b>OLLL</b>: 3, <b>OLQDL</b>: 2",
+        "<b>URYDR</b><br>Sensory neuron (cephalic)<br>Conns in: <b>IL1DR</b>: 2<br>Conns out: <b>IL1DR</b>: 5, <b>CEPDR</b>: 3, <b>AWCL</b>: 1, <b>OLQDR</b>: 1, <b>URXR</b>: 1",
+        "<b>URYVL</b><br>Sensory neuron (cephalic)<br>Conns in: <b>IL1VL</b>: 4, <b>OLLL</b>: 1<br>Conns out: <b>OLLL</b>: 9, <b>OLQVL</b>: 9, <b>CEPVL</b>: 3, <b>URXL</b>: 2, <b>IL1VL</b>: 1",
+        "<b>URYVR</b><br>Sensory neuron (cephalic)<br>Conns out: <b>IL1VR</b>: 3, <b>CEPVR</b>: 1"
+      ],
+      "marker": {
+        "color": [
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc",
+          "#ff66cc"
+        ],
+        "colorbar": {
+          "thickness": 15,
+          "title": {
+            "text": "Node Connections"
+          },
+          "xanchor": "left"
+        },
+        "colorscale": [
+          [
+            0.0,
+            "rgb(255,255,217)"
+          ],
+          [
+            0.125,
+            "rgb(237,248,177)"
+          ],
+          [
+            0.25,
+            "rgb(199,233,180)"
+          ],
+          [
+            0.375,
+            "rgb(127,205,187)"
+          ],
+          [
+            0.5,
+            "rgb(65,182,196)"
+          ],
+          [
+            0.625,
+            "rgb(29,145,192)"
+          ],
+          [
+            0.75,
+            "rgb(34,94,168)"
+          ],
+          [
+            0.875,
+            "rgb(37,52,148)"
+          ],
+          [
+            1.0,
+            "rgb(8,29,88)"
+          ]
+        ],
+        "line": {
+          "width": 1
+        },
+        "reversescale": true,
+        "showscale": false,
+        "size": [
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "symbol": [
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle"
+        ]
+      },
+      "mode": "markers",
+      "opacity": 1,
+      "text": [
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ADEL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ADER</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ADFL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ADFR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ADLL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ADLR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AFDL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AFDR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ALML</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ALMR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ALNL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ALNR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AQR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ASEL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ASER</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ASGL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ASGR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ASHL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ASHR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ASIL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ASIR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ASJL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ASJR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ASKL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>ASKR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AVM</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AWAL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AWAR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AWBL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AWBR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AWCL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>AWCR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>BAGL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>BAGR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>CEPDL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>CEPDR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>CEPVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>CEPVR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DVA</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>FLPL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>FLPR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>IL1DL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>IL1DR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>IL1L</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>IL1R</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>IL1VL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>IL1VR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>IL2DL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>IL2DR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>IL2L</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>IL2R</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>IL2VL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>IL2VR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>OLLL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>OLLR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>OLQDL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>OLQDR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>OLQVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>OLQVR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PDEL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PDER</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PHAL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PHAR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PHBL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PHBR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PHCL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PHCR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PLML</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PLMR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PLNL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PLNR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PQR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PVDL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PVDR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>PVM</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SDQL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>SDQR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>URXL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>URXR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>URYDL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>URYDR</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>URYVL</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>URYVR</b></span>"
+      ],
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.962626,
+        0.821613,
+        -0.786925,
+        0.701275,
+        -0.041563,
+        -0.788059,
+        0.926828,
+        0.939869,
+        -0.901648,
+        -0.136079,
+        -0.322103,
+        0.743945,
+        0.905703,
+        -0.909975,
+        0.039397,
+        -0.433936,
+        0.409416,
+        -0.088024,
+        -0.940022,
+        -0.713199,
+        0.907727,
+        -0.925294,
+        0.959735,
+        0.306807,
+        0.306072,
+        0.952663,
+        -0.201598,
+        0.929775,
+        0.471032,
+        0.820888,
+        -0.985358,
+        0.635042,
+        -0.707615,
+        0.131553,
+        -0.001575,
+        -0.69305,
+        0.723124,
+        -0.840873,
+        0.737834,
+        -0.745621,
+        0.448718,
+        -0.663465,
+        -0.235592,
+        0.858816,
+        -0.411531,
+        0.848175,
+        -0.898943,
+        0.312582,
+        0.454559,
+        -0.58164,
+        0.584666,
+        -0.141852,
+        -0.370259,
+        0.175853,
+        0.67227,
+        -0.695324,
+        0.841225,
+        -0.988242,
+        -0.632156,
+        -0.530919,
+        -0.121014,
+        -0.770808,
+        0.14116,
+        0.52831,
+        0.29351,
+        0.223859,
+        -0.988195,
+        0.760646,
+        -0.73,
+        -0.722805,
+        0.597218,
+        0.735126,
+        0.426351,
+        -0.413377,
+        0.907584,
+        0.073481,
+        -0.509832,
+        0.571865,
+        -0.925312,
+        -0.417137,
+        -0.625429,
+        -0.251384,
+        0.924091
+      ],
+      "y": [
+        -0.243536,
+        -0.434097,
+        -0.150985,
+        0.069374,
+        -0.976287,
+        0.609615,
+        0.185269,
+        0.293267,
+        0.116975,
+        -0.937499,
+        -0.893962,
+        0.574416,
+        -0.384788,
+        0.560121,
+        -0.932324,
+        0.858532,
+        0.88231,
+        0.938332,
+        -0.009769,
+        0.035923,
+        -0.082784,
+        0.328474,
+        -0.143677,
+        0.701032,
+        -0.827998,
+        0.003283,
+        0.877844,
+        -0.254215,
+        0.793768,
+        0.283948,
+        -0.113424,
+        0.75476,
+        -0.582848,
+        0.98018,
+        1.0,
+        -0.692085,
+        -0.514175,
+        -0.562134,
+        0.440448,
+        -0.757865,
+        -0.908558,
+        0.388741,
+        -0.936938,
+        -0.552778,
+        -0.851587,
+        -0.276142,
+        -0.426934,
+        0.943945,
+        -0.5678,
+        -0.760592,
+        0.662515,
+        0.746799,
+        0.944191,
+        -0.887299,
+        -0.667926,
+        -0.307895,
+        0.517169,
+        0.194416,
+        0.783477,
+        0.816197,
+        -0.807912,
+        0.228091,
+        -0.958616,
+        -0.774884,
+        -0.913218,
+        0.9076,
+        -0.376942,
+        -0.626236,
+        0.733844,
+        -0.446937,
+        -0.712583,
+        0.668532,
+        -0.792864,
+        -0.70615,
+        0.415774,
+        0.863094,
+        -0.849209,
+        0.862836,
+        0.443323,
+        0.627138,
+        0.554045,
+        0.92415,
+        0.090702
+      ]
+    }
+  ],
+  "layout": {
+    "height": 800,
+    "hovermode": "closest",
+    "margin": {
+      "b": 20,
+      "l": 5,
+      "r": 5,
+      "t": 40
+    },
+    "showlegend": false,
+    "template": {
+      "data": {
+        "bar": [
+          {
+            "error_x": {
+              "color": "#2a3f5f"
+            },
+            "error_y": {
+              "color": "#2a3f5f"
+            },
+            "marker": {
+              "line": {
+                "color": "white",
+                "width": 0.5
+              },
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "bar"
+          }
+        ],
+        "barpolar": [
+          {
+            "marker": {
+              "line": {
+                "color": "white",
+                "width": 0.5
+              },
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "barpolar"
+          }
+        ],
+        "carpet": [
+          {
+            "aaxis": {
+              "endlinecolor": "#2a3f5f",
+              "gridcolor": "#C8D4E3",
+              "linecolor": "#C8D4E3",
+              "minorgridcolor": "#C8D4E3",
+              "startlinecolor": "#2a3f5f"
+            },
+            "baxis": {
+              "endlinecolor": "#2a3f5f",
+              "gridcolor": "#C8D4E3",
+              "linecolor": "#C8D4E3",
+              "minorgridcolor": "#C8D4E3",
+              "startlinecolor": "#2a3f5f"
+            },
+            "type": "carpet"
+          }
+        ],
+        "choropleth": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "type": "choropleth"
+          }
+        ],
+        "contour": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "contour"
+          }
+        ],
+        "contourcarpet": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "type": "contourcarpet"
+          }
+        ],
+        "heatmap": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "heatmap"
+          }
+        ],
+        "heatmapgl": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "heatmapgl"
+          }
+        ],
+        "histogram": [
+          {
+            "marker": {
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "histogram"
+          }
+        ],
+        "histogram2d": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "histogram2d"
+          }
+        ],
+        "histogram2dcontour": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "histogram2dcontour"
+          }
+        ],
+        "mesh3d": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "type": "mesh3d"
+          }
+        ],
+        "parcoords": [
+          {
+            "line": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "parcoords"
+          }
+        ],
+        "pie": [
+          {
+            "automargin": true,
+            "type": "pie"
+          }
+        ],
+        "scatter": [
+          {
+            "fillpattern": {
+              "fillmode": "overlay",
+              "size": 10,
+              "solidity": 0.2
+            },
+            "type": "scatter"
+          }
+        ],
+        "scatter3d": [
+          {
+            "line": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatter3d"
+          }
+        ],
+        "scattercarpet": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattercarpet"
+          }
+        ],
+        "scattergeo": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattergeo"
+          }
+        ],
+        "scattergl": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattergl"
+          }
+        ],
+        "scattermapbox": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattermapbox"
+          }
+        ],
+        "scatterpolar": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatterpolar"
+          }
+        ],
+        "scatterpolargl": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatterpolargl"
+          }
+        ],
+        "scatterternary": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatterternary"
+          }
+        ],
+        "surface": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "surface"
+          }
+        ],
+        "table": [
+          {
+            "cells": {
+              "fill": {
+                "color": "#EBF0F8"
+              },
+              "line": {
+                "color": "white"
+              }
+            },
+            "header": {
+              "fill": {
+                "color": "#C8D4E3"
+              },
+              "line": {
+                "color": "white"
+              }
+            },
+            "type": "table"
+          }
+        ]
+      },
+      "layout": {
+        "annotationdefaults": {
+          "arrowcolor": "#2a3f5f",
+          "arrowhead": 0,
+          "arrowwidth": 1
+        },
+        "autotypenumbers": "strict",
+        "coloraxis": {
+          "colorbar": {
+            "outlinewidth": 0,
+            "ticks": ""
+          }
+        },
+        "colorscale": {
+          "diverging": [
+            [
+              0,
+              "#8e0152"
+            ],
+            [
+              0.1,
+              "#c51b7d"
+            ],
+            [
+              0.2,
+              "#de77ae"
+            ],
+            [
+              0.3,
+              "#f1b6da"
+            ],
+            [
+              0.4,
+              "#fde0ef"
+            ],
+            [
+              0.5,
+              "#f7f7f7"
+            ],
+            [
+              0.6,
+              "#e6f5d0"
+            ],
+            [
+              0.7,
+              "#b8e186"
+            ],
+            [
+              0.8,
+              "#7fbc41"
+            ],
+            [
+              0.9,
+              "#4d9221"
+            ],
+            [
+              1,
+              "#276419"
+            ]
+          ],
+          "sequential": [
+            [
+              0.0,
+              "#0d0887"
+            ],
+            [
+              0.1111111111111111,
+              "#46039f"
+            ],
+            [
+              0.2222222222222222,
+              "#7201a8"
+            ],
+            [
+              0.3333333333333333,
+              "#9c179e"
+            ],
+            [
+              0.4444444444444444,
+              "#bd3786"
+            ],
+            [
+              0.5555555555555556,
+              "#d8576b"
+            ],
+            [
+              0.6666666666666666,
+              "#ed7953"
+            ],
+            [
+              0.7777777777777778,
+              "#fb9f3a"
+            ],
+            [
+              0.8888888888888888,
+              "#fdca26"
+            ],
+            [
+              1.0,
+              "#f0f921"
+            ]
+          ],
+          "sequentialminus": [
+            [
+              0.0,
+              "#0d0887"
+            ],
+            [
+              0.1111111111111111,
+              "#46039f"
+            ],
+            [
+              0.2222222222222222,
+              "#7201a8"
+            ],
+            [
+              0.3333333333333333,
+              "#9c179e"
+            ],
+            [
+              0.4444444444444444,
+              "#bd3786"
+            ],
+            [
+              0.5555555555555556,
+              "#d8576b"
+            ],
+            [
+              0.6666666666666666,
+              "#ed7953"
+            ],
+            [
+              0.7777777777777778,
+              "#fb9f3a"
+            ],
+            [
+              0.8888888888888888,
+              "#fdca26"
+            ],
+            [
+              1.0,
+              "#f0f921"
+            ]
+          ]
+        },
+        "colorway": [
+          "#636efa",
+          "#EF553B",
+          "#00cc96",
+          "#ab63fa",
+          "#FFA15A",
+          "#19d3f3",
+          "#FF6692",
+          "#B6E880",
+          "#FF97FF",
+          "#FECB52"
+        ],
+        "font": {
+          "color": "#2a3f5f"
+        },
+        "geo": {
+          "bgcolor": "white",
+          "lakecolor": "white",
+          "landcolor": "white",
+          "showlakes": true,
+          "showland": true,
+          "subunitcolor": "#C8D4E3"
+        },
+        "hoverlabel": {
+          "align": "left"
+        },
+        "hovermode": "closest",
+        "mapbox": {
+          "style": "light"
+        },
+        "paper_bgcolor": "white",
+        "plot_bgcolor": "white",
+        "polar": {
+          "angularaxis": {
+            "gridcolor": "#EBF0F8",
+            "linecolor": "#EBF0F8",
+            "ticks": ""
+          },
+          "bgcolor": "white",
+          "radialaxis": {
+            "gridcolor": "#EBF0F8",
+            "linecolor": "#EBF0F8",
+            "ticks": ""
+          }
+        },
+        "scene": {
+          "xaxis": {
+            "backgroundcolor": "white",
+            "gridcolor": "#DFE8F3",
+            "gridwidth": 2,
+            "linecolor": "#EBF0F8",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "#EBF0F8"
+          },
+          "yaxis": {
+            "backgroundcolor": "white",
+            "gridcolor": "#DFE8F3",
+            "gridwidth": 2,
+            "linecolor": "#EBF0F8",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "#EBF0F8"
+          },
+          "zaxis": {
+            "backgroundcolor": "white",
+            "gridcolor": "#DFE8F3",
+            "gridwidth": 2,
+            "linecolor": "#EBF0F8",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "#EBF0F8"
+          }
+        },
+        "shapedefaults": {
+          "line": {
+            "color": "#2a3f5f"
+          }
+        },
+        "ternary": {
+          "aaxis": {
+            "gridcolor": "#DFE8F3",
+            "linecolor": "#A2B1C6",
+            "ticks": ""
+          },
+          "baxis": {
+            "gridcolor": "#DFE8F3",
+            "linecolor": "#A2B1C6",
+            "ticks": ""
+          },
+          "bgcolor": "white",
+          "caxis": {
+            "gridcolor": "#DFE8F3",
+            "linecolor": "#A2B1C6",
+            "ticks": ""
+          }
+        },
+        "title": {
+          "x": 0.05
+        },
+        "xaxis": {
+          "automargin": true,
+          "gridcolor": "#EBF0F8",
+          "linecolor": "#EBF0F8",
+          "ticks": "",
+          "title": {
+            "standoff": 15
+          },
+          "zerolinecolor": "#EBF0F8",
+          "zerolinewidth": 2
+        },
+        "yaxis": {
+          "automargin": true,
+          "gridcolor": "#EBF0F8",
+          "linecolor": "#EBF0F8",
+          "ticks": "",
+          "title": {
+            "standoff": 15
+          },
+          "zerolinecolor": "#EBF0F8",
+          "zerolinewidth": 2
+        }
+      }
+    },
+    "width": 800,
+    "xaxis": {
+      "showgrid": false,
+      "visible": false,
+      "zeroline": false
+    },
+    "yaxis": {
+      "scaleanchor": "x",
+      "scaleratio": 1,
+      "showgrid": false,
+      "visible": false,
+      "zeroline": false
+    }
+  }
+}

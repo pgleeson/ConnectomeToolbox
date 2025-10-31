@@ -1,0 +1,2527 @@
+{
+  "data": [
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.754172,
+        -0.355478
+      ],
+      "y": [
+        -0.031405,
+        0.819365
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.355478,
+        -0.754172
+      ],
+      "y": [
+        0.819365,
+        -0.031405
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.754172,
+        0.379238
+      ],
+      "y": [
+        -0.031405,
+        0.898884
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.379238,
+        -0.754172
+      ],
+      "y": [
+        0.898884,
+        -0.031405
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 7.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.754172,
+        0.13491
+      ],
+      "y": [
+        -0.031405,
+        -0.902187
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 7.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.13491,
+        -0.754172
+      ],
+      "y": [
+        -0.902187,
+        -0.031405
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 10.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.355478,
+        0.379238
+      ],
+      "y": [
+        0.819365,
+        0.898884
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 10.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.379238,
+        -0.355478
+      ],
+      "y": [
+        0.898884,
+        0.819365
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.355478,
+        0.13491
+      ],
+      "y": [
+        0.819365,
+        -0.902187
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.13491,
+        -0.355478
+      ],
+      "y": [
+        -0.902187,
+        0.819365
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.630336,
+        0.59322
+      ],
+      "y": [
+        0.664163,
+        0.632013
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.59322,
+        -0.630336
+      ],
+      "y": [
+        0.632013,
+        0.664163
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.117138,
+        0.558323
+      ],
+      "y": [
+        0.811173,
+        -0.858318
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.558323,
+        0.117138
+      ],
+      "y": [
+        -0.858318,
+        0.811173
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.117138,
+        -0.908578
+      ],
+      "y": [
+        0.811173,
+        0.024301
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.908578,
+        0.117138
+      ],
+      "y": [
+        0.024301,
+        0.811173
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.117138,
+        -0.301864
+      ],
+      "y": [
+        0.811173,
+        -0.927514
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.301864,
+        0.117138
+      ],
+      "y": [
+        -0.927514,
+        0.811173
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 7.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.558323,
+        0.728414
+      ],
+      "y": [
+        -0.858318,
+        0.472233
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 7.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.728414,
+        0.558323
+      ],
+      "y": [
+        0.472233,
+        -0.858318
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.812508,
+        -0.892426
+      ],
+      "y": [
+        0.739179,
+        -0.284795
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.892426,
+        -0.812508
+      ],
+      "y": [
+        -0.284795,
+        0.739179
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.796712,
+        -0.334405
+      ],
+      "y": [
+        -0.762689,
+        0.927037
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.334405,
+        -0.796712
+      ],
+      "y": [
+        0.927037,
+        -0.762689
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.796712,
+        -0.780475
+      ],
+      "y": [
+        -0.762689,
+        0.625735
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.780475,
+        -0.796712
+      ],
+      "y": [
+        0.625735,
+        -0.762689
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.762491,
+        0.738184
+      ],
+      "y": [
+        0.608239,
+        -0.118795
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.738184,
+        0.762491
+      ],
+      "y": [
+        -0.118795,
+        0.608239
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.762491,
+        0.360106
+      ],
+      "y": [
+        0.608239,
+        0.612271
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.360106,
+        0.762491
+      ],
+      "y": [
+        0.612271,
+        0.608239
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.780475,
+        -0.301864
+      ],
+      "y": [
+        0.625735,
+        -0.927514
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.301864,
+        -0.780475
+      ],
+      "y": [
+        -0.927514,
+        0.625735
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.44591,
+        0.822221
+      ],
+      "y": [
+        0.756999,
+        0.062376
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.822221,
+        0.44591
+      ],
+      "y": [
+        0.062376,
+        0.756999
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.44591,
+        -0.476731
+      ],
+      "y": [
+        0.756999,
+        0.815777
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.476731,
+        0.44591
+      ],
+      "y": [
+        0.815777,
+        0.756999
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.637864,
+        -0.621795
+      ],
+      "y": [
+        0.781028,
+        -0.756995
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.621795,
+        0.637864
+      ],
+      "y": [
+        -0.756995,
+        0.781028
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.278678,
+        -0.480824
+      ],
+      "y": [
+        0.870996,
+        -0.662896
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.480824,
+        0.278678
+      ],
+      "y": [
+        -0.662896,
+        0.870996
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.4374,
+        0.728414
+      ],
+      "y": [
+        -0.820079,
+        0.472233
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.728414,
+        -0.4374
+      ],
+      "y": [
+        0.472233,
+        -0.820079
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.863392,
+        0.822221
+      ],
+      "y": [
+        0.161545,
+        0.062376
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.822221,
+        -0.863392
+      ],
+      "y": [
+        0.062376,
+        0.161545
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.490588,
+        0.746657
+      ],
+      "y": [
+        -0.539042,
+        0.296997
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.746657,
+        0.490588
+      ],
+      "y": [
+        0.296997,
+        -0.539042
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "spline",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.738184,
+        0.6381912,
+        0.7048530666666666,
+        0.738184
+      ],
+      "y": [
+        -0.118795,
+        -0.08546406666666667,
+        -0.018802200000000005,
+        -0.118795
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "spline",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.738184,
+        0.6381912,
+        0.7048530666666666,
+        0.738184
+      ],
+      "y": [
+        -0.118795,
+        -0.08546406666666667,
+        -0.018802200000000005,
+        -0.118795
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 10.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.738184,
+        0.360106
+      ],
+      "y": [
+        -0.118795,
+        0.612271
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 10.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.360106,
+        0.738184
+      ],
+      "y": [
+        0.612271,
+        -0.118795
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "spline",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.360106,
+        0.2601132,
+        0.32677506666666667,
+        0.360106
+      ],
+      "y": [
+        0.612271,
+        0.6456019333333334,
+        0.7122638,
+        0.612271
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "spline",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.360106,
+        0.2601132,
+        0.32677506666666667,
+        0.360106
+      ],
+      "y": [
+        0.612271,
+        0.6456019333333334,
+        0.7122638,
+        0.612271
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.480824,
+        -0.908578
+      ],
+      "y": [
+        -0.662896,
+        0.024301
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 4.0
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.908578,
+        -0.480824
+      ],
+      "y": [
+        0.024301,
+        -0.662896
+      ]
+    },
+    {
+      "hoverinfo": "text",
+      "hovertext": [
+        "<b>ADAL</b><br>Layer 3 interneuron<br>Conns in: <b>AVDR</b>: 2, <b>ADAR</b>: 1, <b>AVDL</b>: 1<br>Conns out: <b>AVDR</b>: 2, <b>ADAR</b>: 1, <b>AVDL</b>: 1",
+        "<b>ADAR</b><br>Layer 3 interneuron<br>Conns in: <b>AVDL</b>: 3, <b>ADAL</b>: 1, <b>AVDR</b>: 1<br>Conns out: <b>AVDL</b>: 3, <b>ADAL</b>: 1, <b>AVDR</b>: 1",
+        "<b>AIAL</b><br>Layer 3 interneuron",
+        "<b>AIAR</b><br>Layer 3 interneuron<br>Conns in: <b>AINL</b>: 1<br>Conns out: <b>AINL</b>: 1",
+        "<b>AIBL</b><br>Layer 2 interneuron<br>Conns in: <b>AIBR</b>: 1, <b>RIGR</b>: 1, <b>RIMR</b>: 1<br>Conns out: <b>AIBR</b>: 1, <b>RIGR</b>: 1, <b>RIMR</b>: 1",
+        "<b>AIBR</b><br>Layer 2 interneuron<br>Conns in: <b>DVC</b>: 2, <b>AIBL</b>: 1<br>Conns out: <b>DVC</b>: 2, <b>AIBL</b>: 1",
+        "<b>AIML</b><br>Category 4 interneuron<br>Conns in: <b>AIMR</b>: 1<br>Conns out: <b>AIMR</b>: 1",
+        "<b>AIMR</b><br>Category 4 interneuron<br>Conns in: <b>AIML</b>: 1<br>Conns out: <b>AIML</b>: 1",
+        "<b>AINL</b><br>Category 4 interneuron<br>Conns in: <b>AIAR</b>: 1<br>Conns out: <b>AIAR</b>: 1",
+        "<b>AINR</b><br>Category 4 interneuron",
+        "<b>AIYL</b><br>Layer 3 interneuron",
+        "<b>AIYR</b><br>Layer 3 interneuron",
+        "<b>AIZL</b><br>Layer 3 interneuron<br>Conns in: <b>AIZR</b>: 1, <b>AVER</b>: 1<br>Conns out: <b>AIZR</b>: 1, <b>AVER</b>: 1",
+        "<b>AIZR</b><br>Layer 3 interneuron<br>Conns in: <b>AIZL</b>: 1<br>Conns out: <b>AIZL</b>: 1",
+        "<b>ALA</b><br>Layer 3 interneuron",
+        "<b>AUAL</b><br>Layer 3 interneuron",
+        "<b>AUAR</b><br>Layer 3 interneuron",
+        "<b>AVAL</b><br>Layer 1 interneuron",
+        "<b>AVAR</b><br>Layer 1 interneuron",
+        "<b>AVBL</b><br>Layer 1 interneuron",
+        "<b>AVBR</b><br>Layer 1 interneuron<br>Conns in: <b>RIBL</b>: 1, <b>RIBR</b>: 1<br>Conns out: <b>RIBL</b>: 1, <b>RIBR</b>: 1",
+        "<b>AVDL</b><br>Layer 2 interneuron<br>Conns in: <b>ADAR</b>: 3, <b>ADAL</b>: 1<br>Conns out: <b>ADAR</b>: 3, <b>ADAL</b>: 1",
+        "<b>AVDR</b><br>Layer 2 interneuron<br>Conns in: <b>ADAL</b>: 2, <b>ADAR</b>: 1<br>Conns out: <b>ADAL</b>: 2, <b>ADAR</b>: 1",
+        "<b>AVEL</b><br>Layer 1 interneuron",
+        "<b>AVER</b><br>Layer 1 interneuron<br>Conns in: <b>AIZL</b>: 1, <b>RIMR</b>: 1<br>Conns out: <b>AIZL</b>: 1, <b>RIMR</b>: 1",
+        "<b>AVFL</b><br>Layer 3 interneuron",
+        "<b>AVFR</b><br>Layer 3 interneuron",
+        "<b>AVG</b><br>Layer 3 interneuron",
+        "<b>AVHL</b><br>Layer 3 interneuron",
+        "<b>AVHR</b><br>Layer 3 interneuron",
+        "<b>AVJL</b><br>Layer 2 interneuron<br>Conns in: <b>BDUR</b>: 1, <b>RIS</b>: 1<br>Conns out: <b>BDUR</b>: 1, <b>RIS</b>: 1",
+        "<b>AVJR</b><br>Layer 2 interneuron",
+        "<b>AVKL</b><br>Layer 2 interneuron<br>Conns in: <b>RICL</b>: 1<br>Conns out: <b>RICL</b>: 1",
+        "<b>AVKR</b><br>Layer 2 interneuron<br>Conns in: <b>RIGL</b>: 1<br>Conns out: <b>RIGL</b>: 1",
+        "<b>AVL</b><br>Layer 2 interneuron<br>Conns in: <b>DVC</b>: 1<br>Conns out: <b>DVC</b>: 1",
+        "<b>BDUL</b><br>Layer 3 interneuron<br>Conns in: <b>BDUR</b>: 1<br>Conns out: <b>BDUR</b>: 1",
+        "<b>BDUR</b><br>Layer 3 interneuron<br>Conns in: <b>AVJL</b>: 1, <b>BDUL</b>: 1<br>Conns out: <b>AVJL</b>: 1, <b>BDUL</b>: 1",
+        "<b>DVB</b><br>Layer 3 interneuron",
+        "<b>DVC</b><br>Layer 2 interneuron<br>Conns in: <b>AIBR</b>: 2, <b>AVL</b>: 1<br>Conns out: <b>AIBR</b>: 2, <b>AVL</b>: 1",
+        "<b>LUAL</b><br>Layer 3 interneuron",
+        "<b>LUAR</b><br>Layer 3 interneuron",
+        "<b>PVCL</b><br>Layer 1 interneuron",
+        "<b>PVCR</b><br>Layer 1 interneuron",
+        "<b>PVNL</b><br>Layer 3 interneuron",
+        "<b>PVNR</b><br>Layer 3 interneuron",
+        "<b>PVPL</b><br>Layer 3 interneuron<br>Conns in: <b>PVPR</b>: 1<br>Conns out: <b>PVPR</b>: 1",
+        "<b>PVPR</b><br>Layer 3 interneuron<br>Conns in: <b>PVPL</b>: 1<br>Conns out: <b>PVPL</b>: 1",
+        "<b>PVQL</b><br>Layer 3 interneuron",
+        "<b>PVQR</b><br>Layer 3 interneuron",
+        "<b>PVR</b><br>Layer 3 interneuron",
+        "<b>PVT</b><br>Layer 2 interneuron",
+        "<b>PVWL</b><br>Layer 2 interneuron",
+        "<b>PVWR</b><br>Layer 2 interneuron",
+        "<b>RIAL</b><br>Layer 1 interneuron",
+        "<b>RIAR</b><br>Layer 1 interneuron",
+        "<b>RIBL</b><br>Layer 2 interneuron<br>Conns in: <b>RIBR</b>: 3, <b>AVBR</b>: 1, <b>RIBL</b>: 1<br>Conns out: <b>RIBR</b>: 3, <b>AVBR</b>: 1, <b>RIBL</b>: 1",
+        "<b>RIBR</b><br>Layer 2 interneuron<br>Conns in: <b>RIBL</b>: 3, <b>AVBR</b>: 1, <b>RIBR</b>: 1<br>Conns out: <b>RIBL</b>: 3, <b>AVBR</b>: 1, <b>RIBR</b>: 1",
+        "<b>RICL</b><br>Layer 2 interneuron<br>Conns in: <b>AVKL</b>: 1<br>Conns out: <b>AVKL</b>: 1",
+        "<b>RICR</b><br>Layer 2 interneuron",
+        "<b>RID</b><br>Layer 1 interneuron",
+        "<b>RIFL</b><br>Layer 3 interneuron",
+        "<b>RIFR</b><br>Layer 3 interneuron",
+        "<b>RIGL</b><br>Layer 2 interneuron<br>Conns in: <b>AVKR</b>: 1, <b>RIGR</b>: 1<br>Conns out: <b>AVKR</b>: 1, <b>RIGR</b>: 1",
+        "<b>RIGR</b><br>Layer 2 interneuron<br>Conns in: <b>AIBL</b>: 1, <b>RIGL</b>: 1<br>Conns out: <b>AIBL</b>: 1, <b>RIGL</b>: 1",
+        "<b>RIH</b><br>Category 4 interneuron",
+        "<b>RIML</b><br>Layer 1 interneuron; motorneuron in White et al., 1986",
+        "<b>RIMR</b><br>Layer 1 interneuron; motorneuron in White et al., 1986<br>Conns in: <b>AIBL</b>: 1, <b>AVER</b>: 1<br>Conns out: <b>AIBL</b>: 1, <b>AVER</b>: 1",
+        "<b>RIPL</b><br>Linker to pharynx",
+        "<b>RIPR</b><br>Linker to pharynx",
+        "<b>RIR</b><br>Category 4 interneuron",
+        "<b>RIS</b><br>Layer 3 interneuron<br>Conns in: <b>AVJL</b>: 1<br>Conns out: <b>AVJL</b>: 1",
+        "<b>RMFL</b><br>Layer 2 interneuron",
+        "<b>RMFR</b><br>Layer 2 interneuron",
+        "<b>RMGL</b><br>Layer 2 interneuron",
+        "<b>RMGR</b><br>Layer 2 interneuron",
+        "<b>SAADL</b><br>Layer 2 interneuron",
+        "<b>SAADR</b><br>Layer 2 interneuron",
+        "<b>SAAVL</b><br>Layer 2 interneuron",
+        "<b>SAAVR</b><br>Layer 2 interneuron",
+        "<b>URBL</b><br>Category 4 interneuron",
+        "<b>URBR</b><br>Category 4 interneuron"
+      ],
+      "marker": {
+        "color": [
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#ff3300"
+        ],
+        "colorbar": {
+          "thickness": 15,
+          "title": {
+            "side": "right",
+            "text": "Node Connections"
+          },
+          "xanchor": "left"
+        },
+        "colorscale": [
+          [
+            0.0,
+            "rgb(255,255,217)"
+          ],
+          [
+            0.125,
+            "rgb(237,248,177)"
+          ],
+          [
+            0.25,
+            "rgb(199,233,180)"
+          ],
+          [
+            0.375,
+            "rgb(127,205,187)"
+          ],
+          [
+            0.5,
+            "rgb(65,182,196)"
+          ],
+          [
+            0.625,
+            "rgb(29,145,192)"
+          ],
+          [
+            0.75,
+            "rgb(34,94,168)"
+          ],
+          [
+            0.875,
+            "rgb(37,52,148)"
+          ],
+          [
+            1.0,
+            "rgb(8,29,88)"
+          ]
+        ],
+        "line": {
+          "width": 1
+        },
+        "reversescale": true,
+        "showscale": false,
+        "size": [
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0,
+          15.0
+        ],
+        "symbol": [
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle",
+          "circle"
+        ]
+      },
+      "mode": "markers",
+      "opacity": 1,
+      "text": [
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>ADAL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>ADAR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AIAL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AIAR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AIBL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AIBR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AIML</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AIMR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AINL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AINR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AIYL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AIYR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AIZL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AIZR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>ALA</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AUAL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AUAR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVAL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVAR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVBL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVBR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVDL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVDR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVEL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVER</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVFL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVFR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVG</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVHL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVHR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVJL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVJR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVKL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVKR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>BDUL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>BDUR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>DVB</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>DVC</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>LUAL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>LUAR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>PVCL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>PVCR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>PVNL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>PVNR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>PVPL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>PVPR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>PVQL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>PVQR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>PVR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>PVT</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>PVWL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>PVWR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RIAL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RIAR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RIBL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RIBR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RICL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RICR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RID</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RIFL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RIFR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RIGL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RIGR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RIH</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RIML</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RIMR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RIPL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RIPR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RIR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RIS</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RMFL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RMFR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RMGL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RMGR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>SAADL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>SAADR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>SAAVL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>SAAVR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>URBL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>URBR</b></span>"
+      ],
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        -0.754172,
+        -0.355478,
+        -0.766766,
+        -0.630336,
+        0.117138,
+        0.558323,
+        -0.812508,
+        -0.892426,
+        0.59322,
+        -0.7767,
+        -0.656574,
+        0.841867,
+        -0.796712,
+        -0.334405,
+        0.920344,
+        -0.869241,
+        0.43566,
+        0.784941,
+        0.201975,
+        0.017645,
+        0.762491,
+        0.379238,
+        0.13491,
+        -0.711878,
+        -0.780475,
+        -0.433192,
+        -0.221646,
+        -0.593366,
+        0.683064,
+        -0.956867,
+        0.44591,
+        0.754011,
+        0.637864,
+        0.278678,
+        -0.4374,
+        -0.863392,
+        0.822221,
+        0.965106,
+        0.728414,
+        0.967549,
+        -0.605296,
+        -0.860236,
+        0.862527,
+        -0.942743,
+        -0.101313,
+        0.490588,
+        0.746657,
+        0.006783,
+        0.001691,
+        0.18411,
+        0.078322,
+        0.999856,
+        0.779837,
+        0.950857,
+        -1.0,
+        0.738184,
+        0.360106,
+        -0.621795,
+        -0.730612,
+        -0.180324,
+        0.900137,
+        -0.228907,
+        -0.480824,
+        -0.908578,
+        -0.595804,
+        0.283606,
+        -0.301864,
+        0.809675,
+        -0.423105,
+        -0.952237,
+        -0.476731,
+        -0.064134,
+        0.899875,
+        0.922411,
+        0.516612,
+        -0.923452,
+        0.34061,
+        -0.811214,
+        0.471615,
+        -0.151024,
+        0.629097
+      ],
+      "y": [
+        -0.031405,
+        0.819365,
+        -0.605814,
+        0.664163,
+        0.811173,
+        -0.858318,
+        0.739179,
+        -0.284795,
+        0.632013,
+        0.279338,
+        -0.568474,
+        -0.520916,
+        -0.762689,
+        0.927037,
+        0.55304,
+        0.477506,
+        -0.864386,
+        -0.316161,
+        0.950405,
+        -0.924951,
+        0.608239,
+        0.898884,
+        -0.902187,
+        -0.398068,
+        0.625735,
+        0.67055,
+        0.922867,
+        0.801052,
+        -0.716152,
+        0.197257,
+        0.756999,
+        -0.455335,
+        0.781028,
+        0.870996,
+        -0.820079,
+        0.161545,
+        0.062376,
+        -0.379258,
+        0.472233,
+        0.095432,
+        0.520668,
+        -0.416171,
+        -0.187839,
+        -0.14863,
+        0.969206,
+        -0.539042,
+        0.296997,
+        -0.755654,
+        0.914718,
+        -0.98129,
+        0.984232,
+        -0.163809,
+        0.731664,
+        -0.041955,
+        -0.013324,
+        -0.118795,
+        0.612271,
+        -0.756995,
+        0.421399,
+        -0.956209,
+        0.318426,
+        -0.821372,
+        -0.662896,
+        0.024301,
+        -0.850291,
+        -0.893682,
+        -0.927514,
+        -0.712002,
+        -0.936093,
+        0.357073,
+        0.815777,
+        -0.967016,
+        0.198228,
+        0.427404,
+        0.86376,
+        -0.550758,
+        -0.801467,
+        -0.209441,
+        -0.693813,
+        0.842626,
+        -0.562117
+      ]
+    }
+  ],
+  "layout": {
+    "height": 800,
+    "hovermode": "closest",
+    "margin": {
+      "b": 20,
+      "l": 5,
+      "r": 5,
+      "t": 40
+    },
+    "showlegend": false,
+    "template": {
+      "data": {
+        "bar": [
+          {
+            "error_x": {
+              "color": "#2a3f5f"
+            },
+            "error_y": {
+              "color": "#2a3f5f"
+            },
+            "marker": {
+              "line": {
+                "color": "white",
+                "width": 0.5
+              },
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "bar"
+          }
+        ],
+        "barpolar": [
+          {
+            "marker": {
+              "line": {
+                "color": "white",
+                "width": 0.5
+              },
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "barpolar"
+          }
+        ],
+        "carpet": [
+          {
+            "aaxis": {
+              "endlinecolor": "#2a3f5f",
+              "gridcolor": "#C8D4E3",
+              "linecolor": "#C8D4E3",
+              "minorgridcolor": "#C8D4E3",
+              "startlinecolor": "#2a3f5f"
+            },
+            "baxis": {
+              "endlinecolor": "#2a3f5f",
+              "gridcolor": "#C8D4E3",
+              "linecolor": "#C8D4E3",
+              "minorgridcolor": "#C8D4E3",
+              "startlinecolor": "#2a3f5f"
+            },
+            "type": "carpet"
+          }
+        ],
+        "choropleth": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "type": "choropleth"
+          }
+        ],
+        "contour": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "contour"
+          }
+        ],
+        "contourcarpet": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "type": "contourcarpet"
+          }
+        ],
+        "heatmap": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "heatmap"
+          }
+        ],
+        "heatmapgl": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "heatmapgl"
+          }
+        ],
+        "histogram": [
+          {
+            "marker": {
+              "pattern": {
+                "fillmode": "overlay",
+                "size": 10,
+                "solidity": 0.2
+              }
+            },
+            "type": "histogram"
+          }
+        ],
+        "histogram2d": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "histogram2d"
+          }
+        ],
+        "histogram2dcontour": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "histogram2dcontour"
+          }
+        ],
+        "mesh3d": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "type": "mesh3d"
+          }
+        ],
+        "parcoords": [
+          {
+            "line": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "parcoords"
+          }
+        ],
+        "pie": [
+          {
+            "automargin": true,
+            "type": "pie"
+          }
+        ],
+        "scatter": [
+          {
+            "fillpattern": {
+              "fillmode": "overlay",
+              "size": 10,
+              "solidity": 0.2
+            },
+            "type": "scatter"
+          }
+        ],
+        "scatter3d": [
+          {
+            "line": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatter3d"
+          }
+        ],
+        "scattercarpet": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattercarpet"
+          }
+        ],
+        "scattergeo": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattergeo"
+          }
+        ],
+        "scattergl": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattergl"
+          }
+        ],
+        "scattermapbox": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scattermapbox"
+          }
+        ],
+        "scatterpolar": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatterpolar"
+          }
+        ],
+        "scatterpolargl": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatterpolargl"
+          }
+        ],
+        "scatterternary": [
+          {
+            "marker": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "type": "scatterternary"
+          }
+        ],
+        "surface": [
+          {
+            "colorbar": {
+              "outlinewidth": 0,
+              "ticks": ""
+            },
+            "colorscale": [
+              [
+                0.0,
+                "#0d0887"
+              ],
+              [
+                0.1111111111111111,
+                "#46039f"
+              ],
+              [
+                0.2222222222222222,
+                "#7201a8"
+              ],
+              [
+                0.3333333333333333,
+                "#9c179e"
+              ],
+              [
+                0.4444444444444444,
+                "#bd3786"
+              ],
+              [
+                0.5555555555555556,
+                "#d8576b"
+              ],
+              [
+                0.6666666666666666,
+                "#ed7953"
+              ],
+              [
+                0.7777777777777778,
+                "#fb9f3a"
+              ],
+              [
+                0.8888888888888888,
+                "#fdca26"
+              ],
+              [
+                1.0,
+                "#f0f921"
+              ]
+            ],
+            "type": "surface"
+          }
+        ],
+        "table": [
+          {
+            "cells": {
+              "fill": {
+                "color": "#EBF0F8"
+              },
+              "line": {
+                "color": "white"
+              }
+            },
+            "header": {
+              "fill": {
+                "color": "#C8D4E3"
+              },
+              "line": {
+                "color": "white"
+              }
+            },
+            "type": "table"
+          }
+        ]
+      },
+      "layout": {
+        "annotationdefaults": {
+          "arrowcolor": "#2a3f5f",
+          "arrowhead": 0,
+          "arrowwidth": 1
+        },
+        "autotypenumbers": "strict",
+        "coloraxis": {
+          "colorbar": {
+            "outlinewidth": 0,
+            "ticks": ""
+          }
+        },
+        "colorscale": {
+          "diverging": [
+            [
+              0,
+              "#8e0152"
+            ],
+            [
+              0.1,
+              "#c51b7d"
+            ],
+            [
+              0.2,
+              "#de77ae"
+            ],
+            [
+              0.3,
+              "#f1b6da"
+            ],
+            [
+              0.4,
+              "#fde0ef"
+            ],
+            [
+              0.5,
+              "#f7f7f7"
+            ],
+            [
+              0.6,
+              "#e6f5d0"
+            ],
+            [
+              0.7,
+              "#b8e186"
+            ],
+            [
+              0.8,
+              "#7fbc41"
+            ],
+            [
+              0.9,
+              "#4d9221"
+            ],
+            [
+              1,
+              "#276419"
+            ]
+          ],
+          "sequential": [
+            [
+              0.0,
+              "#0d0887"
+            ],
+            [
+              0.1111111111111111,
+              "#46039f"
+            ],
+            [
+              0.2222222222222222,
+              "#7201a8"
+            ],
+            [
+              0.3333333333333333,
+              "#9c179e"
+            ],
+            [
+              0.4444444444444444,
+              "#bd3786"
+            ],
+            [
+              0.5555555555555556,
+              "#d8576b"
+            ],
+            [
+              0.6666666666666666,
+              "#ed7953"
+            ],
+            [
+              0.7777777777777778,
+              "#fb9f3a"
+            ],
+            [
+              0.8888888888888888,
+              "#fdca26"
+            ],
+            [
+              1.0,
+              "#f0f921"
+            ]
+          ],
+          "sequentialminus": [
+            [
+              0.0,
+              "#0d0887"
+            ],
+            [
+              0.1111111111111111,
+              "#46039f"
+            ],
+            [
+              0.2222222222222222,
+              "#7201a8"
+            ],
+            [
+              0.3333333333333333,
+              "#9c179e"
+            ],
+            [
+              0.4444444444444444,
+              "#bd3786"
+            ],
+            [
+              0.5555555555555556,
+              "#d8576b"
+            ],
+            [
+              0.6666666666666666,
+              "#ed7953"
+            ],
+            [
+              0.7777777777777778,
+              "#fb9f3a"
+            ],
+            [
+              0.8888888888888888,
+              "#fdca26"
+            ],
+            [
+              1.0,
+              "#f0f921"
+            ]
+          ]
+        },
+        "colorway": [
+          "#636efa",
+          "#EF553B",
+          "#00cc96",
+          "#ab63fa",
+          "#FFA15A",
+          "#19d3f3",
+          "#FF6692",
+          "#B6E880",
+          "#FF97FF",
+          "#FECB52"
+        ],
+        "font": {
+          "color": "#2a3f5f"
+        },
+        "geo": {
+          "bgcolor": "white",
+          "lakecolor": "white",
+          "landcolor": "white",
+          "showlakes": true,
+          "showland": true,
+          "subunitcolor": "#C8D4E3"
+        },
+        "hoverlabel": {
+          "align": "left"
+        },
+        "hovermode": "closest",
+        "mapbox": {
+          "style": "light"
+        },
+        "paper_bgcolor": "white",
+        "plot_bgcolor": "white",
+        "polar": {
+          "angularaxis": {
+            "gridcolor": "#EBF0F8",
+            "linecolor": "#EBF0F8",
+            "ticks": ""
+          },
+          "bgcolor": "white",
+          "radialaxis": {
+            "gridcolor": "#EBF0F8",
+            "linecolor": "#EBF0F8",
+            "ticks": ""
+          }
+        },
+        "scene": {
+          "xaxis": {
+            "backgroundcolor": "white",
+            "gridcolor": "#DFE8F3",
+            "gridwidth": 2,
+            "linecolor": "#EBF0F8",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "#EBF0F8"
+          },
+          "yaxis": {
+            "backgroundcolor": "white",
+            "gridcolor": "#DFE8F3",
+            "gridwidth": 2,
+            "linecolor": "#EBF0F8",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "#EBF0F8"
+          },
+          "zaxis": {
+            "backgroundcolor": "white",
+            "gridcolor": "#DFE8F3",
+            "gridwidth": 2,
+            "linecolor": "#EBF0F8",
+            "showbackground": true,
+            "ticks": "",
+            "zerolinecolor": "#EBF0F8"
+          }
+        },
+        "shapedefaults": {
+          "line": {
+            "color": "#2a3f5f"
+          }
+        },
+        "ternary": {
+          "aaxis": {
+            "gridcolor": "#DFE8F3",
+            "linecolor": "#A2B1C6",
+            "ticks": ""
+          },
+          "baxis": {
+            "gridcolor": "#DFE8F3",
+            "linecolor": "#A2B1C6",
+            "ticks": ""
+          },
+          "bgcolor": "white",
+          "caxis": {
+            "gridcolor": "#DFE8F3",
+            "linecolor": "#A2B1C6",
+            "ticks": ""
+          }
+        },
+        "title": {
+          "x": 0.05
+        },
+        "xaxis": {
+          "automargin": true,
+          "gridcolor": "#EBF0F8",
+          "linecolor": "#EBF0F8",
+          "ticks": "",
+          "title": {
+            "standoff": 15
+          },
+          "zerolinecolor": "#EBF0F8",
+          "zerolinewidth": 2
+        },
+        "yaxis": {
+          "automargin": true,
+          "gridcolor": "#EBF0F8",
+          "linecolor": "#EBF0F8",
+          "ticks": "",
+          "title": {
+            "standoff": 15
+          },
+          "zerolinecolor": "#EBF0F8",
+          "zerolinewidth": 2
+        }
+      }
+    },
+    "width": 800,
+    "xaxis": {
+      "showgrid": false,
+      "visible": false,
+      "zeroline": false
+    },
+    "yaxis": {
+      "scaleanchor": "x",
+      "scaleratio": 1,
+      "showgrid": false,
+      "visible": false,
+      "zeroline": false
+    }
+  }
+}

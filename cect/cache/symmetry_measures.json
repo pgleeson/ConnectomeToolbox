@@ -946,10 +946,10 @@
     },
     "OlivaresModel": {
         "Raw": {
-            "Chemical": "-35.80",
+            "Chemical": "0.00",
             "Electrical": "100.00",
-            "Acetylcholine": "-53.25",
-            "GABA": "-5.62"
+            "Acetylcholine": "0.00",
+            "GABA": "0.00"
         },
         "Neurons": {
             "Chemical": "100.00",
@@ -978,62 +978,62 @@
     },
     "OpenWormUnified": {
         "Raw": {
-            "Chemical": "67.57",
+            "Chemical": "69.23",
             "Electrical": "66.90",
-            "Acetylcholine": "72.00",
-            "GABA": "69.67",
-            "Glutamate": "62.43",
-            "OtherChemicalNT": "55.84"
+            "Acetylcholine": "71.80",
+            "GABA": "72.91",
+            "Glutamate": "62.93",
+            "Betaine": "65.77"
         },
         "Neurons": {
-            "Chemical": "64.26",
+            "Chemical": "65.46",
             "Electrical": "62.01",
-            "Acetylcholine": "67.05",
-            "GABA": "66.27",
-            "Glutamate": "62.82",
-            "OtherChemicalNT": "56.41"
+            "Acetylcholine": "66.79",
+            "GABA": "68.71",
+            "Glutamate": "62.95",
+            "Betaine": "64.66"
         },
         "Pharynx": {
-            "Chemical": "77.14",
+            "Chemical": "77.27",
             "Electrical": "53.12",
             "Acetylcholine": "79.69",
-            "Glutamate": "79.59",
-            "OtherChemicalNT": "66.67"
+            "Glutamate": "79.66",
+            "Betaine": "54.55"
         },
         "NonpharyngealH": {
-            "Chemical": "63.77",
+            "Chemical": "64.98",
             "Electrical": "62.21",
-            "Acetylcholine": "66.63",
-            "GABA": "66.27",
-            "Glutamate": "62.00",
-            "OtherChemicalNT": "55.85"
+            "Acetylcholine": "66.37",
+            "GABA": "68.71",
+            "Glutamate": "62.10",
+            "Betaine": "65.57"
         },
         "SensorySomaticH": {
-            "Chemical": "55.52",
+            "Chemical": "53.33",
             "Electrical": "62.79",
-            "Acetylcholine": "51.90",
-            "Glutamate": "54.60",
-            "OtherChemicalNT": "60.22"
+            "Acetylcholine": "55.21",
+            "Glutamate": "52.75",
+            "Betaine": "47.06"
         },
         "MotorSomaticH": {
             "Chemical": "89.46",
             "Electrical": "84.49",
             "Acetylcholine": "88.98",
-            "GABA": "93.44"
+            "GABA": "90.22"
         },
         "MotorMuscles": {
             "Chemical": "86.43",
             "Electrical": "88.59",
             "Acetylcholine": "86.83",
-            "GABA": "84.00"
+            "GABA": "83.22"
         },
         "InterneuronsSomaticH": {
-            "Chemical": "64.17",
+            "Chemical": "67.45",
             "Electrical": "57.52",
-            "Acetylcholine": "67.09",
-            "GABA": "63.46",
-            "Glutamate": "66.53",
-            "OtherChemicalNT": "53.73"
+            "Acetylcholine": "66.88",
+            "GABA": "67.57",
+            "Glutamate": "67.51",
+            "Betaine": "70.97"
         }
     },
     "SSData": {

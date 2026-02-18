@@ -71,7 +71,7 @@ def convert_to_symmetry_array(cds, synclasses, verbose=False):
 
     scaled_conn_array = np.array(new_conn_array)
 
-    verbose = False
+    vverbose = False  # Very verbose...
     for i in range(len(new_conn_array)):
         pre = cds.nodes[i]
         pre_ = get_contralateral_cell(pre)
@@ -80,7 +80,7 @@ def convert_to_symmetry_array(cds, synclasses, verbose=False):
             post_ = get_contralateral_cell(post)
             w = new_conn_array[i][j]
             if w != 0:
-                if verbose:
+                if vverbose:
                     print_(f"Connection {conn_count}:\t{pre}->{post} ({w})")
                 assert pre is not post
                 if pre_ not in cds.nodes:
@@ -90,14 +90,14 @@ def convert_to_symmetry_array(cds, synclasses, verbose=False):
                         )
                     w_ = -1
                 elif post_ not in cds.nodes:
-                    if verbose:
+                    if vverbose:
                         print_(
                             f"   - Mirror conn:\t{pre_}->{post_} not possible as {post_} missing!\n"
                         )
                     w_ = -1
                 else:
                     w_ = new_conn_array[cds.nodes.index(pre_), cds.nodes.index(post_)]
-                    if verbose:
+                    if vverbose:
                         print_(f"   - Mirror:\t{pre_}->{post_} ({w_})\n")
 
                 symm_conn_count += w_
@@ -109,7 +109,10 @@ def convert_to_symmetry_array(cds, synclasses, verbose=False):
                         ] = -1
                 conn_count += 1
 
-    percentage = 100 * symm_conn_count / conn_count
+    if symm_conn_count > 0:
+        percentage = 100 * symm_conn_count / conn_count
+    else:
+        percentage = 0.0
     info = f"Of {(len(new_conn_array) ** 2)} possible edges, {conn_count} are connected, {int(symm_conn_count)} are mirrored - {'%.2f' % percentage}% "
     if verbose:
         print_(info)
@@ -321,12 +324,15 @@ def main2():
         "Witvliet7",
         "Witvliet8",
         "Cook2019Herm",
+        "Cook2019Male",
+        "Cook2020",
     ]
     views = [
         "SensorySomaticH",
         "MotorSomaticH",
         "InterneuronsSomaticH",
         "Neurons",
+        "Pharynx",
     ]
 
     synclass = "Chemical"
@@ -347,7 +353,7 @@ def main2():
             cds_view = cds.get_connectome_view(v)
 
             conn_array, percentage, sym_info = convert_to_symmetry_array(
-                cds_view, [synclass]
+                cds_view, [synclass], verbose=True
             )
 
             symmetries[v.name].append(percentage)
@@ -379,8 +385,9 @@ def main2():
     for view in symmetries:
         print_(f"View: {view} - Symmetry Percentages: {symmetries[view]}")
 
-    # plt.tight_layout(rect=[0, 0, 1, 0.95])
-    plt.show()
+    if "-nogui" not in sys.argv:
+        # plt.tight_layout(rect=[0, 0, 1, 0.95])
+        plt.show()
 
 
 if __name__ == "__main__":

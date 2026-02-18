@@ -15,7 +15,7 @@ from cect.Cells import is_bilateral_left
 
 from cect.Comparison import reader_colors
 
-from cect.Wang2024MaleReader import get_instance as get_wang2024_male_instance
+from cect.readers.Wang2024MaleReader import get_instance as get_wang2024_male_instance
 
 
 from cect import print_

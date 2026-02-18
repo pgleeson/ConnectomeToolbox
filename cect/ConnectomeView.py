@@ -52,7 +52,7 @@ from cect.Cells import get_cell_internal_link
 from cect.Cells import is_one_of_bilateral_pair
 
 from cect.ConnectomeReader import DEFAULT_COLORMAP
-from cect.RipollSanchezDataReader import load_hub_info
+from cect.readers.RipollSanchezDataReader import load_hub_info
 
 import copy
 

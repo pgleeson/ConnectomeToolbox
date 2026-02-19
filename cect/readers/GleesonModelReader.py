@@ -9,7 +9,7 @@
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 from cect import print_
-from cect.NeuroMLDataReader import NeuroMLDataReader
+from cect.readers.NeuroMLDataReader import NeuroMLDataReader
 
 import os
 

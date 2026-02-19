@@ -459,7 +459,7 @@ if __name__ == "__main__":
     if "-pca" in sys.argv:
         # from cect.Cells import PREFERRED_HERM_NEURON_NAMES
 
-        from cect.White_whole import get_instance
+        from cect.readers.White_whole import get_instance
 
         cds_src = get_instance()
 
@@ -587,35 +587,35 @@ if __name__ == "__main__":
             print(f"      - '{cell}': '{cell}.md'")
 
     else:
-        from cect.White_whole import get_instance
+        from cect.readers.White_whole import get_instance
 
         cds_white = get_instance()
 
-        from cect.WitvlietDataReader8 import get_instance
+        from cect.readers.WitvlietDataReader8 import get_instance
 
         cds_w8 = get_instance()
 
         connectomes = {"White_whole": cds_white, "Witvliet8": cds_w8}
 
-        from cect.Cook2019HermReader import get_instance
+        from cect.readers.Cook2019HermReader import get_instance
 
         connectomes["Cook2019Herm"] = get_instance(from_cache=True)
 
-        from cect.Cook2019MaleReader import get_instance
+        from cect.readers.Cook2019MaleReader import get_instance
 
         connectomes["Cook2019Male"] = get_instance(from_cache=True)
-        from cect.WormNeuroAtlasReader import get_instance
+        from cect.readers.WormNeuroAtlasReader import get_instance
 
         connectomes["WormNeuroAtlas"] = get_instance()
 
         """
-        from cect.WormNeuroAtlasMAReader import get_instance
+        from cect.readers.WormNeuroAtlasMAReader import get_instance
         connectomes['Bentley2016_MA'] = get_instance()
 
-        from cect.WormNeuroAtlasFuncReader import get_instance
+        from cect.readers.WormNeuroAtlasFuncReader import get_instance
         connectomes['Randi2023'] = get_instance()
 
-        from cect.RipollSanchezShortRangeReader import get_instance
+        from cect.readers.RipollSanchezShortRangeReader import get_instance
         connectomes['RipollSanchezShortRange'] = get_instance() """
 
         # load_individual_neuron_info()

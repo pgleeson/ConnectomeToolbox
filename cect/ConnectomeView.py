@@ -1278,9 +1278,9 @@ if __name__ == "__main__":
         EXC_INH_GJ_SYN_CLASSES,
     )
 
-    from cect.TestDataReader import get_instance
-    # from cect.Cook2019HermReader import get_instance
-    # from cect.White_whole import get_instance
+    from cect.readers.TestDataReader import get_instance
+    # from cect.readers.Cook2019HermReader import get_instance
+    # from cect.readers.White_whole import get_instance
 
     tdr_instance = get_instance()
 

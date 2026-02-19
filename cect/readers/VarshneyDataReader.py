@@ -10,7 +10,6 @@ from cect.Neurotransmitters import GENERIC_ELEC_SYN
 from openpyxl import load_workbook
 
 import os
-import sys
 
 from cect import print_
 
@@ -37,7 +36,11 @@ class VarshneyDataReader(ConnectomeDataset):
 
         cells, neuron_conns = self.read_data()
         for conn in neuron_conns:
-            self.add_connection_info(conn, append_existing_connections=True)
+            self.add_connection_info(
+                conn,
+                append_existing_connections=True,
+                check_overwritten_connections=False,
+            )
 
     def read_data(self):
         cells = []
@@ -108,8 +111,12 @@ def main():
 
     print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
 
-    if "-nogui" not in sys.argv:
-        my_instance.connection_number_plot(GENERIC_CHEM_SYN)
+    cell = "BAGR"
+    syntype = "Generic_CS"
+    conns = my_instance.get_connections_from(cell, syntype)
+    print(f"There are {len(conns)} connections from {cell} of type {syntype}:")
+    for c in sorted(conns.keys()):
+        print(f" {cell} -> {c}: {conns[c]}")
 
 
 if __name__ == "__main__":

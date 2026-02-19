@@ -2,7 +2,7 @@
 WormAtlasInfo
 
 This module defines color codes for various tissues and cell types in C. elegans, based on data from WormAtlas
-(https://www.wormatlas.org/colorcode.htm). It also includes functionality to generate an HTML file displaying 
+(https://www.wormatlas.org/colorcode.htm). It also includes functionality to generate an HTML file displaying
 these colors and their corresponding cell types.
 
 Constants:
@@ -13,6 +13,7 @@ Main Script:
     Generates an HTML file (`docs/Colors.html`) and corresponding PNG images for each color defined in the WA_COLORS dictionary.
     The HTML file displays a table with the color codes and their associated cell types, organized by tissue and sex.
 """
+
 from cect import print_
 
 # Data taken from https://www.wormatlas.org/colorcode.htm

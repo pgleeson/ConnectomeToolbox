@@ -526,7 +526,7 @@ def generate_comparison_page(
                                     "../api/%s"
                                     % reader_module.__name__.replace(".", "/")
                                 )
-                                reader_class = reader_module.__name__.split(".")[1]
+                                reader_class = reader_module.__name__.split(".")[2]
                                 reader_info = f'Python Reader: <a href="{reader_page}">{reader_class}</a>'
                                 desc_full = f"<i>{dp}{reader_module.READER_DESCRIPTION}.&nbsp;&nbsp;&nbsp;{reader_info}</i>\n"
 

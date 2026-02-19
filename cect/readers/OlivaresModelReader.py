@@ -34,7 +34,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
             get_cache_filename,
         )
 
-        return load_connectome_dataset_file(get_cache_filename(__name__.split(".")[1]))
+        return load_connectome_dataset_file(get_cache_filename(__name__.split(".")[-1]))
     else:
         return NeuroMLDataReader(filename)
 

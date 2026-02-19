@@ -5,7 +5,7 @@ from cect.ConnectomeDataset import (
     ConnectomeDataset,
     get_cache_filename,
 )
-from cect.White_whole import get_cache, get_instance
+from cect.readers.White_whole import get_cache, get_instance
 
 
 class TestWhiteWhole(unittest.TestCase):

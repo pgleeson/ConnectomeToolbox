@@ -1,4 +1,4 @@
-from readers.WitvlietDataReader import WitvlietDataReader
+from cect.readers.WitvlietDataReader import WitvlietDataReader
 from cect.ConnectomeDataset import get_dataset_source_on_github
 
 

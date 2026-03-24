@@ -39,7 +39,7 @@ class TestConnectomeDataset(unittest.TestCase):
             "Yim2024DataReader",
             "TestDataReader",
         ]:  # "VarshneyDataReader",
-            m = importlib.import_module("cect." + r)
+            m = importlib.import_module("cect.readers." + r)
 
             print_("Loading %s from source..." % r)
             cds1 = m.get_instance(from_cache=False)

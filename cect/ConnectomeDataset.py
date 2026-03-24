@@ -187,8 +187,10 @@ class ConnectomeDataset:
 
                 if append_existing_connections:
                     conn_array[pre_index, post_index] += conn.number
+                    print_("  Now weight is: %f" % conn_array[pre_index, post_index])
 
                 elif check_overwritten_connections:
+                    print_("  Overwritten connection!")
                     raise Exception(info)
                 else:
                     print_(info)
@@ -1281,21 +1283,21 @@ if __name__ == "__main__":
     # from cect.ConnectomeView import BRAINMAP_A_VIEW as view
     # from cect.ConnectomeView import PEP_HUBS_VIEW as view
 
-    from cect.White_whole import get_instance
-    # from cect.TestDataReader import get_instance
+    from cect.readers.White_whole import get_instance
+    # from cect.readers.TestDataReader import get_instance
 
-    # from cect.BrittinDataReader import get_instance
-    # from cect.WitvlietDataReader8 import get_instance
-    # from cect.Cook2019HermReader import get_instance
-    # from cect.Yim2024DataReader import get_instance
-    # from cect.WormNeuroAtlasMAReader import get_instance
-    # from cect.Wang2024Reader import get_instance
+    # from cect.readers.BrittinDataReader import get_instance
+    # from cect.readers.WitvlietDataReader8 import get_instance
+    # from cect.readers.Cook2019HermReader import get_instance
+    # from cect.readers.Yim2024DataReader import get_instance
+    # from cect.readers.WormNeuroAtlasMAReader import get_instance
+    # from cect.readers.Wang2024Reader import get_instance
 
     # synclass = "Acetylcholine"
     # synclass = "Chemical"
     # synclass = "Electrical"
     # synclass = "Contact"
-    # from cect.TestDataReader import get_instance
+    # from cect.readers.TestDataReader import get_instance
 
     synclass = "Chemical Inh"
     synclass = "Chemical"

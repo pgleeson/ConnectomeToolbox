@@ -1,3 +1,19 @@
+"""
+WormAtlasInfo
+
+This module defines color codes for various tissues and cell types in C. elegans, based on data from WormAtlas
+(https://www.wormatlas.org/colorcode.htm). It also includes functionality to generate an HTML file displaying
+these colors and their corresponding cell types.
+
+Constants:
+    VERTICAL_ELLIPSE: Unicode character for a vertical ellipse (used on https://openworm.org/ConnectomeToolbox/Comparison).
+    WA_COLORS: Nested dictionary containing color codes for different tissues and cell types in hermaphrodite and male C. elegans.
+
+Main Script:
+    Generates an HTML file (`docs/Colors.html`) and corresponding PNG images for each color defined in the WA_COLORS dictionary.
+    The HTML file displays a table with the color codes and their associated cell types, organized by tissue and sex.
+"""
+
 from cect import print_
 
 # Data taken from https://www.wormatlas.org/colorcode.htm
@@ -128,6 +144,12 @@ WA_COLORS["Male"]["Epithelial Tissue"]["ray structural cell"] = "#006666"
 
 
 if __name__ == "__main__":
+    """
+    Main script execution.
+
+    This script generates an HTML file (`docs/Colors.html`) and corresponding PNG images for each color defined in the WA_COLORS dictionary.
+    The HTML file displays a table with the color codes and their associated cell types, organized by tissue and sex.
+    """
     from PIL import ImageColor
     import png
 

@@ -5,7 +5,7 @@ import unittest
 
 class TestReader(unittest.TestCase):
     def test_reader(self):
-        from cect.VarshneyDataReader import get_instance
+        from cect.readers.VarshneyDataReader import get_instance
 
         my_instance = get_instance()
 

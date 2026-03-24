@@ -52,7 +52,7 @@ from cect.Cells import get_cell_internal_link
 from cect.Cells import is_one_of_bilateral_pair
 
 from cect.ConnectomeReader import DEFAULT_COLORMAP
-from cect.RipollSanchezDataReader import load_hub_info
+from cect.readers.RipollSanchezDataReader import load_hub_info
 
 import copy
 
@@ -1278,9 +1278,9 @@ if __name__ == "__main__":
         EXC_INH_GJ_SYN_CLASSES,
     )
 
-    from cect.TestDataReader import get_instance
-    # from cect.Cook2019HermReader import get_instance
-    # from cect.White_whole import get_instance
+    from cect.readers.TestDataReader import get_instance
+    # from cect.readers.Cook2019HermReader import get_instance
+    # from cect.readers.White_whole import get_instance
 
     tdr_instance = get_instance()
 

@@ -34,7 +34,7 @@ def get_dataset_link(dataset):
         dataset (str): The dataset to link to
 
     Returns:
-        str: A hyperlink to the dataset
+        (str): A hyperlink to the dataset
     """
     # return dataset+'--'
     dataset_text = dataset.replace("Herm", " Herm").replace("Male", " Male")

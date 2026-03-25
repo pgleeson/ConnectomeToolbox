@@ -13,7 +13,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``WitvlietDataReader`` to load data on Witvliet dataset 1 (L1 stage)
 
     Returns:
-        WitvlietDataReader: The initialized connectome reader
+        (WitvlietDataReader): The initialized connectome reader
     """
     if from_cache:
         from cect.ConnectomeDataset import (

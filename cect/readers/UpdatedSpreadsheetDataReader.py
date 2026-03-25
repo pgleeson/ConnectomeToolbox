@@ -118,7 +118,7 @@ class UpdatedSpreadsheetDataReader(ConnectomeDataset):
     def read_data(self, include_nonconnected_cells=False):
         """
         Returns:
-            Tuple[list, list]: List of cells (str) and list of connections (``ConnectionInfo``) which have been read in
+            (tuple[list, list]): List of cells (str) and list of connections (``ConnectionInfo``) which have been read in
         """
 
         conns = []
@@ -158,9 +158,7 @@ class UpdatedSpreadsheetDataReader(ConnectomeDataset):
     def read_muscle_data(self):
         """
         Returns:
-            neurons (:obj:`list` of :obj:`str`): List of motor neurons. Each neuron has at least one connection with a post-synaptic muscle cell.
-            muscles (:obj:`list` of :obj:`str`): List of muscle cells.
-            conns (:obj:`list` of :obj:`ConnectionInfo`): List of neuron-muscle connections.
+            (tuple[list, list, list]): List of neurons, muscle cells, and neuron-muscle connections.
         """
 
         neurons = []

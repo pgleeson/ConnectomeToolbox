@@ -151,7 +151,7 @@ class Yim2024DataReader(ConnectomeDataset):
     def read_all_data(self):
         """
         Returns:
-            Tuple[list, list, list, list]: List of neurons, muscles), other cells and connections which have been read in
+            (tuple[list, list, list, list]): List of neurons, muscles, other cells and connections which have been read in
         """
 
         neurons = set([])

@@ -21,7 +21,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``WormNeuroAtlasExtSynReader`` to load data on peptidergic connectivity using the **[WormNeuroAtlas package](https://github.com/francescorandi/wormneuroatlas)**
 
     Returns:
-        WormNeuroAtlasExtSynReader: The initialised connectome reader
+        (WormNeuroAtlasExtSynReader): The initialised connectome reader
     """
     if from_cache:
         from cect.ConnectomeDataset import (

@@ -18,7 +18,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``WhiteDataReader`` to load data on the JSH series - a fourth stage (L4) larva
 
     Returns:
-        WhiteDataReader: The initialized connectome reader
+        (WhiteDataReader): The initialized connectome reader
     """
     if from_cache:
         from cect.ConnectomeDataset import (

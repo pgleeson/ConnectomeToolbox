@@ -18,7 +18,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``WhiteDataReader`` to load data on the adult (A) N2U series
 
     Returns:
-        WhiteDataReader: The initialised connectome reader
+        (WhiteDataReader): The initialised connectome reader
     """
     if from_cache:
         from cect.ConnectomeDataset import (

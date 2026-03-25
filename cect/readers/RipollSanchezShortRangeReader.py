@@ -19,7 +19,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``RipollSanchezDataReader`` to load data on the short range model of neuropedtidergic connectome
 
     Returns:
-        RipollSanchezDataReader: The initialised connectome reader
+        (RipollSanchezDataReader): The initialised connectome reader
     """
     if from_cache:
         from cect.ConnectomeDataset import (

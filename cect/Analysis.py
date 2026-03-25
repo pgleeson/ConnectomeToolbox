@@ -204,10 +204,6 @@ def plot_symmetry(
     Plot symmetry for specified synclass across selected datasets.
     Produces 3 subplots for SensorySomaticH, MotorSomaticH, InterneuronsSomaticH.
 
-    Parameters:
-        json_file (str): Path to the cached JSON file.
-        synclass (str): Synapse class to plot, e.g., "Chemical".
-        datasets_to_plot (list, optional): List of datasets to include. Defaults to all.
     """
     # Load JSON data
     with open(json_file, "r") as f:

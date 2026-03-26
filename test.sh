@@ -25,21 +25,21 @@ if [ "$quick_test" == 0 ]; then
 
     python -m pytest -vs
 
-    python -m cect.TestDataReader -nogui                                                                                                                                         
+    python -m cect.readers.TestDataReader -nogui                                                                                                                                         
     python -m cect.ConnectomeView                                                                                                                             
     python -m cect.ConnectomeDataset -nogui
 
     # Note: all run when Cells above called...
     
-    #python -m cect.Cook2019DataReader
-    #python -m cect.Cook2019HermReader -nogui
-    #python -m cect.WormNeuroAtlasReader -nogui
-    #python -m cect.WitvlietDataReader1
-    #python -m cect.WitvlietDataReader2
-    python -m cect.WhiteDataReader
+    #python -m cect.readers.Cook2019DataReader
+    #python -m cect.readers.Cook2019HermReader -nogui
+    #python -m cect.readers.WormNeuroAtlasReader -nogui
+    #python -m cect.readers.WitvlietDataReader1
+    #python -m cect.readers.WitvlietDataReader2
+    python -m cect.readers.WhiteDataReader
     python -m cect.Analysis -nogui
-    #python -m cect.White_A
-    #python -m cect.White_L4
+    #python -m cect.readers.White_A
+    #python -m cect.readers.White_L4
 
     #python -m cect.Comparison 0
     

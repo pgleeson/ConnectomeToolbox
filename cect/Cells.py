@@ -52,7 +52,7 @@ def get_cell_notes(cell: str):
         cell (str): Name of the cell
 
     Returns:
-        str: Description of the cell type
+        (str): Description of the cell type
     """
     desc = cell_notes[cell] if cell in cell_notes else "???"
     desc = desc[0].upper() + desc[1:]
@@ -1524,7 +1524,7 @@ def get_primary_classification():
     """Get the primary classification of the cells, based on https://www.wormatlas.org/colorcode.htm
 
     Returns:
-        dict: Dict of cells vs classification/group from https://www.wormatlas.org/colorcode.htm
+        (dict): Dict of cells vs classification/group from https://www.wormatlas.org/colorcode.htm
     """
 
     classification = {}
@@ -1701,7 +1701,7 @@ def is_known_cell(cell: str, allow_modelled_neurons: bool = False):
         cell (str): Cell name
 
     Returns:
-        bool: Whether this is a known cell name
+        (bool): Whether this is a known cell name
     """
     if allow_modelled_neurons:
         return cell in ALL_PREFERRED_CELL_NAMES + KNOWN_MODELLED_NEURONS
@@ -1717,7 +1717,7 @@ def get_SIM_class(cell: str):
         cell: which cell to assess
 
     Returns:
-        str: whether a cell is Sensory/Interneuron/Motorneuron (or Other)
+        (str): whether a cell is Sensory/Interneuron/Motorneuron (or Other)
     """
 
     pharyngeal_polymodal_to_class_motor = [
@@ -1753,13 +1753,13 @@ def get_contralateral_cell(cell: str):
     """Gets the contralateral cell for a given cell, based on Kim et al. 2024: https://doi.org/10.1101/2024.10.03.616419
 
     Args:
-        cell (_type_): _description_
+        cell (str): The cell for which to get the contralateral cell
 
     Raises:
-        Exception: _description_
+        Exception: If the cell is not a known cell, or if it is a non-muscle cell for which contralateral cell determination is not yet implemented/tested
 
     Returns:
-        _type_: _description_
+        (str): The contralateral cell
     """
     if not is_known_cell(cell, allow_modelled_neurons=True):
         raise Exception(
@@ -1972,7 +1972,10 @@ def is_any_neuron(cell: str, allow_modelled_neurons: bool = False):
 
 def remove_leading_index_zero(cell: str):
     """
-    Returns neuron name with an index without leading zero. E.g. VB01 -> VB1.
+    Removes leading zero from cell index, e.g. VB01 -> VB1.
+
+    Returns:
+        (str): Name with an index without leading zero.
     """
     if cell[:2] in ["DA", "AS", "DD", "DB", "VA", "VB", "VC", "VD"] and cell[
         -2:

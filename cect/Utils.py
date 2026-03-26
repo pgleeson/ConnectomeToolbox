@@ -30,7 +30,7 @@ def register_connectome_dataset(name, cds):
 
 
 for reader in readers:
-    module = __import__("cect.%s" % reader, fromlist=["NAME", "get_instance"])
+    module = __import__("cect.readers.%s" % reader, fromlist=["NAME", "get_instance"])
     NAME = getattr(module, "NAME")
     get_instance = getattr(module, "get_instance")
 

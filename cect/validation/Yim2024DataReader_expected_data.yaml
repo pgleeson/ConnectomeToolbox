@@ -1,0 +1,16 @@
+connection_lists:
+- comment: Data visually read in from 41467_2024_45943_MOESM6_ESM.xlsx. Normalized
+    data is on tab/sheet "Dauer_normalized". Values were copied from the cells in
+    Microsoft Excel
+  connections:
+  - post: AFDR
+    pre: ADFR
+    weight: 0.428024049927915
+  - post: RMED
+    pre: SMBDL
+    weight: 6.01978135910464
+  - post: RIPL
+    pre: ASHL
+    weight: 1.20804164634321
+  synapse: Generic_CS
+reader: Yim2024DataReader

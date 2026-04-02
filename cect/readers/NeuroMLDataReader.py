@@ -158,7 +158,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``NeuroMLDataReader`` to load data on connectome
 
     Returns:
-        NeuroMLDataReader: The initialized connectome reader
+        (NeuroMLDataReader): The initialized connectome reader
     """
     if from_cache:  #####
         from cect.ConnectomeDataset import (

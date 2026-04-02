@@ -37,6 +37,9 @@ READER_DESCRIPTION = (
 class Cook2020DataReader(ConnectomeDataset):
     """
     Reader of data from Cook et al. 2020 - The connectome of the Caenorhabditis elegans pharynx
+
+    Returns:
+        (Cook2020DataReader): The initialized Cook et al 2020 pharyngeal connectome reader
     """
 
     cells = []
@@ -52,7 +55,7 @@ class Cook2020DataReader(ConnectomeDataset):
     def read_data(self):
         """
         Returns:
-            Tuple[list, list]: List of cells (str) and list of connections (``ConnectionInfo``) which have been read in
+            (tuple[list, list]): List of cells (str) and list of connections (``ConnectionInfo``) which have been read in
         """
         with open(filename, "r") as f:
             reader = csv.DictReader(f)

@@ -18,7 +18,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``Cook2019DataReader`` to load data on hermaphrodite connectome
 
     Returns:
-        Cook2019DataReader: The initialized hermaphrodite connectome reader
+        (Cook2019DataReader): The initialized hermaphrodite connectome reader
     """
     if from_cache:
         from cect.ConnectomeDataset import (

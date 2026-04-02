@@ -63,6 +63,9 @@ READER_DESCRIPTION = (
 class Yim2024DataReader(ConnectomeDataset):
     """
     Reader of data from Yim et al. 2024 - Dauer connectome
+
+    Returns:
+        (Yim2024DataReader): The initialized connectome reader
     """
 
     verbose = False
@@ -200,7 +203,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``Yim2024DataReader`` to load data on dauer connectome
 
     Returns:
-        Yim2024DataReader: The initialized connectome reader
+        (Yim2024DataReader): The initialized connectome reader
     """
     if from_cache:
         from cect.ConnectomeDataset import (

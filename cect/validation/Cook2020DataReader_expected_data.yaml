@@ -1,0 +1,7 @@
+reader: Cook2020DataReader
+connection_lists:
+- connections:
+  - pre: I1R
+    post: I2R
+    weight: 3
+  synapse: Generic_CS

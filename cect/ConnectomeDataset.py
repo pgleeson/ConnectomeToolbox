@@ -46,7 +46,7 @@ def get_dataset_source_on_github(dataset_file):
         dataset_file (str): filename of the dataset
 
     Returns:
-        str: URL to GitHub file
+        (str): URL to GitHub file
     """
     return (
         '<b><a href="https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/%s">%s</a></b>'
@@ -257,6 +257,19 @@ class ConnectomeDataset:
                 conns.append(conn_info)
 
         return list(neurons), list(muscles), conns
+
+    def get_connection_weight(self, pre_node, post_node, synclass):
+        if synclass not in self.connections:
+            raise Exception("No connections of synclass %s in this dataset!" % synclass)
+        conn_array = self.connections[synclass]
+        if pre_node not in self.nodes:
+            raise Exception("Pre node %s not in this dataset!" % pre_node)
+        if post_node not in self.nodes:
+            raise Exception("Post node %s not in this dataset!" % post_node)
+
+        pre_index = self.nodes.index(pre_node)
+        post_index = self.nodes.index(post_node)
+        return conn_array[pre_index, post_index]
 
     def get_connections_from(self, node, synclass, ordered_by_weight=False):
         if synclass not in self.connections:

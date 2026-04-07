@@ -118,7 +118,7 @@ class UpdatedSpreadsheetDataReader2(ConnectomeDataset):
     def read_data(self, include_nonconnected_cells=False):
         """
         Returns:
-            Tuple[list, list]: List of cells (str) and list of connections (``ConnectionInfo``) which have been read in
+            (tuple[list, list]): List of cells (str) and list of connections (``ConnectionInfo``) which have been read in
         """
 
         conns = []
@@ -156,7 +156,7 @@ class UpdatedSpreadsheetDataReader2(ConnectomeDataset):
     def read_muscle_data(self):
         """
         Returns:
-            Tuple[list, list, list]: List of cells (str), list of muscles (str) and list of connections (``ConnectionInfo``) which have been read in
+            (tuple[list, list, list]): List of neurons (str), list of muscles (str) and list of connections (``ConnectionInfo``) which have been read in
         """
 
         neurons = []

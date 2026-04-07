@@ -30,7 +30,7 @@ def get_instance(from_cache: bool = LOAD_READERS_FROM_CACHE_BY_DEFAULT, **kwargs
     """Uses ``WhiteDataReader`` to load data on the whole worm connectome, including pharynx and ventral cord
 
     Returns:
-        ConnectomeDataset or WhiteDataReader: The initialised connectome reader
+        (ConnectomeDataset or WhiteDataReader): The initialised connectome reader
     """
     cache = get_cache() if from_cache else None
     instance = cache or WhiteDataReader(kwargs.get("spreadsheet_location", filename))
@@ -41,10 +41,6 @@ READER_DESCRIPTION = (
     """Data extracted from %s - all connectivity from White et al. 1986)"""
     % get_dataset_source_on_github(filename.split("/")[-1])
 )
-
-"""
-read_data = my_instance.read_data
-read_muscle_data = my_instance.read_muscle_data"""
 
 
 def main1():

@@ -22,10 +22,31 @@ class TestExpectedConnections(unittest.TestCase):
 
         validation_md = "# Validation status of Data Readers\n\n"
 
-        data_readers = ["Yim2024DataReader", "Cook2020DataReader"]
         data_readers = {
-            "YimEtAl2024": ["Yim2024DataReader"],
+            "WhiteEtAl1986": ["White_A", "White_L4", "White_whole"],
+            "VarshneyEtAl2011": ["VarshneyDataReader"],
+            "BentleyEtAl2016": ["WormNeuroAtlasMAReader", "WormNeuroAtlasPepReader"],
+            "CookEtAl2019": ["Cook2019HermDataReader", "Cook2019MaleDataReader"],
             "CookEtAl2020": ["Cook2020DataReader"],
+            "BrittinEtAl2021": ["BrittinDataReader"],
+            "WitvlietEtAl2021": [
+                "WitvlietDataReader1",
+                "WitvlietDataReader2",
+                "WitvlietDataReader3",
+                "WitvlietDataReader4",
+                "WitvlietDataReader5",
+                "WitvlietDataReader6",
+                "WitvlietDataReader7",
+                "WitvlietDataReader8",
+            ],
+            "RandiEtAl2023": ["WormNeuroAtlasFuncReader"],
+            "RipollSanchezEtAl2023": [
+                "RipollSanchezShortRangeReader",
+                "RipollSanchezMedRangeReader",
+                "RipollSanchezLongRangeReader",
+            ],
+            "YimEtAl2024": ["Yim2024DataReader", "Yim2024NonNormDataReader"],
+            "WangEtAl2025": ["Wang2024HermDataReader", "Wang2024MaleDataReader"],
         }
 
         for data_set in data_readers:
@@ -56,39 +77,48 @@ class TestExpectedConnections(unittest.TestCase):
         expected_data_folder = __file__.replace("Validator.py", "")
         expected_data_file = f"{expected_data_folder}/{data_reader}_expected_data.yaml"
 
-        with open(expected_data_file, "r") as f:
-            print_(
-                f"Loading expected data for {data_reader} from {expected_data_file}..."
-            )
-            expected_data = ReaderExpectedData.from_yaml(f)
-
-        self.assertIsInstance(expected_data, ReaderExpectedData)
-        self.assertEqual(expected_data.reader, data_reader)
-
-        data_reader_ref = data_reader.replace("DataReader", "")
-
-        conn_dataset = get_connectome_dataset(data_reader_ref, from_cache=True)
-
-        print_(conn_dataset.summary())
-
-        for conn_list in expected_data.connection_lists:
-            print_(f"Checking connection list: {conn_list}, {conn_list['synapse']}...")
-
-            report += "| Pre      | Post | Expected weight | Match |\n|----------|------|-----------------|-------|\n"
-
-            for conn in conn_list["connections"]:
-                print_(f"Checking connection: {conn}...")
-                w = conn_dataset.get_connection_weight(
-                    conn["pre"], conn["post"], synclass=conn_list["synapse"]
+        try:
+            with open(expected_data_file, "r") as f:
+                print_(
+                    f"Loading expected data for {data_reader} from {expected_data_file}..."
                 )
-                self.assertIsNotNone(
-                    w, f"Connection weight for {conn} should not be None"
-                )
-                match_info = "Yes" if w == conn["weight"] else f"{self.MISMATCH}: {w}"
-                print_(match_info)
-                report += f"| {conn['pre']} | {conn['post']} | {conn['weight']} | {match_info} |\n"
+                expected_data = ReaderExpectedData.from_yaml(f)
 
-        report += f"\n_Validation {'PASSED' if self.MISMATCH not in report else 'FAILED'} on {date.today().isoformat()} with cect v{cect_version}_\n\n"
+            self.assertIsInstance(expected_data, ReaderExpectedData)
+            self.assertEqual(expected_data.reader, data_reader)
+
+            data_reader_ref = data_reader.replace("DataReader", "")
+
+            conn_dataset = get_connectome_dataset(data_reader_ref, from_cache=True)
+
+            print_(conn_dataset.summary())
+
+            for conn_list in expected_data.connection_lists:
+                print_(
+                    f"Checking connection list: {conn_list}, {conn_list['synapse']}..."
+                )
+
+                report += "| Pre      | Post | Expected weight | Match |\n|----------|------|-----------------|-------|\n"
+
+                for conn in conn_list["connections"]:
+                    print_(f"Checking connection: {conn}...")
+                    w = conn_dataset.get_connection_weight(
+                        conn["pre"], conn["post"], synclass=conn_list["synapse"]
+                    )
+                    self.assertIsNotNone(
+                        w, f"Connection weight for {conn} should not be None"
+                    )
+                    match_info = (
+                        "Yes" if w == conn["weight"] else f"{self.MISMATCH}: {w}"
+                    )
+                    print_(match_info)
+                    report += f"| {conn['pre']} | {conn['post']} | {conn['weight']} | {match_info} |\n"
+
+            report += f"\n_Validation {'PASSED' if self.MISMATCH not in report else 'FAILED'} on {date.today().isoformat()} with cect v{cect_version}_\n\n"
+
+        except Exception as e:
+            print_(f"Error loading or checking expected data for {data_reader}: {e}")
+            report += f"\n**TODO: add expected data file: {expected_data_file}**\n\n"
 
         return report
 

@@ -42,7 +42,7 @@ class TestExpectedConnections(unittest.TestCase):
             "RandiEtAl2023": ["WormNeuroAtlasFuncReader"],
             "RipollSanchezEtAl2023": [
                 "RipollSanchezShortRangeReader",
-                "RipollSanchezMedRangeReader",
+                "RipollSanchezMidRangeReader",
                 "RipollSanchezLongRangeReader",
             ],
             "YimEtAl2024": [
@@ -53,8 +53,8 @@ class TestExpectedConnections(unittest.TestCase):
         }
         """
         data_readers = {
-            "YimEtAl2024": [
-                "Yim2024NonNormDataReader",
+            "RipollSanchezEtAl2023": [
+                "RipollSanchezShortRangeReader",
             ]
         }"""
 

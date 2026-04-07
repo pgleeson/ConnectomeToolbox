@@ -2,6 +2,8 @@
 
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
+from cect import print_
+
 all_known_connectome_datasets = {}
 
 
@@ -21,12 +23,16 @@ readers = [
     "Cook2019HermReader",
     "Cook2019MaleReader",
     "Cook2020DataReader",
+    "RipollSanchezShortRangeReader",
+    "RipollSanchezMidRangeReader",
+    "RipollSanchezLongRangeReader",
     "Yim2024DataReader",
     "Yim2024NonNormDataReader",
 ]
 
 
 def register_connectome_dataset(name, cds):
+    print_(" -- Registering connectome dataset: %s" % name)
     all_known_connectome_datasets[name] = cds
 
 

@@ -1,0 +1,15 @@
+
+reader: RipollSanchezMidRangeReader
+connection_lists:
+- comment: 
+  connections:
+  - pre: PVR
+    post: I3
+    weight: 6
+  - pre: SABVL
+    post: VC1
+    weight: 1
+  - pre: RIR
+    post: AVKR
+    weight: 5
+  synapse: Peptidergic

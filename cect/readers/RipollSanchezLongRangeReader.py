@@ -14,6 +14,8 @@ from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 MODEL = "long_range_model"
 
+NAME = "RipollSanchezLongRangeReader"
+
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``RipollSanchezDataReader`` to load data on the long range model of neuropedtidergic connectome

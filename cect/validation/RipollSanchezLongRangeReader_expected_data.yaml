@@ -1,0 +1,30 @@
+
+reader: RipollSanchezLongRangeReader
+connection_lists:
+- comment: 
+  connections:
+  - pre: I3
+    post: I5
+    weight: 3
+  - pre: URBL
+    post: RMDDL
+    weight: 4
+  - pre: RIVR
+    post: HSNL
+    weight: 6
+  - pre: PVR
+    post: I3
+    weight: 6
+  - pre: SABVL
+    post: VC1
+    weight: 1
+  - pre: RIR
+    post: AVKR
+    weight: 5
+  - pre: VC4
+    post: I4
+    weight: 1
+  - pre: ALA
+    post: HSNR
+    weight: 11
+  synapse: Peptidergic

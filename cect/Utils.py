@@ -22,6 +22,7 @@ readers = [
     "Cook2019MaleReader",
     "Cook2020DataReader",
     "Yim2024DataReader",
+    "Yim2024NonNormDataReader",
 ]
 
 

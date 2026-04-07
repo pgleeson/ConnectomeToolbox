@@ -45,9 +45,18 @@ class TestExpectedConnections(unittest.TestCase):
                 "RipollSanchezMedRangeReader",
                 "RipollSanchezLongRangeReader",
             ],
-            "YimEtAl2024": ["Yim2024DataReader", "Yim2024NonNormDataReader"],
+            "YimEtAl2024": [
+                "Yim2024NonNormDataReader",
+                "Yim2024DataReader",
+            ],
             "WangEtAl2025": ["Wang2024HermDataReader", "Wang2024MaleDataReader"],
         }
+        """
+        data_readers = {
+            "YimEtAl2024": [
+                "Yim2024NonNormDataReader",
+            ]
+        }"""
 
         for data_set in data_readers:
             validation_md += f"## {data_set}\n\n"
@@ -118,7 +127,9 @@ class TestExpectedConnections(unittest.TestCase):
 
         except Exception as e:
             print_(f"Error loading or checking expected data for {data_reader}: {e}")
-            report += f"\n**TODO: add expected data file: {expected_data_file}**\n\n"
+            report += (
+                f"\n**TODO: add expected data file: {expected_data_file}**: {e}\n\n"
+            )
 
         return report
 

@@ -1,0 +1,15 @@
+
+reader: Yim2024NonNormDataReader
+connection_lists:
+- comment: 
+  connections:
+  - pre: RIH
+    post: CEPshDL
+    weight: 7464.984227
+  - pre: PVNL
+    post: ALMR
+    weight: 97686.4
+  - pre: URYDR
+    post: URADR
+    weight: 33663.09403
+  synapse: Contact

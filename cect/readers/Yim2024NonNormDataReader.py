@@ -35,6 +35,7 @@ from cect import print_
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
 filename = "%s41467_2024_45943_MOESM6_ESM.xlsx" % spreadsheet_location
 
+NAME = "Yim2024NonNorm"
 
 READER_DESCRIPTION = (
     """Data extracted from %s Yim et al. 2024 on Dauer connectome **(Non-normalized)**"""

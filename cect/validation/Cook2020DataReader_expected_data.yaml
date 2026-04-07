@@ -4,4 +4,7 @@ connection_lists:
   - pre: I1R
     post: I2R
     weight: 3
+  - pre: I1R
+    post: I2L
+    weight: 1
   synapse: Generic_CS

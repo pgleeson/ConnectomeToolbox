@@ -27,6 +27,7 @@ plugins:
       autoapi_add_nav_entry: false
       autoapi_ignore:
         - tests/*.py
+        - validation/test_white/*py
   - mkdocstrings:
 
 extra_css:

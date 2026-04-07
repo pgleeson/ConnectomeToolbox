@@ -2,11 +2,13 @@ from cect import print_
 
 from cect.Neurotransmitters import GENERIC_CHEM_SYN
 from cect.Utils import get_connectome_dataset
+from cect import __version__ as cect_version
 
 import modelspec
 from modelspec import field, instance_of
 from modelspec.base_types import Base
 from typing import List
+from datetime import date
 import yaml
 import sys
 
@@ -85,6 +87,8 @@ class TestExpectedConnections(unittest.TestCase):
                 match_info = "Yes" if w == conn["weight"] else f"{self.MISMATCH}: {w}"
                 print_(match_info)
                 report += f"| {conn['pre']} | {conn['post']} | {conn['weight']} | {match_info} |\n"
+
+        report += f"\n_Validation {'PASSED' if self.MISMATCH not in report else 'FAILED'} on {date.today().isoformat()} with cect v{cect_version}_\n\n"
 
         return report
 

@@ -11,7 +11,7 @@ This has been added to our repository [here](https://github.com/openworm/Connect
 
 ### Normalised data
 
-The spreadsheet contained a sheet named "Dauer_normalized", from where the vales were read. 
+The spreadsheet contained a sheet named "Dauer_normalized", from where the values were read and added to the connection test yaml file. 
 
 ### Validation tests for Yim2024DataReader
 
@@ -20,6 +20,9 @@ The spreadsheet contained a sheet named "Dauer_normalized", from where the vales
 | ADFR | AFDR | 0.428024049927915 | Yes |
 | SMBDL | RMED | 6.01978135910464 | Yes |
 | ASHL | RIPL | 1.20804164634321 | Yes |
+
+_Validation PASSED on 2026-04-07 with cect v0.3.1_
+
 
 
 ## CookEtAl2020
@@ -34,5 +37,9 @@ Data was taken from Cook et al. 2020, The connectome of the Caenorhabditis elega
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
 | I1R | I2R | 3 | Yes |
+| I1R | I2L | 1 | Yes |
+
+_Validation PASSED on 2026-04-07 with cect v0.3.1_
+
 
 

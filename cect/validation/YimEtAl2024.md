@@ -7,4 +7,4 @@ This has been added to our repository [here](https://github.com/openworm/Connect
 
 ### Normalised data
 
-The spreadsheet contained a sheet named "Dauer_normalized", from where the vales were read. 
+The spreadsheet contained a sheet named "Dauer_normalized", from where the values were read and added to the connection test yaml file. 

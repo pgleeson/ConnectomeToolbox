@@ -8,21 +8,15 @@ The primary source of this data is https://www.wormatlas.org/neuronalwiring.html
 
 TODO...
 
-### Validation tests for White_A
-
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//White_A_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//White_A_expected_data.yaml'
 
 
 
-### Validation tests for White_L4
-
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//White_L4_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//White_L4_expected_data.yaml'
 
 
-
-### Validation tests for White_whole
 
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//White_whole_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//White_whole_expected_data.yaml'
@@ -32,8 +26,6 @@ TODO...
 ## VarshneyEtAl2011
 
 TODO...
-
-### Validation tests for VarshneyDataReader
 
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//VarshneyDataReader_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//VarshneyDataReader_expected_data.yaml'
@@ -46,14 +38,10 @@ TODO...
 
 
 
-### Validation tests for WormNeuroAtlasMAReader
-
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WormNeuroAtlasMAReader_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WormNeuroAtlasMAReader_expected_data.yaml'
 
 
-
-### Validation tests for WormNeuroAtlasPepReader
 
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WormNeuroAtlasPepReader_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WormNeuroAtlasPepReader_expected_data.yaml'
@@ -64,14 +52,10 @@ TODO...
 
 TODO...
 
-### Validation tests for Cook2019HermDataReader
-
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//Cook2019HermDataReader_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//Cook2019HermDataReader_expected_data.yaml'
 
 
-
-### Validation tests for Cook2019MaleDataReader
 
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//Cook2019MaleDataReader_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//Cook2019MaleDataReader_expected_data.yaml'
@@ -82,24 +66,41 @@ TODO...
 
 Data was taken from Cook et al. 2020, The connectome of the Caenorhabditis elegans pharynx, [J Comp Neurol. 2020; 528: 2767–2784](https://onlinelibrary.wiley.com/doi/10.1002/cne.24932).
 
-TODO...
+The connectivity data was released in 2 CSV files in the supplementary information for that paper:
 
-### Validation tests for Cook2020DataReader
+- [cne24932-sup-0004-Supinfo4.csv](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2Fcne.24932&file=cne24932-sup-0004-Supinfo4.csv) described as "Complete edge list for pharyngeal reconstruction."
+
+- [cne24932-sup-0005-Supinfo5.csv](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2Fcne.24932&file=cne24932-sup-0005-Supinfo5.csv) described as "Inferred gap junction connectivity between end-organs". These connections have been included and some of these tested below also. 
+
+These files were opened in Apple Numbers, and the weights (numbers of connections between pairs of cells, electrical or chemical) were read off, to provide checks listed below. 
+
+
+### Validation tests for Cook2020DataReader (Chemical synaptic connections)
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
 | I1R | I2R | 3 | Yes |
 | I1R | I2L | 1 | Yes |
+| RIPL | pm3VL | 4 | Yes |
 
-_Validation PASSED on 2026-04-07 with cect v0.3.1_
+### Validation tests for Cook2020DataReader (Electrical connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| M4 | pm5VL | 1 | Yes |
+| e2DR | e3D | 2 | Yes |
+| g1AL | M3L | 2 | Yes |
+| pm1 | pm2VL | 3 | Yes |
+| mc1V | pm3VL | 3 | Yes |
+| mc3V | pm7VL | 3 | Yes |
+
+_Validation PASSED on 2026-04-09 with cect v0.3.1_
 
 
 
 ## BrittinEtAl2021
 
 TODO...
-
-### Validation tests for BrittinDataReader
 
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//BrittinDataReader_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//BrittinDataReader_expected_data.yaml'
@@ -110,56 +111,40 @@ TODO...
 
 TODO...
 
-### Validation tests for WitvlietDataReader1
-
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader1_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader1_expected_data.yaml'
 
 
-
-### Validation tests for WitvlietDataReader2
 
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader2_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader2_expected_data.yaml'
 
 
 
-### Validation tests for WitvlietDataReader3
-
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader3_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader3_expected_data.yaml'
 
 
-
-### Validation tests for WitvlietDataReader4
 
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader4_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader4_expected_data.yaml'
 
 
 
-### Validation tests for WitvlietDataReader5
-
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader5_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader5_expected_data.yaml'
 
 
-
-### Validation tests for WitvlietDataReader6
 
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader6_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader6_expected_data.yaml'
 
 
 
-### Validation tests for WitvlietDataReader7
-
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader7_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader7_expected_data.yaml'
 
 
-
-### Validation tests for WitvlietDataReader8
 
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader8_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader8_expected_data.yaml'
@@ -169,8 +154,6 @@ TODO...
 ## RandiEtAl2023
 
 TODO...
-
-### Validation tests for WormNeuroAtlasFuncReader
 
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WormNeuroAtlasFuncReader_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WormNeuroAtlasFuncReader_expected_data.yaml'
@@ -189,7 +172,8 @@ There is a GitHub repository referenced in the paper: https://github.com/LidiaRi
 
 For each of these CSV files, the file was opened in Apple Numbers, and the weights (numbers of matched peptides expressed in pre cell with corresponding receptor in post cell) read off, to provide checks listed below. 
 
-### Validation tests for RipollSanchezShortRangeReader
+
+### Validation tests for RipollSanchezShortRangeReader (Peptidergic connections)
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -197,11 +181,12 @@ For each of these CSV files, the file was opened in Apple Numbers, and the weigh
 | URBL | RMDDL | 4 | Yes |
 | RIVR | HSNL | 6 | Yes |
 
-_Validation PASSED on 2026-04-07 with cect v0.3.1_
+_Validation PASSED on 2026-04-09 with cect v0.3.1_
 
 
 
-### Validation tests for RipollSanchezMidRangeReader
+
+### Validation tests for RipollSanchezMidRangeReader (Peptidergic connections)
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -209,11 +194,12 @@ _Validation PASSED on 2026-04-07 with cect v0.3.1_
 | SABVL | VC1 | 1 | Yes |
 | RIR | AVKR | 5 | Yes |
 
-_Validation PASSED on 2026-04-07 with cect v0.3.1_
+_Validation PASSED on 2026-04-09 with cect v0.3.1_
 
 
 
-### Validation tests for RipollSanchezLongRangeReader
+
+### Validation tests for RipollSanchezLongRangeReader (Peptidergic connections)
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -226,7 +212,7 @@ _Validation PASSED on 2026-04-07 with cect v0.3.1_
 | VC4 | I4 | 1 | Yes |
 | ALA | HSNR | 11 | Yes |
 
-_Validation PASSED on 2026-04-07 with cect v0.3.1_
+_Validation PASSED on 2026-04-09 with cect v0.3.1_
 
 
 
@@ -249,7 +235,8 @@ This file was opened in Excel and weights of selected connections were visually 
 The spreadsheet above contained a sheet named "Dauer_normalized", from where the values for the "normalized" connections were read. 
 This file was opened in Excel and weights of selected connections were visually read from the cells, noting the pre and post cells and added to the connection test yaml file. 
 
-### Validation tests for Yim2024NonNormDataReader
+
+### Validation tests for Yim2024NonNormDataReader (Contact connections)
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -257,11 +244,12 @@ This file was opened in Excel and weights of selected connections were visually 
 | PVNL | ALMR | 97686.4 | Yes |
 | URYDR | URADR | 33663.09403 | Yes |
 
-_Validation PASSED on 2026-04-07 with cect v0.3.1_
+_Validation PASSED on 2026-04-09 with cect v0.3.1_
 
 
 
-### Validation tests for Yim2024DataReader
+
+### Validation tests for Yim2024DataReader (Chemical synaptic connections)
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -269,7 +257,7 @@ _Validation PASSED on 2026-04-07 with cect v0.3.1_
 | SMBDL | RMED | 6.01978135910464 | Yes |
 | ASHL | RIPL | 1.20804164634321 | Yes |
 
-_Validation PASSED on 2026-04-07 with cect v0.3.1_
+_Validation PASSED on 2026-04-09 with cect v0.3.1_
 
 
 
@@ -277,14 +265,10 @@ _Validation PASSED on 2026-04-07 with cect v0.3.1_
 
 TODO...
 
-### Validation tests for Wang2024HermDataReader
-
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//Wang2024HermDataReader_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//Wang2024HermDataReader_expected_data.yaml'
 
 
-
-### Validation tests for Wang2024MaleDataReader
 
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//Wang2024MaleDataReader_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//Wang2024MaleDataReader_expected_data.yaml'

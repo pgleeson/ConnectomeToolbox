@@ -66,7 +66,6 @@ class TestExpectedConnections(unittest.TestCase):
             for data_reader in data_readers[data_set]:
                 print_(f"Validating reader: {data_reader}...")
 
-                validation_md += f"### Validation tests for {data_reader}\n\n"
                 report = self.load_and_check_expected_data(data_reader)
                 validation_md += report + "\n\n"
 
@@ -103,9 +102,14 @@ class TestExpectedConnections(unittest.TestCase):
             print_(conn_dataset.summary())
 
             for conn_list in expected_data.connection_lists:
-                print_(
-                    f"Checking connection list: {conn_list}, {conn_list['synapse']}..."
-                )
+                syn_type = conn_list["synapse"]
+                if syn_type == GENERIC_CHEM_SYN:
+                    syn_type = "Chemical synaptic"
+                elif syn_type == "Generic_GJ":
+                    syn_type = "Electrical"
+
+                print_(f"Checking connection list: {conn_list}, {syn_type}...")
+                report += f"\n### Validation tests for {data_reader} ({syn_type} connections)\n\n"
 
                 report += "| Pre      | Post | Expected weight | Match |\n|----------|------|-----------------|-------|\n"
 

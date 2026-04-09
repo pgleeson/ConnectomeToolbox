@@ -7,4 +7,27 @@ connection_lists:
   - pre: I1R
     post: I2L
     weight: 1
+  - pre: RIPL
+    post: pm3VL
+    weight: 4
   synapse: Generic_CS
+- connections:
+  - pre: M4
+    post: pm5VL
+    weight: 1
+  - pre: e2DR
+    post: e3D
+    weight: 2
+  - pre: g1AL
+    post: M3L
+    weight: 2
+  - pre: pm1
+    post: pm2VL
+    weight: 3
+  - pre: mc1V
+    post: pm3VL
+    weight: 3
+  - pre: mc3V
+    post: pm7VL
+    weight: 3
+  synapse: Generic_GJ

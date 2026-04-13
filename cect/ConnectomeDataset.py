@@ -88,6 +88,8 @@ class ConnectomeDataset:
         for conn in self.connections:
             info["connections"][conn] = self.connections[conn].tolist()
 
+        info["summary"] = self.summary()
+
         return info
 
     def save_to_cache(self, reference: str):

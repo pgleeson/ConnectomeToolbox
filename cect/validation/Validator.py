@@ -1,6 +1,6 @@
 from cect import print_
 
-from cect.Neurotransmitters import GENERIC_CHEM_SYN
+from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS, GENERIC_ELEC_SYN_CLASS
 from cect.Utils import get_connectome_dataset
 from cect import __version__ as cect_version
 
@@ -102,14 +102,16 @@ class TestExpectedConnections(unittest.TestCase):
             print_(conn_dataset.summary())
 
             for conn_list in expected_data.connection_lists:
-                syn_type = conn_list["synapse"]
-                if syn_type == GENERIC_CHEM_SYN:
-                    syn_type = "Chemical synaptic"
-                elif syn_type == "Generic_GJ":
-                    syn_type = "Electrical"
+                syn_class = conn_list["synapse"]
+                if syn_class == GENERIC_CHEM_SYN_CLASS:
+                    syn_info = "Chemical synaptic"
+                elif syn_class == GENERIC_ELEC_SYN_CLASS:
+                    syn_info = "Electrical"
+                else:
+                    syn_info = f"{syn_class}"
 
-                print_(f"Checking connection list: {conn_list}, {syn_type}...")
-                report += f"\n### Validation tests for {data_reader} ({syn_type} connections)\n\n"
+                print_(f"Checking connection list: {conn_list}, {syn_info}...")
+                report += f"\n### Validation tests for {data_reader} ({syn_info} connections)\n\n"
 
                 report += "| Pre      | Post | Expected weight | Match |\n|----------|------|-----------------|-------|\n"
 
@@ -219,9 +221,9 @@ def generate_reader_exp_data_obj(reader_name, source_files, additional_comment="
     # This is a placeholder implementation. In a real implementation, you would read the source files and extract the expected data.
     expected_data = ReaderExpectedData(reader=reader_name)
 
-    for syn_type, source_file in source_files.items():
+    for syn_class, source_file in source_files.items():
         chem_conns = ConnectionList(
-            synapse=syn_type,
+            synapse=syn_class,
             comment=f"Data visually read in from {source_file}. {additional_comment}",
         )
 
@@ -236,11 +238,11 @@ if __name__ == "__main__":
 
         yim_data = generate_reader_exp_data_obj(
             reader_name="Yim2024DataReader",
-            source_files={GENERIC_CHEM_SYN: "41467_2024_45943_MOESM6_ESM.xlsx"},
+            source_files={GENERIC_CHEM_SYN_CLASS: "41467_2024_45943_MOESM6_ESM.xlsx"},
             additional_comment='Normalized data is on tab/sheet "Dauer_normalized". Values were copied from the cells in Microsoft Excel',
         )
 
-        chem_conns = yim_data.get_connection_list_by_synapse(GENERIC_CHEM_SYN)
+        chem_conns = yim_data.get_connection_list_by_synapse(GENERIC_CHEM_SYN_CLASS)
 
         chem_conns.connections.append(
             Connection(pre="ADFR", post="AFDR", weight=0.428024049927915)

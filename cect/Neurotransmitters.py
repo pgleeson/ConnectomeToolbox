@@ -52,8 +52,12 @@ WANG_2024_EXTRA_NT_INFO = [
     FIVE_HTP_FIVE_HT,
 ]
 
-GENERIC_CHEM_SYN = "Generic_CS"
-GENERIC_ELEC_SYN = "Generic_GJ"
+CHEMICAL_SYN_TYPE = "Chemical"
+ELECTRICAL_SYN_TYPE = "GapJunction"
+
+GENERIC_CHEM_SYN_CLASS = "Generic_CS"
+GENERIC_ELEC_SYN_CLASS = "Generic_GJ"
+
 
 CONTACTOME_SYN_TYPE = "Contact"
 CONTACTOME_SYN_CLASS = "Contact"
@@ -73,3 +77,41 @@ ALL_KNOWN_EXTRASYNAPTIC_CLASSES += MONOAMINERGIC_SYN_CLASSES
 
 FUNCTIONAL_SYN_TYPE = "Functional"
 FUNCTIONAL_SYN_CLASS = "Functional"
+
+ALL_SYN_CLASSES = (
+    [
+        GENERIC_CHEM_SYN_CLASS,
+        GENERIC_ELEC_SYN_CLASS,
+        CONTACTOME_SYN_CLASS,
+        FUNCTIONAL_SYN_CLASS,
+    ]
+    + ALL_KNOWN_EXTRASYNAPTIC_CLASSES
+    + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
+)
+
+
+ALL_SYN_TYPES = [
+    CHEMICAL_SYN_TYPE,
+    ELECTRICAL_SYN_TYPE,
+    CONTACTOME_SYN_TYPE,
+    EXTRASYNAPTIC_SYN_TYPE,
+    FUNCTIONAL_SYN_TYPE,
+]
+
+
+def get_syn_type_from_synclass(synclass):
+    if synclass in ALL_KNOWN_EXTRASYNAPTIC_CLASSES:
+        return EXTRASYNAPTIC_SYN_TYPE
+    elif (
+        synclass in ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
+        or synclass == GENERIC_CHEM_SYN_CLASS
+    ):
+        return CHEMICAL_SYN_TYPE
+    elif synclass == GENERIC_ELEC_SYN_CLASS:
+        return ELECTRICAL_SYN_TYPE
+    elif synclass == CONTACTOME_SYN_CLASS:
+        return CONTACTOME_SYN_TYPE
+    elif synclass == FUNCTIONAL_SYN_CLASS:
+        return FUNCTIONAL_SYN_TYPE
+    else:
+        raise ValueError("Unknown synclass '%s'" % synclass)

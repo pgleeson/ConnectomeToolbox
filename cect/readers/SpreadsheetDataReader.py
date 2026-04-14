@@ -17,6 +17,12 @@ from cect.ConnectomeDataset import ConnectomeDataset
 from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
+from cect.Neurotransmitters import (
+    CHEMICAL_SYN_TYPE,
+    ELECTRICAL_SYN_TYPE,
+    OTHER_CHEMICAL_NT,
+)
+
 from xlrd import open_workbook
 import os
 import sys
@@ -81,9 +87,16 @@ class SpreadsheetDataReader(ConnectomeDataset):
             for row in range(1, rb.sheet_by_index(sheet).nrows):
                 pre = str(rb.sheet_by_index(0).cell(row, 0).value)
                 post = str(rb.sheet_by_index(0).cell(row, 1).value)
-                syntype = rb.sheet_by_index(0).cell(row, 2).value
+                syntype_here = rb.sheet_by_index(0).cell(row, 2).value
+                if syntype_here == "Generic_GJ":
+                    syntype = ELECTRICAL_SYN_TYPE
+                else:
+                    syntype = CHEMICAL_SYN_TYPE
                 num = int(rb.sheet_by_index(0).cell(row, 3).value)
                 synclass = rb.sheet_by_index(0).cell(row, 4).value
+
+                if synclass == "Octapamine":
+                    synclass = "Octopamine"
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
                 if pre not in cells:
@@ -116,9 +129,19 @@ class SpreadsheetDataReader(ConnectomeDataset):
         for row in range(1, sheet.nrows):
             pre = str(sheet.cell(row, 0).value)
             post = str(sheet.cell(row, 1).value)
-            syntype = "Send"
+            syntype = CHEMICAL_SYN_TYPE
             num = int(sheet.cell(row, 2).value)
-            synclass = sheet.cell(row, 3).value.replace(",", "plus").replace(" ", "_")
+            synclass = (
+                sheet.cell(row, 3)
+                .value.replace(", ", "_")
+                .replace(" ", "_")
+                .replace(",", "plus")
+            )
+
+            if synclass == "":
+                synclass = OTHER_CHEMICAL_NT
+            if synclass == "FRMFemide":
+                synclass = "FMRFamide"
 
             conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
             if pre not in neurons:
@@ -158,7 +181,35 @@ def main():
     print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
 
     if "-nogui" not in sys.argv:
-        my_instance.connection_number_plot("Acetylcholine")
+        # my_instance.connection_number_plot("OtherChemicalNT")
+
+        from cect.ConnectomeView import RAW_VIEW as view
+
+        """
+        from cect.ConnectomeView import LOCOMOTION_3_VIEW as view
+        from cect.ConnectomeView import LOCOMOTION_1_VIEW as view
+       
+        # from cect.ConnectomeView import SOCIAL_VIEW as view
+        from cect.ConnectomeView import LOCOMOTION_2_VIEW as view"""
+
+        print("--- Using view: %s" % view)
+        cds2 = my_instance.get_connectome_view(view)
+        print(cds2.summary())
+
+        # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
+
+        synclass = list(view.synclass_sets.keys())[0]
+        synclass = "GABA"
+        synclass = "OtherChemicalNT"
+
+        # fig = cds2.to_plotly_graph_fig(synclass, view)
+        fig = cds2.to_plotly_hive_plot_fig(synclass, view)
+
+        import plotly.io as pio
+
+        pio.renderers.default = "browser"
+
+        fig.show()
 
 
 if __name__ == "__main__":

@@ -5,7 +5,13 @@ from cect.ConnectomeReader import DEFAULT_COLORMAP
 
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
-from cect.Neurotransmitters import ACETYLCHOLINE, GABA, GENERIC_ELEC_SYN
+from cect.Neurotransmitters import (
+    ACETYLCHOLINE,
+    GABA,
+    GENERIC_ELEC_SYN_CLASS,
+    CHEMICAL_SYN_TYPE,
+    ELECTRICAL_SYN_TYPE,
+)
 
 import os
 import sys
@@ -45,44 +51,76 @@ class TestDataReader(ConnectomeDataset):
             self.add_connection_info(conn)
 
     def read_data(self):
-        self.conns.append(ConnectionInfo("PVCL", "AVBL", 7, "Send", ACETYLCHOLINE))
-        self.conns.append(ConnectionInfo("PVCR", "AVBR", 1, "Send", ACETYLCHOLINE))
-
-        self.conns.append(ConnectionInfo("PVCL", "DB4", 6, "Send", ACETYLCHOLINE))
-        self.conns.append(ConnectionInfo("PVCL", "VB6", 2, "Send", ACETYLCHOLINE))
-        self.conns.append(ConnectionInfo("DB4", "DD4", 2, "Send", ACETYLCHOLINE))
-        self.conns.append(ConnectionInfo("DB4", "VD6", 14, "Send", ACETYLCHOLINE))
-        self.conns.append(ConnectionInfo("VA6", "VD6", 6, "Send", ACETYLCHOLINE))
-        self.conns.append(ConnectionInfo("VB6", "DD4", 32, "Send", ACETYLCHOLINE))
-
-        self.conns.append(ConnectionInfo("VD6", "VA6", 3, "Send", GABA))
-
-        self.conns.append(ConnectionInfo("VD3", "VA3", 2, "Send", GABA))
-        self.conns.append(ConnectionInfo("VD3", "VB2", 2, "Send", GABA))
-
         self.conns.append(
-            ConnectionInfo("DB4", "AVBL", 4, "GapJunction", GENERIC_ELEC_SYN)
+            ConnectionInfo("PVCL", "AVBL", 7, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
         )
         self.conns.append(
-            ConnectionInfo("VB6", "AVBL", 3, "GapJunction", GENERIC_ELEC_SYN)
-        )
-        self.conns.append(
-            ConnectionInfo("VB6", "VB6", 3, "GapJunction", GENERIC_ELEC_SYN)
-        )
-        self.conns.append(
-            ConnectionInfo("DD4", "DD5", 3, "GapJunction", GENERIC_ELEC_SYN)
+            ConnectionInfo("PVCR", "AVBR", 1, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
         )
 
-        self.conns.append(ConnectionInfo("DVA", "PVCL", 3, "Send", ACETYLCHOLINE))
+        self.conns.append(
+            ConnectionInfo("PVCL", "DB4", 6, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+        )
+        self.conns.append(
+            ConnectionInfo("PVCL", "VB6", 2, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+        )
+        self.conns.append(
+            ConnectionInfo("DB4", "DD4", 2, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+        )
+        self.conns.append(
+            ConnectionInfo("DB4", "VD6", 14, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+        )
+        self.conns.append(
+            ConnectionInfo("VA6", "VD6", 6, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+        )
+        self.conns.append(
+            ConnectionInfo("VB6", "DD4", 32, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+        )
 
-        self.conns.append(ConnectionInfo("ASHR", "RMGR", 6, "Send", ACETYLCHOLINE))
-        self.conns.append(ConnectionInfo("AWBR", "ASHR", 2, "Send", ACETYLCHOLINE))
+        self.conns.append(ConnectionInfo("VD6", "VA6", 3, CHEMICAL_SYN_TYPE, GABA))
 
-        self.conns.append(ConnectionInfo("I5", "M4", 9, "Send", ACETYLCHOLINE))
-        self.conns.append(ConnectionInfo("M4", "M1", 9, "Send", ACETYLCHOLINE))
+        self.conns.append(ConnectionInfo("VD3", "VA3", 2, CHEMICAL_SYN_TYPE, GABA))
+        self.conns.append(ConnectionInfo("VD3", "VB2", 2, CHEMICAL_SYN_TYPE, GABA))
 
         self.conns.append(
-            ConnectionInfo("ASHR", "ASKR", 1, "GapJunction", GENERIC_ELEC_SYN)
+            ConnectionInfo(
+                "DB4", "AVBL", 4, ELECTRICAL_SYN_TYPE, GENERIC_ELEC_SYN_CLASS
+            )
+        )
+        self.conns.append(
+            ConnectionInfo(
+                "VB6", "AVBL", 3, ELECTRICAL_SYN_TYPE, GENERIC_ELEC_SYN_CLASS
+            )
+        )
+        self.conns.append(
+            ConnectionInfo("VB6", "VB6", 3, ELECTRICAL_SYN_TYPE, GENERIC_ELEC_SYN_CLASS)
+        )
+        self.conns.append(
+            ConnectionInfo("DD4", "DD5", 3, ELECTRICAL_SYN_TYPE, GENERIC_ELEC_SYN_CLASS)
+        )
+
+        self.conns.append(
+            ConnectionInfo("DVA", "PVCL", 3, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+        )
+
+        self.conns.append(
+            ConnectionInfo("ASHR", "RMGR", 6, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+        )
+        self.conns.append(
+            ConnectionInfo("AWBR", "ASHR", 2, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+        )
+
+        self.conns.append(
+            ConnectionInfo("I5", "M4", 9, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+        )
+        self.conns.append(
+            ConnectionInfo("M4", "M1", 9, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+        )
+
+        self.conns.append(
+            ConnectionInfo(
+                "ASHR", "ASKR", 1, ELECTRICAL_SYN_TYPE, GENERIC_ELEC_SYN_CLASS
+            )
         )
 
         for c in self.conns:
@@ -112,11 +150,9 @@ def main():
 
     print(tdr_instance.summary(list_pre_cells=True))
 
-    quit()
-
     from cect.ConnectomeView import RAW_VIEW
 
-    fig = tdr_instance.to_plotly_matrix_fig(
+    fig, _ = tdr_instance.to_plotly_matrix_fig(
         ACETYLCHOLINE, RAW_VIEW, color_continuous_scale=DEFAULT_COLORMAP
     )
     if "-nogui" not in sys.argv:

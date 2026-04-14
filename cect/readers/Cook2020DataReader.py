@@ -4,15 +4,21 @@ from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import ConnectomeDataset
 from cect.ConnectomeDataset import get_dataset_source_on_github
+
+# ruff: noqa: F401
 from cect.Cells import PREFERRED_HERM_NEURON_NAMES
+
+# ruff: noqa: F401
 from cect.Cells import PREFERRED_MUSCLE_NAMES
 from cect.Cells import convert_to_preferred_muscle_name
 from cect.Cells import is_potential_muscle
+
+# ruff: noqa: F401
 from cect.Cells import is_known_muscle
 from cect.Cells import is_marginal_cell
 from cect.Cells import convert_to_preferred_phar_cell_name
-from cect.Neurotransmitters import GENERIC_CHEM_SYN
-from cect.Neurotransmitters import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS, CHEMICAL_SYN_TYPE
+from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS, ELECTRICAL_SYN_TYPE
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 import os
@@ -50,7 +56,11 @@ class Cook2020DataReader(ConnectomeDataset):
 
         cells, neuron_conns = self.read_data()
         for conn in neuron_conns:
-            self.add_connection_info(conn, check_overwritten_connections=False)
+            self.add_connection_info(
+                conn,
+                check_overwritten_connections=True,
+                append_existing_connections=True,
+            )
 
     def read_data(self):
         """
@@ -73,14 +83,21 @@ class Cook2020DataReader(ConnectomeDataset):
                 num = float(row["Weight"])
                 syntype = str.strip(row["Type"])
 
+                if syntype == "Electrical":
+                    syntype = ELECTRICAL_SYN_TYPE
+                else:
+                    syntype = CHEMICAL_SYN_TYPE
+
                 synclass = (
-                    GENERIC_ELEC_SYN if "Electrical" in syntype else GENERIC_CHEM_SYN
+                    GENERIC_ELEC_SYN_CLASS
+                    if syntype == ELECTRICAL_SYN_TYPE
+                    else GENERIC_CHEM_SYN_CLASS
                 )
 
-                if syntype == "Electrical":
-                    self.conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
-
                 self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+                # Add post -> pre conn for gap junction connections
+                if syntype == ELECTRICAL_SYN_TYPE:
+                    self.conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
                 if pre not in self.cells:
                     self.cells.append(pre)
@@ -105,15 +122,13 @@ class Cook2020DataReader(ConnectomeDataset):
                     post = convert_to_preferred_phar_cell_name(post)
 
                 num = float(row["Weight"])
-                syntype = "Electrical"
-                if syntype == "Electrical":
-                    self.conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
-                synclass = (
-                    GENERIC_ELEC_SYN if "Electrical" in syntype else GENERIC_CHEM_SYN
-                )
+                syntype = ELECTRICAL_SYN_TYPE
+                synclass = GENERIC_ELEC_SYN_CLASS
 
                 self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+                # Add post -> pre conn for gap junction connections
+                self.conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
                 if pre not in self.cells:
                     self.cells.append(pre)
@@ -122,7 +137,7 @@ class Cook2020DataReader(ConnectomeDataset):
 
         return self.cells, self.conns
 
-    def read_muscle_data(self):
+    '''def read_muscle_data(self):
         """
         Returns:
             neurons (:obj:`list` of :obj:`str`): List of motor neurons. Each neuron has at least one connection with a post-synaptic muscle cell.
@@ -151,14 +166,20 @@ class Cook2020DataReader(ConnectomeDataset):
                     post = convert_to_preferred_phar_cell_name(post)
                 num = float(row["Weight"])
                 syntype = str.strip(row["Type"])
-                synclass = (
-                    GENERIC_ELEC_SYN if "Electrical" in syntype else GENERIC_CHEM_SYN
-                )
 
                 if syntype == "Electrical":
-                    conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
+                    syntype = ELECTRICAL_SYN_TYPE
+
+                synclass = (
+                    GENERIC_ELEC_SYN_CLASS
+                    if syntype  == ELECTRICAL_SYN_TYPE 
+                    else GENERIC_CHEM_SYN_CLASS
+                )
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+                # Add post -> pre conn for gap junction connections
+                if syntype == ELECTRICAL_SYN_TYPE:
+                    conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
                 if is_known_muscle(post):
                     if post in PREFERRED_MUSCLE_NAMES and post not in muscles:
@@ -182,15 +203,19 @@ class Cook2020DataReader(ConnectomeDataset):
                 if is_marginal_cell(post):
                     post = convert_to_preferred_phar_cell_name(post)
                 num = float(row["Weight"])
+
                 syntype = "Electrical"
+
                 synclass = (
-                    GENERIC_ELEC_SYN if "Electrical" in syntype else GENERIC_CHEM_SYN
+                    GENERIC_ELEC_SYN_CLASS
+                    if "Electrical" in syntype
+                    else GENERIC_CHEM_SYN_CLASS
                 )
 
                 if syntype == "Electrical":
-                    conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
                 conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+                conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
                 if is_known_muscle(post):
                     if post in PREFERRED_MUSCLE_NAMES and post not in muscles:
@@ -198,7 +223,10 @@ class Cook2020DataReader(ConnectomeDataset):
                     if pre in PREFERRED_HERM_NEURON_NAMES and pre not in neurons:
                         neurons.append(pre)
 
-        return neurons, muscles, conns
+        return neurons, muscles, conns'''
+
+    def read_muscle_data(self):
+        return self._read_muscle_data()
 
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
@@ -215,8 +243,9 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
 
 my_instance = get_instance()
 
+"""
 read_data = my_instance.read_data
-read_muscle_data = my_instance.read_muscle_data
+read_muscle_data = my_instance.read_muscle_data"""
 
 
 def main():
@@ -226,6 +255,8 @@ def main():
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
     print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
+
+    print_(my_instance.summary())
 
 
 if __name__ == "__main__":

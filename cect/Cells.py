@@ -16,8 +16,8 @@ from cect import print_
 from typing import List
 
 from cect.Neurotransmitters import (
-    GENERIC_CHEM_SYN,
-    GENERIC_ELEC_SYN,
+    GENERIC_CHEM_SYN_CLASS,
+    GENERIC_ELEC_SYN_CLASS,
     ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
 )
 
@@ -1493,6 +1493,24 @@ COOK_GROUPING_1["Male other cells"] = (
     MALE_RAY_STRUCTURAL_CELLS + PROCTODEUM_CELL_MALE + GONAD_CELL_MALE
 )
 
+COOK_GROUPING_VNC = {}
+
+for group in COOK_GROUPING_1:
+    if group != "Motorneurons":
+        COOK_GROUPING_VNC[group] = list(COOK_GROUPING_1[group])
+    else:
+        COOK_GROUPING_VNC["VNC Motorneurons"] = []
+        COOK_GROUPING_VNC["Other Motorneurons"] = []
+        for cell in COOK_GROUPING_1[group]:
+            if cell in VENTRAL_CORD_MOTORNEURONS + VC_HERM_MOTORNEURONS:
+                COOK_GROUPING_VNC["VNC Motorneurons"].append(cell)
+            else:
+                COOK_GROUPING_VNC["Other Motorneurons"].append(cell)
+
+assert len(COOK_GROUPING_1["Motorneurons"]) == len(
+    COOK_GROUPING_VNC["VNC Motorneurons"]
+) + len(COOK_GROUPING_VNC["Other Motorneurons"])
+
 ALL_PREFERRED_NEURON_NAMES = PREFERRED_HERM_NEURON_NAMES + MALE_SPECIFIC_NEURONS
 
 
@@ -2343,9 +2361,11 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
     print_(" - Adding table for %s" % cell_type)
 
     syn_summaries = {
-        "Chemical conns in": [GENERIC_CHEM_SYN] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
-        "Chemical conns out": [GENERIC_CHEM_SYN] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
-        "Electrical conns": [GENERIC_ELEC_SYN],
+        "Chemical conns in": [GENERIC_CHEM_SYN_CLASS]
+        + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
+        "Chemical conns out": [GENERIC_CHEM_SYN_CLASS]
+        + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
+        "Electrical conns": [GENERIC_ELEC_SYN_CLASS],
     }
 
     fig_md = ""

@@ -8,7 +8,7 @@ from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeReader import analyse_connections
 from cect import print_
 
-from cect.Neurotransmitters import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS
 from cect.Neurotransmitters import OTHER_CHEMICAL_NT
 
 from cect.ConnectomeDataset import ConnectomeDataset
@@ -102,7 +102,7 @@ class WormNeuroAtlasReader(ConnectomeDataset):
                 num = gji[0]
                 if num > 0:
                     # print("Gap junc (%s (%i) -> %s (%i): %s"%(pre, apre, post, apost, gji))
-                    synclass = GENERIC_ELEC_SYN
+                    synclass = GENERIC_ELEC_SYN_CLASS
                     syntype = "GapJunction"
                     conns.append(
                         ConnectionInfo(str(pre), str(post), num, syntype, synclass)

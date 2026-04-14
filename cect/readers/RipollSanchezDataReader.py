@@ -151,7 +151,7 @@ def main():
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
     # fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
-    fig = cds2.to_plotly_matrix_fig(
+    fig, _ = cds2.to_plotly_matrix_fig(
         list(view.synclass_sets.keys())[2],
         view,
         color_continuous_scale=["white", "blue", "cyan", "green", "yellow", "orange"],

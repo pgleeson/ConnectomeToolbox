@@ -267,6 +267,7 @@ def generate_comparison_page(
         # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
         # readers["Bentley2016_MA"] = ["cect.readers.WormNeuroAtlasMAReader", "Bentley_2016"]
         # readers["White_A"] = ["cect.readers.White_A", "White_1986"]
+        # readers["White_L4"] = ["cect.readers.White_L4", "White_1986"]
         readers["White_whole"] = ["cect.readers.White_whole", "White_1986"]
         readers["Test"] = ["cect.readers.TestDataReader", None]
 
@@ -274,13 +275,13 @@ def generate_comparison_page(
 
         # readers["Randi2023"] = ["cect.readers.WormNeuroAtlasFuncReader", "Randi_2023"]
 
-        # readers["Brittin2021"] = ["cect.readers.BrittinDataReader", "Brittin_2021"]
+        readers["Brittin2021"] = ["cect.readers.BrittinDataReader", "Brittin_2021"]
         # readers["Yim2024"] = ["cect.readers.Yim2024DataReader", "Yim_2024"]
         # readers["Yim2024NonNorm"] = ["cect.readers.Yim2024NonNormDataReader", "Yim_2024"]
 
         # readers["White_whole"] = ["cect.readers.White_whole", "White_1986"]
         # readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
-        # readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
+        readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 
         # readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
         # readers["Cook2019Male"] = ["cect.readers.Cook2019MaleReader", "Cook_2019"]
@@ -293,6 +294,8 @@ def generate_comparison_page(
         # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
         # readers["RipollSanchezLongRange"] = [ "cect.readers.RipollSanchezLongRangeReader", "RipollSanchez_2023", ]
         # readers["OpenWormUnified"] = ["cect.readers.OpenWormUnifiedReader", "OpenWorm_Unified"]
+
+        readers["SSData"] = ["cect.readers.SpreadsheetDataReader", None]
 
     else:
         if not quick:
@@ -677,6 +680,22 @@ def generate_comparison_page(
                                 for c in cv.connections:
                                     conn_array = cv.connections[c]
                                     nonzero = np.count_nonzero(conn_array)
+                                    count_diagonal_entries = np.count_nonzero(
+                                        np.diag(conn_array)
+                                    )
+                                    is_symmetric = np.array_equal(
+                                        conn_array, conn_array.T
+                                    )
+                                    sym_info = ""
+                                    if is_symmetric:
+                                        sym_info = f"Matrix is symmetric with <b>{count_diagonal_entries + int((nonzero - count_diagonal_entries) / 2)}</b> unique pairs<br/>"
+                                    diag_info = (
+                                        "<b>%s</b> nodes with self-connections<br/>"
+                                        % count_diagonal_entries
+                                        if count_diagonal_entries > 0
+                                        else ""
+                                    )
+                                    # print_(count_diagonal_entries)
                                     pre = sorted(
                                         [
                                             cv.nodes[i]
@@ -693,12 +712,13 @@ def generate_comparison_page(
                                     )
                                     if nonzero > 0:
                                         view_info += (
-                                            "|**%s** | %s matrix | %i non-zero entries, avg. weight: %s, sum: %s| %s | %s |\n"
+                                            "|**%s** | <b>%s</b> matrix | <b>%i</b> non-zero entries<br/>%sAvg. weight: <b>%s</b><br/>Sum of weights: <b>%s</b> | %s | %s |\n"
                                             % (
                                                 c,
                                                 conn_array.shape,
                                                 nonzero,
-                                                np.sum(conn_array) / nonzero
+                                                diag_info + sym_info,
+                                                "%.6f" % (np.sum(conn_array) / nonzero)
                                                 if nonzero > 0
                                                 else 0,
                                                 np.sum(conn_array),
@@ -891,11 +911,11 @@ def generate_comparison_page(
 
     # h = HTML(df_all.to_html(escape=False, index=False))
 
-    from cect.Cells import COOK_GROUPING_1
+    from cect.Cells import COOK_GROUPING_VNC
 
     if color_table:
         STYLE = '"width:80px;font-family:Arial"'
-        font_size = "190%"
+        font_size = "150%"
         table_html += f'<table>\n  <tr>\n    <th style={STYLE}><span style="font-size:{font_size}"> </span></th>\n'
 
         readers_to_include = []
@@ -923,18 +943,19 @@ def generate_comparison_page(
 
             # table_html += f'    <th style={STYLE}><span style="font-size:150%">{better_name}</span></th>\n'
 
-        for group in COOK_GROUPING_1:
+        for group in COOK_GROUPING_VNC:
             table_html += f'    <th style={STYLE}><span style="font-size:{font_size}">{group}</span></th>\n'
 
         for reader_name in readers_to_include:
             table_html += f'  <tr>\n<td align="middle"><b><span style="font-size:{font_size};text-align:center;padding:3px;font-family:Arial">{better_names[reader_name]}</span></b></th>\n'
 
-            for group in COOK_GROUPING_1:
+            for group in COOK_GROUPING_VNC:
                 # table_html += f'  <tr>\n<td><b><span style="font-size:150%;text-align:center;padding:3px;">{group}</span></b></th>\n'
 
                 connectome = all_connectomes[reader_name]
                 cells_here = ""
-                for cell in sorted(COOK_GROUPING_1[group]):
+                cell_names = []
+                for cell in sorted(COOK_GROUPING_VNC[group]):
                     if cell in connectome.nodes:
                         cells_here += "%s&nbsp;" % get_cell_internal_link(
                             cell_name=cell,
@@ -943,11 +964,15 @@ def generate_comparison_page(
                             use_color=True,
                             individual_cell_page=True,
                         )
+                        cell_names.append(cell)
                     else:
                         pass  # cells_here+='<s>%s</s>&nbsp;'%cell
 
                     if (cells_here.split("<br/>")[-1]).count("&nbsp;") > 14:
                         cells_here += "<br/>\n"
+
+                if len(cell_names) > 0:
+                    cells_here += f"<p align='left' valign='bottom'><div title='{', '.join(cell_names)}'><u><b>({len(cell_names)})</b></u></div></p>\n"
 
                 table_html += f'    <td align="middle">{cells_here}</th>\n'
 
@@ -1028,6 +1053,22 @@ if __name__ == "__main__":
         plt.gcf().subplots_adjust(bottom=0.25)
 
         plt.show()
+
+    elif "-table" in sys.argv:
+        quick = 0
+
+        save_to_cache = False
+
+        connectomes = generate_comparison_page(
+            quick,
+            color_table=True,
+            dataset_pages=False,
+            save_to_cache=save_to_cache,
+            load_from_cache=(not save_to_cache),
+        )
+
+        print("Finished. All loaded connectomes:\n%s" % connectomes)
+
     else:
         quick = len(sys.argv) > 1 and eval(sys.argv[1])
 

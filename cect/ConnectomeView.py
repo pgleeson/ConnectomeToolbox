@@ -38,8 +38,8 @@ from cect.Cells import KNOWN_MODELLED_NEURONS
 from cect.Neurotransmitters import ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
 from cect.Neurotransmitters import ALL_KNOWN_EXTRASYNAPTIC_CLASSES
 from cect.Neurotransmitters import MONOAMINERGIC_SYN_CLASSES
-from cect.Neurotransmitters import GENERIC_CHEM_SYN
-from cect.Neurotransmitters import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS
+from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS
 
 from cect.Neurotransmitters import CONTACTOME_SYN_TYPE
 from cect.Neurotransmitters import CONTACTOME_SYN_CLASS
@@ -196,8 +196,8 @@ putative_exc_syn_class = ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS.copy()
 putative_exc_syn_class.remove("GABA")
 
 EXC_INH_GJ_SYN_CLASSES = {
-    "Chemical": [GENERIC_CHEM_SYN] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
-    "Electrical": [GENERIC_ELEC_SYN],
+    "Chemical": [GENERIC_CHEM_SYN_CLASS] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
+    "Electrical": [GENERIC_ELEC_SYN_CLASS],
     "Extrasynaptic": ALL_KNOWN_EXTRASYNAPTIC_CLASSES,
 }
 for n in ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS:
@@ -211,10 +211,10 @@ EXC_INH_GJ_FUNC_CONT_SYN_CLASSES[FUNCTIONAL_SYN_TYPE] = [FUNCTIONAL_SYN_CLASS]
 EXC_INH_GJ_FUNC_CONT_SYN_CLASSES[CONTACTOME_SYN_TYPE] = [CONTACTOME_SYN_CLASS]
 
 ALL_SYN_CLASSES = {
-    "All synapses": [GENERIC_CHEM_SYN]
+    "All synapses": [GENERIC_CHEM_SYN_CLASS]
     + putative_exc_syn_class
     + ["GABA"]
-    + [GENERIC_ELEC_SYN]
+    + [GENERIC_ELEC_SYN_CLASS]
     + ALL_KNOWN_EXTRASYNAPTIC_CLASSES
     + [FUNCTIONAL_SYN_CLASS]
     + [CONTACTOME_SYN_CLASS]
@@ -222,7 +222,7 @@ ALL_SYN_CLASSES = {
 
 CHEM_GJ_SYN_CLASSES = {
     "All Chemical": EXC_INH_GJ_SYN_CLASSES["Chemical"],
-    "Electrical": [GENERIC_ELEC_SYN],
+    "Electrical": [GENERIC_ELEC_SYN_CLASS],
     "Extrasynaptic": EXC_INH_GJ_SYN_CLASSES["Extrasynaptic"],
 }
 

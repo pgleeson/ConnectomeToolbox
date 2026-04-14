@@ -94,7 +94,7 @@ These files were opened in Apple Numbers, and the weights (numbers of connection
 | mc1V | pm3VL | 3 | Yes |
 | mc3V | pm7VL | 3 | Yes |
 
-_Validation PASSED on 2026-04-09 with cect v0.3.1_
+_Validation PASSED on 2026-04-14 with cect v0.3.1_
 
 
 
@@ -181,7 +181,7 @@ For each of these CSV files, the file was opened in Apple Numbers, and the weigh
 | URBL | RMDDL | 4 | Yes |
 | RIVR | HSNL | 6 | Yes |
 
-_Validation PASSED on 2026-04-09 with cect v0.3.1_
+_Validation PASSED on 2026-04-14 with cect v0.3.1_
 
 
 
@@ -194,7 +194,7 @@ _Validation PASSED on 2026-04-09 with cect v0.3.1_
 | SABVL | VC1 | 1 | Yes |
 | RIR | AVKR | 5 | Yes |
 
-_Validation PASSED on 2026-04-09 with cect v0.3.1_
+_Validation PASSED on 2026-04-14 with cect v0.3.1_
 
 
 
@@ -212,7 +212,7 @@ _Validation PASSED on 2026-04-09 with cect v0.3.1_
 | VC4 | I4 | 1 | Yes |
 | ALA | HSNR | 11 | Yes |
 
-_Validation PASSED on 2026-04-09 with cect v0.3.1_
+_Validation PASSED on 2026-04-14 with cect v0.3.1_
 
 
 
@@ -244,7 +244,7 @@ This file was opened in Excel and weights of selected connections were visually 
 | PVNL | ALMR | 97686.4 | Yes |
 | URYDR | URADR | 33663.09403 | Yes |
 
-_Validation PASSED on 2026-04-09 with cect v0.3.1_
+_Validation PASSED on 2026-04-14 with cect v0.3.1_
 
 
 
@@ -257,7 +257,7 @@ _Validation PASSED on 2026-04-09 with cect v0.3.1_
 | SMBDL | RMED | 6.01978135910464 | Yes |
 | ASHL | RIPL | 1.20804164634321 | Yes |
 
-_Validation PASSED on 2026-04-09 with cect v0.3.1_
+_Validation PASSED on 2026-04-14 with cect v0.3.1_
 
 
 

@@ -23,8 +23,8 @@ from cect.Neurotransmitters import CONTACTOME_SYN_TYPE
 from cect.Neurotransmitters import CONTACTOME_SYN_CLASS
 
 # ruff: noqa: F401
-from cect.Neurotransmitters import GENERIC_CHEM_SYN
-from cect.Neurotransmitters import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS
+from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS
 
 from openpyxl import load_workbook
 
@@ -45,7 +45,7 @@ post_range = range(3, 225)
 
 def get_synclass(cell, normalized):
     if normalized:
-        return GENERIC_CHEM_SYN
+        return GENERIC_CHEM_SYN_CLASS
     else:
         return CONTACTOME_SYN_CLASS
 

@@ -20,8 +20,8 @@ from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 from cect.ConnectomeDataset import ConnectomeDataset
 
 # ruff: noqa: F401
-from cect.Neurotransmitters import GENERIC_CHEM_SYN
-from cect.Neurotransmitters import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS
+from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS
 from cect.Neurotransmitters import CONTACTOME_SYN_CLASS
 
 from openpyxl import load_workbook

@@ -46,8 +46,8 @@ search:
     
     | Connection type | Total size | Values present | Nodes with pre connections | Nodes with post connections |
     | --- | --- | --- | --- | --- |
-    |**Chemical** | (20, 20) matrix | 2 non-zero entries, avg. weight: 9.0, sum: 18.0| **<span style="color:#ff3300;">I5</span>**, **<span style="color:#9966cc;">M4</span>** | **<span style="color:#9966cc;">M1</span>**, **<span style="color:#9966cc;">M4</span>** |
-    |**Acetylcholine** | (20, 20) matrix | 2 non-zero entries, avg. weight: 9.0, sum: 18.0| **<span style="color:#ff3300;">I5</span>**, **<span style="color:#9966cc;">M4</span>** | **<span style="color:#9966cc;">M1</span>**, **<span style="color:#9966cc;">M4</span>** |
+    |**Chemical** | <b>(20, 20)</b> matrix | <b>2</b> non-zero entries<br/>Avg. weight: <b>9.000000</b><br/>Sum of weights: <b>18.0</b> | **<span style="color:#ff3300;">I5</span>**, **<span style="color:#9966cc;">M4</span>** | **<span style="color:#9966cc;">M1</span>**, **<span style="color:#9966cc;">M4</span>** |
+    |**Acetylcholine** | <b>(20, 20)</b> matrix | <b>2</b> non-zero entries<br/>Avg. weight: <b>9.000000</b><br/>Sum of weights: <b>18.0</b> | **<span style="color:#ff3300;">I5</span>**, **<span style="color:#9966cc;">M4</span>** | **<span style="color:#9966cc;">M1</span>**, **<span style="color:#9966cc;">M4</span>** |
     
     
     | Nodes in current view<br/>(20 total) <span style="color:#ffffff;">xxxxxxxxxxxxxxxxxxxxxxxxx</span>| Num cells in node<br/>(20 total) | Num in this dataset<br/>(3 total) | Cells in node |

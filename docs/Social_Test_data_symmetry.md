@@ -46,9 +46,9 @@ search:
     
     | Connection type | Total size | Values present | Nodes with pre connections | Nodes with post connections |
     | --- | --- | --- | --- | --- |
-    |**Chemical** | (8, 8) matrix | 2 non-zero entries, avg. weight: 4.0, sum: 8.0| **<span style="color:grey;">ASH</span>**, **<span style="color:grey;">AWB</span>** | **<span style="color:grey;">ASH</span>**, **<span style="color:lightgrey;">RMG</span>** |
-    |**Electrical** | (8, 8) matrix | 1 non-zero entries, avg. weight: 1.0, sum: 1.0| **<span style="color:grey;">ASH</span>** | **<span style="color:grey;">ASK</span>** |
-    |**Acetylcholine** | (8, 8) matrix | 2 non-zero entries, avg. weight: 4.0, sum: 8.0| **<span style="color:grey;">ASH</span>**, **<span style="color:grey;">AWB</span>** | **<span style="color:grey;">ASH</span>**, **<span style="color:lightgrey;">RMG</span>** |
+    |**Chemical** | <b>(8, 8)</b> matrix | <b>2</b> non-zero entries<br/>Avg. weight: <b>4.000000</b><br/>Sum of weights: <b>8.0</b> | **<span style="color:grey;">ASH</span>**, **<span style="color:grey;">AWB</span>** | **<span style="color:grey;">ASH</span>**, **<span style="color:lightgrey;">RMG</span>** |
+    |**Electrical** | <b>(8, 8)</b> matrix | <b>1</b> non-zero entries<br/>Avg. weight: <b>1.000000</b><br/>Sum of weights: <b>1.0</b> | **<span style="color:grey;">ASH</span>** | **<span style="color:grey;">ASK</span>** |
+    |**Acetylcholine** | <b>(8, 8)</b> matrix | <b>2</b> non-zero entries<br/>Avg. weight: <b>4.000000</b><br/>Sum of weights: <b>8.0</b> | **<span style="color:grey;">ASH</span>**, **<span style="color:grey;">AWB</span>** | **<span style="color:grey;">ASH</span>**, **<span style="color:lightgrey;">RMG</span>** |
     
     
     | Nodes in current view<br/>(8 total) <span style="color:#ffffff;">xxxxxxxxxxxxxxxxxxxxxxxxx</span>| Num cells in node<br/>(16 total) | Num in this dataset<br/>(4 total) | Cells in node |

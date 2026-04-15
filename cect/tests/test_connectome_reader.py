@@ -1,12 +1,16 @@
 from cect import print_
 import unittest
 
+from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS, CHEMICAL_SYN_TYPE
+
 
 class TestConnectomeReader(unittest.TestCase):
     def test_conn_info(self):
         from cect.ConnectomeReader import ConnectionInfo, load_connection_info
 
-        ci = ConnectionInfo("precell", "postcell", 66, "sy", "sc")
+        ci = ConnectionInfo(
+            "precell", "postcell", 66, CHEMICAL_SYN_TYPE, GENERIC_CHEM_SYN_CLASS
+        )
 
         str1 = str(ci)
         print_("Created: %s" % str1)

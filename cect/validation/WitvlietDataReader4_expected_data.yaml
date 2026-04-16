@@ -1,0 +1,25 @@
+
+reader: WitvlietDataReader4
+connection_lists:
+- connections:
+  - pre: AWCR
+    post: AWCL
+    weight: 5
+  - pre: RIML
+    post: MDR04
+    weight: 2
+  - pre: RIVL
+    post: MVR07
+    weight: 1
+  synapse: Generic_CS
+- connections:
+  - pre: ALML
+    post: AVDR
+    weight: 2
+  - pre: AVER
+    post: URYVL
+    weight: 1
+  - pre: SMDDL
+    post: SMDDR
+    weight: 1
+  synapse: Generic_GJ

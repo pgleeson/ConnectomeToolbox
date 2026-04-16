@@ -1,0 +1,25 @@
+
+reader: WitvlietDataReader5
+connection_lists:
+- connections:
+  - pre: ADLR
+    post: ASHR
+    weight: 3
+  - pre: ALNR
+    post: SAAVR
+    weight: 2
+  - pre: BAGR
+    post: RIBL
+    weight: 13
+  synapse: Generic_CS
+- connections:
+  - pre: ADAR
+    post: ASHR
+    weight: 2
+  - pre: ADLL
+    post: CEPshVL
+    weight: 1
+  - pre: OLQVL
+    post: RIGL
+    weight: 2
+  synapse: Generic_GJ

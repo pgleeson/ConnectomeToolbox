@@ -1,0 +1,25 @@
+
+reader: WitvlietDataReader8
+connection_lists:
+- connections:
+  - pre: ASER
+    post: AWCR
+    weight: 9
+  - pre: ALNL
+    post: SAAVL
+    weight: 10
+  - pre: ALML
+    post: BDUL
+    weight: 9
+  synapse: Generic_CS
+- connections:
+  - pre: ADFL
+    post: AIAL
+    weight: 3
+  - pre: AFDR
+    post: AIZR
+    weight: 1
+  - pre: PVT
+    post: RIBL
+    weight: 2
+  synapse: Generic_GJ

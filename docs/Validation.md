@@ -94,7 +94,7 @@ These files were opened in Apple Numbers, and the weights (numbers of connection
 | mc1V | pm3VL | 3 | Yes |
 | mc3V | pm7VL | 3 | Yes |
 
-_Validation PASSED on 2026-04-14 with cect v0.3.1_
+_Validation PASSED on 2026-04-16 with cect v0.3.1_
 
 
 
@@ -112,7 +112,26 @@ TODO...
 TODO...
 
 
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader1_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader1_expected_data.yaml'
+
+
+### Validation tests for WitvlietDataReader1 (Chemical synaptic connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| PVCL | SIAVL | 2 | Yes |
+| AINR | AUAL | 2 | Yes |
+| RIAL | RMDVR | 6 | Yes |
+| URBR | IL1R | 1 | Yes |
+
+### Validation tests for WitvlietDataReader1 (Electrical connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ASHL | ADAL | 9 | Yes |
+| RMDR | SMDVR | 1 | Yes |
+| IL1R | IL1VR | 2 | Yes |
+
+_Validation PASSED on 2026-04-16 with cect v0.3.1_
 
 
 
@@ -181,7 +200,7 @@ For each of these CSV files, the file was opened in Apple Numbers, and the weigh
 | URBL | RMDDL | 4 | Yes |
 | RIVR | HSNL | 6 | Yes |
 
-_Validation PASSED on 2026-04-14 with cect v0.3.1_
+_Validation PASSED on 2026-04-16 with cect v0.3.1_
 
 
 
@@ -194,7 +213,7 @@ _Validation PASSED on 2026-04-14 with cect v0.3.1_
 | SABVL | VC1 | 1 | Yes |
 | RIR | AVKR | 5 | Yes |
 
-_Validation PASSED on 2026-04-14 with cect v0.3.1_
+_Validation PASSED on 2026-04-16 with cect v0.3.1_
 
 
 
@@ -212,7 +231,7 @@ _Validation PASSED on 2026-04-14 with cect v0.3.1_
 | VC4 | I4 | 1 | Yes |
 | ALA | HSNR | 11 | Yes |
 
-_Validation PASSED on 2026-04-14 with cect v0.3.1_
+_Validation PASSED on 2026-04-16 with cect v0.3.1_
 
 
 
@@ -244,7 +263,7 @@ This file was opened in Excel and weights of selected connections were visually 
 | PVNL | ALMR | 97686.4 | Yes |
 | URYDR | URADR | 33663.09403 | Yes |
 
-_Validation PASSED on 2026-04-14 with cect v0.3.1_
+_Validation PASSED on 2026-04-16 with cect v0.3.1_
 
 
 
@@ -257,7 +276,7 @@ _Validation PASSED on 2026-04-14 with cect v0.3.1_
 | SMBDL | RMED | 6.01978135910464 | Yes |
 | ASHL | RIPL | 1.20804164634321 | Yes |
 
-_Validation PASSED on 2026-04-14 with cect v0.3.1_
+_Validation PASSED on 2026-04-16 with cect v0.3.1_
 
 
 

@@ -112,6 +112,13 @@ TODO...
 Data on neuronal connectivity at different developmental stages of C. elegans from: Connectomes across development reveal principles of brain maturation
 [Witvliet et al. 2021](https://www.nature.com/articles/s41586-021-03778-8), Nature 
 
+While the paper's supplementary information contained connectivity matrices ([here](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03778-8/MediaObjects/41586_2021_3778_MOESM4_ESM.xlsx)), these only contain the chemical connections. 
+
+The 8 spreadsheet files (witvliet_2020_1 L1.xlsx, witvliet_2020_2 L1.xlsx, ..., witvliet_2020_8 adult.xlsx) hosted on [WormWiring](https://wormwiring.org/pages/witvliet.html), also contain electrical connectivity, and are saved to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data), and used for the readers.
+
+The chemical connection weights below were read from the supplementary information spreadsheet, and the electrial connection weights were taken from the WormWiring spreadheet.
+
+
 
 
 
@@ -119,10 +126,9 @@ Data on neuronal connectivity at different developmental stages of C. elegans fr
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
-| PVCL | SIAVL | 2 | Yes |
+| AWAL | AWBL | 2 | Yes |
 | AINR | AUAL | 2 | Yes |
 | RIAL | RMDVR | 6 | Yes |
-| URBR | IL1R | 1 | Yes |
 
 ### Validation tests for WitvlietDataReader1 (Electrical connections)
 
@@ -137,7 +143,23 @@ _Validation PASSED on 2026-04-16 with cect v0.3.1_
 
 
 
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader2_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader2_expected_data.yaml'
+### Validation tests for WitvlietDataReader2 (Chemical synaptic connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ADLR | ASKR | 4 | Yes |
+| AUAL | RIBL | 3 | Yes |
+| AWBL | AIZL | 2 | Yes |
+
+### Validation tests for WitvlietDataReader2 (Electrical connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| AVJR | RIS | 1 | Yes |
+| OLLL | OLLR | 2 | Yes |
+| RIH | RIR | 1 | Yes |
+
+_Validation PASSED on 2026-04-16 with cect v0.3.1_
 
 
 

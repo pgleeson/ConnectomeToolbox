@@ -2,8 +2,8 @@
 reader: WitvlietDataReader1
 connection_lists:
 - connections:
-  - pre: PVCL
-    post: SIAVL
+  - pre: AWAL
+    post: AWBL
     weight: 2
   - pre: AINR
     post: AUAL
@@ -11,9 +11,6 @@ connection_lists:
   - pre: RIAL
     post: RMDVR
     weight: 6
-  - pre: URBR
-    post: IL1R
-    weight: 1
   synapse: Generic_CS
 - connections:
   - pre: ASHL

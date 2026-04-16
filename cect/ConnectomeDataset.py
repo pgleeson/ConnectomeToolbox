@@ -1265,24 +1265,53 @@ def load_connectome_dataset(d: dict):
 if __name__ == "__main__":
     cds = ConnectomeDataset()
 
-    from cect.Neurotransmitters import ACETYLCHOLINE, CHEMICAL_SYN_TYPE, GABA, ELECTRICAL_SYN_TYPE, GENERIC_ELEC_SYN_CLASS
+    from cect.Neurotransmitters import (
+        ACETYLCHOLINE,
+        CHEMICAL_SYN_TYPE,
+        GABA,
+        ELECTRICAL_SYN_TYPE,
+        GENERIC_ELEC_SYN_CLASS,
+    )
 
+    cds.add_connection_info(
+        ConnectionInfo("VA6", "VD6", 6, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+    cds.add_connection_info(
+        ConnectionInfo("VA6", "VD1", 1, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+    cds.add_connection_info(
+        ConnectionInfo("VA6", "VD5", 5, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
 
-    cds.add_connection_info(ConnectionInfo("VA6", "VD6", 6, CHEMICAL_SYN_TYPE, ACETYLCHOLINE))
-    cds.add_connection_info(ConnectionInfo("VA6", "VD1", 1, CHEMICAL_SYN_TYPE, ACETYLCHOLINE))
-    cds.add_connection_info(ConnectionInfo("VA6", "VD5", 5, CHEMICAL_SYN_TYPE, ACETYLCHOLINE))
+    cds.add_connection_info(
+        ConnectionInfo("VB6", "DD4", 32, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+    cds.add_connection_info(
+        ConnectionInfo("VA2", "VA6", 7, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
 
-    cds.add_connection_info(ConnectionInfo("VB6", "DD4", 32, CHEMICAL_SYN_TYPE, ACETYLCHOLINE))
-    cds.add_connection_info(ConnectionInfo("VA2", "VA6", 7, CHEMICAL_SYN_TYPE, ACETYLCHOLINE))
+    cds.add_connection_info(
+        ConnectionInfo("AVFL", "AVHL", 2, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+    cds.add_connection_info(
+        ConnectionInfo("AVFR", "AVHL", 3, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+    cds.add_connection_info(
+        ConnectionInfo("AVFR", "AVHR", 3, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+    cds.add_connection_info(
+        ConnectionInfo("AVFL", "VA6", 6, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
 
-    cds.add_connection_info(ConnectionInfo("AVFL", "AVHL", 2, CHEMICAL_SYN_TYPE, ACETYLCHOLINE))
-    cds.add_connection_info(ConnectionInfo("AVFR", "AVHL", 3, CHEMICAL_SYN_TYPE, ACETYLCHOLINE))
-    cds.add_connection_info(ConnectionInfo("AVFR", "AVHR", 3, CHEMICAL_SYN_TYPE, ACETYLCHOLINE))
-    cds.add_connection_info(ConnectionInfo("AVFL", "VA6", 6, CHEMICAL_SYN_TYPE, ACETYLCHOLINE))
-
-    cds.add_connection_info(ConnectionInfo("DVA", "PVCL", 3, CHEMICAL_SYN_TYPE, ACETYLCHOLINE))
-    cds.add_connection_info(ConnectionInfo("ASHR", "RMGR", 6, CHEMICAL_SYN_TYPE, ACETYLCHOLINE))
-    cds.add_connection_info(ConnectionInfo("AWBR", "ASHR", 2, CHEMICAL_SYN_TYPE, ACETYLCHOLINE))
+    cds.add_connection_info(
+        ConnectionInfo("DVA", "PVCL", 3, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+    cds.add_connection_info(
+        ConnectionInfo("ASHR", "RMGR", 6, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+    cds.add_connection_info(
+        ConnectionInfo("AWBR", "ASHR", 2, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
 
     cds.add_connection_info(ConnectionInfo("VD6", "VA6", 3, CHEMICAL_SYN_TYPE, GABA))
 

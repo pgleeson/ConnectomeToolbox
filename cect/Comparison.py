@@ -281,7 +281,7 @@ def generate_comparison_page(
 
         # readers["White_whole"] = ["cect.readers.White_whole", "White_1986"]
         # readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
-        readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
+        # readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 
         # readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
         # readers["Cook2019Male"] = ["cect.readers.Cook2019MaleReader", "Cook_2019"]
@@ -289,13 +289,13 @@ def generate_comparison_page(
 
         # readers["OpenWormUnified"] = ["cect.readers.OpenWormUnifiedReader", "OpenWorm_Unified"]
 
-        readers["Witvliet7"] = ["cect.readers.WitvlietDataReader7", "Witvliet_2021"]
+        readers["Witvliet1"] = ["cect.readers.WitvlietDataReader1", "Witvliet_2021"]
         # readers["Witvliet8"] = ["cect.readers.WitvlietDataReader8", "Witvliet_2021"]
         # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
         # readers["RipollSanchezLongRange"] = [ "cect.readers.RipollSanchezLongRangeReader", "RipollSanchez_2023", ]
         # readers["OpenWormUnified"] = ["cect.readers.OpenWormUnifiedReader", "OpenWorm_Unified"]
 
-        readers["SSData"] = ["cect.readers.SpreadsheetDataReader", None]
+        # readers["SSData"] = ["cect.readers.SpreadsheetDataReader", None]
 
     else:
         if not quick:

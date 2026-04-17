@@ -67,7 +67,11 @@ class WhiteDataReader(ConnectomeDataset):
         # neurons, conns = self.read_data()
 
         for conn in conns:
-            self.add_connection_info(conn)
+            self.add_connection_info(
+                conn,
+                append_existing_connections=False,
+                check_overwritten_connections=True,
+            )
 
     def read_data(self):
         return self._read_data()

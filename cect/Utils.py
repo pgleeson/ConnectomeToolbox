@@ -23,6 +23,7 @@ readers = [
     "Cook2019HermReader",
     "Cook2019MaleReader",
     "Cook2020DataReader",
+    "BrittinDataReader",
     "RipollSanchezShortRangeReader",
     "RipollSanchezMidRangeReader",
     "RipollSanchezLongRangeReader",

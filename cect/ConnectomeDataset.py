@@ -133,6 +133,7 @@ class ConnectomeDataset:
         conn: ConnectionInfo,
         check_overwritten_connections: bool = True,
         append_existing_connections=False,
+        fail_on_any_repeated_connection=False,
     ):
         """
         Adds a connection to the dataset, checking for consistency with any existing connections.
@@ -184,6 +185,18 @@ class ConnectomeDataset:
                     conn,
                 )
             )
+            if fail_on_any_repeated_connection:
+                raise Exception(
+                    "Connection already exists at (%i,%i) (%s,%s), weight: %f, new connection: %s"
+                    % (
+                        pre_index,
+                        post_index,
+                        conn.pre_cell,
+                        conn.post_cell,
+                        conn_array[pre_index, post_index],
+                        conn,
+                    )
+                )
 
             if conn_array[pre_index, post_index] != conn.number:
                 info = (

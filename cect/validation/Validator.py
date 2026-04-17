@@ -11,6 +11,7 @@ from typing import List
 from datetime import date
 import yaml
 import sys
+import numpy as np
 
 import unittest
 
@@ -129,6 +130,22 @@ class TestExpectedConnections(unittest.TestCase):
                     print_(match_info)
                     report += f"| {conn['pre']} | {conn['post']} | {conn['weight']} | {match_info} |\n"
 
+                if "total_nonzero_conns" in conn_list:
+                    num_nz = conn_list["total_nonzero_conns"]
+                    cdarr = conn_dataset.connections[syn_class]
+                    num_nz_cd = np.count_nonzero(cdarr)
+                    match_info = (
+                        "matches"
+                        if num_nz == num_nz_cd
+                        else f"{self.MISMATCH}: {num_nz_cd}"
+                    )
+                    report += (
+                        "\nExpected number of nonzero connection weights: %i (%s)\n"
+                        % (num_nz, match_info)
+                    )
+                else:
+                    report += "\nTODO: add total num nonzero connections\n"
+
             report += f"\n_Validation {'PASSED' if self.MISMATCH not in report else 'FAILED'} on {date.today().isoformat()} with cect v{cect_version}_\n\n"
 
         except Exception as e:
@@ -163,11 +180,13 @@ class ConnectionList(Base):
 
     Args:
         synapse: The type of synapse
+        total_nonzero_conns: Total nonzero
         comment: A comment about how the data was found, e.g. taken from a spreadsheet
         connections: The list of connections of this type
     """
 
     synapse: str = field(validator=instance_of(str))
+    total_nonzero_conns: int = field(validator=instance_of(int))
     comment: str = field(validator=instance_of(str))
     connections: List[Connection] = field(factory=list)
 
@@ -225,6 +244,7 @@ def generate_reader_exp_data_obj(reader_name, source_files, additional_comment="
         chem_conns = ConnectionList(
             synapse=syn_class,
             comment=f"Data visually read in from {source_file}. {additional_comment}",
+            total_nonzero_conns=-1,
         )
 
     expected_data.connection_lists.append(chem_conns)
@@ -253,6 +273,7 @@ if __name__ == "__main__":
         chem_conns.connections.append(
             Connection(pre="ASHL", post="RIPL", weight=1.20804164634321)
         )
+        chem_conns.total_nonzero_conns = 2198
 
         exp_data_file = f"{expected_data_folder}/{yim_data.reader}_expected_data.yaml"
         with open(exp_data_file, "w") as f:

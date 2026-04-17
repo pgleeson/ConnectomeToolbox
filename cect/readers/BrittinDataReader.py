@@ -30,10 +30,35 @@ spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
 
 filename = "%s41586_2021_3284_MOESM5_ESM.xlsx" % spreadsheet_location
 
+NAME = "Brittin"
+
 READER_DESCRIPTION = (
     """Data extracted from %s for membrane contact information."""
     % get_dataset_source_on_github(filename.split("/")[-1])
 )
+
+pairs_added = []
+repeated_pairs = []
+
+
+def add_pair_of_contact_conns(conns, A, B, contact_area):
+    syntype = CONTACTOME_SYN_TYPE
+    synclass = CONTACTOME_SYN_CLASS
+
+    if (A, B) not in pairs_added:
+        ci = ConnectionInfo(A, B, contact_area, syntype, synclass)
+        conns.append(ci)
+        pairs_added.append((A, B))
+    else:
+        if (A, B) not in repeated_pairs:
+            repeated_pairs.append((A, B))
+    if (B, A) not in pairs_added:
+        ci = ConnectionInfo(B, A, contact_area, syntype, synclass)
+        conns.append(ci)
+        pairs_added.append((B, A))
+    else:
+        if (B, A) not in repeated_pairs:
+            repeated_pairs.append((B, A))
 
 
 class BrittinDataReader(ConnectomeDataset):
@@ -47,7 +72,12 @@ class BrittinDataReader(ConnectomeDataset):
 
         cells, neuron_conns = self.read_data()
         for conn in neuron_conns:
-            self.add_connection_info(conn, check_overwritten_connections=True)
+            self.add_connection_info(
+                conn,
+                check_overwritten_connections=True,
+                append_existing_connections=False,
+                fail_on_any_repeated_connection=True,
+            )
 
     def read_data(self):
         cells = []
@@ -63,39 +93,34 @@ class BrittinDataReader(ConnectomeDataset):
         print_("Opened sheet %s in Excel file: %s" % (sheet, filename))
         # print(dir(sheet))
 
+        DELTA_VALUE_4 = 4
+
         for row in sheet.rows:
             # print(row[0].value)
             if "cell_1" not in row[0].value:
                 delta = int(row[3].value)
-                if delta == 4:
-                    pre = row[0].value
-                    post = row[1].value
-                    num = float(row[2].value)
-                    syntype = CONTACTOME_SYN_TYPE
-                    synclass = "%s%s" % (self.reference_graph, row[3].value)
-                    synclass = CONTACTOME_SYN_CLASS
+                if delta == DELTA_VALUE_4:
+                    A = row[0].value
+                    B = row[1].value
+                    contact_area = float(row[2].value)
 
-                    ci = ConnectionInfo(pre, post, num, syntype, synclass)
-                    conns.append(ci)
-                    ci = ConnectionInfo(post, pre, num, syntype, synclass)
-                    conns.append(ci)
+                    add_pair_of_contact_conns(conns, A, B, contact_area)
 
-                    if pre not in cells:
-                        cells.append(pre)
-                    if post not in cells:
-                        cells.append(post)
+                    if A not in cells:
+                        cells.append(A)
+                    if B not in cells:
+                        cells.append(B)
 
-                    pre_ = get_contralateral_cell(pre)
-                    post_ = get_contralateral_cell(post)
-                    ci_ = ConnectionInfo(pre_, post_, num, syntype, synclass)
-                    conns.append(ci_)
-                    ci_ = ConnectionInfo(post_, pre_, num, syntype, synclass)
-                    conns.append(ci_)
+                    A_c = get_contralateral_cell(A)
+                    B_c = get_contralateral_cell(B)
 
-                    if pre_ not in cells:
-                        cells.append(pre_)
-                    if post_ not in cells:
-                        cells.append(post_)
+                    if not A_c == B:
+                        add_pair_of_contact_conns(conns, A_c, B_c, contact_area)
+
+                        if A_c not in cells:
+                            cells.append(A_c)
+                        if B_c not in cells:
+                            cells.append(B_c)
 
         for cell in cells:
             if is_one_of_bilateral_pair(cell):
@@ -125,8 +150,6 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
         return BrittinDataReader("M")
 
 
-my_instance = get_instance()
-
 if __name__ == "__main__":
     wdr = get_instance()
 
@@ -137,3 +160,7 @@ if __name__ == "__main__":
 
     print(len(wdr.original_connection_infos))
     print(len(wdr.get_current_connection_info_list()))
+
+    print("Pairs added: %s" % len(pairs_added))
+    print("Repeated pairs: %s" % len(repeated_pairs))
+    print("Total pairs: %s" % (len(pairs_added) + len(repeated_pairs)))

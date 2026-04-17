@@ -12,6 +12,7 @@ connection_lists:
     post: RMDVR
     weight: 6
   synapse: Generic_CS
+  total_nonzero_conns: 775
 - connections:
   - pre: ASHL
     post: ADAL
@@ -23,3 +24,4 @@ connection_lists:
     post: IL1VR
     weight: 2
   synapse: Generic_GJ
+  total_nonzero_conns: 164

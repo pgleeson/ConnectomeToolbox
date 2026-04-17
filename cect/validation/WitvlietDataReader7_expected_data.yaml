@@ -12,6 +12,7 @@ connection_lists:
     post: OLLL
     weight: 7
   synapse: Generic_CS
+  total_nonzero_conns: 2202
 - connections:
   - pre: ADAL
     post: PVQL
@@ -23,3 +24,4 @@ connection_lists:
     post: SMBDL
     weight: 2
   synapse: Generic_GJ
+  total_nonzero_conns: 576

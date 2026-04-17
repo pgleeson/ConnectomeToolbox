@@ -12,6 +12,7 @@ connection_lists:
     post: CEPVL
     weight: 3
   synapse: Generic_CS
+  total_nonzero_conns: 1525
 - connections:
   - pre: AIZR
     post: AWCL
@@ -23,3 +24,4 @@ connection_lists:
     post: OLQVL
     weight: 1
   synapse: Generic_GJ
+  total_nonzero_conns: 426

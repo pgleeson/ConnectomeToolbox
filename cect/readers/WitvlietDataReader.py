@@ -14,6 +14,7 @@ from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS, ELECTRICAL_SYN_TYPE
 from openpyxl import load_workbook
 import os
 from cect import print_
+import numpy as np
 
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
 
@@ -112,23 +113,20 @@ class WitvlietDataReader(ConnectomeDataset):
 
 
 def main1():
-    wdr = WitvlietDataReader("witvliet_2020_7.xlsx")
+    wdr = WitvlietDataReader("witvliet_2020_4 L1.xlsx")
 
     cells, neuron_conns = wdr.read_data()
     neurons2muscles, muscles, muscle_conns = wdr.read_muscle_data()
 
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
+    gj = wdr.connections[GENERIC_ELEC_SYN_CLASS]
 
-def main2():
-    wdr = WitvlietDataReader("witvliet_2020_8.xlsx")
+    print(gj)
 
-    cells, neuron_conns = wdr.read_data()
-    neurons2muscles, muscles, muscle_conns = wdr.read_muscle_data()
+    print(f"Nonzero electrical connections: {np.count_nonzero(gj)}")
 
-    analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
 
 if __name__ == "__main__":
     main1()
-    main2()

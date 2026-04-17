@@ -12,6 +12,7 @@ connection_lists:
     post: BDUL
     weight: 9
   synapse: Generic_CS
+  total_nonzero_conns: 2186
 - connections:
   - pre: ADFL
     post: AIAL
@@ -23,3 +24,4 @@ connection_lists:
     post: RIBL
     weight: 2
   synapse: Generic_GJ
+  total_nonzero_conns: 532

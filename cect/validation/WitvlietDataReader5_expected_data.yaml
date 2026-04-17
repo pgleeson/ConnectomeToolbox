@@ -12,6 +12,7 @@ connection_lists:
     post: RIBL
     weight: 13
   synapse: Generic_CS
+  total_nonzero_conns: 1515
 - connections:
   - pre: ADAR
     post: ASHR
@@ -23,3 +24,4 @@ connection_lists:
     post: RIGL
     weight: 2
   synapse: Generic_GJ
+  total_nonzero_conns: 578

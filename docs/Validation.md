@@ -162,7 +162,7 @@ The chemical connection weights below were read from the supplementary informati
 | AINR | AUAL | 2 | Yes |
 | RIAL | RMDVR | 6 | Yes |
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: 775 (matches)
 
 ### Validation tests for WitvlietDataReader1 (Electrical connections)
 
@@ -172,7 +172,7 @@ TODO: add total num nonzero connections
 | RMDR | SMDVR | 1 | Yes |
 | IL1R | IL1VR | 2 | Yes |
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: 164 (matches)
 
 _Validation PASSED on 2026-04-17 with cect v0.3.1_
 
@@ -187,7 +187,7 @@ _Validation PASSED on 2026-04-17 with cect v0.3.1_
 | AUAL | RIBL | 3 | Yes |
 | AWBL | AIZL | 2 | Yes |
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: 986 (matches)
 
 ### Validation tests for WitvlietDataReader2 (Electrical connections)
 
@@ -197,7 +197,7 @@ TODO: add total num nonzero connections
 | OLLL | OLLR | 2 | Yes |
 | RIH | RIR | 1 | Yes |
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: 246 (matches)
 
 _Validation PASSED on 2026-04-17 with cect v0.3.1_
 
@@ -212,7 +212,7 @@ _Validation PASSED on 2026-04-17 with cect v0.3.1_
 | FLPR | FLPL | 3 | Yes |
 | RIVL | GLRVR | 2 | Yes |
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: 1012 (matches)
 
 ### Validation tests for WitvlietDataReader3 (Electrical connections)
 
@@ -222,7 +222,7 @@ TODO: add total num nonzero connections
 | OLLL | OLLR | 2 | Yes |
 | SMDDL | SMDDR | 1 | Yes |
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: 186 (matches)
 
 _Validation PASSED on 2026-04-17 with cect v0.3.1_
 
@@ -237,7 +237,7 @@ _Validation PASSED on 2026-04-17 with cect v0.3.1_
 | RIML | MDR04 | 2 | Yes |
 | RIVL | MVR07 | 1 | Yes |
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: 1136 (matches)
 
 ### Validation tests for WitvlietDataReader4 (Electrical connections)
 
@@ -247,7 +247,7 @@ TODO: add total num nonzero connections
 | AVER | URYVL | 1 | Yes |
 | SMDDL | SMDDR | 1 | Yes |
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: 415 (matches)
 
 _Validation PASSED on 2026-04-17 with cect v0.3.1_
 
@@ -262,7 +262,7 @@ _Validation PASSED on 2026-04-17 with cect v0.3.1_
 | ALNR | SAAVR | 2 | Yes |
 | BAGR | RIBL | 13 | Yes |
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: 1515 (matches)
 
 ### Validation tests for WitvlietDataReader5 (Electrical connections)
 
@@ -272,7 +272,7 @@ TODO: add total num nonzero connections
 | ADLL | CEPshVL | 1 | Yes |
 | OLQVL | RIGL | 2 | Yes |
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: 578 (matches)
 
 _Validation PASSED on 2026-04-17 with cect v0.3.1_
 
@@ -287,7 +287,7 @@ _Validation PASSED on 2026-04-17 with cect v0.3.1_
 | ASKR | AIAR | 18 | Yes |
 | ALML | CEPVL | 3 | Yes |
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: 1525 (matches)
 
 ### Validation tests for WitvlietDataReader6 (Electrical connections)
 
@@ -297,7 +297,7 @@ TODO: add total num nonzero connections
 | BAGR | RIR | 1 | Yes |
 | DVA | OLQVL | 1 | Yes |
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: 426 (matches)
 
 _Validation PASSED on 2026-04-17 with cect v0.3.1_
 
@@ -312,7 +312,7 @@ _Validation PASSED on 2026-04-17 with cect v0.3.1_
 | ALNR | SAAVR | 11 | Yes |
 | CEPDL | OLLL | 7 | Yes |
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: 2202 (matches)
 
 ### Validation tests for WitvlietDataReader7 (Electrical connections)
 
@@ -322,7 +322,7 @@ TODO: add total num nonzero connections
 | SIAVL | SMDVR | 1 | Yes |
 | SAADL | SMBDL | 2 | Yes |
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: 576 (matches)
 
 _Validation PASSED on 2026-04-17 with cect v0.3.1_
 
@@ -337,7 +337,7 @@ _Validation PASSED on 2026-04-17 with cect v0.3.1_
 | ALNL | SAAVL | 10 | Yes |
 | ALML | BDUL | 9 | Yes |
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: 2186 (matches)
 
 ### Validation tests for WitvlietDataReader8 (Electrical connections)
 
@@ -347,9 +347,9 @@ TODO: add total num nonzero connections
 | AFDR | AIZR | 1 | Yes |
 | PVT | RIBL | 2 | Yes |
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: 532 (Mismatch: 612)
 
-_Validation PASSED on 2026-04-17 with cect v0.3.1_
+_Validation FAILED on 2026-04-17 with cect v0.3.1_
 
 
 

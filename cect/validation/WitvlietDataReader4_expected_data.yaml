@@ -12,6 +12,7 @@ connection_lists:
     post: MVR07
     weight: 1
   synapse: Generic_CS
+  total_nonzero_conns: 1136
 - connections:
   - pre: ALML
     post: AVDR
@@ -23,3 +24,4 @@ connection_lists:
     post: SMDDR
     weight: 1
   synapse: Generic_GJ
+  total_nonzero_conns: 415

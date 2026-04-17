@@ -12,6 +12,7 @@ connection_lists:
     post: AIZL
     weight: 2
   synapse: Generic_CS
+  total_nonzero_conns: 986
 - connections:
   - pre: AVJR
     post: RIS
@@ -23,3 +24,4 @@ connection_lists:
     post: RIR
     weight: 1
   synapse: Generic_GJ
+  total_nonzero_conns: 246

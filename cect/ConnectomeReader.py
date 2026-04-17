@@ -13,6 +13,8 @@ from cect.Cells import PREFERRED_MUSCLE_NAMES
 
 from cect.Cells import is_known_muscle
 
+from cect.Neurotransmitters import ALL_SYN_CLASSES, ALL_SYN_TYPES
+
 
 DEFAULT_COLORMAP = [
     "white",
@@ -37,7 +39,17 @@ class ConnectionInfo:
         self.pre_cell = pre_cell
         self.post_cell = post_cell
         self.number = number
+        if syntype not in ALL_SYN_TYPES:
+            raise ValueError(
+                f"Error: syntype {syntype} not in known synapse types: {ALL_SYN_TYPES}"
+            )
+
         self.syntype = syntype
+
+        if synclass not in ALL_SYN_CLASSES:
+            raise ValueError(
+                f"Error: synclass {synclass} not in known synapse classes: {ALL_SYN_CLASSES}"
+            )
         self.synclass = synclass
 
     def to_dict(self):

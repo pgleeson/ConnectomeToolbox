@@ -1,0 +1,25 @@
+
+reader: WitvlietDataReader3
+connection_lists:
+- connections:
+  - pre: ADLR
+    post: ASKR
+    weight: 4
+  - pre: FLPR
+    post: FLPL
+    weight: 3
+  - pre: RIVL
+    post: GLRVR
+    weight: 2
+  synapse: Generic_CS
+- connections:
+  - pre: OLLR
+    post: RIGR
+    weight: 1
+  - pre: OLLL
+    post: OLLR
+    weight: 2
+  - pre: SMDDL
+    post: SMDDR
+    weight: 1
+  synapse: Generic_GJ

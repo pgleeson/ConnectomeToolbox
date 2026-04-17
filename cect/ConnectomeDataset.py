@@ -20,7 +20,7 @@ from cect.Cells import is_pharyngeal_cell
 from cect.Cells import is_known_cell
 from cect.Cells import get_SIM_class
 
-from cect.Neurotransmitters import FUNCTIONAL_SYN_CLASS
+from cect.Neurotransmitters import FUNCTIONAL_SYN_CLASS, get_syn_type_from_synclass
 
 import numpy as np
 import math
@@ -88,6 +88,8 @@ class ConnectomeDataset:
         for conn in self.connections:
             info["connections"][conn] = self.connections[conn].tolist()
 
+        info["summary"] = self.summary()
+
         return info
 
     def save_to_cache(self, reference: str):
@@ -131,7 +133,18 @@ class ConnectomeDataset:
         conn: ConnectionInfo,
         check_overwritten_connections: bool = True,
         append_existing_connections=False,
+        fail_on_any_repeated_connection=False,
     ):
+        """
+        Adds a connection to the dataset, checking for consistency with any existing connections.
+        Args:
+            conn (ConnectionInfo): The connection info, with pre/post cell and synapse type/class
+            check_overwritten_connections (bool, optional): Raise an error if an existing connection is overwritten, but only if append_existing_connections is False. Defaults to True.
+            append_existing_connections (bool, optional): Append a connection between 2 cells to an existing connection between the same cells (add to the existing weight). Defaults to False.
+
+        Raises:
+            Exception: Error if check_overwritten_connections is True and an existing connection is overwritten (but only if append_existing_connections is False)
+        """
         if self.verbose:
             print_("----   Adding: %s" % conn)
 
@@ -172,13 +185,27 @@ class ConnectomeDataset:
                     conn,
                 )
             )
-
-            if conn_array[pre_index, post_index] != conn.number:
-                info = (
-                    "     *** Existing connection at (%i,%i), was: %s, changing to: %s (appending: %s)"
+            if fail_on_any_repeated_connection:
+                raise Exception(
+                    "Connection already exists at (%i,%i) (%s,%s), weight: %f, new connection: %s"
                     % (
                         pre_index,
                         post_index,
+                        conn.pre_cell,
+                        conn.post_cell,
+                        conn_array[pre_index, post_index],
+                        conn,
+                    )
+                )
+
+            if conn_array[pre_index, post_index] != conn.number:
+                info = (
+                    "     *** Existing connection at (%i,%i) (%s,%s), was: %s, changing to: %s (appending: %s)"
+                    % (
+                        pre_index,
+                        post_index,
+                        conn.pre_cell,
+                        conn.post_cell,
                         conn_array[pre_index, post_index],
                         conn.number,
                         append_existing_connections,
@@ -207,20 +234,21 @@ class ConnectomeDataset:
 
     def get_current_connection_info_list(self):
         cis = []
-        for conn in self.connections:
-            conn_array = self.connections[conn]
+        for synclass in self.connections:
+            conn_array = self.connections[synclass]
             pre, post = np.nonzero(conn_array)
             """print_(
                 f"{conn} has {len(pre)} nonzero entries: {pre}->{pre}, e.g. {conn_array[pre[0],post[0]]}"
             )"""
             for pp in zip(pre, post):
+                syntype = get_syn_type_from_synclass(synclass)
                 cis.append(
                     ConnectionInfo(
                         self.nodes[pp[0]],
                         self.nodes[pp[1]],
                         conn_array[pp[0], pp[1]],
-                        syntype="???",
-                        synclass=conn,
+                        syntype=syntype,
+                        synclass=synclass,
                     )
                 )
         return cis
@@ -1002,6 +1030,14 @@ class ConnectomeDataset:
 
         num_steps_for_edge_curves = 15
 
+        max_degree = max(degrees.values())
+
+        if max_degree == 0:
+            print_(
+                "No edges - all cells have degree 0, so skipping hive plot generation..."
+            )
+            return None
+
         hp = hive_plot_n_axes(
             node_list=nodes,
             edges=edges,
@@ -1015,7 +1051,7 @@ class ConnectomeDataset:
             cw_edge_kwargs={"num_steps": num_steps_for_edge_curves},
             ccw_edge_kwargs={"num_steps": num_steps_for_edge_curves},
             vmins=[0] * 3,
-            vmaxes=[max(degrees.values())] * 3,
+            vmaxes=[max_degree] * 3,
         )
 
         for ax in hp.axes:
@@ -1242,31 +1278,63 @@ def load_connectome_dataset(d: dict):
 if __name__ == "__main__":
     cds = ConnectomeDataset()
 
-    cds.add_connection_info(ConnectionInfo("VA6", "VD6", 6, "Send", "Acetylcholine"))
-    cds.add_connection_info(ConnectionInfo("VA6", "VD1", 1, "Send", "Acetylcholine"))
-    cds.add_connection_info(ConnectionInfo("VA6", "VD5", 5, "Send", "Acetylcholine"))
-
-    cds.add_connection_info(ConnectionInfo("VB6", "DD4", 32, "Send", "Acetylcholine"))
-    cds.add_connection_info(ConnectionInfo("VA2", "VA6", 7, "Send", "Acetylcholine"))
-
-    cds.add_connection_info(ConnectionInfo("AVFL", "AVHL", 2, "Send", "Acetylcholine"))
-    cds.add_connection_info(ConnectionInfo("AVFR", "AVHL", 3, "Send", "Acetylcholine"))
-    cds.add_connection_info(ConnectionInfo("AVFR", "AVHR", 3, "Send", "Acetylcholine"))
-    cds.add_connection_info(ConnectionInfo("AVFL", "VA6", 6, "Send", "Acetylcholine"))
-
-    cds.add_connection_info(ConnectionInfo("DVA", "PVCL", 3, "Send", "Acetylcholine"))
-    cds.add_connection_info(ConnectionInfo("ASHR", "RMGR", 6, "Send", "Acetylcholine"))
-    cds.add_connection_info(ConnectionInfo("AWBR", "ASHR", 2, "Send", "Acetylcholine"))
-
-    cds.add_connection_info(ConnectionInfo("VD6", "VA6", 3, "Send", "GABA"))
+    from cect.Neurotransmitters import (
+        ACETYLCHOLINE,
+        CHEMICAL_SYN_TYPE,
+        GABA,
+        ELECTRICAL_SYN_TYPE,
+        GENERIC_ELEC_SYN_CLASS,
+    )
 
     cds.add_connection_info(
-        ConnectionInfo("ASHR", "ASKR", 1, "GapJunction", "Generic_GJ")
+        ConnectionInfo("VA6", "VD6", 6, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+    cds.add_connection_info(
+        ConnectionInfo("VA6", "VD1", 1, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+    cds.add_connection_info(
+        ConnectionInfo("VA6", "VD5", 5, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+
+    cds.add_connection_info(
+        ConnectionInfo("VB6", "DD4", 32, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+    cds.add_connection_info(
+        ConnectionInfo("VA2", "VA6", 7, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+
+    cds.add_connection_info(
+        ConnectionInfo("AVFL", "AVHL", 2, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+    cds.add_connection_info(
+        ConnectionInfo("AVFR", "AVHL", 3, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+    cds.add_connection_info(
+        ConnectionInfo("AVFR", "AVHR", 3, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+    cds.add_connection_info(
+        ConnectionInfo("AVFL", "VA6", 6, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+
+    cds.add_connection_info(
+        ConnectionInfo("DVA", "PVCL", 3, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+    cds.add_connection_info(
+        ConnectionInfo("ASHR", "RMGR", 6, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+    cds.add_connection_info(
+        ConnectionInfo("AWBR", "ASHR", 2, CHEMICAL_SYN_TYPE, ACETYLCHOLINE)
+    )
+
+    cds.add_connection_info(ConnectionInfo("VD6", "VA6", 3, CHEMICAL_SYN_TYPE, GABA))
+
+    cds.add_connection_info(
+        ConnectionInfo("ASHR", "ASKR", 1, ELECTRICAL_SYN_TYPE, GENERIC_ELEC_SYN_CLASS)
     )
 
     print(cds.summary())
 
-    synclass = "Acetylcholine"
+    synclass = ACETYLCHOLINE
 
     print(cds.get_connections_from("VA6", synclass))
     print("From: %s" % cds.get_connections_summary("VA6", synclass, "from"))

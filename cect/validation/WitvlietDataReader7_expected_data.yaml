@@ -1,0 +1,25 @@
+
+reader: WitvlietDataReader7
+connection_lists:
+- connections:
+  - pre: AQR
+    post: BAGR
+    weight: 4
+  - pre: ALNR
+    post: SAAVR
+    weight: 11
+  - pre: CEPDL
+    post: OLLL
+    weight: 7
+  synapse: Generic_CS
+- connections:
+  - pre: ADAL
+    post: PVQL
+    weight: 2
+  - pre: SIAVL
+    post: SMDVR
+    weight: 1
+  - pre: SAADL
+    post: SMBDL
+    weight: 2
+  synapse: Generic_GJ

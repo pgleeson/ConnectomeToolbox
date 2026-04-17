@@ -8,8 +8,8 @@ from cect.Cells import remove_leading_index_zero
 
 from cect.ConnectomeDataset import ConnectomeDataset
 
-from cect.Neurotransmitters import GENERIC_CHEM_SYN
-from cect.Neurotransmitters import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS, CHEMICAL_SYN_TYPE
+from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS, ELECTRICAL_SYN_TYPE
 
 from openpyxl import load_workbook
 import os
@@ -41,7 +41,11 @@ class WitvlietDataReader(ConnectomeDataset):
         neurons, muscles, other_cells, conns = self.read_all_data()
 
         for conn in conns:
-            self.add_connection_info(conn)
+            self.add_connection_info(
+                conn,
+                append_existing_connections=False,
+                check_overwritten_connections=True,
+            )
 
     def read_data(self):
         return self._read_data()
@@ -74,16 +78,26 @@ class WitvlietDataReader(ConnectomeDataset):
             if is_potential_muscle(post):
                 post = convert_to_preferred_muscle_name(post)
 
-            syntype = str(row[2])
+            syntype_here = str(row[2])
             num = int(row[3])
+
+            if syntype_here == "electrical":
+                syntype = ELECTRICAL_SYN_TYPE
+            elif syntype_here == "chemical":
+                syntype = CHEMICAL_SYN_TYPE
 
             if self.verbose and num > 0:
                 print_("Conn %s -> %s #%i" % (pre, post, num))
 
-            synclass = GENERIC_ELEC_SYN if "electrical" in syntype else GENERIC_CHEM_SYN
-            if synclass == GENERIC_ELEC_SYN:
-                conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
+            synclass = (
+                GENERIC_ELEC_SYN_CLASS
+                if syntype == ELECTRICAL_SYN_TYPE
+                else GENERIC_CHEM_SYN_CLASS
+            )
 
+            # Add the reverse connection for electrical synapses, since they are bidirectional
+            if synclass == GENERIC_ELEC_SYN_CLASS:
+                conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
             conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
 
             for p in [pre, post]:

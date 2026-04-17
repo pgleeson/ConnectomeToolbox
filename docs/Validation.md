@@ -83,6 +83,8 @@ These files were opened in Apple Numbers, and the weights (numbers of connection
 | I1R | I2L | 1 | Yes |
 | RIPL | pm3VL | 4 | Yes |
 
+TODO: add total num nonzero connections
+
 ### Validation tests for Cook2020DataReader (Electrical connections)
 
 | Pre      | Post | Expected weight | Match |
@@ -94,60 +96,260 @@ These files were opened in Apple Numbers, and the weights (numbers of connection
 | mc1V | pm3VL | 3 | Yes |
 | mc3V | pm7VL | 3 | Yes |
 
-_Validation PASSED on 2026-04-09 with cect v0.3.1_
+TODO: add total num nonzero connections
+
+_Validation PASSED on 2026-04-17 with cect v0.3.1_
 
 
 
 ## BrittinEtAl2021
 
-TODO...
+Data taken from: A multi-scale brain map derived from whole-brain volumetric reconstructions, 
+Christopher A. Brittin, Steven J. Cook, David H. Hall, Scott W. Emmons & Netta Cohen, [Nature 591, 105–110, 2021](https://www.nature.com/articles/s41586-021-03284-x).
+
+Supplementary data file 3 ([41586_2021_3284_MOESM5_ESM.xlsx](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03284-x/MediaObjects/41586_2021_3284_MOESM5_ESM.xlsx)) 
+containing the M<sup>δ</sup>, C<sup>δ</sup> and G<sup>δ</sup> reference graphs was downloaded and used in the BrittinDataReader.
+
+The M<sup>4</sup> graph is the example used in Connectome Toolbox. Values for the contact area/weights in tab M, with delta = 4 were used for this, and the values below were read from the spreadsheet.
 
 
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//BrittinDataReader_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//BrittinDataReader_expected_data.yaml'
+
+
+### Validation tests for BrittinDataReader (Contact connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ADAL | ADLL | 11319.5 | Yes |
+| ADLL | ADAL | 11319.5 | Yes |
+| ADLR | ADAR | 11319.5 | Yes |
+| ADLR | ADAR | 11319.5 | Yes |
+| ADAR | ADLR | 11319.5 | Yes |
+| RID | RICL | 10043.5 | Yes |
+| RICL | RID | 10043.5 | Yes |
+| RICR | RID | 10043.5 | Yes |
+| RIAR | SIBVR | 5114.25 | Yes |
+| AQR | RIAL | 2010.75 | Yes |
+| AQR | RIAR | 2010.75 | Yes |
+| RIAR | AQR | 2010.75 | Yes |
+| RIAL | AQR | 2010.75 | Yes |
+
+Expected number of nonzero connection weights: 3850 (matches)
+
+_Validation PASSED on 2026-04-17 with cect v0.3.1_
 
 
 
 ## WitvlietEtAl2021
 
-TODO...
+Data on neuronal connectivity at different developmental stages of C. elegans from: Connectomes across development reveal principles of brain maturation
+[Witvliet et al. Nature 2021](https://www.nature.com/articles/s41586-021-03778-8). 
 
+While the paper's supplementary information contained connectivity matrices ([here](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03778-8/MediaObjects/41586_2021_3778_MOESM4_ESM.xlsx)), these only contain the chemical connections. 
 
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader1_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader1_expected_data.yaml'
+The 8 spreadsheet files (witvliet_2020_1 L1.xlsx, witvliet_2020_2 L1.xlsx, ..., witvliet_2020_8 adult.xlsx) hosted on [WormWiring](https://wormwiring.org/pages/witvliet.html), also contain electrical connectivity, and are saved to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data), and used for the readers.
 
-
-
-
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader2_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader2_expected_data.yaml'
-
-
-
-
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader3_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader3_expected_data.yaml'
+The chemical connection weights below were read from the supplementary information spreadsheet, and the electrial connection weights were taken from the WormWiring spreadheet.
 
 
 
 
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader4_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader4_expected_data.yaml'
+
+### Validation tests for WitvlietDataReader1 (Chemical synaptic connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| AWAL | AWBL | 2 | Yes |
+| AINR | AUAL | 2 | Yes |
+| RIAL | RMDVR | 6 | Yes |
+
+TODO: add total num nonzero connections
+
+### Validation tests for WitvlietDataReader1 (Electrical connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ASHL | ADAL | 9 | Yes |
+| RMDR | SMDVR | 1 | Yes |
+| IL1R | IL1VR | 2 | Yes |
+
+TODO: add total num nonzero connections
+
+_Validation PASSED on 2026-04-17 with cect v0.3.1_
 
 
 
 
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader5_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader5_expected_data.yaml'
+### Validation tests for WitvlietDataReader2 (Chemical synaptic connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ADLR | ASKR | 4 | Yes |
+| AUAL | RIBL | 3 | Yes |
+| AWBL | AIZL | 2 | Yes |
+
+TODO: add total num nonzero connections
+
+### Validation tests for WitvlietDataReader2 (Electrical connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| AVJR | RIS | 1 | Yes |
+| OLLL | OLLR | 2 | Yes |
+| RIH | RIR | 1 | Yes |
+
+TODO: add total num nonzero connections
+
+_Validation PASSED on 2026-04-17 with cect v0.3.1_
 
 
 
 
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader6_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader6_expected_data.yaml'
+### Validation tests for WitvlietDataReader3 (Chemical synaptic connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ADLR | ASKR | 4 | Yes |
+| FLPR | FLPL | 3 | Yes |
+| RIVL | GLRVR | 2 | Yes |
+
+TODO: add total num nonzero connections
+
+### Validation tests for WitvlietDataReader3 (Electrical connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| OLLR | RIGR | 1 | Yes |
+| OLLL | OLLR | 2 | Yes |
+| SMDDL | SMDDR | 1 | Yes |
+
+TODO: add total num nonzero connections
+
+_Validation PASSED on 2026-04-17 with cect v0.3.1_
 
 
 
 
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader7_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader7_expected_data.yaml'
+### Validation tests for WitvlietDataReader4 (Chemical synaptic connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| AWCR | AWCL | 5 | Yes |
+| RIML | MDR04 | 2 | Yes |
+| RIVL | MVR07 | 1 | Yes |
+
+TODO: add total num nonzero connections
+
+### Validation tests for WitvlietDataReader4 (Electrical connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ALML | AVDR | 2 | Yes |
+| AVER | URYVL | 1 | Yes |
+| SMDDL | SMDDR | 1 | Yes |
+
+TODO: add total num nonzero connections
+
+_Validation PASSED on 2026-04-17 with cect v0.3.1_
 
 
 
 
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader8_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WitvlietDataReader8_expected_data.yaml'
+### Validation tests for WitvlietDataReader5 (Chemical synaptic connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ADLR | ASHR | 3 | Yes |
+| ALNR | SAAVR | 2 | Yes |
+| BAGR | RIBL | 13 | Yes |
+
+TODO: add total num nonzero connections
+
+### Validation tests for WitvlietDataReader5 (Electrical connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ADAR | ASHR | 2 | Yes |
+| ADLL | CEPshVL | 1 | Yes |
+| OLQVL | RIGL | 2 | Yes |
+
+TODO: add total num nonzero connections
+
+_Validation PASSED on 2026-04-17 with cect v0.3.1_
+
+
+
+
+### Validation tests for WitvlietDataReader6 (Chemical synaptic connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ASER | ASEL | 1 | Yes |
+| ASKR | AIAR | 18 | Yes |
+| ALML | CEPVL | 3 | Yes |
+
+TODO: add total num nonzero connections
+
+### Validation tests for WitvlietDataReader6 (Electrical connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| AIZR | AWCL | 2 | Yes |
+| BAGR | RIR | 1 | Yes |
+| DVA | OLQVL | 1 | Yes |
+
+TODO: add total num nonzero connections
+
+_Validation PASSED on 2026-04-17 with cect v0.3.1_
+
+
+
+
+### Validation tests for WitvlietDataReader7 (Chemical synaptic connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| AQR | BAGR | 4 | Yes |
+| ALNR | SAAVR | 11 | Yes |
+| CEPDL | OLLL | 7 | Yes |
+
+TODO: add total num nonzero connections
+
+### Validation tests for WitvlietDataReader7 (Electrical connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ADAL | PVQL | 2 | Yes |
+| SIAVL | SMDVR | 1 | Yes |
+| SAADL | SMBDL | 2 | Yes |
+
+TODO: add total num nonzero connections
+
+_Validation PASSED on 2026-04-17 with cect v0.3.1_
+
+
+
+
+### Validation tests for WitvlietDataReader8 (Chemical synaptic connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ASER | AWCR | 9 | Yes |
+| ALNL | SAAVL | 10 | Yes |
+| ALML | BDUL | 9 | Yes |
+
+TODO: add total num nonzero connections
+
+### Validation tests for WitvlietDataReader8 (Electrical connections)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ADFL | AIAL | 3 | Yes |
+| AFDR | AIZR | 1 | Yes |
+| PVT | RIBL | 2 | Yes |
+
+TODO: add total num nonzero connections
+
+_Validation PASSED on 2026-04-17 with cect v0.3.1_
 
 
 
@@ -181,7 +383,9 @@ For each of these CSV files, the file was opened in Apple Numbers, and the weigh
 | URBL | RMDDL | 4 | Yes |
 | RIVR | HSNL | 6 | Yes |
 
-_Validation PASSED on 2026-04-09 with cect v0.3.1_
+TODO: add total num nonzero connections
+
+_Validation PASSED on 2026-04-17 with cect v0.3.1_
 
 
 
@@ -194,7 +398,9 @@ _Validation PASSED on 2026-04-09 with cect v0.3.1_
 | SABVL | VC1 | 1 | Yes |
 | RIR | AVKR | 5 | Yes |
 
-_Validation PASSED on 2026-04-09 with cect v0.3.1_
+TODO: add total num nonzero connections
+
+_Validation PASSED on 2026-04-17 with cect v0.3.1_
 
 
 
@@ -212,7 +418,9 @@ _Validation PASSED on 2026-04-09 with cect v0.3.1_
 | VC4 | I4 | 1 | Yes |
 | ALA | HSNR | 11 | Yes |
 
-_Validation PASSED on 2026-04-09 with cect v0.3.1_
+TODO: add total num nonzero connections
+
+_Validation PASSED on 2026-04-17 with cect v0.3.1_
 
 
 
@@ -244,7 +452,9 @@ This file was opened in Excel and weights of selected connections were visually 
 | PVNL | ALMR | 97686.4 | Yes |
 | URYDR | URADR | 33663.09403 | Yes |
 
-_Validation PASSED on 2026-04-09 with cect v0.3.1_
+Expected number of nonzero connection weights: 2198 (matches)
+
+_Validation PASSED on 2026-04-17 with cect v0.3.1_
 
 
 
@@ -257,7 +467,9 @@ _Validation PASSED on 2026-04-09 with cect v0.3.1_
 | SMBDL | RMED | 6.01978135910464 | Yes |
 | ASHL | RIPL | 1.20804164634321 | Yes |
 
-_Validation PASSED on 2026-04-09 with cect v0.3.1_
+Expected number of nonzero connection weights: 2198 (matches)
+
+_Validation PASSED on 2026-04-17 with cect v0.3.1_
 
 
 

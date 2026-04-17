@@ -1,0 +1,25 @@
+
+reader: WitvlietDataReader1
+connection_lists:
+- connections:
+  - pre: AWAL
+    post: AWBL
+    weight: 2
+  - pre: AINR
+    post: AUAL
+    weight: 2
+  - pre: RIAL
+    post: RMDVR
+    weight: 6
+  synapse: Generic_CS
+- connections:
+  - pre: ASHL
+    post: ADAL
+    weight: 9
+  - pre: RMDR
+    post: SMDVR
+    weight: 1
+  - pre: IL1R
+    post: IL1VR
+    weight: 2
+  synapse: Generic_GJ

@@ -6,7 +6,7 @@ from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 NAME = "Witvliet2"
-SRC_FILENAME = "witvliet_2020_2.xlsx"
+SRC_FILENAME = "witvliet_2020_2 L1.xlsx"
 
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):

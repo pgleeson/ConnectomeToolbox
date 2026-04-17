@@ -17,8 +17,8 @@ from cect.Cells import is_known_muscle
 
 from cect.ConnectomeDataset import ConnectomeDataset
 
-from cect.Neurotransmitters import GENERIC_CHEM_SYN
-from cect.Neurotransmitters import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS, CHEMICAL_SYN_TYPE
+from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS, ELECTRICAL_SYN_TYPE
 
 from openpyxl import load_workbook
 
@@ -56,12 +56,12 @@ post_range = {
 
 def get_synclass(cell, syntype):
     if syntype == "GapJunction":
-        return GENERIC_ELEC_SYN
+        return GENERIC_ELEC_SYN_CLASS
     else:
         '''# dirty hack
         if cell.startswith("DD") or cell.startswith("VD"):
             return "GABA"'''
-        return GENERIC_CHEM_SYN
+        return GENERIC_CHEM_SYN_CLASS
 
 
 class Cook2019DataReader(ConnectomeDataset):
@@ -187,7 +187,11 @@ class Cook2019DataReader(ConnectomeDataset):
                         post = convert_to_preferred_muscle_name(post)
 
                     if num > 0:
-                        syntype = "Send" if "chemical" in conn_type else "GapJunction"
+                        syntype = (
+                            CHEMICAL_SYN_TYPE
+                            if "chemical" in conn_type
+                            else ELECTRICAL_SYN_TYPE
+                        )
                         synclass = get_synclass(pre, syntype)
 
                         ci = ConnectionInfo(pre, post, num, syntype, synclass)

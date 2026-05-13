@@ -13,7 +13,11 @@ from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 from cect.ConnectomeReader import ConnectionInfo
 from cect.ConnectomeDataset import ConnectomeDataset
 from cect import print_
-from cect.Neurotransmitters import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import (
+    GENERIC_ELEC_SYN_CLASS,
+    CHEMICAL_SYN_TYPE,
+    ELECTRICAL_SYN_TYPE,
+)
 from cect.Neurotransmitters import ACETYLCHOLINE
 from cect.Neurotransmitters import GABA
 
@@ -131,7 +135,7 @@ class NeuroMLDataReader(ConnectomeDataset):
                 elif "inh_syn" in conn.post_component:
                     synclass = GABA  # e.g. postComponent="neuron_to_neuron_inh_syn",
 
-                ci = ConnectionInfo(pre, post, w, "???", synclass)
+                ci = ConnectionInfo(pre, post, w, CHEMICAL_SYN_TYPE, synclass)
 
                 # print_("Conn: %s" % (ci))
                 conns.append(ci)
@@ -145,8 +149,8 @@ class NeuroMLDataReader(ConnectomeDataset):
                 pre = self._get_cell_name(pre_pop, conn.get_pre_cell_id())
                 post = self._get_cell_name(post_pop, conn.get_post_cell_id())
                 w = conn.get_weight()
-                synclass = GENERIC_ELEC_SYN
-                ci = ConnectionInfo(pre, post, w, "???", synclass)
+                synclass = GENERIC_ELEC_SYN_CLASS
+                ci = ConnectionInfo(pre, post, w, ELECTRICAL_SYN_TYPE, synclass)
 
                 # print_("Conn: %s" % (ci))
                 conns.append(ci)

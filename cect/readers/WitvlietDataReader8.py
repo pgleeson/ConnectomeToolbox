@@ -6,7 +6,7 @@ from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 NAME = "Witvliet8"
-SRC_FILENAME = "witvliet_2020_8.xlsx"
+SRC_FILENAME = "witvliet_2020_8 adult.xlsx"
 
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):

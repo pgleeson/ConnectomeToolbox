@@ -1,0 +1,46 @@
+
+reader: BrittinDataReader
+connection_lists:
+- comment: 
+  connections:
+  - pre: ADAL
+    post: ADLL
+    weight: 11319.5
+  - pre: ADLL
+    post: ADAL
+    weight: 11319.5
+  - pre: ADLR
+    post: ADAR
+    weight: 11319.5
+  - pre: ADLR
+    post: ADAR
+    weight: 11319.5
+  - pre: ADAR
+    post: ADLR
+    weight: 11319.5
+  - pre: RID
+    post: RICL
+    weight: 10043.5
+  - pre: RICL
+    post: RID
+    weight: 10043.5
+  - pre: RICR
+    post: RID
+    weight: 10043.5
+  - pre: RIAR
+    post: SIBVR
+    weight: 5114.25
+  - pre: AQR
+    post: RIAL
+    weight: 2010.75
+  - pre: AQR
+    post: RIAR
+    weight: 2010.75
+  - pre: RIAR
+    post: AQR
+    weight: 2010.75
+  - pre: RIAL
+    post: AQR
+    weight: 2010.75
+  synapse: Contact
+  total_nonzero_conns: 3850

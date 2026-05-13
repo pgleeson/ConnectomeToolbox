@@ -1,0 +1,27 @@
+
+reader: WitvlietDataReader6
+connection_lists:
+- connections:
+  - pre: ASER
+    post: ASEL
+    weight: 1
+  - pre: ASKR
+    post: AIAR
+    weight: 18
+  - pre: ALML
+    post: CEPVL
+    weight: 3
+  synapse: Generic_CS
+  total_nonzero_conns: 1525
+- connections:
+  - pre: AIZR
+    post: AWCL
+    weight: 2
+  - pre: BAGR
+    post: RIR
+    weight: 1
+  - pre: DVA
+    post: OLQVL
+    weight: 1
+  synapse: Generic_GJ
+  total_nonzero_conns: 426

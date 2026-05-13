@@ -113,7 +113,7 @@ class WitvlietDataReader(ConnectomeDataset):
 
 
 def main1():
-    wdr = WitvlietDataReader("witvliet_2020_4 L1.xlsx")
+    wdr = WitvlietDataReader("witvliet_2020_8 adult.xlsx")
 
     cells, neuron_conns = wdr.read_data()
     neurons2muscles, muscles, muscle_conns = wdr.read_muscle_data()
@@ -123,9 +123,10 @@ def main1():
     gj = wdr.connections[GENERIC_ELEC_SYN_CLASS]
 
     print(gj)
+    count_diagonal_entries = np.count_nonzero(np.diag(gj))
 
     print(f"Nonzero electrical connections: {np.count_nonzero(gj)}")
-
+    print(f"Nonzero electrical connections on the diagonal: {count_diagonal_entries}")
 
 
 if __name__ == "__main__":

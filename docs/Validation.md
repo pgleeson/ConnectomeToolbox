@@ -84,7 +84,10 @@ The connectivity data was released in 2 CSV files in the supplementary informati
 These files were opened in Apple Numbers, and the weights (numbers of connections between pairs of cells, electrical or chemical) were read off, to provide checks listed below. 
 
 
-### Validation tests for Cook2020DataReader (Chemical synaptic connections)
+### Validation tests for Cook2020DataReader 
+
+
+#### Chemical synaptic connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -94,7 +97,7 @@ These files were opened in Apple Numbers, and the weights (numbers of connection
 
 TODO: add total num nonzero connections
 
-### Validation tests for Cook2020DataReader (Electrical connections)
+#### Electrical connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -124,7 +127,10 @@ The M<sup>4</sup> graph is the example used in Connectome Toolbox. Values for th
 
 
 
-### Validation tests for BrittinDataReader (Contact connections)
+### Validation tests for BrittinDataReader 
+
+
+#### Contact connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -163,7 +169,10 @@ The chemical connection weights below were read from the supplementary informati
 
 
 
-### Validation tests for WitvlietDataReader1 (Chemical synaptic connections)
+### Validation tests for WitvlietDataReader1 
+
+
+#### Chemical synaptic connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -173,7 +182,7 @@ The chemical connection weights below were read from the supplementary informati
 
 Expected number of nonzero connection weights: 775 (matches)
 
-### Validation tests for WitvlietDataReader1 (Electrical connections)
+#### Electrical connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -188,7 +197,10 @@ _Validation PASSED on 2026-05-13 with cect v0.3.1_
 
 
 
-### Validation tests for WitvlietDataReader2 (Chemical synaptic connections)
+### Validation tests for WitvlietDataReader2 
+
+
+#### Chemical synaptic connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -198,7 +210,7 @@ _Validation PASSED on 2026-05-13 with cect v0.3.1_
 
 Expected number of nonzero connection weights: 986 (matches)
 
-### Validation tests for WitvlietDataReader2 (Electrical connections)
+#### Electrical connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -213,7 +225,10 @@ _Validation PASSED on 2026-05-13 with cect v0.3.1_
 
 
 
-### Validation tests for WitvlietDataReader3 (Chemical synaptic connections)
+### Validation tests for WitvlietDataReader3 
+
+
+#### Chemical synaptic connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -223,7 +238,7 @@ _Validation PASSED on 2026-05-13 with cect v0.3.1_
 
 Expected number of nonzero connection weights: 1012 (matches)
 
-### Validation tests for WitvlietDataReader3 (Electrical connections)
+#### Electrical connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -238,7 +253,10 @@ _Validation PASSED on 2026-05-13 with cect v0.3.1_
 
 
 
-### Validation tests for WitvlietDataReader4 (Chemical synaptic connections)
+### Validation tests for WitvlietDataReader4 
+
+
+#### Chemical synaptic connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -248,7 +266,7 @@ _Validation PASSED on 2026-05-13 with cect v0.3.1_
 
 Expected number of nonzero connection weights: 1136 (matches)
 
-### Validation tests for WitvlietDataReader4 (Electrical connections)
+#### Electrical connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -263,7 +281,10 @@ _Validation PASSED on 2026-05-13 with cect v0.3.1_
 
 
 
-### Validation tests for WitvlietDataReader5 (Chemical synaptic connections)
+### Validation tests for WitvlietDataReader5 
+
+
+#### Chemical synaptic connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -273,7 +294,7 @@ _Validation PASSED on 2026-05-13 with cect v0.3.1_
 
 Expected number of nonzero connection weights: 1515 (matches)
 
-### Validation tests for WitvlietDataReader5 (Electrical connections)
+#### Electrical connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -288,7 +309,10 @@ _Validation PASSED on 2026-05-13 with cect v0.3.1_
 
 
 
-### Validation tests for WitvlietDataReader6 (Chemical synaptic connections)
+### Validation tests for WitvlietDataReader6 
+
+
+#### Chemical synaptic connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -298,7 +322,7 @@ _Validation PASSED on 2026-05-13 with cect v0.3.1_
 
 Expected number of nonzero connection weights: 1525 (matches)
 
-### Validation tests for WitvlietDataReader6 (Electrical connections)
+#### Electrical connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -313,7 +337,10 @@ _Validation PASSED on 2026-05-13 with cect v0.3.1_
 
 
 
-### Validation tests for WitvlietDataReader7 (Chemical synaptic connections)
+### Validation tests for WitvlietDataReader7 
+
+
+#### Chemical synaptic connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -323,7 +350,7 @@ _Validation PASSED on 2026-05-13 with cect v0.3.1_
 
 Expected number of nonzero connection weights: 2202 (matches)
 
-### Validation tests for WitvlietDataReader7 (Electrical connections)
+#### Electrical connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -338,7 +365,10 @@ _Validation PASSED on 2026-05-13 with cect v0.3.1_
 
 
 
-### Validation tests for WitvlietDataReader8 (Chemical synaptic connections)
+### Validation tests for WitvlietDataReader8 
+
+
+#### Chemical synaptic connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -348,7 +378,7 @@ _Validation PASSED on 2026-05-13 with cect v0.3.1_
 
 Expected number of nonzero connection weights: 2186 (matches)
 
-### Validation tests for WitvlietDataReader8 (Electrical connections)
+#### Electrical connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -384,7 +414,10 @@ There is a GitHub repository referenced in the paper: https://github.com/LidiaRi
 For each of these CSV files, the file was opened in Apple Numbers, and the weights (numbers of matched peptides expressed in pre cell with corresponding receptor in post cell) read off, to provide checks listed below. 
 
 
-### Validation tests for RipollSanchezShortRangeReader (Peptidergic connections)
+### Validation tests for RipollSanchezShortRangeReader 
+
+
+#### Peptidergic connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -399,7 +432,10 @@ _Validation PASSED on 2026-05-13 with cect v0.3.1_
 
 
 
-### Validation tests for RipollSanchezMidRangeReader (Peptidergic connections)
+### Validation tests for RipollSanchezMidRangeReader 
+
+
+#### Peptidergic connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -414,7 +450,10 @@ _Validation PASSED on 2026-05-13 with cect v0.3.1_
 
 
 
-### Validation tests for RipollSanchezLongRangeReader (Peptidergic connections)
+### Validation tests for RipollSanchezLongRangeReader 
+
+
+#### Peptidergic connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -453,7 +492,10 @@ The spreadsheet above contained a sheet named "Dauer_normalized", from where the
 This file was opened in Excel and weights of selected connections were visually read from the cells, noting the pre and post cells and added to the connection test yaml file. 
 
 
-### Validation tests for Yim2024NonNormDataReader (Contact connections)
+### Validation tests for Yim2024NonNormDataReader 
+
+
+#### Contact connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -468,7 +510,10 @@ _Validation PASSED on 2026-05-13 with cect v0.3.1_
 
 
 
-### Validation tests for Yim2024DataReader (Chemical synaptic connections)
+### Validation tests for Yim2024DataReader 
+
+
+#### Chemical synaptic connections
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|

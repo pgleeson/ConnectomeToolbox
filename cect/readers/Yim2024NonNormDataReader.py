@@ -7,27 +7,12 @@
 ############################################################
 
 from cect.readers.Yim2024DataReader import Yim2024DataReader
-from cect.ConnectomeReader import ConnectionInfo
-from cect.ConnectomeReader import analyse_connections
-from cect.Cells import convert_to_preferred_muscle_name
-from cect.Cells import is_any_neuron
-from cect.Cells import remove_leading_index_zero
-from cect.Cells import is_potential_muscle
-from cect.Cells import is_known_muscle
 from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
-from cect.ConnectomeDataset import ConnectomeDataset
-
-# ruff: noqa: F401
-from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS
-from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS
 from cect.Neurotransmitters import CONTACTOME_SYN_CLASS
 
-from openpyxl import load_workbook
-
 import os
-import numpy as np
 
 from cect import print_
 

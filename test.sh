@@ -18,10 +18,10 @@ else
 fi
 
 ##   Test readers
-                                                                                                                    
-python -m cect.Cells $quick_test
+                 
+python -m cect.validation.Validator        
 
-python -m cect.validation.Validator
+python -m cect.Cells $quick_test
 
 if [ "$quick_test" == 0 ]; then
 

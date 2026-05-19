@@ -1,0 +1,16 @@
+
+reader: RipollSanchezShortRangeReader
+connection_lists:
+- comment: 
+  connections:
+  - pre: I3
+    post: I5
+    weight: 3
+  - pre: URBL
+    post: RMDDL
+    weight: 4
+  - pre: RIVR
+    post: HSNL
+    weight: 6
+  synapse: Peptidergic
+  total_nonzero_conns: 31417

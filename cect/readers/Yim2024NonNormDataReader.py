@@ -20,8 +20,8 @@ from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 from cect.ConnectomeDataset import ConnectomeDataset
 
 # ruff: noqa: F401
-from cect.Neurotransmitters import GENERIC_CHEM_SYN
-from cect.Neurotransmitters import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS
+from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS
 from cect.Neurotransmitters import CONTACTOME_SYN_CLASS
 
 from openpyxl import load_workbook
@@ -35,6 +35,7 @@ from cect import print_
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
 filename = "%s41467_2024_45943_MOESM6_ESM.xlsx" % spreadsheet_location
 
+NAME = "Yim2024NonNorm"
 
 READER_DESCRIPTION = (
     """Data extracted from %s Yim et al. 2024 on Dauer connectome **(Non-normalized)**"""
@@ -46,7 +47,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``Yim2024NonNormDataReader`` to load data on dauer connectome
 
     Returns:
-        Yim2024NonNormDataReader: The initialised connectome reader
+        (Yim2024NonNormDataReader): The initialised connectome reader
     """
     if from_cache:
         from cect.ConnectomeDataset import (

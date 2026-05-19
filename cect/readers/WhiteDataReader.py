@@ -21,27 +21,27 @@ import os
 
 from cect import print_
 
-from cect.Cells import GENERIC_CHEM_SYN
-from cect.Cells import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS, CHEMICAL_SYN_TYPE
+from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS, ELECTRICAL_SYN_TYPE
 
 
 def get_syntype(syntype):
     if syntype == "electrical":
-        return "GapJunction"
+        return ELECTRICAL_SYN_TYPE
     elif syntype == "chemical":
-        return "Send"
+        return CHEMICAL_SYN_TYPE
     else:
         raise NotImplementedError("Cannot parse syntype '%s'" % syntype)
 
 
 def get_synclass(cell, syntype):
-    if syntype == "GapJunction":
-        return GENERIC_ELEC_SYN
+    if syntype == ELECTRICAL_SYN_TYPE:
+        return GENERIC_ELEC_SYN_CLASS
     else:
         '''# dirty hack
         if cell.startswith("DD") or cell.startswith("VD"):
             return "GABA"'''
-        return GENERIC_CHEM_SYN
+        return GENERIC_CHEM_SYN_CLASS
 
 
 def parse_line(line):
@@ -67,7 +67,11 @@ class WhiteDataReader(ConnectomeDataset):
         # neurons, conns = self.read_data()
 
         for conn in conns:
-            self.add_connection_info(conn)
+            self.add_connection_info(
+                conn,
+                append_existing_connections=False,
+                check_overwritten_connections=True,
+            )
 
     def read_data(self):
         return self._read_data()

@@ -1,6 +1,6 @@
 from cect.Cells import ALL_PREFERRED_CELL_NAMES
-from cect.Cells import GENERIC_CHEM_SYN
-from cect.Cells import GENERIC_ELEC_SYN
+from cect.Cells import GENERIC_CHEM_SYN_CLASS
+from cect.Cells import GENERIC_ELEC_SYN_CLASS
 
 from cect.Cells import get_cell_notes
 from cect.Cells import get_cell_internal_link
@@ -264,8 +264,8 @@ def generate_cell_info_pages(connectomes):
         )
 
         all_synclasses = [
-            GENERIC_CHEM_SYN,
-            GENERIC_ELEC_SYN,
+            GENERIC_CHEM_SYN_CLASS,
+            GENERIC_ELEC_SYN_CLASS,
         ]  # ensure these 2 are at the start...
 
         for cds_name in connectomes:
@@ -302,14 +302,14 @@ def generate_cell_info_pages(connectomes):
 
         for synclass in all_synclasses:
             synclass_info = synclass
-            if synclass == GENERIC_CHEM_SYN:
+            if synclass == GENERIC_CHEM_SYN_CLASS:
                 synclass_info = "Chemical synaptic"
-            if synclass == GENERIC_ELEC_SYN:
+            if synclass == GENERIC_ELEC_SYN_CLASS:
                 synclass_info = "Electrical synaptic"
 
             header = "### %s connections %s %s  { data-search-exclude }\n\n" % (
                 synclass_info,
-                "to" if not synclass == GENERIC_ELEC_SYN else "from/to",
+                "to" if not synclass == GENERIC_ELEC_SYN_CLASS else "from/to",
                 cell_link,
             )
 
@@ -319,14 +319,14 @@ def generate_cell_info_pages(connectomes):
                 w[r_name] = {}
                 cds = connectomes[cds_name]
 
-                connection_symbol = "↔" if synclass == GENERIC_ELEC_SYN else "→"
+                connection_symbol = "↔" if synclass == GENERIC_ELEC_SYN_CLASS else "→"
 
                 if synclass in cds.connections:
                     conns = cds.get_connections_to(cell, synclass)
 
-                    if cds_name == reference_cs and synclass == GENERIC_CHEM_SYN:
+                    if cds_name == reference_cs and synclass == GENERIC_CHEM_SYN_CLASS:
                         conns_to_cs = _get_top_list(conns, max_conn_cells)
-                    if cds_name == reference_gj and synclass == GENERIC_ELEC_SYN:
+                    if cds_name == reference_gj and synclass == GENERIC_ELEC_SYN_CLASS:
                         conns_gj = _get_top_list(conns, max_conn_cells)
                     if cds_name == reference_mono:
                         conns_to_mono = _get_top_list(conns, max_conn_cells)
@@ -359,7 +359,7 @@ def generate_cell_info_pages(connectomes):
             if "No connections" not in w_md:
                 tables_md += "%s\n%s\n\n" % (header, w_md)
 
-            if not synclass == GENERIC_ELEC_SYN:
+            if not synclass == GENERIC_ELEC_SYN_CLASS:
                 header = "### %s connections %s %s  { data-search-exclude }\n\n" % (
                     synclass_info,
                     "from",
@@ -375,7 +375,10 @@ def generate_cell_info_pages(connectomes):
                     if synclass in cds.connections:
                         conns = cds.get_connections_from(cell, synclass)
 
-                        if cds_name == reference_cs and synclass == GENERIC_CHEM_SYN:
+                        if (
+                            cds_name == reference_cs
+                            and synclass == GENERIC_CHEM_SYN_CLASS
+                        ):
                             conns_from_cs = _get_top_list(conns, max_conn_cells)
                         if cds_name == reference_mono:
                             conns_from_mono = _get_top_list(conns, max_conn_cells)

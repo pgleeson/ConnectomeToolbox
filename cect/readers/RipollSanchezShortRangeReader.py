@@ -34,10 +34,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
         return RipollSanchezDataReader(MODEL)
 
 
-"""
-read_data = my_instance.read_data
-read_muscle_data = my_instance.read_muscle_data"""
-
+NAME = "RipollSanchezShortRangeReader"
 
 READER_DESCRIPTION = (
     """Data extracted from %s for short range model of neuropedtidergic connectome"""

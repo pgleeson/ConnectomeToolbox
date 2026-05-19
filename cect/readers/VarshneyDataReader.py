@@ -4,8 +4,8 @@ from cect.ConnectomeDataset import ConnectomeDataset
 from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
-from cect.Neurotransmitters import GENERIC_CHEM_SYN
-from cect.Neurotransmitters import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS, CHEMICAL_SYN_TYPE
+from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS, ELECTRICAL_SYN_TYPE
 
 from openpyxl import load_workbook
 
@@ -57,15 +57,19 @@ class VarshneyDataReader(ConnectomeDataset):
             post = str(row[1])
 
             if not post == NMJ_ENDPOINT:
-                syntype = str(row[2])
+                syntype_here = str(row[2])
                 num = int(row[3])
                 synclass = (
-                    GENERIC_ELEC_SYN
-                    if syntype == "EJ"
-                    else GENERIC_CHEM_SYN
-                    if (syntype == "Sp" or syntype == "S")
+                    GENERIC_ELEC_SYN_CLASS
+                    if syntype_here == "EJ"
+                    else GENERIC_CHEM_SYN_CLASS
+                    if (syntype_here == "Sp" or syntype_here == "S")
                     else None
                 )
+                if syntype_here == "EJ":
+                    syntype = ELECTRICAL_SYN_TYPE
+                else:
+                    syntype = CHEMICAL_SYN_TYPE
 
                 if synclass is not None:
                     conns.append(ConnectionInfo(pre, post, num, syntype, synclass))

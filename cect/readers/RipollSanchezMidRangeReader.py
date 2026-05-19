@@ -14,12 +14,14 @@ from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 MODEL = "mid_range_model"
 
+NAME = "RipollSanchezMidRangeReader"
+
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``RipollSanchezDataReader`` to load data on the mid range model of neuropedtidergic connectome
 
     Returns:
-        RipollSanchezDataReader: The initialised connectome reader
+        (RipollSanchezDataReader): The initialised connectome reader
     """
     if from_cache:
         from cect.ConnectomeDataset import (

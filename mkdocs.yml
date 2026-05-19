@@ -27,6 +27,7 @@ plugins:
       autoapi_add_nav_entry: false
       autoapi_ignore:
         - tests/*.py
+        - validation/test_white/*py
   - mkdocstrings:
 
 extra_css:
@@ -771,6 +772,9 @@ nav:
   - 'Computational models':
     - 'Gleeson et al. 2018': 'GleesonModel_data_graph.md'
     - 'Olivares et al. 2021': 'OlivaresModel_data_graph.md'
+
+  - Validation: 'Validation.md'
+
 
   - Resources:
     - 'Resources': 'Resources.md'

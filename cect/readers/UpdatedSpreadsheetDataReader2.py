@@ -16,6 +16,9 @@ from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import ConnectomeDataset
 from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
+
+from cect.Neurotransmitters import CHEMICAL_SYN_TYPE, ELECTRICAL_SYN_TYPE
+
 import os
 
 from cect import print_
@@ -77,9 +80,9 @@ def _get_old_muscle_name(muscle):
 
 def _get_syntype(syntype):
     if syntype == "electrical":
-        return "GapJunction"
+        return ELECTRICAL_SYN_TYPE
     elif syntype == "chemical":
-        return "Send"
+        return CHEMICAL_SYN_TYPE
     else:
         raise NotImplementedError("Cannot parse syntype '%s'" % syntype)
 
@@ -118,7 +121,7 @@ class UpdatedSpreadsheetDataReader2(ConnectomeDataset):
     def read_data(self, include_nonconnected_cells=False):
         """
         Returns:
-            Tuple[list, list]: List of cells (str) and list of connections (``ConnectionInfo``) which have been read in
+            (tuple[list, list]): List of cells (str) and list of connections (``ConnectionInfo``) which have been read in
         """
 
         conns = []
@@ -156,7 +159,7 @@ class UpdatedSpreadsheetDataReader2(ConnectomeDataset):
     def read_muscle_data(self):
         """
         Returns:
-            Tuple[list, list, list]: List of cells (str), list of muscles (str) and list of connections (``ConnectionInfo``) which have been read in
+            (tuple[list, list, list]): List of neurons (str), list of muscles (str) and list of connections (``ConnectionInfo``) which have been read in
         """
 
         neurons = []

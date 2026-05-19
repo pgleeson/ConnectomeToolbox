@@ -25,8 +25,8 @@ from cect.Neurotransmitters import SEROTONIN
 from cect.Neurotransmitters import TYRAMINE
 from cect.Neurotransmitters import BETAINE
 from cect.Neurotransmitters import ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
-from cect.Neurotransmitters import GENERIC_CHEM_SYN
-from cect.Neurotransmitters import GENERIC_ELEC_SYN
+from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS
+from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS
 from cect.Neurotransmitters import MONOAMINERGIC_SYN_CLASSES
 
 from cect.Neurotransmitters import SEROTONIN_UPTAKE
@@ -302,7 +302,7 @@ class Wang2024Reader(ConnectomeDataset):
             for conn in anat_conns[:]:
                 # print_("Original conn: %s" % conn)
 
-                if conn.synclass == GENERIC_ELEC_SYN:
+                if conn.synclass == GENERIC_ELEC_SYN_CLASS:
                     if include_electrical_connections:
                         # print_("    Adding electrical conn: %s" % conn)
                         if normalize_conn_numbers:
@@ -313,7 +313,7 @@ class Wang2024Reader(ConnectomeDataset):
                     is_any_neuron(conn.pre_cell) and conn.pre_cell in neurotransmitters
                 ):
                     if conn.synclass in ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS + [
-                        GENERIC_CHEM_SYN
+                        GENERIC_CHEM_SYN_CLASS
                     ]:
                         if normalize_conn_numbers:
                             conn.number = 1.0

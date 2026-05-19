@@ -21,6 +21,8 @@ fi
                                                                                                                     
 python -m cect.Cells $quick_test
 
+python -m cect.validation.Validator
+
 if [ "$quick_test" == 0 ]; then
 
     python -m pytest -vs

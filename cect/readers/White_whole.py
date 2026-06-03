@@ -49,7 +49,7 @@ def main1():
     neurons2muscles, muscles, muscle_conns = my_instance.read_muscle_data()
     analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
-    cell = "RIFL"
+    cell = "ADAL"
     conns = my_instance.get_connections_from(cell, "Generic_CS")
     print(f"There are {len(conns)} connections from {cell}:")
     for c in sorted(conns.keys()):

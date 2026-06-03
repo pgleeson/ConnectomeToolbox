@@ -1,0 +1,15 @@
+reader: VarshneyDataReader
+connection_lists:
+- connections:
+  - pre: AVAL
+    post: AS5
+    weight: 3
+  - pre: ADAL
+    post: AVBR
+    weight: 2
+  synapse: Generic_CS
+- connections:
+  - pre: AVAL
+    post: AVAR
+    weight: 5
+  synapse: Generic_GJ

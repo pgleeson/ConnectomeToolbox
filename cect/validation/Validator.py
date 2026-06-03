@@ -57,6 +57,18 @@ class TestExpectedConnections(unittest.TestCase):
             "RipollSanchezEtAl2023": [
                 "RipollSanchezShortRangeReader",
             ]
+        }
+        data_readers = {
+        "WitvlietEtAl2021": [
+                "WitvlietDataReader1",
+                "WitvlietDataReader2",
+                "WitvlietDataReader3",
+                "WitvlietDataReader4",
+                "WitvlietDataReader5",
+                "WitvlietDataReader6",
+                "WitvlietDataReader7",
+                "WitvlietDataReader8",
+            ]
         }"""
 
         for data_set in data_readers:
@@ -69,11 +81,10 @@ class TestExpectedConnections(unittest.TestCase):
 
                 report = self.load_and_check_expected_data(data_reader)
                 validation_md += report + "\n\n"
-
-        with open(
-            __file__.replace("Validator.py", "../../docs/Validation.md"), "w"
-        ) as f:
+        val_md = __file__.replace("Validator.py", "../../docs/Validation.md")
+        with open(val_md, "w") as f:
             f.write(validation_md)
+            print_(f"Validation report written to {val_md}")
 
         assert self.MISMATCH not in validation_md, (
             "Validation failed for some connections. See Validation.md for details."
@@ -102,6 +113,8 @@ class TestExpectedConnections(unittest.TestCase):
 
             print_(conn_dataset.summary())
 
+            report += f"\n### Validation tests for {data_reader} \n\n"
+
             for conn_list in expected_data.connection_lists:
                 syn_class = conn_list["synapse"]
                 if syn_class == GENERIC_CHEM_SYN_CLASS:
@@ -112,8 +125,8 @@ class TestExpectedConnections(unittest.TestCase):
                     syn_info = f"{syn_class}"
 
                 print_(f"Checking connection list: {conn_list}, {syn_info}...")
-                report += f"\n### Validation tests for {data_reader} ({syn_info} connections)\n\n"
 
+                report += f"\n#### {syn_info} connections\n\n"
                 report += "| Pre      | Post | Expected weight | Match |\n|----------|------|-----------------|-------|\n"
 
                 for conn in conn_list["connections"]:

@@ -10,7 +10,9 @@ A primary source of information for this resource on [individual neurons](https:
 
 ## Worm Wiring
 
-[WormWiring](https://www.wormwiring.org/) is a database hosting nematode connectomics data along with tools for its visualisation and analysis. It serves as a central repository for multiple _C. elegans_ connectivity datasets, spanning from White et al. 1986 hermaphrodite data through to the complete hermaphrodite and male connectomes of Cook et al. 2019. It also includes data from related nematodes such as _Pristionchus pacificus_.
+[WormWiring](https://www.wormwiring.org/) is a database hosting nematode connectomics data along with tools for its visualisation and analysis. It serves as a central repository for multiple _C. elegans_ connectivity datasets, spanning from White et al. 1986 hermaphrodite data through to the complete hermaphrodite and male connectomes of Cook et al. 2019. 
+
+It also includes data from related nematodes such as _Pristionchus pacificus_.
 
 ## WormBase
 
@@ -18,11 +20,11 @@ A primary source of information for this resource on [individual neurons](https:
 
 ## WormNeuroAtlas
 
-[WormNeuroAtlas](https://francescorandi.github.io/wormneuroatlas) is a Python package that combines multimodal _C. elegans_ neural datasets in one place, integrating the neural signal propagation atlas, genome, single-cell transcriptome, neuropeptide/GPCR deorphanization data, anatomical connectome, monoaminergic connectome, and chemical-synapse sign predictions. It was developed by [Francesco Randi](https://github.com/francescorandi), and underpins the functional atlas presented in [Randi et al. 2023](Randi_2023.md)..
+[WormNeuroAtlas](https://francescorandi.github.io/wormneuroatlas) is a Python package that combines multimodal _C. elegans_ neural datasets in one place, integrating the neural signal propagation atlas, genome, single-cell transcriptome, neuropeptide/GPCR deorphanization data, anatomical connectome, monoaminergic connectome, and chemical-synapse sign predictions. 
+
+It was developed by [Francesco Randi](https://github.com/francescorandi), and underpins the functional atlas presented in [Randi et al. 2023](Randi_2023.md)..
 
 ## WormBook
-
-Introductory chapters on a number of aspects of worm biology, including [neurobiology and behavior](http://www.wormbook.org/toc_neurobiobehavior.html).
 
 [WormBook](http://www.wormbook.org) is an open-access, online collection of original, peer-reviewed chapters on the biology of C. elegans and related nematodes, covering nearly every aspect of research, including [worm neurobiology and behaviour](http://www.wormbook.org/toc_neurobiobehavior.html). It also includes WormMethods, a collection of laboratory methods and protocols, and serves as the text companion to [WormBase](https://www.wormbase.org/), with genes, proteins, and cells linked directly to their relevant WormBase pages.
 
@@ -32,7 +34,7 @@ Introductory chapters on a number of aspects of worm biology, including [neurobi
 
 ## NemaNode
 
-[NemaNode](https://nemanode.org) is an open source software package developed by the Zhen Lab and is used to visualise the datasets presented in [Witvliet et al. 2021](Witvliet_2021.md).
+[NemaNode](https://nemanode.org) is an open source software package developed by the Zhen and Samuel Labs and is used to visualise the datasets presented in [Witvliet et al. 2021](Witvliet_2021.md).
 
 ## parsetrakem2
 

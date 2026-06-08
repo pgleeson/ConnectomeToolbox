@@ -2386,6 +2386,8 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
 
     for syn_summary in syn_summaries:
         layout = go.Layout(
+            # Pinned to stock "plotly" to preserve this figure's appearance
+            template="plotly",
             plot_bgcolor="#FFF",  # Sets background color to white
         )
         fig = go.Figure(layout=layout)
@@ -2465,7 +2467,10 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
             with open("./docs/%s" % asset_filename, "w") as asset_file:
                 asset_file.write(_format_json(fig.to_json()))
 
-            fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
+            import cect.Comparison as _comparison
+
+            if _comparison.GENERATE_PNGS:
+                fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
             fig_md += '\n%s```{.plotly .no-auto-theme}\n%s---8<-- "./%s"\n%s```\n\n' % (
                 indent,

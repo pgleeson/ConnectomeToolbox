@@ -11,6 +11,11 @@ import importlib
 
 all_data = {}
 
+# Writing static PNG copies of every figure via kaleido is slow (it drives a
+# headless browser subprocess). The interactive plots are embedded from the JSON
+# assets regardless, so PNG generation can be skipped for quick test runs.
+GENERATE_PNGS = True
+
 
 reader_colors = {
     "White_A": "lightpink",
@@ -133,7 +138,8 @@ def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "
     with open("./docs/%s" % asset_filename, "w") as asset_file:
         asset_file.write(_format_json(fig.to_json()))
 
-    fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
+    if GENERATE_PNGS:
+        fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
     return '\n%s```{.plotly .no-auto-theme}\n%s{ "file_path": "./%s" }\n%s```\n' % (
         indent,
@@ -177,7 +183,8 @@ def get_matrix_markdown(
     with open("./docs/%s" % asset_filename, "w") as asset_file:
         asset_file.write(_format_json(fig.to_json()))
 
-    fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
+    if GENERATE_PNGS:
+        fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
     extra = "\n" + indent + extra_info if extra_info is not None else ""
 
@@ -207,7 +214,8 @@ def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    
     with open("./docs/%s" % asset_filename, "w") as asset_file:
         asset_file.write(_format_json(fig.to_json()))
 
-    fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
+    if GENERATE_PNGS:
+        fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
     return f'\n{indent}<br/>\n{indent}```{{.plotly .no-auto-theme}}\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n'
 
@@ -258,6 +266,11 @@ def generate_comparison_page(
 ):
     connectomes = {}
     all_connectomes = {}
+
+    # Skip the slow static PNG exports for quick test runs (quick != 0); the
+    # interactive figures are still embedded from the JSON assets.
+    global GENERATE_PNGS
+    GENERATE_PNGS = quick < 2
 
     readers = {}
 

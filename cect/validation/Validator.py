@@ -14,6 +14,7 @@ import sys
 import numpy as np
 
 import unittest
+import sys
 
 
 class TestExpectedConnections(unittest.TestCase):
@@ -109,7 +110,13 @@ class TestExpectedConnections(unittest.TestCase):
 
             data_reader_ref = data_reader.replace("DataReader", "")
 
-            conn_dataset = get_connectome_dataset(data_reader_ref, from_cache=True)
+            if len(sys.argv) > 1 and sys.argv[1] == "0": # so not quick...
+                from_cache = False
+            else:
+                from_cache = True
+            print_(" --- Loading connectome dataset for reader %s with from_cache=%s... (%s)" % (data_reader_ref, from_cache, sys.argv))
+
+            conn_dataset = get_connectome_dataset(data_reader_ref, from_cache=from_cache)
 
             print_(conn_dataset.summary())
 
@@ -282,6 +289,7 @@ def generate_reader_exp_data_obj(reader_name, source_files, additional_comment="
 
 
 if __name__ == "__main__":
+
     if "-test" in sys.argv:
         expected_data_folder = __file__.replace("Validator.py", "")
 
@@ -311,5 +319,9 @@ if __name__ == "__main__":
         print_(f"Expected data for YIM reader written to {exp_data_file}")
 
     else:
-        unittest.main()
+        print_(" --- Running validator tests...")
+        # Don't let unittest parse our cache flag (e.g. the "0"/"1" arg);
+        # it would try to interpret it as a test name. Pass only argv[0].
+        unittest.main(argv=[sys.argv[0]])
+
         sys.exit(0)

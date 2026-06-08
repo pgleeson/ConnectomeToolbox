@@ -19,7 +19,7 @@ fi
 
 ##   Test readers
                  
-python -m cect.validation.Validator        
+python -m cect.validation.Validator $quick_test       
 
 python -m cect.Cells $quick_test
 

@@ -2208,6 +2208,36 @@ def get_cell_osbv1_link(cell: str, text: str = "OSB 3D", button: bool = False):
     return f'<a href="{osbv1_link}">{text}</a>' if is_herm_neuron(cell) else ""
 
 
+def get_wormwiring_3d_link(
+    cell: str, text: str = "View in WormWiring", button: bool = False
+):
+    wormwiring_link = (
+        f"https://wormwiring.org/apps/neuronMaps/?cell={cell}&sex=1&db=n930"
+    )
+
+    if button:
+        return (
+            f"[{text}]({wormwiring_link}){{ .md-button }}"
+            if is_herm_neuron(cell)
+            else ""
+        )
+    return f'<a href="{wormwiring_link}">{text}</a>' if is_herm_neuron(cell) else ""
+
+
+def get_zhen_tools_link(
+    cell: str, text: str = "View in Zhen Tools", button: bool = False
+):
+    zhen_tools_link = f"https://zhen-tools.com/#/3d-viewer?neurons={cell}"
+
+    if button:
+        return (
+            f"[{text}]({zhen_tools_link}){{ .md-button }}"
+            if is_herm_neuron(cell)
+            else ""
+        )
+    return f'<a href="{zhen_tools_link}">{text}</a>' if is_herm_neuron(cell) else ""
+
+
 def get_cell_wormatlas_link(
     cell_name: str, html: bool = False, text: str = None, button: bool = False
 ):

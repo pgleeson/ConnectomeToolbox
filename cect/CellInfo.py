@@ -6,6 +6,8 @@ from cect.Cells import get_cell_notes
 from cect.Cells import get_cell_internal_link
 from cect.Cells import get_cell_wormatlas_link
 from cect.Cells import get_cell_osbv1_link
+from cect.Cells import get_wormwiring_3d_link
+from cect.Cells import get_zhen_tools_link
 from cect.Cells import are_bilateral_pair
 from cect.Cells import is_any_neuron
 from cect.Cells import get_primary_classification
@@ -260,13 +262,15 @@ def generate_cell_info_pages(connectomes):
                 % nt_info
             )
 
-        cell_info += "    %s " % (
+        cell_info += "    %s" % (
             get_cell_wormatlas_link(cell, text="Info on WormAtlas", button=True)
         )
 
-        cell_info += "%s\n\n" % get_cell_osbv1_link(
+        cell_info += " %s" % get_cell_osbv1_link(
             cell, text="View in 3D on Open Source Brain", button=True
         )
+        cell_info += " %s" % get_wormwiring_3d_link(cell, button=True)
+        cell_info += " %s\n\n" % get_zhen_tools_link(cell, button=True)
 
         all_synclasses = [
             GENERIC_CHEM_SYN_CLASS,

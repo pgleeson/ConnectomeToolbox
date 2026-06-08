@@ -3,7 +3,7 @@ set -ex
 ruff format cect/*.py cect/*/*.py
 ruff check cect/*.py cect/*/*.py
 
-pip install .[docs]
+pip install -e .[docs]
 
 
 quick_test=0

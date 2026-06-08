@@ -394,46 +394,36 @@ class ConnectomeDataset:
                 )
             )
 
+        # Precompute the cell -> view-index mapping once, rather than calling the
+        # O(N) view.get_index_of_cell() / cv.nodes.index() inside the hot loop below
+        # (which previously dominated the runtime; see ConnectomeView.get_index_of_cell).
+        if view.only_show_existing_nodes:
+            target_index = {name: i for i, name in enumerate(cv.nodes)}
+        else:
+            # First node set containing a cell wins, matching get_index_of_cell().
+            target_index = {}
+            for i, ns in enumerate(view.node_sets):
+                for c in ns.cells:
+                    if c not in target_index:
+                        target_index[c] = i
+
         for synclass_set in view.synclass_sets:
             cv.connections[synclass_set] = np.zeros(
                 [len(cv.nodes)] * 2, dtype=self.DEFAULT_DTYPE
             )
+            cv_conn = cv.connections[synclass_set]
 
             for synclass in view.synclass_sets[synclass_set]:
                 if synclass in self.connections:
                     conn_array = self.connections[synclass]
-                    for pre in self.nodes:
-                        pre_index = (
-                            cv.nodes.index(pre)
-                            if view.only_show_existing_nodes
-                            else view.get_index_of_cell(pre)
-                        )
-                        for post in self.nodes:
-                            post_index = (
-                                cv.nodes.index(post)
-                                if view.only_show_existing_nodes
-                                else view.get_index_of_cell(post)
-                            )
-
-                            if self.verbose and False:
-                                print_(
-                                    "-- Testing if %s (%i), %s (%s) in my %i node sets %s..."
-                                    % (
-                                        pre,
-                                        pre_index,
-                                        post,
-                                        post_index,
-                                        len(view.node_sets),
-                                        view.node_sets[:5],
-                                    )
-                                )
-
-                            if pre_index >= 0 and post_index >= 0:
-                                cv.connections[synclass_set][pre_index, post_index] += (
-                                    conn_array[
-                                        self.nodes.index(pre), self.nodes.index(post)
-                                    ]
-                                )
+                    # Iterate only non-zero entries; zero entries add nothing, so this
+                    # gives identical results while skipping the full N^2 cell pairs.
+                    rows, cols = np.nonzero(conn_array)
+                    for r, c in zip(rows.tolist(), cols.tolist()):
+                        pre_index = target_index.get(self.nodes[r], -1)
+                        post_index = target_index.get(self.nodes[c], -1)
+                        if pre_index >= 0 and post_index >= 0:
+                            cv_conn[pre_index, post_index] += conn_array[r, c]
 
         return cv
 
@@ -576,6 +566,9 @@ class ConnectomeDataset:
                 ]
             )
         fig.update_layout(
+            # Pinned to stock "plotly" to preserve this heatmap's appearance, since
+            # plotly_white is now the global default (see note in CellInfo.py).
+            template="plotly",
             margin=dict(l=2, r=2, t=2, b=2),
         )
 
@@ -645,7 +638,12 @@ class ConnectomeDataset:
             return DEFAULT_NODE_SIZE * math.sqrt(len(node_set.cells))
 
         import plotly.graph_objects as go
+        import plotly.io as pio
         import networkx as nx
+
+        # plotly_white as the default avoids deep-copying the template per figure
+        # (see note in CellInfo.py); set here so it applies regardless of import order.
+        pio.templates.default = "plotly_white"
 
         gap_junction = synclass == "Electrical" or "All" in synclass
 
@@ -948,10 +946,6 @@ class ConnectomeDataset:
         )
         fig.update_traces(textposition="middle center")
 
-        fig.update_layout(
-            template="plotly_white",
-        )
-
         fig.update_xaxes(visible=False)
         fig.update_yaxes(visible=False)
 
@@ -962,6 +956,11 @@ class ConnectomeDataset:
         from hiveplotlib.converters import networkx_to_nodes_edges
         from hiveplotlib.node import split_nodes_on_variable
         from hiveplotlib.viz.plotly import hive_plot_viz as plotly_hive_plot_viz
+        import plotly.io as pio
+
+        # plotly_white as the default avoids deep-copying the template per figure
+        # (see note in CellInfo.py); set here so it applies regardless of import order.
+        pio.templates.default = "plotly_white"
 
         print_("==============")
         print_(f"Generating: {synclass} for view {view.name}")
@@ -1126,7 +1125,6 @@ class ConnectomeDataset:
         fig.update_layout(hovermode="closest")
 
         fig.update_layout(
-            template="plotly_white",
             plot_bgcolor="rgba(0, 0, 0, 0)",
             paper_bgcolor="rgba(0, 0, 0, 0)",
         )
@@ -1356,7 +1354,7 @@ if __name__ == "__main__":
 
     print(pprint.pprint(nx.node_link_data(G)))"""
 
-    from cect.ConnectomeView import NEURONS_VIEW as view
+    # from cect.ConnectomeView import NEURONS_VIEW as view
     # from cect.ConnectomeView import RAW_VIEW as view
     # from cect.ConnectomeView import LOCOMOTION_2_VIEW as view
     # from cect.ConnectomeView import ESCAPE_VIEW as view
@@ -1364,7 +1362,7 @@ if __name__ == "__main__":
 
     # from cect.ConnectomeView import SOCIAL_VIEW as view
     # from cect.ConnectomeView import SOCIAL_VIEW as view
-    # from cect.ConnectomeView import COOK_FIG3_VIEW as view
+    from cect.ConnectomeView import COOK_FIG3_VIEW as view
     # from cect.ConnectomeView import BRAINMAP_VIEW as view
     # from cect.ConnectomeView import BRAINMAP_A_VIEW as view
     # from cect.ConnectomeView import PEP_HUBS_VIEW as view
@@ -1414,11 +1412,11 @@ if __name__ == "__main__":
     # fig = cds2.to_plotly_hive_plot_fig(synclass, view)
 
     # fig = cds2.to_plotly_graph_fig(synclass, view)
-    # fig = cds2.to_plotly_graph_fig(synclass, view)
+    fig = cds2.to_plotly_graph_fig(synclass, view)
     # fig = cds2.to_plotly_matrix_fig(list(view.synclass_sets.keys())[0], view)
-    fig, info = cds2.to_plotly_matrix_fig(
-        list(view.synclass_sets.keys())[0], view, symmetry=True
-    )
+    # fig, info = cds2.to_plotly_matrix_fig(
+    #    list(view.synclass_sets.keys())[0], view, symmetry=True
+    # )
     # fig = cds2.to_plotly_matrix_fig(synclass, view)
 
     import plotly.io as pio

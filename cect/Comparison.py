@@ -296,7 +296,7 @@ def generate_comparison_page(
         # readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
         # readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 
-        readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
+        # readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
         # readers["Cook2019Male"] = ["cect.readers.Cook2019MaleReader", "Cook_2019"]
         readers["Cook2020"] = ["cect.readers.Cook2020DataReader", "Cook_2020"]
 

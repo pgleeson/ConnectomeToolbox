@@ -14,7 +14,6 @@ import sys
 import numpy as np
 
 import unittest
-import sys
 
 
 class TestExpectedConnections(unittest.TestCase):
@@ -110,13 +109,18 @@ class TestExpectedConnections(unittest.TestCase):
 
             data_reader_ref = data_reader.replace("DataReader", "")
 
-            if len(sys.argv) > 1 and sys.argv[1] == "0": # so not quick...
+            if len(sys.argv) > 1 and sys.argv[1] == "0":  # so not quick...
                 from_cache = False
             else:
                 from_cache = True
-            print_(" --- Loading connectome dataset for reader %s with from_cache=%s... (%s)" % (data_reader_ref, from_cache, sys.argv))
+            print_(
+                " --- Loading connectome dataset for reader %s with from_cache=%s... (%s)"
+                % (data_reader_ref, from_cache, sys.argv)
+            )
 
-            conn_dataset = get_connectome_dataset(data_reader_ref, from_cache=from_cache)
+            conn_dataset = get_connectome_dataset(
+                data_reader_ref, from_cache=from_cache
+            )
 
             print_(conn_dataset.summary())
 
@@ -289,7 +293,6 @@ def generate_reader_exp_data_obj(reader_name, source_files, additional_comment="
 
 
 if __name__ == "__main__":
-
     if "-test" in sys.argv:
         expected_data_folder = __file__.replace("Validator.py", "")
 

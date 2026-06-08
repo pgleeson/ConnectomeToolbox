@@ -183,7 +183,7 @@ def analyse_connections(
 
     for nt in sorted(nts.keys()):
         print_(
-            "   %s present in %s connections, %s synapses total (avg %.3f syns per conn)"
+            "   %s is  present in %s connections, %s synapses total (avg %.3f syns per conn)"
             % (nt, nts[nt], nts_tot[nt], nts_tot[nt] / nts[nt])
         )
 
@@ -230,18 +230,9 @@ def analyse_connections(
 
     for nt in nts:
         print_(
-            "  %s present in %s connections, %s synapses total (avg %.3f syns per conn)"
+            "  %s is present in %s connections, %s synapses total (avg %.3f syns per conn)"
             % (nt, nts[nt], nts_tot[nt], nts_tot[nt] / nts[nt])
         )
-
-    """
-    core_set = ["AVBL", "PVCL", "VA6", "VB6", "VD6", "DB4", "DD4"]
-    # core_set = ['VA6', 'VD6']
-    print_("\n\nConnections between cells in the subset %s:\n" % (core_set))
-
-    for c in neuron_conns:
-        if c.pre_cell in core_set and c.post_cell in core_set:
-            print_(str(c))"""
 
     for cd in print_details_on:
         print_("\n\nAll outgoing connections of %s:\n" % (cd))

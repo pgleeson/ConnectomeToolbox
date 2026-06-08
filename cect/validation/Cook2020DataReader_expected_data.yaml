@@ -3,13 +3,19 @@ connection_lists:
 - connections:
   - pre: I1R
     post: I2R
-    weight: 3
+    weight: 8
   - pre: I1R
     post: I2L
     weight: 1
   - pre: RIPL
     post: pm3VL
     weight: 4
+  - pre: I5
+    post: g1AR
+    weight: 5
+  - pre: I5
+    post: g1AL
+    weight: 8
   synapse: Generic_CS
 - connections:
   - pre: M4

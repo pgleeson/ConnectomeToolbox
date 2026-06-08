@@ -198,33 +198,38 @@ class ConnectomeDataset:
                     )
                 )
 
-            if conn_array[pre_index, post_index] != conn.number:
-                info = (
-                    "     *** Existing connection at (%i,%i) (%s,%s), was: %s, changing to: %s (appending: %s)"
-                    % (
-                        pre_index,
-                        post_index,
-                        conn.pre_cell,
-                        conn.post_cell,
-                        conn_array[pre_index, post_index],
-                        conn.number,
-                        append_existing_connections,
-                    )
+            info = (
+                "     *** Existing connection at (%i,%i) (%s,%s), was: %s, changing to: %s (checking: %s, appending: %s)"
+                % (
+                    pre_index,
+                    post_index,
+                    conn.pre_cell,
+                    conn.post_cell,
+                    conn_array[pre_index, post_index],
+                    conn.number,
+                    check_overwritten_connections,
+                    append_existing_connections,
+                )
+            )
+
+            if append_existing_connections:
+                conn_array[pre_index, post_index] += conn.number
+                print_(
+                    "  ++++ New, appended weight is: %f"
+                    % conn_array[pre_index, post_index]
                 )
 
-                if append_existing_connections:
-                    conn_array[pre_index, post_index] += conn.number
-                    print_("  Now weight is: %f" % conn_array[pre_index, post_index])
+            elif conn_array[pre_index, post_index] == conn.number:
+                print_("  Connection is the same as existing, no change.")
 
-                elif check_overwritten_connections:
-                    print_("  Overwritten connection!")
-                    raise Exception(info)
-                else:
-                    print_(info)
+            elif check_overwritten_connections:
+                print_("  Overwritten connection!")
+                raise Exception(info)
             else:
-                print_("Same weight...")
+                print_(info)
 
-        conn_array[pre_index, post_index] = conn.number
+        else:
+            conn_array[pre_index, post_index] = conn.number
 
         if self.verbose:
             print_(

@@ -1180,9 +1180,10 @@ PHARYNGEAL_MUSCLE_NAMES = ODD_PHARYNGEAL_MUSCLE_NAMES + EVEN_PHARYNGEAL_MUSCLE_N
 for cell in PHARYNGEAL_MUSCLE_NAMES:
     cell_notes[cell] = "pharyngeal muscle"
 
-UNSPECIFIED_BODY_WALL_MUSCLES = ["BWM"]
+UNSPECIFIED_BODY_WALL_MUSCLE = "BWM"
+UNSPECIFIED_BODY_WALL_MUSCLES = [UNSPECIFIED_BODY_WALL_MUSCLE]
 
-cell_notes["BWM"] = "unspecified body wall muscle"
+cell_notes[UNSPECIFIED_BODY_WALL_MUSCLE] = "unspecified body wall muscle"
 
 MALE_DIAGONAL_MUSCLES = [
     "dglL1",
@@ -1848,7 +1849,7 @@ def convert_to_preferred_muscle_name(muscle: str):
             else "MV%s0%s" % (muscle[4], muscle[5])
         )
     elif muscle == "LegacyBodyWallMuscles":
-        return "BWM"
+        return UNSPECIFIED_BODY_WALL_MUSCLE
     elif muscle.startswith("pm1"):
         return "pm1"
     elif muscle == "pm2vl":

@@ -6,10 +6,13 @@ connection_lists:
     weight: 3
   - pre: ADAL
     post: AVBR
-    weight: 2
+    weight: 7
   synapse: Generic_CS
+  total_nonzero_conns: 2194
+  total_weight: 6394
 - connections:
   - pre: AVAL
     post: AVAR
     weight: 5
   synapse: Generic_GJ
+  total_nonzero_conns: 1031

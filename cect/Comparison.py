@@ -285,7 +285,7 @@ def generate_comparison_page(
 
         readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
         # readers["Cook2019Male"] = ["cect.readers.Cook2019MaleReader", "Cook_2019"]
-        # readers["Cook2020"] = ["cect.readers.Cook2020DataReader", "Cook_2020"]
+        readers["Cook2020"] = ["cect.readers.Cook2020DataReader", "Cook_2020"]
 
         # readers["OpenWormUnified"] = ["cect.readers.OpenWormUnifiedReader", "OpenWorm_Unified"]
 
@@ -688,7 +688,13 @@ def generate_comparison_page(
                                     )
                                     sym_info = ""
                                     if is_symmetric:
-                                        sym_info = f"Matrix is symmetric with <b>{count_diagonal_entries + int((nonzero - count_diagonal_entries) / 2)}</b> unique pairs<br/>"
+                                        diagonal_sum = np.sum(np.diag(conn_array))
+                                        unique_sum = (
+                                            np.sum(conn_array) - diagonal_sum
+                                        ) / 2 + diagonal_sum
+
+                                        sym_info = f"Matrix is symmetric with <b>{count_diagonal_entries + int((nonzero - count_diagonal_entries) / 2)}</b> unique pairs (total unique pair weight: <b>{unique_sum}</b>)<br/>"
+
                                     diag_info = (
                                         "<b>%s</b> nodes with self-connections<br/>"
                                         % count_diagonal_entries

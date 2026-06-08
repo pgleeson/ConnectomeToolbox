@@ -143,6 +143,20 @@ class TestExpectedConnections(unittest.TestCase):
                     print_(match_info)
                     report += f"| {conn['pre']} | {conn['post']} | {conn['weight']} | {match_info} |\n"
 
+                if "total_weight" in conn_list:
+                    total_w = conn_list["total_weight"]
+                    cdarr = conn_dataset.connections[syn_class]
+                    total_w_cd = np.sum(cdarr)
+                    match_info = (
+                        "matches"
+                        if total_w == total_w_cd
+                        else f"{self.MISMATCH}: {total_w_cd}"
+                    )
+                    report += "\nExpected total weight of connections: %f (%s)\n" % (
+                        total_w,
+                        match_info,
+                    )
+
                 if "total_nonzero_conns" in conn_list:
                     num_nz = conn_list["total_nonzero_conns"]
                     cdarr = conn_dataset.connections[syn_class]
@@ -193,13 +207,15 @@ class ConnectionList(Base):
 
     Args:
         synapse: The type of synapse
-        total_nonzero_conns: Total nonzero
+        total_nonzero_conns: Total nonzero conns
+        total_weight: Total weight of connections
         comment: A comment about how the data was found, e.g. taken from a spreadsheet
         connections: The list of connections of this type
     """
 
     synapse: str = field(validator=instance_of(str))
     total_nonzero_conns: int = field(validator=instance_of(int))
+    total_weight: float = field(validator=instance_of(float))
     comment: str = field(validator=instance_of(str))
     connections: List[Connection] = field(factory=list)
 

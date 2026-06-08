@@ -48,9 +48,6 @@ class Cook2020DataReader(ConnectomeDataset):
         (Cook2020DataReader): The initialized Cook et al 2020 pharyngeal connectome reader
     """
 
-    cells = []
-    conns = []
-
     def __init__(self):
         ConnectomeDataset.__init__(self)
 
@@ -58,8 +55,9 @@ class Cook2020DataReader(ConnectomeDataset):
         for conn in neuron_conns:
             self.add_connection_info(
                 conn,
-                check_overwritten_connections=True,
+                check_overwritten_connections=False,
                 append_existing_connections=True,
+                fail_on_any_repeated_connection=False,
             )
 
     def read_data(self):
@@ -67,6 +65,9 @@ class Cook2020DataReader(ConnectomeDataset):
         Returns:
             (tuple[list, list]): List of cells (str) and list of connections (``ConnectionInfo``) which have been read in
         """
+        cells = []
+        conns = []
+
         with open(filename, "r") as f:
             reader = csv.DictReader(f)
             print_("Opened file: " + filename)
@@ -94,15 +95,15 @@ class Cook2020DataReader(ConnectomeDataset):
                     else GENERIC_CHEM_SYN_CLASS
                 )
 
-                self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+                conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
                 # Add post -> pre conn for gap junction connections
                 if syntype == ELECTRICAL_SYN_TYPE:
-                    self.conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
+                    conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
-                if pre not in self.cells:
-                    self.cells.append(pre)
-                if post not in self.cells:
-                    self.cells.append(post)
+                if pre not in cells:
+                    cells.append(pre)
+                if post not in cells:
+                    cells.append(post)
 
         with open(filename2, "r") as f:
             reader = csv.DictReader(f)
@@ -126,16 +127,16 @@ class Cook2020DataReader(ConnectomeDataset):
                 syntype = ELECTRICAL_SYN_TYPE
                 synclass = GENERIC_ELEC_SYN_CLASS
 
-                self.conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+                conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
                 # Add post -> pre conn for gap junction connections
-                self.conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
+                conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
 
-                if pre not in self.cells:
-                    self.cells.append(pre)
-                if post not in self.cells:
-                    self.cells.append(post)
+                if pre not in cells:
+                    cells.append(pre)
+                if post not in cells:
+                    cells.append(post)
 
-        return self.cells, self.conns
+        return cells, conns
 
     '''def read_muscle_data(self):
         """
@@ -252,11 +253,23 @@ def main():
     cells, neuron_conns = my_instance.read_data()
     neurons2muscles, muscles, muscle_conns = my_instance.read_muscle_data()
 
-    analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
+    analyse_connections(
+        cells, neuron_conns, neurons2muscles, muscles, muscle_conns, print_details_on=[]
+    )
 
     print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
 
     print_(my_instance.summary())
+
+    cells = ["I5", "M4"]
+    syntypes = ["Generic_CS", "Generic_GJ"]
+
+    for cell in cells:
+        for syntype in syntypes:
+            conns = my_instance.get_connections_from(cell, syntype)
+            print(f"There are {len(conns)} connections from {cell} of type {syntype}:")
+            for c in sorted(conns.keys()):
+                print(f" {cell} -> {c}: {conns[c]}")
 
 
 if __name__ == "__main__":

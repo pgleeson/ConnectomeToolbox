@@ -1193,6 +1193,7 @@ COOK_FIG3_VIEW.node_sets.append(
         color="#FF00FF",
         shape="circle",
         position=(6.3, 5.9),
+        size=40,
         description="Hermaphrodite specific motorneurons",
     )
 )

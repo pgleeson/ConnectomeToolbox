@@ -27,6 +27,13 @@ READER_DESCRIPTION = (
 
 NMJ_ENDPOINT = "NMJ"
 
+SEND_SYN = "S"
+SEND_POLY_SYN = "Sp"
+RECEIVE_SYN = "R"
+RECEIVE_POLY_SYN = "Rp"
+
+ELECT_JUNC_SYN = "EJ"
+
 
 class VarshneyDataReader(ConnectomeDataset):
     """Reader for Varshney et al. 2011 connectivity dataset"""
@@ -39,12 +46,15 @@ class VarshneyDataReader(ConnectomeDataset):
             self.add_connection_info(
                 conn,
                 append_existing_connections=True,
-                check_overwritten_connections=False,
+                check_overwritten_connections=True,
+                fail_on_any_repeated_connection=False,
             )
 
     def read_data(self):
         cells = []
         conns = []
+
+        self.typed_conns = {"S": [], "Sp": [], "R": [], "Rp": [], "EJ": []}
 
         wb = load_workbook(filename)
         sheet = wb.worksheets[0]
@@ -59,14 +69,17 @@ class VarshneyDataReader(ConnectomeDataset):
             if not post == NMJ_ENDPOINT:
                 syntype_here = str(row[2])
                 num = int(row[3])
+
+                self.typed_conns[syntype_here].append(f"{pre}_{post}_{num}")
+
                 synclass = (
                     GENERIC_ELEC_SYN_CLASS
-                    if syntype_here == "EJ"
+                    if syntype_here == ELECT_JUNC_SYN
                     else GENERIC_CHEM_SYN_CLASS
-                    if (syntype_here == "Sp" or syntype_here == "S")
+                    if (syntype_here == SEND_POLY_SYN or syntype_here == SEND_SYN)
                     else None
                 )
-                if syntype_here == "EJ":
+                if syntype_here == ELECT_JUNC_SYN:
                     syntype = ELECTRICAL_SYN_TYPE
                 else:
                     syntype = CHEMICAL_SYN_TYPE
@@ -77,6 +90,26 @@ class VarshneyDataReader(ConnectomeDataset):
                         cells.append(pre)
                     if post not in cells:
                         cells.append(post)
+                else:
+                    if not (
+                        syntype_here == RECEIVE_SYN or syntype_here == RECEIVE_POLY_SYN
+                    ):
+                        raise ValueError(
+                            f"Warning: Unrecognized synapse type '{syntype_here}' for connection {pre} -> {post} for {NAME}."
+                        )
+
+        for syn_type, conn_list in self.typed_conns.items():
+            print_(
+                f"  {syn_type}: {len(conn_list)} connections ({', '.join(conn_list[:5])}...) "
+            )
+        s_tot = len(self.typed_conns[SEND_SYN]) + len(self.typed_conns[SEND_POLY_SYN])
+        r_tot = len(self.typed_conns[RECEIVE_SYN]) + len(
+            self.typed_conns[RECEIVE_POLY_SYN]
+        )
+        print_(
+            f"  Total chemical synapses: {s_tot} (send) + {r_tot} (receive) = {s_tot + r_tot}"
+        )
+        print_(f"  Total electrical synapses: {len(self.typed_conns[ELECT_JUNC_SYN])}")
 
         return cells, conns
 
@@ -115,7 +148,7 @@ def main():
 
     print_(" -- Finished analysing connections using: %s" % os.path.basename(__file__))
 
-    cell = "BAGR"
+    cell = "ADAL"
     syntype = "Generic_CS"
     conns = my_instance.get_connections_from(cell, syntype)
     print(f"There are {len(conns)} connections from {cell} of type {syntype}:")

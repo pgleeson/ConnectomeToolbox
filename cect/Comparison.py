@@ -262,20 +262,20 @@ def generate_comparison_page(
     readers = {}
 
     if quick == 2:  # very quick...
-        # readers["Varshney"] = ["cect.readers.VarshneyDataReader", "Varshney_2011"]
         # readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
         # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
         # readers["Bentley2016_MA"] = ["cect.readers.WormNeuroAtlasMAReader", "Bentley_2016"]
-        # readers["White_A"] = ["cect.readers.White_A", "White_1986"]
-        # readers["White_L4"] = ["cect.readers.White_L4", "White_1986"]
+        readers["White_A"] = ["cect.readers.White_A", "White_1986"]
+        readers["White_L4"] = ["cect.readers.White_L4", "White_1986"]
         readers["White_whole"] = ["cect.readers.White_whole", "White_1986"]
-        readers["Test"] = ["cect.readers.TestDataReader", None]
+        # readers["Test"] = ["cect.readers.TestDataReader", None]
+        readers["Varshney"] = ["cect.readers.VarshneyDataReader", "Varshney_2011"]
 
         # readers["WormNeuroAtlas"] = ["cect.readers.WormNeuroAtlasReader", "Randi_2023"]
 
         # readers["Randi2023"] = ["cect.readers.WormNeuroAtlasFuncReader", "Randi_2023"]
 
-        readers["Brittin2021"] = ["cect.readers.BrittinDataReader", "Brittin_2021"]
+        # readers["Brittin2021"] = ["cect.readers.BrittinDataReader", "Brittin_2021"]
         # readers["Yim2024"] = ["cect.readers.Yim2024DataReader", "Yim_2024"]
         # readers["Yim2024NonNorm"] = ["cect.readers.Yim2024NonNormDataReader", "Yim_2024"]
 
@@ -283,13 +283,13 @@ def generate_comparison_page(
         # readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
         # readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 
-        # readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
+        readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
         # readers["Cook2019Male"] = ["cect.readers.Cook2019MaleReader", "Cook_2019"]
-        readers["Cook2020"] = ["cect.readers.Cook2020DataReader", "Cook_2020"]
+        # readers["Cook2020"] = ["cect.readers.Cook2020DataReader", "Cook_2020"]
 
         # readers["OpenWormUnified"] = ["cect.readers.OpenWormUnifiedReader", "OpenWorm_Unified"]
 
-        readers["Witvliet1"] = ["cect.readers.WitvlietDataReader1", "Witvliet_2021"]
+        # readers["Witvliet1"] = ["cect.readers.WitvlietDataReader1", "Witvliet_2021"]
         # readers["Witvliet8"] = ["cect.readers.WitvlietDataReader8", "Witvliet_2021"]
         # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
         # readers["RipollSanchezLongRange"] = [ "cect.readers.RipollSanchezLongRangeReader", "RipollSanchez_2023", ]

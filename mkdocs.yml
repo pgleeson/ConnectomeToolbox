@@ -18,6 +18,8 @@ theme:
 plugins:
   - plotly
   - search
+  - mkdocs-jupyter:
+      include_requirejs: true
   - mkdocs-autoapi:
       autoapi_dir: "cect"
       autoapi_root: "api/"
@@ -25,6 +27,7 @@ plugins:
       autoapi_add_nav_entry: false
       autoapi_ignore:
         - tests/*.py
+        - validation/test_white/*py
   - mkdocstrings:
 
 extra_css:
@@ -70,6 +73,7 @@ nav:
     - '<b>Cook et al. 2019</b>': 'Cook_2019.md'
     - '<b>Cook et al. 2020</b>': 'Cook_2020.md'
     - 'Fenyves et al. 2020': 'Fenyves_2020.md'
+    - 'Moyle et al. 2021': 'Moyle_2021.md'
     - '<b>Brittin et al. 2021</b>': 'Brittin_2021.md'
     - 'Taylor et al. 2021': 'Taylor_2021.md'
     - 'Yemini et al. 2021': 'Yemini_2021.md'
@@ -79,7 +83,9 @@ nav:
     - 'Atanas et al. 2023': 'Atanas_2023.md'
     - '<b>Randi et al. 2023</b>': 'Randi_2023.md'
     - '<b>Ripoll-Sánchez et al. 2023</b>': 'RipollSanchez_2023.md'
-  
+    - '<b>Yim et al. 2024</b>': 'Yim_2024.md'
+    - '<b>Wang et al. 2024</b>': 'Wang_2024.md'
+
   - 'Data sets':
     - 'White et al. 1986 - A (N2U)': 'White_A_data_graph.md'
     - 'White et al. 1986 - L4 (JSH)': 'White_L4_data_graph.md'
@@ -104,6 +110,10 @@ nav:
     - 'Ripoll-Sánchez 2023 (short)': 'RipollSanchezShortRange_data.md'
     - 'Ripoll-Sánchez 2023 (mid)': 'RipollSanchezMidRange_data.md'
     - 'Ripoll-Sánchez 2023 (long)': 'RipollSanchezLongRange_data.md'
+    - 'Yim et al. 2024': 'Yim2024_data.md'
+    - 'Yim et al. 2024 (non norm.)': 'Yim2024NonNorm_data.md'
+    - 'Wang et al. 2024 Herm': 'Wang2024Herm_data.md'
+    - 'Wang et al. 2024 Male': 'Wang2024Male_data.md'
     - 'Test': 'Test_data_graph.md'
   - Cells:
     - 'All <i>C. elegans</i> cells': 'Cells.md'    
@@ -758,10 +768,21 @@ nav:
       - 'R9shR': 'R9shR.md'
       - 'R9stL': 'R9stL.md'
       - 'R9stR': 'R9stR.md'
+
+  - 'Computational models':
+    - 'Gleeson et al. 2018': 'GleesonModel_data_graph.md'
+    - 'Olivares et al. 2021': 'OlivaresModel_data_graph.md'
+
+  - Validation: 'Validation.md'
+
+
   - Resources:
     - 'Resources': 'Resources.md'
   - Python package:
     - 'Installation': 'Python.md'
+    - 'Example notebooks':
+      - 'Using the cect Python API': 'notebooks/Introduction.ipynb'
+      - 'Investigating bilateral symmetry': 'notebooks/BilateralSymmetry.ipynb'
     - 'API Reference': "api/summary/"
   - Help:
     - 'About & Contact': 'About.md'

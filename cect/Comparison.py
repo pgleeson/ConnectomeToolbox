@@ -12,6 +12,42 @@ import importlib
 all_data = {}
 
 
+reader_colors = {
+    "White_A": "lightpink",
+    "White_L4": "darkred",
+    "White_whole": "red",
+    "Varshney": "#009e73",
+    "Bentley2016_MA": "#56b4e9",
+    "Bentley2016_PEP": "fuchsia",
+    "Cook2019Herm": "darkmagenta",
+    "Cook2019Male": "blue",
+    "Cook2020": "darkorchid",
+    "Brittin2021": "khaki",
+    "Witvliet1": "#eeee44",
+    "Witvliet2": "#cccc44",
+    "Witvliet3": "#aaaa44",
+    "Witvliet4": "#888844",
+    "Witvliet5": "#666644",
+    "Witvliet6": "#444444",
+    "Witvliet7": "#222244",
+    "Witvliet8": "#111144",
+    "WormNeuroAtlas": "lightblue",
+    "Randi2023": "peachpuff",
+    "RipollSanchezShortRange": "gold",
+    "RipollSanchezMidRange": "goldenrod",
+    "RipollSanchezLongRange": "orange",
+    "Yim2024": "#0d7ba4",
+    "Yim2024NonNorm": "#0d7ba4",
+    "Wang2024Herm": "firebrick",
+    "Wang2024Male": "#e88989",
+    "OpenWormUnified": "yellowgreen",
+    "Test": "palegoldenrod",
+    "SSData": "moccasin",
+    "UpdSSData": "papayawhip",
+    "UpdSSData2": "mistyrose",
+    "GleesonModel": "black",
+    "OlivaresModel": "black",
+}
 reader_pages = {
     "White_A": "White_A_data",
     "White_L4": "White_L4_data",
@@ -36,10 +72,17 @@ reader_pages = {
     "RipollSanchezShortRange": "RipollSanchezShortRange_data",
     "RipollSanchezMidRange": "RipollSanchezMidRange_data",
     "RipollSanchezLongRange": "RipollSanchezLongRange_data",
+    "Yim2024": "Yim2024_data",
+    "Yim2024NonNorm": "Yim2024NonNorm_data",
+    "Wang2024Herm": "Wang2024Herm_data",
+    "Wang2024Male": "Wang2024Male_data",
+    "OpenWormUnified": "OpenWormUnified_data",
     "Test": "Test_data",
     "SSData": "SSData_data",
     "UpdSSData": "UpdSSData_data",
     "UpdSSData2": "UpdSSData2_data",
+    "GleesonModel": "GleesonModel_data",
+    "OlivaresModel": "OlivaresModel_data",
 }
 
 all_data[""] = [
@@ -63,7 +106,8 @@ def shorten_neurotransmitter(nt):
         .replace("Tyramine", "Tyr.")
         .replace("FMRFamide", "FMRFam.")
         .replace("Generic_", "Gen_")
-        .replace("Octapamine", "Octapa.")
+        .replace("Octopamine", "Octopa.")
+        .replace("Octapamine", "Octopa.")
         .replace("Dopamine", "Dopa.")
     )
 
@@ -91,7 +135,7 @@ def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "
 
     fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
-    return '\n%s```plotly\n%s{ "file_path": "./%s" }\n%s```\n' % (
+    return '\n%s```{.plotly .no-auto-theme}\n%s{ "file_path": "./%s" }\n%s```\n' % (
         indent,
         indent,
         asset_filename,
@@ -99,18 +143,35 @@ def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "
     )
 
 
-def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
+def get_matrix_markdown(
+    reader_name, view, connectome, synclass, indent="    ", symmetry=False
+):
     view_id = view.id
 
     if np.sum(connectome.connections[synclass]) == 0:
         return None
 
-    fig = connectome.to_plotly_matrix_fig(synclass, view)
+    if symmetry and view.has_multicell_nodes():
+        return f"\n{indent}Symmetry graph of that view, {view_id}, is not possible, as it contains nodes with multiple cells\n"
 
-    asset_filename = "assets/%s_%s_%s.json" % (
+    try:
+        fig, extra_info = connectome.to_plotly_matrix_fig(
+            synclass, view, symmetry=symmetry
+        )
+        from cect.Analysis import register_symmetry_info
+
+        if symmetry:
+            percentage = extra_info.split()[-1][:-1]
+            register_symmetry_info(reader_name, view_id, synclass, percentage)
+
+    except Exception as e:
+        return f"\n{indent}Can't generate that matrix for view {view}.\n{indent}Error: {e}\n"
+
+    asset_filename = "assets/%s_%s_%s%s.json" % (
         reader_name,
         view_id.replace(" ", "_"),
         synclass.replace(" ", "_"),
+        "_symm" if symmetry else "",
     )
 
     with open("./docs/%s" % asset_filename, "w") as asset_file:
@@ -118,7 +179,9 @@ def get_matrix_markdown(reader_name, view, connectome, synclass, indent="    "):
 
     fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
-    return f'\n{indent}<br/>\n{indent}```plotly\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n'
+    extra = "\n" + indent + extra_info if extra_info is not None else ""
+
+    return f'\n{indent}<br/>\n{indent}```{{.plotly .no-auto-theme}}\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```{extra}\n'
 
 
 def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    "):
@@ -126,6 +189,9 @@ def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    
 
     if np.sum(connectome.connections[synclass]) == 0:
         return None
+
+    if "brainmap" in view.id.lower():
+        return f"\n{indent}Hive plot of that view, {view_id}, is not possible, as it is the BrainMap view\n"
 
     fig = connectome.to_plotly_hive_plot_fig(synclass, view)
 
@@ -143,76 +209,194 @@ def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    
 
     fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
-    return f'\n{indent}<br/>\n{indent}```plotly\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n'
+    return f'\n{indent}<br/>\n{indent}```{{.plotly .no-auto-theme}}\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n'
 
 
-def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
+def get_improved_reader_name(reader_name):
+    better_name = (
+        reader_name.replace("_", " ")
+        .replace("201", " 201")
+        .replace("202", " 202")
+        .replace("Sanchez", " Sanchez et al. 2023")
+        .replace("tley", "tley et al.")
+        .replace("Cook", "Cook et al.")
+        .replace("Wang", "Wang et al.")
+        .replace("ttin", "ttin et al.")
+        .replace("im", "im et al.")
+        .replace("Herm", " (herm.)")
+        .replace("Male", " (male)")
+        .replace("ShortRange", " (short range)")
+        .replace("liet", "liet ")
+        .replace("MA", " (monoamin.)")
+        .replace("PEP", " (peptid.)")
+        .replace("ite A", "ite et al. 1986 N2U/adult")
+        .replace("ite L4", "ite et al. 1986 JSH/L4")
+        .replace("ite whole", "ite et al. 1986 (whole worm)")
+        .replace("Randi", "Randi et al.")
+        .replace("Varshney", "Varshney et al. 2011")
+        .replace("Witvliet 1", "Witvliet et al. 2021 1 (L1)")
+        .replace("Witvliet 2", "Witvliet et al. 2021 2 (L1)")
+        .replace("Witvliet 3", "Witvliet et al. 2021 3 (L1)")
+        .replace("Witvliet 4", "Witvliet et al. 2021 4 (L1)")
+        .replace("Witvliet 5", "Witvliet et al. 2021 5 (L2)")
+        .replace("Witvliet 6", "Witvliet et al. 2021 6 (L3)")
+        .replace("Witvliet 7", "Witvliet et al. 2021 7 (adult)")
+        .replace("Witvliet 8", "Witvliet et al. 2021 8 (adult)")
+        .replace("Gleeson", "Gleeson et al. 2018")
+        .replace("Olivares", "Olivares et al. 2021")
+        .replace("Model", " (model)")
+    )
+    return better_name
+
+
+def generate_comparison_page(
+    quick: int,
+    color_table=True,
+    dataset_pages=True,
+    save_to_cache=False,
+    load_from_cache=True,
+):
     connectomes = {}
     all_connectomes = {}
 
     readers = {}
 
-    if not quick:
-        readers["White_A"] = ["cect.White_A", "White_1986"]
-        readers["White_L4"] = ["cect.White_L4", "White_1986"]
+    if quick == 2:  # very quick...
+        # readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
+        # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
+        # readers["Bentley2016_MA"] = ["cect.readers.WormNeuroAtlasMAReader", "Bentley_2016"]
+        readers["White_A"] = ["cect.readers.White_A", "White_1986"]
+        readers["White_L4"] = ["cect.readers.White_L4", "White_1986"]
+        readers["White_whole"] = ["cect.readers.White_whole", "White_1986"]
+        # readers["Test"] = ["cect.readers.TestDataReader", None]
+        readers["Varshney"] = ["cect.readers.VarshneyDataReader", "Varshney_2011"]
 
-    readers["White_whole"] = ["cect.White_whole", "White_1986"]
-    readers["Varshney"] = ["cect.VarshneyDataReader", "Varshney_2011"]
+        # readers["WormNeuroAtlas"] = ["cect.readers.WormNeuroAtlasReader", "Randi_2023"]
 
-    if not quick:
-        readers["Bentley2016_MA"] = ["cect.WormNeuroAtlasMAReader", "Bentley_2016"]
-        readers["Bentley2016_PEP"] = ["cect.WormNeuroAtlasPepReader", "Bentley_2016"]
+        # readers["Randi2023"] = ["cect.readers.WormNeuroAtlasFuncReader", "Randi_2023"]
 
-        readers["Cook2019Herm"] = ["cect.Cook2019HermReader", "Cook_2019"]
+        # readers["Brittin2021"] = ["cect.readers.BrittinDataReader", "Brittin_2021"]
+        # readers["Yim2024"] = ["cect.readers.Yim2024DataReader", "Yim_2024"]
+        # readers["Yim2024NonNorm"] = ["cect.readers.Yim2024NonNormDataReader", "Yim_2024"]
 
-    if not quick:
-        readers["Cook2019Male"] = ["cect.Cook2019MaleReader", "Cook_2019"]
+        # readers["White_whole"] = ["cect.readers.White_whole", "White_1986"]
+        # readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
+        # readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 
-    readers["Cook2020"] = ["cect.Cook2020DataReader", "Cook_2020"]
+        readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
+        # readers["Cook2019Male"] = ["cect.readers.Cook2019MaleReader", "Cook_2019"]
+        # readers["Cook2020"] = ["cect.readers.Cook2020DataReader", "Cook_2020"]
 
-    readers["Brittin2021"] = ["cect.BrittinDataReader", "Brittin_2021"]
+        # readers["OpenWormUnified"] = ["cect.readers.OpenWormUnifiedReader", "OpenWorm_Unified"]
 
-    if not quick:
-        readers["Witvliet1"] = ["cect.WitvlietDataReader1", "Witvliet_2021"]
-        readers["Witvliet2"] = ["cect.WitvlietDataReader2", "Witvliet_2021"]
-        readers["Witvliet3"] = ["cect.WitvlietDataReader3", "Witvliet_2021"]
-        readers["Witvliet4"] = ["cect.WitvlietDataReader4", "Witvliet_2021"]
-        readers["Witvliet5"] = ["cect.WitvlietDataReader5", "Witvliet_2021"]
-        readers["Witvliet6"] = ["cect.WitvlietDataReader6", "Witvliet_2021"]
-        readers["Witvliet7"] = ["cect.WitvlietDataReader7", "Witvliet_2021"]
+        # readers["Witvliet1"] = ["cect.readers.WitvlietDataReader1", "Witvliet_2021"]
+        # readers["Witvliet8"] = ["cect.readers.WitvlietDataReader8", "Witvliet_2021"]
+        # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
+        # readers["RipollSanchezLongRange"] = [ "cect.readers.RipollSanchezLongRangeReader", "RipollSanchez_2023", ]
+        # readers["OpenWormUnified"] = ["cect.readers.OpenWormUnifiedReader", "OpenWorm_Unified"]
 
-    readers["Witvliet8"] = ["cect.WitvlietDataReader8", "Witvliet_2021"]
+        # readers["SSData"] = ["cect.readers.SpreadsheetDataReader", None]
 
-    if not quick:
-        readers["WormNeuroAtlas"] = ["cect.WormNeuroAtlasReader", "Randi_2023"]
+    else:
+        if not quick:
+            readers["White_A"] = ["cect.readers.White_A", "White_1986"]
+            readers["White_L4"] = ["cect.readers.White_L4", "White_1986"]
 
-        readers["Randi2023"] = ["cect.WormNeuroAtlasFuncReader", "Randi_2023"]
+        readers["White_whole"] = ["cect.readers.White_whole", "White_1986"]
+        readers["Varshney"] = ["cect.readers.VarshneyDataReader", "Varshney_2011"]
 
-    if not quick:
-        readers["RipollSanchezShortRange"] = [
-            "cect.RipollSanchezShortRangeReader",
-            "RipollSanchez_2023",
+        readers["Bentley2016_MA"] = [
+            "cect.readers.WormNeuroAtlasMAReader",
+            "Bentley_2016",
         ]
-        readers["RipollSanchezMidRange"] = [
-            "cect.RipollSanchezMidRangeReader",
-            "RipollSanchez_2023",
-        ]
-        readers["RipollSanchezLongRange"] = [
-            "cect.RipollSanchezLongRangeReader",
-            "RipollSanchez_2023",
+        if not quick:
+            readers["Bentley2016_PEP"] = [
+                "cect.readers.WormNeuroAtlasPepReader",
+                "Bentley_2016",
+            ]
+
+        if not quick:
+            readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
+            readers["Cook2019Male"] = ["cect.readers.Cook2019MaleReader", "Cook_2019"]
+
+        readers["Cook2020"] = ["cect.readers.Cook2020DataReader", "Cook_2020"]
+
+        readers["Brittin2021"] = ["cect.readers.BrittinDataReader", "Brittin_2021"]
+
+        if not quick:
+            readers["Witvliet1"] = ["cect.readers.WitvlietDataReader1", "Witvliet_2021"]
+            readers["Witvliet2"] = ["cect.readers.WitvlietDataReader2", "Witvliet_2021"]
+            readers["Witvliet3"] = ["cect.readers.WitvlietDataReader3", "Witvliet_2021"]
+            readers["Witvliet4"] = ["cect.readers.WitvlietDataReader4", "Witvliet_2021"]
+            readers["Witvliet5"] = ["cect.readers.WitvlietDataReader5", "Witvliet_2021"]
+            readers["Witvliet6"] = ["cect.readers.WitvlietDataReader6", "Witvliet_2021"]
+            readers["Witvliet7"] = ["cect.readers.WitvlietDataReader7", "Witvliet_2021"]
+
+        readers["Witvliet8"] = ["cect.readers.WitvlietDataReader8", "Witvliet_2021"]
+
+        if not quick:
+            readers["WormNeuroAtlas"] = [
+                "cect.readers.WormNeuroAtlasReader",
+                "Randi_2023",
+            ]
+
+            readers["Randi2023"] = [
+                "cect.readers.WormNeuroAtlasFuncReader",
+                "Randi_2023",
+            ]
+
+        if not quick:
+            readers["RipollSanchezShortRange"] = [
+                "cect.readers.RipollSanchezShortRangeReader",
+                "RipollSanchez_2023",
+            ]
+            readers["RipollSanchezMidRange"] = [
+                "cect.readers.RipollSanchezMidRangeReader",
+                "RipollSanchez_2023",
+            ]
+            readers["RipollSanchezLongRange"] = [
+                "cect.readers.RipollSanchezLongRangeReader",
+                "RipollSanchez_2023",
+            ]
+
+        readers["Yim2024"] = ["cect.readers.Yim2024DataReader", "Yim_2024"]
+        readers["Yim2024NonNorm"] = [
+            "cect.readers.Yim2024NonNormDataReader",
+            "Yim_2024",
         ]
 
-    if not quick:
-        readers["SSData"] = ["cect.SpreadsheetDataReader", None]
-        readers["UpdSSData"] = ["cect.UpdatedSpreadsheetDataReader", None]
-        readers["UpdSSData2"] = ["cect.UpdatedSpreadsheetDataReader2", None]
+        readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
+        readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
 
-    readers["Test"] = ["cect.TestDataReader", None]
+        readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
+        readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
+
+        readers["OpenWormUnified"] = [
+            "cect.readers.OpenWormUnifiedReader",
+            "OpenWorm_Unified",
+        ]
+
+        if not quick:
+            readers["SSData"] = ["cect.readers.SpreadsheetDataReader", None]
+            readers["UpdSSData"] = ["cect.readers.UpdatedSpreadsheetDataReader", None]
+            readers["UpdSSData2"] = ["cect.readers.UpdatedSpreadsheetDataReader2", None]
+
+        readers["Test"] = ["cect.readers.TestDataReader", None]
 
     main_mk = "# Comparison between data readers\n"
+
+    main_mk += "This table shows the current dataset readers with a summary of the different types of cells and connections they contain. \n\n"
+    main_mk += "**Scroll** to the right to see more columns. \n\n"
+    main_mk += "**Hover over** colored dots to see the name/description of the cell and **click on them** to go to a page dedicated to that cell.\n\n"
+
     table_html = ""
 
-    for reader_name, reader_info in readers.items():
+    to_include = []
+    for dataset in readers.keys():
+        to_include.append(dataset)
+
+    for reader_name in to_include:
+        reader_info = readers[reader_name]
         reader = reader_info[0]
 
         description_page = reader_info[1] if len(reader_info) > 1 else None
@@ -224,7 +408,15 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
         reader_module = importlib.import_module(reader)
 
         try:
-            connectome = reader_module.get_instance()
+            if load_from_cache:
+                connectome = reader_module.get_instance(from_cache=True)
+
+            else:
+                connectome = reader_module.get_instance()
+
+                if save_to_cache:
+                    connectome.save_to_cache(reader.split(".")[2])
+
             all_connectomes[reader_name] = connectome
             preferred, not_in_preferred, missing_preferred, muscles = check_cells(
                 connectome.nodes
@@ -232,7 +424,10 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
             print_("Adding full connectome info: %s" % connectome)
 
         except Exception as e:
-            print_("NOT adding full connectome info (%s)" % e)
+            print_(
+                "NOT adding full connectome info (%s, %s, error: %s)"
+                % (reader_name, reader_info, str(e))
+            )
             connectome = None
 
         if reader_name in reader_pages:
@@ -240,11 +435,14 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
 
             if dataset_pages:
                 if connectome is not None:
-                    from cect.ConnectomeView import ALL_VIEWS
+                    if quick == 2:
+                        from cect.ConnectomeView import QUICK_VIEWS as views
+                    else:
+                        from cect.ConnectomeView import ALL_VIEWS as views
 
                     indent = "    "
 
-                    for view in ALL_VIEWS:
+                    for view in views:
                         print_("Generating view: %s (%s)" % (view.name, view.id))
 
                         view_prefix = "" if view.id == "Raw" else "%s_" % view.id
@@ -261,20 +459,36 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
                             view_prefix,
                             reader_pages[reader_name],
                         )
+                        symmetry_filename = "docs/%s%s_symmetry.md" % (
+                            view_prefix,
+                            reader_pages[reader_name],
+                        )
 
                         for filename in [
                             graph_filename,
                             matrix_filename,
                             hiveplot_filename,
+                            symmetry_filename,
                         ]:
                             with open(filename, "w") as f:
                                 graph = "graph" in filename
                                 hiveplot = "hiveplot" in filename
-                                matrix = not graph and not hiveplot
+                                symmetry = "symmetry" in filename
+                                matrix = not graph and not hiveplot and not symmetry
+
+                                suffix = (
+                                    "_graph"
+                                    if graph
+                                    else (
+                                        "_hiveplot"
+                                        if hiveplot
+                                        else ("_symmetry" if symmetry else "")
+                                    )
+                                )
 
                                 f.write(
                                     '---\ntitle: "Dataset: %s"\nsearch:\n  exclude: true\n---\n\n'
-                                    % reader_name
+                                    % get_improved_reader_name(reader_name)
                                 )
 
                                 desc_full = ""
@@ -294,9 +508,7 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
                                             "<b>" if rr == reader_name else "",
                                             view_prefix,
                                             reader_pages[rr],
-                                            "_graph"
-                                            if graph
-                                            else ("_hiveplot" if hiveplot else ""),
+                                            suffix,
                                             rr,
                                             "</b>" if rr == reader_name else "",
                                         )
@@ -317,7 +529,7 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
                                     "../api/%s"
                                     % reader_module.__name__.replace(".", "/")
                                 )
-                                reader_class = reader_module.__name__.split(".")[1]
+                                reader_class = reader_module.__name__.split(".")[2]
                                 reader_info = f'Python Reader: <a href="{reader_page}">{reader_class}</a>'
                                 desc_full = f"<i>{dp}{reader_module.READER_DESCRIPTION}.&nbsp;&nbsp;&nbsp;{reader_info}</i>\n"
 
@@ -357,12 +569,21 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
                                     )
                                 )
                                 f.write(
-                                    '%s<a href="../%s%s_hiveplot"> Hive plot</a>%s \n\n'
+                                    '%s<a href="../%s%s_hiveplot"> Hive plot</a>%s -'
                                     % (
                                         "<b>" if hiveplot else "",
                                         view_prefix,
                                         reader_pages[reader_name],
                                         "</b>" if hiveplot else "",
+                                    )
+                                )
+                                f.write(
+                                    '%s<a href="../%s%s_symmetry"> Symmetry</a>%s \n\n'
+                                    % (
+                                        "<b>" if symmetry else "",
+                                        view_prefix,
+                                        reader_pages[reader_name],
+                                        "</b>" if symmetry else "",
                                     )
                                 )
 
@@ -375,7 +596,7 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
     """
                                 )
 
-                                for viewb in ALL_VIEWS:
+                                for viewb in views:
                                     viewb_prefix = (
                                         "" if viewb.id == "Raw" else "%s_" % viewb.id
                                     )
@@ -386,9 +607,7 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
                                             "<b>" if view.id == viewb.id else "",
                                             viewb_prefix,
                                             reader_pages[reader_name],
-                                            "_graph"
-                                            if graph
-                                            else ("_hiveplot" if hiveplot else ""),
+                                            suffix,
                                             viewb.name,
                                             "</b>" if view.id == viewb.id else "",
                                             "" if "Fig 3" in view.name else " - ",
@@ -431,6 +650,15 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
                                             sc,
                                             indent=indent,
                                         )
+                                    elif symmetry:
+                                        mkdown_fig = get_matrix_markdown(
+                                            reader_name,
+                                            view,
+                                            cv,
+                                            sc,
+                                            indent=indent,
+                                            symmetry=True,
+                                        )
 
                                     if mkdown_fig is not None:
                                         no_conns = False
@@ -438,6 +666,139 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
 
                                 if no_conns:
                                     f.write("No connections present in this view\n")
+
+                                view_info = "**%s** (%s)\n\n" % (
+                                    view.name,
+                                    view.id,
+                                )
+                                if view.description is not None:
+                                    view_info += "_%s_\n\n" % view.description
+
+                                view_info += "\n\n"
+
+                                view_info += "| Connection type | Total size | Values present | Nodes with pre connections | Nodes with post connections |\n| --- | --- | --- | --- | --- |\n"
+                                for c in cv.connections:
+                                    conn_array = cv.connections[c]
+                                    nonzero = np.count_nonzero(conn_array)
+                                    count_diagonal_entries = np.count_nonzero(
+                                        np.diag(conn_array)
+                                    )
+                                    is_symmetric = np.array_equal(
+                                        conn_array, conn_array.T
+                                    )
+                                    sym_info = ""
+                                    if is_symmetric:
+                                        sym_info = f"Matrix is symmetric with <b>{count_diagonal_entries + int((nonzero - count_diagonal_entries) / 2)}</b> unique pairs<br/>"
+                                    diag_info = (
+                                        "<b>%s</b> nodes with self-connections<br/>"
+                                        % count_diagonal_entries
+                                        if count_diagonal_entries > 0
+                                        else ""
+                                    )
+                                    # print_(count_diagonal_entries)
+                                    pre = sorted(
+                                        [
+                                            cv.nodes[i]
+                                            for i in range(len(cv.nodes))
+                                            if conn_array[i].sum() > 0
+                                        ]
+                                    )
+                                    post = sorted(
+                                        [
+                                            cv.nodes[i]
+                                            for i in range(len(cv.nodes))
+                                            if conn_array[:, i].sum() > 0
+                                        ]
+                                    )
+                                    if nonzero > 0:
+                                        view_info += (
+                                            "|**%s** | <b>%s</b> matrix | <b>%i</b> non-zero entries<br/>%sAvg. weight: <b>%s</b><br/>Sum of weights: <b>%s</b> | %s | %s |\n"
+                                            % (
+                                                c,
+                                                conn_array.shape,
+                                                nonzero,
+                                                diag_info + sym_info,
+                                                "%.6f" % (np.sum(conn_array) / nonzero)
+                                                if nonzero > 0
+                                                else 0,
+                                                np.sum(conn_array),
+                                                ", ".join(
+                                                    [
+                                                        "**%s**"
+                                                        % view.get_node_set(
+                                                            p
+                                                        ).to_markdown()
+                                                        for p in pre
+                                                    ]
+                                                ),
+                                                ", ".join(
+                                                    [
+                                                        "**%s**"
+                                                        % view.get_node_set(
+                                                            p
+                                                        ).to_markdown()
+                                                        for p in post
+                                                    ]
+                                                ),
+                                            )
+                                        )
+
+                                view_info += "\n\n"
+                                total_cells = sum(
+                                    [len(ns.cells) for ns in view.node_sets]
+                                )
+                                total_here = 0
+                                for ns in view.node_sets:
+                                    for c in ns.cells:
+                                        if c in connectome.nodes:
+                                            total_here += 1
+
+                                view_info += (
+                                    f'| Nodes in current view<br/>({len(view.node_sets)} total) <span style="color:#ffffff;">xxxxxxxxxxxxxxxxxxxxxxxxx</span>| '
+                                    + f"Num cells in node<br/>({total_cells} total) | "
+                                    + f"Num in this dataset<br/>({total_here} total) | "
+                                    + "Cells in node |\n"
+                                    + "| --- | --- | --- | --- |\n"
+                                )
+
+                                for ns in view.node_sets:
+                                    n_in_dataset = np.sum(
+                                        [
+                                            (1 if c in connectome.nodes else 0)
+                                            for c in ns.cells
+                                        ]
+                                    )
+                                    node_colored = ns.to_markdown()
+
+                                    node_desc = (
+                                        " <br/><i>%s</i>" % ns.description
+                                        if ns.description is not None
+                                        else ""
+                                    )
+
+                                    cells_linked = [
+                                        get_cell_internal_link(
+                                            c,
+                                            individual_cell_page=True,
+                                            html=True,
+                                            use_color=True,
+                                            bold=(c in connectome.nodes),
+                                            strikethrough=(c not in connectome.nodes),
+                                        )
+                                        for c in sorted(ns.cells)
+                                    ]
+                                    view_info += "|**%s**%s |%i | %i | %s|\n" % (
+                                        node_colored,
+                                        node_desc,
+                                        len(ns.cells),
+                                        n_in_dataset,
+                                        ", ".join(cells_linked),
+                                    )
+
+                                f.write(
+                                    '=== "View info"\n\n    %s\n\n'
+                                    % (view_info.replace("\n", "\n    "))
+                                )
 
                                 cell_types = {
                                     "Neurons (herm)": preferred,
@@ -550,11 +911,11 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
 
     # h = HTML(df_all.to_html(escape=False, index=False))
 
-    from cect.Cells import COOK_GROUPING_1
+    from cect.Cells import COOK_GROUPING_VNC
 
     if color_table:
         STYLE = '"width:80px;font-family:Arial"'
-        font_size = "190%"
+        font_size = "150%"
         table_html += f'<table>\n  <tr>\n    <th style={STYLE}><span style="font-size:{font_size}"> </span></th>\n'
 
         readers_to_include = []
@@ -570,49 +931,31 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
                 and "WormNeuroAtlas" not in reader_name
                 and "RipollSanchezMidRange" not in reader_name
                 and "RipollSanchezLongRange" not in reader_name
+                and "NonNorm" not in reader_name
+                and "OpenWorm" not in reader_name
             ):
                 readers_to_include.append(reader_name)
 
         better_names = {}
         for reader_name in readers_to_include:
-            better_name = (
-                reader_name.replace("_", " ")
-                .replace("201", " 201")
-                .replace("202", " 202")
-                .replace("Sanchez", " Sanchez et al. 2023 ")
-                .replace("tley", "tley et al.")
-                .replace("Cook", "Cook et al.")
-                .replace("ttin", "ttin et al.")
-                .replace("19", "19 ")
-                .replace("liet", "liet ")
-                .replace("MA", "Monoamin.")
-                .replace("PEP", "Peptid.")
-                .replace("ite A", "ite et al. 1986 N2U/Adult")
-                .replace("ite L4", "ite et al. 1986 JSU/L4")
-                .replace("ite whole", "ite et al. 1986 Whole worm")
-                .replace("Randi", "Randi et al.")
-                .replace("Varshney", "Varshney et al. 2011")
-                .replace("Witvliet 1", "Witvliet et al. 2021 1 (L1)")
-                .replace("Witvliet 5", "Witvliet et al. 2021 5 (L2)")
-                .replace("Witvliet 6", "Witvliet et al. 2021 6 (L3)")
-                .replace("Witvliet 8", "Witvliet et al. 2021 8 (Adult)")
-            )
+            better_name = get_improved_reader_name(reader_name)
             better_names[reader_name] = better_name
 
             # table_html += f'    <th style={STYLE}><span style="font-size:150%">{better_name}</span></th>\n'
 
-        for group in COOK_GROUPING_1:
+        for group in COOK_GROUPING_VNC:
             table_html += f'    <th style={STYLE}><span style="font-size:{font_size}">{group}</span></th>\n'
 
         for reader_name in readers_to_include:
             table_html += f'  <tr>\n<td align="middle"><b><span style="font-size:{font_size};text-align:center;padding:3px;font-family:Arial">{better_names[reader_name]}</span></b></th>\n'
 
-            for group in COOK_GROUPING_1:
+            for group in COOK_GROUPING_VNC:
                 # table_html += f'  <tr>\n<td><b><span style="font-size:150%;text-align:center;padding:3px;">{group}</span></b></th>\n'
 
                 connectome = all_connectomes[reader_name]
                 cells_here = ""
-                for cell in sorted(COOK_GROUPING_1[group]):
+                cell_names = []
+                for cell in sorted(COOK_GROUPING_VNC[group]):
                     if cell in connectome.nodes:
                         cells_here += "%s&nbsp;" % get_cell_internal_link(
                             cell_name=cell,
@@ -621,11 +964,15 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
                             use_color=True,
                             individual_cell_page=True,
                         )
+                        cell_names.append(cell)
                     else:
                         pass  # cells_here+='<s>%s</s>&nbsp;'%cell
 
                     if (cells_here.split("<br/>")[-1]).count("&nbsp;") > 14:
                         cells_here += "<br/>\n"
+
+                if len(cell_names) > 0:
+                    cells_here += f"<p align='left' valign='bottom'><div title='{', '.join(cell_names)}'><u><b>({len(cell_names)})</b></u></div></p>\n"
 
                 table_html += f'    <td align="middle">{cells_here}</th>\n'
 
@@ -664,12 +1011,75 @@ def generate_comparison_page(quick: bool, color_table=True, dataset_pages=True):
 
     print_("Written page: %s" % filename)
 
+    from cect.Analysis import save_symmetry_info
+
+    save_symmetry_info()
+
     return connectomes
 
 
 if __name__ == "__main__":
-    quick = len(sys.argv) > 1 and eval(sys.argv[1])
+    if "-color" in sys.argv:
+        from cect.Cells import CORE_ANATOMICAL_CONNECTOMES
 
-    connectomes = generate_comparison_page(quick, color_table=True, dataset_pages=False)
+        import matplotlib.pyplot as plt
 
-    print("Finished. All loaded connectomes:\n%s" % connectomes)
+        plt.figure(figsize=(8, 6))
+
+        for conn in CORE_ANATOMICAL_CONNECTOMES:
+            color = reader_colors[conn]
+            print(f"{conn}: {color}")
+            name = get_improved_reader_name(conn)
+            plt.plot(
+                [0],
+                [1],
+                label=f"{name}",
+                color=color,
+                linestyle="None",
+                marker="o",
+                markersize=6 if "Cook2019Herm" in conn else 3,
+            )
+
+        handles, labels = plt.gca().get_legend_handles_labels()
+        ncol = 4
+        plt.legend(
+            handles,
+            labels,
+            loc="upper center",
+            bbox_to_anchor=(0.5, -0.15),
+            ncol=ncol,
+            frameon=False,
+        )
+        plt.gcf().subplots_adjust(bottom=0.25)
+
+        plt.show()
+
+    elif "-table" in sys.argv:
+        quick = 0
+
+        save_to_cache = False
+
+        connectomes = generate_comparison_page(
+            quick,
+            color_table=True,
+            dataset_pages=False,
+            save_to_cache=save_to_cache,
+            load_from_cache=(not save_to_cache),
+        )
+
+        print("Finished. All loaded connectomes:\n%s" % connectomes)
+
+    else:
+        quick = len(sys.argv) > 1 and eval(sys.argv[1])
+
+        save_to_cache = True
+
+        connectomes = generate_comparison_page(
+            quick,
+            color_table=True,
+            dataset_pages=False,
+            save_to_cache=save_to_cache,
+            load_from_cache=(not save_to_cache),
+        )
+
+        print("Finished. All loaded connectomes:\n%s" % connectomes)

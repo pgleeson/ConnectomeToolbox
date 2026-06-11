@@ -3,7 +3,7 @@
 ############################################################
 
 #    Information on cells in C. elegans
-#    Much of this data taken from supplementary info of Ceook et al 2019
+#    Much of this data taken from supplementary info of Cook et al 2019
 
 ############################################################
 
@@ -15,32 +15,34 @@ from cect import print_
 
 from typing import List
 
-
-ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS = [
-    "Acetylcholine",
-    "Acetylcholine_Tyramine",
-    "Dopamine",
-    "FMRFamide",
-    "GABA",
-    "Glutamate",
-    "Octapamine",
-    "Serotonin",
-    "Serotonin_Acetylcholine",
-    "Serotonin_Glutamate",
-]
-
-GENERIC_CHEM_SYN = "Generic_CS"
-GENERIC_ELEC_SYN = "Generic_GJ"
-
-EXTRASYNAPTIC_SYN_TYPE = "Extrasynaptic"
-MONOAMINERGIC_SYN_CLASS = "Monoaminergic"
-PEPTIDERGIC_SYN_CLASS = "Peptidergic"
-
-ALL_KNOWN_EXTRASYNAPTIC_CLASSES = [MONOAMINERGIC_SYN_CLASS, PEPTIDERGIC_SYN_CLASS]
+from cect.Neurotransmitters import (
+    GENERIC_CHEM_SYN_CLASS,
+    GENERIC_ELEC_SYN_CLASS,
+    ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
+)
 
 cell_notes = {}
 
 connectomes = None
+
+CORE_ANATOMICAL_CONNECTOMES = [
+    "Cook2019Herm",
+    "Cook2019Male",
+    "White_A",
+    "White_L4",
+    "White_whole",
+    "Varshney",
+    "Cook2020",
+    "Witvliet1",
+    "Witvliet2",
+    "Witvliet3",
+    "Witvliet4",
+    "Witvliet5",
+    "Witvliet6",
+    "Witvliet7",
+    "Witvliet8",
+    "Yim2024",
+]
 
 
 def get_cell_notes(cell: str):
@@ -50,7 +52,7 @@ def get_cell_notes(cell: str):
         cell (str): Name of the cell
 
     Returns:
-        str: Description of the cell type
+        (str): Description of the cell type
     """
     desc = cell_notes[cell] if cell in cell_notes else "???"
     desc = desc[0].upper() + desc[1:]
@@ -1101,7 +1103,7 @@ BODY_WALL_MUSCLE_NAMES = [
 ]
 
 HEAD_MUSCLES_COOK = []
-BODY_MUSCLES_COOK = []
+BODY_ONLY_MUSCLES_COOK = []
 
 for bwm in BODY_WALL_MUSCLE_NAMES:
     num = int(bwm[3:5])
@@ -1109,7 +1111,7 @@ for bwm in BODY_WALL_MUSCLE_NAMES:
         HEAD_MUSCLES_COOK.append(bwm)
         cell_notes[bwm] = "head muscle"
     else:
-        BODY_MUSCLES_COOK.append(bwm)
+        BODY_ONLY_MUSCLES_COOK.append(bwm)
         cell_notes[bwm] = "main body muscle"
 
 
@@ -1491,6 +1493,24 @@ COOK_GROUPING_1["Male other cells"] = (
     MALE_RAY_STRUCTURAL_CELLS + PROCTODEUM_CELL_MALE + GONAD_CELL_MALE
 )
 
+COOK_GROUPING_VNC = {}
+
+for group in COOK_GROUPING_1:
+    if group != "Motorneurons":
+        COOK_GROUPING_VNC[group] = list(COOK_GROUPING_1[group])
+    else:
+        COOK_GROUPING_VNC["VNC Motorneurons"] = []
+        COOK_GROUPING_VNC["Other Motorneurons"] = []
+        for cell in COOK_GROUPING_1[group]:
+            if cell in VENTRAL_CORD_MOTORNEURONS + VC_HERM_MOTORNEURONS:
+                COOK_GROUPING_VNC["VNC Motorneurons"].append(cell)
+            else:
+                COOK_GROUPING_VNC["Other Motorneurons"].append(cell)
+
+assert len(COOK_GROUPING_1["Motorneurons"]) == len(
+    COOK_GROUPING_VNC["VNC Motorneurons"]
+) + len(COOK_GROUPING_VNC["Other Motorneurons"])
+
 ALL_PREFERRED_NEURON_NAMES = PREFERRED_HERM_NEURON_NAMES + MALE_SPECIFIC_NEURONS
 
 
@@ -1498,12 +1518,31 @@ ALL_PREFERRED_CELL_NAMES = (
     ALL_PREFERRED_NEURON_NAMES + PREFERRED_MUSCLE_NAMES + ALL_NON_NEURON_MUSCLE_CELLS
 )
 
+# Known to be used in computational models
+KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS = [
+    "DB8",
+    "DB9",
+    "DB10",
+    "DD7",
+    "DD8",
+    "DD9",
+    "DD10",
+    "DA10",
+]
+
+for cell in KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS:
+    cell_notes[cell] = (
+        "NOT AN ACTUAL C. ELEGANS NEURON! A cell by this name is sometimes used in computational models of worm locomotion"
+    )
+
+KNOWN_MODELLED_NEURONS = KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS
+
 
 def get_primary_classification():
     """Get the primary classification of the cells, based on https://www.wormatlas.org/colorcode.htm
 
     Returns:
-        dict: Dict of cells vs classification/group from https://www.wormatlas.org/colorcode.htm
+        (dict): Dict of cells vs classification/group from https://www.wormatlas.org/colorcode.htm
     """
 
     classification = {}
@@ -1673,16 +1712,19 @@ def get_primary_classification():
     return classification
 
 
-def is_known_cell(cell: str):
+def is_known_cell(cell: str, allow_modelled_neurons: bool = False):
     """Is this string the name of one of the known cells?
 
     Args:
         cell (str): Cell name
 
     Returns:
-        bool: Whether this is a known cell name
+        (bool): Whether this is a known cell name
     """
-    return cell in ALL_PREFERRED_CELL_NAMES
+    if allow_modelled_neurons:
+        return cell in ALL_PREFERRED_CELL_NAMES + KNOWN_MODELLED_NEURONS
+    else:
+        return cell in ALL_PREFERRED_CELL_NAMES
 
 
 def get_SIM_class(cell: str):
@@ -1693,7 +1735,7 @@ def get_SIM_class(cell: str):
         cell: which cell to assess
 
     Returns:
-        str: whether a cell is Sensory/Interneuron/Motorneuron (or Other)
+        (str): whether a cell is Sensory/Interneuron/Motorneuron (or Other)
     """
 
     pharyngeal_polymodal_to_class_motor = [
@@ -1725,20 +1767,35 @@ def is_one_of_bilateral_pair(cell: str):
     return is_bilateral_left(cell) or is_bilateral_right(cell)
 
 
-def get_contralateral_neuron(cell: str):
-    """Gets the contralateral neuron for a given neuron, based on Kim et al. 2024: https://doi.org/10.1101/2024.10.03.616419
+def get_contralateral_cell(cell: str):
+    """Gets the contralateral cell for a given cell, based on Kim et al. 2024: https://doi.org/10.1101/2024.10.03.616419
 
     Args:
-        cell (_type_): _description_
+        cell (str): The cell for which to get the contralateral cell
 
     Raises:
-        Exception: _description_
+        Exception: If the cell is not a known cell, or if it is a non-muscle cell for which contralateral cell determination is not yet implemented/tested
 
     Returns:
-        _type_: _description_
+        (str): The contralateral cell
     """
-    if not is_any_neuron(cell):
-        raise Exception("Not yet implemented/tested for non neuronal cells")
+    if not is_known_cell(cell, allow_modelled_neurons=True):
+        raise Exception(
+            "Cannot determine contralateral cell for: %s (unknown cell)" % cell
+        )
+    if is_known_muscle(cell):
+        if cell in ["MVR24", "MANAL"]:
+            return cell
+        if "L" in cell:
+            return cell.replace("L", "R")
+        if "R" in cell:
+            return cell.replace("R", "L")
+        return cell
+    """elif not is_any_neuron(cell):
+        raise Exception(
+            "Determining contralateral cell is not yet implemented/tested for non neuronal cells, e.g. %s"
+            % cell
+        )"""
     if is_bilateral_left(cell):
         return cell[:-1] + "R"
     if is_bilateral_right(cell):
@@ -1919,13 +1976,24 @@ def is_male_specific_cell(cell: str):
     )
 
 
-def is_any_neuron(cell: str):
-    return cell in PREFERRED_HERM_NEURON_NAMES + MALE_SPECIFIC_NEURONS
+def is_any_neuron(cell: str, allow_modelled_neurons: bool = False):
+    if allow_modelled_neurons:
+        return (
+            cell
+            in PREFERRED_HERM_NEURON_NAMES
+            + MALE_SPECIFIC_NEURONS
+            + KNOWN_MODELLED_NEURONS
+        )
+    else:
+        return cell in PREFERRED_HERM_NEURON_NAMES + MALE_SPECIFIC_NEURONS
 
 
 def remove_leading_index_zero(cell: str):
     """
-    Returns neuron name with an index without leading zero. E.g. VB01 -> VB1.
+    Removes leading zero from cell index, e.g. VB01 -> VB1.
+
+    Returns:
+        (str): Name with an index without leading zero.
     """
     if cell[:2] in ["DA", "AS", "DD", "DB", "VA", "VB", "VC", "VD"] and cell[
         -2:
@@ -1968,7 +2036,7 @@ def get_standard_color(cell: str):
         + MALE_NON_HEAD_SENSORY_NEURONS
     ):
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["sensory neuron"]
-    elif cell in MOTORNEURONS_COOK:
+    elif cell in MOTORNEURONS_COOK + KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS:
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["motor neuron"]
     elif cell in PHARYNGEAL_POLYMODAL_NEURONS:
         return WA_COLORS["Hermaphrodite"]["Nervous Tissue"]["polymodal neuron"]
@@ -2097,6 +2165,8 @@ def get_cell_internal_link(
     text: str = None,
     use_color: bool = False,
     individual_cell_page: bool = False,
+    bold: bool = False,
+    strikethrough: bool = False,
 ):
     url = "../Cells/index.html#%s" % cell_name
 
@@ -2109,7 +2179,14 @@ def get_cell_internal_link(
             color = get_standard_color(cell_name)
             link_text = f'<span style="color:{color};">{link_text}</span>'
 
-        return '<a href="%s" title="%s">%s</a>' % (
+        if strikethrough:
+            link_text = (
+                f'<span style="text-decoration: line-through;">{link_text}</span>'
+            )
+        if bold:
+            link_text = f"<strong>{link_text}</strong>"
+
+        return '<a href="%s" title="%s" style="text-decoration:none;">%s</a>' % (
             url,
             (cell_name + " (%s)" if text else "%s") % get_short_description(cell_name),
             link_text,
@@ -2279,13 +2356,16 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
     import plotly.graph_objects as go
 
     from cect.Comparison import _format_json
+    from cect.Comparison import reader_colors
 
     print_(" - Adding table for %s" % cell_type)
 
     syn_summaries = {
-        "Chemical conns in": [GENERIC_CHEM_SYN] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
-        "Chemical conns out": [GENERIC_CHEM_SYN] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
-        "Electrical conns": [GENERIC_ELEC_SYN],
+        "Chemical conns in": [GENERIC_CHEM_SYN_CLASS]
+        + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
+        "Chemical conns out": [GENERIC_CHEM_SYN_CLASS]
+        + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
+        "Electrical conns": [GENERIC_ELEC_SYN_CLASS],
     }
 
     fig_md = ""
@@ -2293,22 +2373,43 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
     verbose = False
     some_cells = False
 
+    sorted_cells_alphabetical = sorted(cells)
+
+    sorted_reader_names = list(connectomes.keys())
+    if "Cook2020Male" in sorted_reader_names:
+        sorted_reader_names.remove("Cook2020Male")
+        sorted_reader_names = ["Cook2020Male"] + sorted_reader_names
+    if "Cook2019Herm" in sorted_reader_names:
+        sorted_reader_names.remove("Cook2019Herm")
+        sorted_reader_names = ["Cook2019Herm"] + sorted_reader_names
+
     for syn_summary in syn_summaries:
-        fig = go.Figure()
+        layout = go.Layout(
+            plot_bgcolor="#FFF",  # Sets background color to white
+        )
+        fig = go.Figure(layout=layout)
+        fig.update_xaxes(showgrid=False, showline=True, linewidth=1, linecolor="black")
+        fig.update_yaxes(showgrid=False, showline=True, linewidth=1, linecolor="black")
+
         fig.layout.showlegend = True
 
         fig_md += '\n=== "%s"\n\n' % syn_summary
         # fig_md += "    Connections to these cells of type: %s\n\n" % syn_type
 
         nonempty_fig_present = False
-        for reader_name, connectome in connectomes.items():
-            sorted_cells = sorted(cells)
 
+        sorted_cells_conns = None
+
+        for reader_name in sorted_reader_names:
+            connectome = connectomes[reader_name]
+
+            if reader_name not in CORE_ANATOMICAL_CONNECTOMES:
+                continue
             indent = "    "
-            y = []
-            for cell in sorted_cells:
+            conn_nums = []
+            for cell in sorted_cells_alphabetical:
                 syn_types = syn_summaries[syn_summary]
-                total_y = 0
+                total_conn_nums = 0
                 for syn_type in syn_types:
                     if "out" in syn_summary:
                         conns_here = connectome.get_connections_from(cell, syn_type)
@@ -2319,20 +2420,37 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
                             "Conns: %i for %s of type %s (%s)"
                             % (len(conns_here), cell, syn_type, syn_summary)
                         )
-                    total_y += len(conns_here)
+                    total_conn_nums += len(conns_here)
 
-                y.append(total_y)
+                conn_nums.append(total_conn_nums)
 
-            if sum(y) > 0:
-                marker_symbol = "square"
-                dash = "solid"
+            if sum(conn_nums) > 0:
+                if sorted_cells_conns is None:
+                    sorted_cells_conns = [
+                        x
+                        for _, x in sorted(
+                            zip(conn_nums, sorted_cells_alphabetical), reverse=True
+                        )
+                    ]
+
+                conn_nums_sorted = []
+                for c in sorted_cells_conns:
+                    ind = sorted_cells_alphabetical.index(c)
+                    conn_nums_sorted.append(conn_nums[ind])
+
+                marker_symbol = "circle"
+                # dash = "solid"
 
                 fig.add_scatter(
-                    name="%s %s" % (reader_name, syn_summary),
-                    x=sorted_cells,
-                    y=y,
+                    name="%s" % (reader_name),
+                    x=sorted_cells_conns,
+                    y=conn_nums_sorted,
                     marker_symbol=marker_symbol,
-                    line=dict(dash=dash),
+                    marker=dict(
+                        color=reader_colors[reader_name],
+                        size=5 if "Cook2019Herm" in reader_name else 3,
+                    ),
+                    mode="markers",
                 )
                 nonempty_fig_present = True
                 some_cells = True
@@ -2346,7 +2464,9 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
             with open("./docs/%s" % asset_filename, "w") as asset_file:
                 asset_file.write(_format_json(fig.to_json()))
 
-            fig_md += '\n%s```plotly\n%s---8<-- "./%s"\n%s```\n\n' % (
+            fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
+
+            fig_md += '\n%s```{.plotly .no-auto-theme}\n%s---8<-- "./%s"\n%s```\n\n' % (
                 indent,
                 indent,
                 asset_filename,
@@ -2398,11 +2518,17 @@ if __name__ == "__main__":
 
     from cect.Comparison import generate_comparison_page
 
-    connectomes = generate_comparison_page(quick)
+    save_to_cache = True
+
+    connectomes = generate_comparison_page(
+        quick, save_to_cache=save_to_cache, load_from_cache=(not save_to_cache)
+    )
 
     from cect.CellInfo import generate_cell_info_pages
 
-    generate_cell_info_pages(connectomes)
+    if quick < 3:
+        print_("Generating cell info pages...")
+        generate_cell_info_pages(connectomes)
 
     filename = "docs/Cells.md"
 

@@ -13,6 +13,8 @@ from cect.Cells import PREFERRED_MUSCLE_NAMES
 
 from cect.Cells import is_known_muscle
 
+from cect.Neurotransmitters import ALL_SYN_CLASSES, ALL_SYN_TYPES
+
 
 DEFAULT_COLORMAP = [
     "white",
@@ -22,24 +24,48 @@ DEFAULT_COLORMAP = [
     "yellow",
     "orange",
 ]  # ["white", "green", "black"]
+
 POS_NEG_COLORMAP = ["darkblue", "blue", "white", "red", "darkred"]
+
+SYMMETRY_COLORMAP = ["red", "pink", "white", "lightblue", "blue"]
 
 
 class ConnectionInfo:
     """Holds information on a single connection between a `pre_cell` and `post_cell` - the `number` of connections, the `syntype` and `synclass`"""
 
-    def __init__(self, pre_cell, post_cell, number, syntype, synclass):
+    def __init__(
+        self, pre_cell: str, post_cell: str, number: float, syntype: str, synclass: str
+    ):
         self.pre_cell = pre_cell
         self.post_cell = post_cell
         self.number = number
+        if syntype not in ALL_SYN_TYPES:
+            raise ValueError(
+                f"Error: syntype {syntype} not in known synapse types: {ALL_SYN_TYPES}"
+            )
+
         self.syntype = syntype
+
+        if synclass not in ALL_SYN_CLASSES:
+            raise ValueError(
+                f"Error: synclass {synclass} not in known synapse classes: {ALL_SYN_CLASSES}"
+            )
         self.synclass = synclass
 
+    def to_dict(self):
+        return {
+            "pre_cell": self.pre_cell,
+            "post_cell": self.post_cell,
+            "number": float(self.number),
+            "syntype": self.syntype,
+            "synclass": self.synclass,
+        }
+
     def __str__(self):
-        return "Connection from %s to %s (%i times, type: %s, neurotransmitter: %s)" % (
+        return "Connection from %s to %s (%s times, type: %s, neurotransmitter: %s)" % (
             self.pre_cell,
             self.post_cell,
-            self.number,
+            int(self.number) if int(self.number) == self.number else self.number,
             self.syntype,
             self.synclass,
         )
@@ -70,6 +96,18 @@ class ConnectionInfo:
         return self.__str__()
 
 
+def load_connection_info(d: dict):
+    ci = ConnectionInfo(
+        pre_cell=d["pre_cell"],
+        post_cell=d["post_cell"],
+        number=d["number"],
+        syntype=d["syntype"],
+        synclass=d["synclass"],
+    )
+
+    return ci
+
+
 def check_cells(cells):
     in_preferred = []
     not_in_preferred = []
@@ -89,7 +127,7 @@ def check_cells(cells):
             missing_preferred.remove(c)
 
     if False:
-        print(
+        print_(
             "Of these %i cells:\n  %i in preferred: %s\n  %i not in preferred: %s\n  %i missing preferred: %s\n  %i muscles: %s"
             % (
                 len(cells),
@@ -107,7 +145,14 @@ def check_cells(cells):
     return in_preferred, not_in_preferred, missing_preferred, muscles
 
 
-def analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns):
+def analyse_connections(
+    cells,
+    neuron_conns,
+    neurons2muscles,
+    muscles,
+    muscle_conns,
+    print_details_on=["ADAL"],
+):
     print_("Found %s non-muscle cells: %s\n" % (len(cells), sorted(cells)))
 
     preferred, not_in_preferred, missing_preferred, muscles_ = check_cells(cells)
@@ -189,15 +234,15 @@ def analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_co
             % (nt, nts[nt], nts_tot[nt], nts_tot[nt] / nts[nt])
         )
 
+    """
     core_set = ["AVBL", "PVCL", "VA6", "VB6", "VD6", "DB4", "DD4"]
     # core_set = ['VA6', 'VD6']
     print_("\n\nConnections between cells in the subset %s:\n" % (core_set))
 
     for c in neuron_conns:
         if c.pre_cell in core_set and c.post_cell in core_set:
-            print_(str(c))
+            print_(str(c))"""
 
-    print_details_on = ["ADAL"]
     for cd in print_details_on:
         print_("\n\nAll outgoing connections of %s:\n" % (cd))
         for c in neuron_conns:

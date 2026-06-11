@@ -11,12 +11,12 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        -0.364025,
-        -0.368557
+        -0.497927,
+        -0.579983
       ],
       "y": [
-        -0.562422,
-        -0.47752
+        -0.555004,
+        -0.531362
       ]
     },
     {
@@ -30,12 +30,12 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        0.333687,
-        0.306469
+        0.106196,
+        0.055675
       ],
       "y": [
-        0.024057,
-        -0.020022
+        0.135393,
+        0.106944
       ]
     },
     {
@@ -49,12 +49,31 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        0.305542,
-        0.306469
+        -0.008933,
+        0.055675
       ],
       "y": [
-        -0.085749,
-        -0.020022
+        0.083739,
+        0.106944
+      ]
+    },
+    {
+      "hoverinfo": "none",
+      "line": {
+        "color": "#ff6f6f ",
+        "shape": "linear",
+        "width": 7.75
+      },
+      "mode": "lines",
+      "textposition": "middle center",
+      "type": "scatter",
+      "x": [
+        0.708328,
+        0.72184
+      ],
+      "y": [
+        0.174072,
+        0.114966
       ]
     },
     {
@@ -68,16 +87,16 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        0.305542,
-        0.20733574999999999,
-        0.2728065833333333,
-        0.305542
+        -0.008933,
+        -0.10595949999999998,
+        -0.04127516666666667,
+        -0.008933
       ],
       "y": [
-        -0.085749,
-        -0.053013583333333336,
-        0.012457250000000003,
-        -0.085749
+        0.083739,
+        0.11608116666666665,
+        0.18076549999999997,
+        0.083739
       ]
     },
     {
@@ -91,16 +110,16 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        0.305542,
-        0.20733574999999999,
-        0.2728065833333333,
-        0.305542
+        -0.008933,
+        -0.10595949999999998,
+        -0.04127516666666667,
+        -0.008933
       ],
       "y": [
-        -0.085749,
-        -0.053013583333333336,
-        0.012457250000000003,
-        -0.085749
+        0.083739,
+        0.11608116666666665,
+        0.18076549999999997,
+        0.083739
       ]
     },
     {
@@ -114,10 +133,13 @@
         "<b>AWBR</b><br>Sensory neuron (amphid)",
         "<b>DVA</b><br>Sensory neuron (mechanosensory)",
         "<b>AVBL</b><br>Layer 1 interneuron<br>Conns in: <b>DB4</b>: 4, <b>VB6</b>: 3",
+        "<b>AVBR</b><br>Layer 1 interneuron",
         "<b>PVCL</b><br>Layer 1 interneuron",
+        "<b>PVCR</b><br>Layer 1 interneuron",
         "<b>RMGR</b><br>Layer 2 interneuron",
         "<b>DB4</b><br>Ventral cord motor neuron<br>Conns out: <b>AVBL</b>: 4",
-        "<b>DD4</b><br>Ventral cord motor neuron",
+        "<b>DD4</b><br>Ventral cord motor neuron<br>Conns out: <b>DD5</b>: 3",
+        "<b>DD5</b><br>Ventral cord motor neuron<br>Conns in: <b>DD4</b>: 3",
         "<b>VA3</b><br>Ventral cord motor neuron",
         "<b>VA6</b><br>Ventral cord motor neuron",
         "<b>VB2</b><br>Ventral cord motor neuron",
@@ -137,6 +159,9 @@
           "#ff3300",
           "#ff3300",
           "#ff3300",
+          "#ff3300",
+          "#ff3300",
+          "#9966cc",
           "#9966cc",
           "#9966cc",
           "#9966cc",
@@ -193,11 +218,79 @@
           ]
         ],
         "line": {
-          "width": 1
+          "color": "#444444",
+          "width": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
         },
         "reversescale": true,
         "showscale": false,
         "size": [
+          15.0,
+          15.0,
+          15.0,
           15.0,
           15.0,
           15.0,
@@ -235,24 +328,30 @@
           "circle",
           "circle",
           "circle",
+          "circle",
+          "circle",
+          "circle",
           "circle"
         ]
       },
       "mode": "markers",
       "opacity": 1,
       "text": [
-        "<span style=\"color:#000000;font-size:1.0em\"><b>I5</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>I5</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>M1</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>M4</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>ASHR</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>ASKR</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>AWBR</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>DVA</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>AVBL</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>PVCL</b></span>",
-        "<span style=\"color:#000000;font-size:1.0em\"><b>RMGR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVBL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>AVBR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>PVCL</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>PVCR</b></span>",
+        "<span style=\"color:#ffffff;font-size:1.0em\"><b>RMGR</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>DB4</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>DD4</b></span>",
+        "<span style=\"color:#000000;font-size:1.0em\"><b>DD5</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>VA3</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>VA6</b></span>",
         "<span style=\"color:#000000;font-size:1.0em\"><b>VB2</b></span>",
@@ -263,44 +362,50 @@
       "textposition": "middle center",
       "type": "scatter",
       "x": [
-        -0.794249,
-        -0.836243,
-        -0.964125,
-        -0.364025,
-        -0.368557,
-        -0.790093,
-        -0.533132,
-        0.306469,
-        0.100289,
-        -0.221556,
-        0.333687,
-        0.485764,
-        0.871653,
-        0.060501,
-        1.0,
-        0.305542,
-        0.533639,
-        0.874437
+        -1.0,
+        -0.874105,
+        -0.817336,
+        -0.497927,
+        -0.579983,
+        -0.747011,
+        -0.460047,
+        0.055675,
+        -0.109696,
+        0.137954,
+        -0.166589,
+        0.160418,
+        0.106196,
+        0.708328,
+        0.72184,
+        0.523198,
+        0.647391,
+        0.873601,
+        -0.008933,
+        0.94053,
+        0.386495
       ],
       "y": [
-        -0.48497,
-        0.435575,
-        0.047434,
-        -0.562422,
-        -0.47752,
-        -0.187567,
-        0.555263,
-        -0.020022,
-        0.706655,
-        0.600583,
-        0.024057,
-        0.62281,
-        0.387273,
-        -0.525366,
-        -0.005139,
-        -0.085749,
-        -0.634378,
-        -0.396518
+        0.057131,
+        -0.338058,
+        0.458999,
+        -0.555004,
+        -0.531362,
+        0.197695,
+        0.609956,
+        0.106944,
+        -0.661575,
+        -0.60248,
+        0.693635,
+        0.748707,
+        0.135393,
+        0.174072,
+        0.114966,
+        0.627883,
+        -0.539246,
+        -0.345623,
+        0.083739,
+        0.214061,
+        -0.649834
       ]
     }
   ],

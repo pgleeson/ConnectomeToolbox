@@ -1,6 +1,6 @@
 from cect.Cells import ALL_PREFERRED_CELL_NAMES
-from cect.Cells import GENERIC_CHEM_SYN
-from cect.Cells import GENERIC_ELEC_SYN
+from cect.Cells import GENERIC_CHEM_SYN_CLASS
+from cect.Cells import GENERIC_ELEC_SYN_CLASS
 
 from cect.Cells import get_cell_notes
 from cect.Cells import get_cell_internal_link
@@ -12,6 +12,10 @@ from cect.Cells import get_primary_classification
 from cect.Cells import get_standard_color
 from cect.Cells import is_male_specific_cell
 from cect.Cells import is_bilateral_left
+
+from cect.Comparison import reader_colors
+
+from cect.readers.Wang2024MaleReader import get_instance as get_wang2024_male_instance
 
 
 from cect import print_
@@ -30,7 +34,7 @@ def get_dataset_link(dataset):
         dataset (str): The dataset to link to
 
     Returns:
-        str: A hyperlink to the dataset
+        (str): A hyperlink to the dataset
     """
     # return dataset+'--'
     dataset_text = dataset.replace("Herm", " Herm").replace("Male", " Male")
@@ -43,12 +47,13 @@ def get_weight_table_markdown(w):
 
     for dataset in w:
         # print(dataset)
-        # print(w[dataset].values())
+        # print("-- Checking whether to add dataset: %s" % dataset)
         if (
             len(w[dataset]) > 0
             and sum(w[dataset].values()) > 0
             and "SSData" not in dataset
         ):
+            # print("   -- Adding dataset: %s" % dataset)
             ww[dataset] = w[dataset]
             tot_conns += sum(w[dataset].values())
 
@@ -76,12 +81,22 @@ def get_weight_table_markdown(w):
 
     if df_all is not None:
         fig = df_all.plot(
-            labels=dict(index="Connection", value="Weight", variable="Dataset")
+            labels=dict(index="Connection", value="Weight", variable="Dataset"),
+            color_discrete_map=reader_colors,
         )
         fig.update_traces(
-            marker=dict(size=4), marker_symbol="circle", mode="lines+markers"
+            marker=dict(size=4),
+            marker_symbol="circle",
+            mode="markers",
         )
-        fig_md = f"\n{indent}```plotly\n{indent}{fig.to_json()}\n{indent}```\n"
+        fig.update_layout(
+            template="plotly_white",
+            plot_bgcolor="rgba(0, 0, 0, 0)",
+            paper_bgcolor="rgba(0, 0, 0, 0)",
+        )
+        fig.update_xaxes(showgrid=False, showline=True, linewidth=1, linecolor="black")
+        fig.update_yaxes(showgrid=False, showline=True, linewidth=1, linecolor="black")
+        fig_md = f"\n{indent}```{{.plotly .no-auto-theme}}\n{indent}{fig.to_json()}\n{indent}```\n"
     else:
         fig_md = ""
 
@@ -99,10 +114,10 @@ def load_individual_neuron_info():
     cell_info = {}
     with open(filename) as csvfile:
         reader = csv.reader(csvfile, delimiter=";")
-        print(reader)
+        # print(reader)
 
         for row in reader:
-            print(", ".join(row))
+            print_(", ".join(row))
             if not row[0].startswith("#"):
                 cell_info[row[0]] = (row[1].strip(), row[2].strip(), row[3].strip())
 
@@ -142,6 +157,9 @@ def generate_cell_info_pages(connectomes):
     cell_classification = get_primary_classification()
 
     all_cell_info = [["Cell name", "Type", "Name details", "Lineage", "Classification"]]
+
+    wang2024_male_reader = get_wang2024_male_instance(from_cache=False)
+    neurotransmitters = wang2024_male_reader.all_neurotransmitters
 
     for cell in ALL_PREFERRED_CELL_NAMES:
         print_("Generating individual cell page for: %s" % cell)
@@ -223,6 +241,20 @@ def generate_cell_info_pages(connectomes):
             )
         )
 
+        if is_any_neuron(cell):
+            # print_(f"Checking if {cell} is in: {neurotransmitters}")
+            nt_info = (
+                ", ".join(neurotransmitters[cell])
+                if cell in neurotransmitters
+                and len(neurotransmitters[cell]) > 0
+                and neurotransmitters[cell][0] is not None
+                else "Not present in Wang et al. 2024"
+            )
+            cell_info += (
+                '    <p class="subtext">Neurotransmitters a/c to <a href="../Wang_2024">Wang et al. 2024 </a>: <b>%s</b></p>\n\n'
+                % nt_info
+            )
+
         cell_info += "    %s " % (
             get_cell_wormatlas_link(cell, text="Info on WormAtlas", button=True)
         )
@@ -232,8 +264,8 @@ def generate_cell_info_pages(connectomes):
         )
 
         all_synclasses = [
-            GENERIC_CHEM_SYN,
-            GENERIC_ELEC_SYN,
+            GENERIC_CHEM_SYN_CLASS,
+            GENERIC_ELEC_SYN_CLASS,
         ]  # ensure these 2 are at the start...
 
         for cds_name in connectomes:
@@ -270,14 +302,14 @@ def generate_cell_info_pages(connectomes):
 
         for synclass in all_synclasses:
             synclass_info = synclass
-            if synclass == GENERIC_CHEM_SYN:
+            if synclass == GENERIC_CHEM_SYN_CLASS:
                 synclass_info = "Chemical synaptic"
-            if synclass == GENERIC_ELEC_SYN:
+            if synclass == GENERIC_ELEC_SYN_CLASS:
                 synclass_info = "Electrical synaptic"
 
             header = "### %s connections %s %s  { data-search-exclude }\n\n" % (
                 synclass_info,
-                "to" if not synclass == GENERIC_ELEC_SYN else "from/to",
+                "to" if not synclass == GENERIC_ELEC_SYN_CLASS else "from/to",
                 cell_link,
             )
 
@@ -287,14 +319,14 @@ def generate_cell_info_pages(connectomes):
                 w[r_name] = {}
                 cds = connectomes[cds_name]
 
-                connection_symbol = "↔" if synclass == GENERIC_ELEC_SYN else "→"
+                connection_symbol = "↔" if synclass == GENERIC_ELEC_SYN_CLASS else "→"
 
                 if synclass in cds.connections:
                     conns = cds.get_connections_to(cell, synclass)
 
-                    if cds_name == reference_cs and synclass == GENERIC_CHEM_SYN:
+                    if cds_name == reference_cs and synclass == GENERIC_CHEM_SYN_CLASS:
                         conns_to_cs = _get_top_list(conns, max_conn_cells)
-                    if cds_name == reference_gj and synclass == GENERIC_ELEC_SYN:
+                    if cds_name == reference_gj and synclass == GENERIC_ELEC_SYN_CLASS:
                         conns_gj = _get_top_list(conns, max_conn_cells)
                     if cds_name == reference_mono:
                         conns_to_mono = _get_top_list(conns, max_conn_cells)
@@ -327,7 +359,7 @@ def generate_cell_info_pages(connectomes):
             if "No connections" not in w_md:
                 tables_md += "%s\n%s\n\n" % (header, w_md)
 
-            if not synclass == GENERIC_ELEC_SYN:
+            if not synclass == GENERIC_ELEC_SYN_CLASS:
                 header = "### %s connections %s %s  { data-search-exclude }\n\n" % (
                     synclass_info,
                     "from",
@@ -343,7 +375,10 @@ def generate_cell_info_pages(connectomes):
                     if synclass in cds.connections:
                         conns = cds.get_connections_from(cell, synclass)
 
-                        if cds_name == reference_cs and synclass == GENERIC_CHEM_SYN:
+                        if (
+                            cds_name == reference_cs
+                            and synclass == GENERIC_CHEM_SYN_CLASS
+                        ):
                             conns_from_cs = _get_top_list(conns, max_conn_cells)
                         if cds_name == reference_mono:
                             conns_from_mono = _get_top_list(conns, max_conn_cells)
@@ -427,34 +462,14 @@ if __name__ == "__main__":
     if "-pca" in sys.argv:
         # from cect.Cells import PREFERRED_HERM_NEURON_NAMES
 
-        from cect.White_whole import get_instance
+        from cect.readers.White_whole import get_instance
 
         cds_src = get_instance()
-        """
-        from cect.RipollSanchezMidRangeReader import get_instance
-        cds_src = get_instance()"""
-        """ 
-        from cect.Cook2019HermReader import get_instance
-        from cect.WormNeuroAtlasFuncReader import get_instance
-        from cect.TestDataReader import get_instance
 
-        from cect.ConnectomeView import PHARYNX_VIEW as view
-        from cect.ConnectomeView import RAW_VIEW as view
-        """
         from cect.ConnectomeView import NEURONS_VIEW as view
 
         cds_src = get_instance()
         cds = cds_src.get_connectome_view(view)
-        """
-        for cell in ['I3']:
-            print(cds.nodes)
-            print(cds.connections.keys())
-            index = cds.nodes.index(cell)
-            print('Conns from %s (index: %i): %s'%(cell,index,cds.get_connections_from(cell, syntype)))
-            matrix = cds.connections[syntype]
-            print(matrix[index])
-            print('Conns to %s (index: %i): %s'%(cell,index,cds.get_connections_to(cell, syntype)))
-            print(matrix.T[index])"""
 
         data = {}
 
@@ -529,7 +544,7 @@ if __name__ == "__main__":
                 a = positions[cell]
                 if right in positions:
                     b = positions[right]
-                    print("Connecting %s->%s: %s->%s" % (cell, right, a, b))
+                    # print("Connecting %s->%s: %s->%s" % (cell, right, a, b))
                     # Add edges to the figure
                     edge_trace = go.Scatter3d(
                         x=[a[0], b[0]],
@@ -575,32 +590,35 @@ if __name__ == "__main__":
             print(f"      - '{cell}': '{cell}.md'")
 
     else:
-        from cect.White_whole import get_instance
+        from cect.readers.White_whole import get_instance
 
         cds_white = get_instance()
 
-        from cect.WitvlietDataReader8 import get_instance
+        from cect.readers.WitvlietDataReader8 import get_instance
 
         cds_w8 = get_instance()
 
         connectomes = {"White_whole": cds_white, "Witvliet8": cds_w8}
 
-        from cect.Cook2019HermReader import get_instance
+        from cect.readers.Cook2019HermReader import get_instance
 
-        connectomes["Cook2019Herm"] = get_instance()
+        connectomes["Cook2019Herm"] = get_instance(from_cache=True)
 
-        from cect.Cook2019MaleReader import get_instance
+        from cect.readers.Cook2019MaleReader import get_instance
 
-        connectomes["Cook2019Male"] = get_instance()
+        connectomes["Cook2019Male"] = get_instance(from_cache=True)
+        from cect.readers.WormNeuroAtlasReader import get_instance
+
+        connectomes["WormNeuroAtlas"] = get_instance()
 
         """
-        from cect.WormNeuroAtlasMAReader import get_instance
+        from cect.readers.WormNeuroAtlasMAReader import get_instance
         connectomes['Bentley2016_MA'] = get_instance()
 
-        from cect.WormNeuroAtlasFuncReader import get_instance
+        from cect.readers.WormNeuroAtlasFuncReader import get_instance
         connectomes['Randi2023'] = get_instance()
 
-        from cect.RipollSanchezShortRangeReader import get_instance
+        from cect.readers.RipollSanchezShortRangeReader import get_instance
         connectomes['RipollSanchezShortRange'] = get_instance() """
 
         # load_individual_neuron_info()

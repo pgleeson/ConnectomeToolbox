@@ -31,6 +31,10 @@ filename2 = "%scne24932-sup-0005-supinfo5.csv" % spreadsheet_location
 
 NAME = "Cook2020"
 
+DATASET_DESCRIPTION = "Chemical and electrical connectivity of the C. elegans pharynx, from Cook et al 2020, including connections between pharyngeal neurons, muscles and other cells."
+
+WEIGHTS = "TODO..."
+
 READER_DESCRIPTION = (
     """Data extracted from %s and %s for connectivity of pharyngeal neurons, muscles and other cells"""
     % (

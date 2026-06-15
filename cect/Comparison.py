@@ -257,6 +257,21 @@ def get_improved_reader_name(reader_name):
     return better_name
 
 
+def _latexify(text):
+    return (
+        text.replace("_", "\\_")
+        .replace("&", "\\&")
+        .replace("%", "\\%")
+        .replace("$", "\\$")
+        .replace("#", "\\#")
+        .replace("{", "\\{")
+        .replace("}", "\\}")
+        .replace("~", "\\textasciitilde{}")
+        .replace("^", "\\textasciicircum{}")
+        .replace("C. elegans", "\\celegans{}")
+    )
+
+
 def generate_comparison_page(
     quick: int,
     color_table=True,
@@ -297,8 +312,8 @@ def generate_comparison_page(
         # readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
         # readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 
-        # readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
-        # readers["Cook2019Male"] = ["cect.readers.Cook2019MaleReader", "Cook_2019"]
+        readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
+        readers["Cook2019Male"] = ["cect.readers.Cook2019MaleReader", "Cook_2019"]
         readers["Cook2020"] = ["cect.readers.Cook2020DataReader", "Cook_2020"]
 
         # readers["OpenWormUnified"] = ["cect.readers.OpenWormUnifiedReader", "OpenWorm_Unified"]
@@ -405,12 +420,14 @@ def generate_comparison_page(
 
     table_html = ""
 
-    latex = """\\begin{table}[tp]
+    latex = """\\newcolumntype{b}{X}
+\\newcolumntype{s}{>{\hsize=.5\hsize}X}
+\\begin{table}[tp]
   \\centering
   \\caption{List of all datasets in the \\celegans{} Connectome Toolbox}\\label{tab:dataset-table}
   \\rowcolors{1}{table-shade}{white}
   \\footnotesize
-  \\begin{tabularx}{\\textwidth}{lXXXl}
+  \\begin{tabularx}{\\textwidth}{ssbb}
     \\toprule%
     \\hiderowcolors%
     \\textbf{Original publication} & \\textbf{Reference/link} & \\textbf{Description} & \\textbf{Weight} \\\\
@@ -472,13 +489,19 @@ def generate_comparison_page(
                         .replace("OlivaresModel", "Olivares2021")
                     )
 
-                    ref = reader_name.replace("_", "\\_")
-                    description = f"{reader_module.READER_DESCRIPTION[:6]}"
-                    weight = "???" if connectome is None else "wwwww"
+                    ref = get_improved_reader_name(reader_name)
+                    description = "TODO"
+                    if hasattr(reader_module, "DATASET_DESCRIPTION"):
+                        description = reader_module.DATASET_DESCRIPTION
+                    weight = "TODO"
+                    if hasattr(reader_module, "WEIGHTS"):
+                        weight = reader_module.WEIGHTS
                     ref_url = f"\\href{{https://openworm.org/ConnectomeToolbox/{reader_name}_data}}{{{ref}}}"
 
-                    latex += f"    \\cite{{{pub}}} & {ref_url} & {description} & "
-                    latex += f" {weight} \\\\ \n    \midrule%\n"
+                    latex += (
+                        f"    \\cite{{{pub}}} & {ref_url} & {_latexify(description)} & "
+                    )
+                    latex += f" {_latexify(weight)} \\\\ \n    \midrule%\n"
 
             if dataset_pages:
                 if connectome is not None:

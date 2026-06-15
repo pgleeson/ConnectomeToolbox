@@ -35,6 +35,8 @@ MALE_GAP_SYMM = "male gap jn symmetric"
 HERMAPHRODITE = "Hermaphrodite"
 MALE = "Male"
 
+WEIGHTS = "Weights are the total number of EM serial sections of connectivity, taking into account both the number of synapses and the sizes of synapses."
+
 SEX_SPECIFIC_SHEETS = {
     HERMAPHRODITE: [HERM_CHEM, HERM_GAP_SYMM],
     MALE: [MALE_CHEM, MALE_GAP_SYMM],
@@ -44,7 +46,7 @@ pre_range = {
     HERM_CHEM: range(4, 304),
     HERM_GAP_SYMM: range(4, 472),
     MALE_CHEM: range(4, 386),
-    MALE_GAP_SYMM: range(4, 472),
+    MALE_GAP_SYMM: range(4, 589),
 }
 post_range = {
     HERM_CHEM: range(4, 457),
@@ -66,7 +68,7 @@ def get_synclass(cell, syntype):
 
 class Cook2019DataReader(ConnectomeDataset):
     """
-    Reader of data from Cook et al. 2019 - Whole-animal connectomes of both Caeonrhabditis elegans sexes
+    Reader of data from Cook et al. 2019 - Whole-animal connectomes of both Caenorhabditis elegans sexes
     """
 
     spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
@@ -89,7 +91,7 @@ class Cook2019DataReader(ConnectomeDataset):
 
         for conn_type in SEX_SPECIFIC_SHEETS[self.sex]:
             sheet = wb.get_sheet_by_name(conn_type)
-            print_("Looking at sheet: %s" % conn_type)
+            print_("Looking at the sheet: %s" % conn_type)
 
             self.pre_cells[conn_type] = []
             self.post_cells[conn_type] = []

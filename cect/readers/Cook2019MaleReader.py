@@ -2,12 +2,19 @@
 
 from cect.readers.Cook2019DataReader import Cook2019DataReader
 from cect.readers.Cook2019DataReader import MALE
+
+# ruff: noqa: F401
+from cect.readers.Cook2019DataReader import WEIGHTS
+
 from cect.ConnectomeDataset import get_dataset_source_on_github
 
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 NAME = "Cook2019Male"
+
+
+DATASET_DESCRIPTION = "Chemical and electrical connectivity of the male from Cook et al 2019, including connections between neurons, muscles and other cells."
 
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):

@@ -163,7 +163,7 @@ class TestExpectedConnections(unittest.TestCase):
                         if total_w == total_w_cd
                         else f"{self.MISMATCH}: {total_w_cd}"
                     )
-                    report += "\nExpected total weight of connections: %f (%s)\n" % (
+                    report += "\nExpected total weight of connections: %g (%s)\n" % (
                         total_w,
                         match_info,
                     )

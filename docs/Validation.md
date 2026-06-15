@@ -41,7 +41,7 @@ The dataset...
 | AVAL | AS5 | 3 | Yes |
 | ADAL | AVBR | 7 | Yes |
 
-Expected total weight of connections: 6394.000000 (matches)
+Expected total weight of connections: 6394 (matches)
 
 Expected number of nonzero connection weights: 2194 (matches)
 
@@ -84,15 +84,79 @@ Known datasets: ['White_A', 'White_L4', 'White_whole', 'Witvliet1', 'Witvliet2',
 
 ## CookEtAl2019
 
-TODO...
+Data was taken from: Cook et al. 2019, Whole-animal connectomes of both Caenorhabditis elegans sexes. [Nature 571, 63–71](https://doi.org/10.1038/s41586-019-1352-7)
 
 
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//Cook2019HermDataReader_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//Cook2019HermDataReader_expected_data.yaml'
+### Validation tests for Cook2019HermDataReader 
+
+
+#### Chemical synaptic connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| I1R | I2R | 6 | Yes |
+| SMBDL | SDQR | 18 | Yes |
+| VC2 | PVT | 6 | Yes |
+| DB4 | MDL13 | 4 | Yes |
+| RIMR | MDL05 | 15 | Yes |
+
+Expected total weight of connections: 28113 (matches)
+
+Expected number of nonzero connection weights: 4879 (matches)
+
+#### Electrical connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| M4 | pm5VL | 1 | Yes |
+| g1AL | M4 | 7 | Yes |
+| PLNL | PHCL | 2 | Yes |
+| PVDL | ALA | 250 | Yes |
+| RMDVR | SMDVR | 8 | Yes |
+
+Expected total weight of connections: 21801 (matches)
+
+Expected number of nonzero connection weights: 2881 (matches)
+
+_Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 
 
 
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//Cook2019MaleDataReader_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//Cook2019MaleDataReader_expected_data.yaml'
+### Validation tests for Cook2019MaleDataReader 
+
+
+#### Chemical synaptic connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| I1R | I2R | 6 | Yes |
+| SMBDL | SDQR | 18 | Yes |
+| R7BL | PDC | 34 | Yes |
+| DB4 | MDL13 | 4 | Yes |
+| RIMR | MDL05 | 15 | Yes |
+| CEPDR | RMHL | 6 | Yes |
+| URBL | OLLL | 4 | Yes |
+
+Expected total weight of connections: 45959 (matches)
+
+Expected number of nonzero connection weights: 5306 (matches)
+
+#### Electrical connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| M4 | pm5VL | 1 | Yes |
+| g1AL | M4 | 7 | Yes |
+| CANL | exc_cell | 200 | Yes |
+| PVDL | ALA | 250 | Yes |
+| URBL | IL2L | 17 | Yes |
+
+Expected total weight of connections: 31684 (matches)
+
+Expected number of nonzero connection weights: 3476 (matches)
+
+_Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 
 

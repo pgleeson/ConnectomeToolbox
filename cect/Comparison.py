@@ -261,6 +261,7 @@ def generate_comparison_page(
     quick: int,
     color_table=True,
     dataset_pages=True,
+    latex_table=True,
     save_to_cache=False,
     load_from_cache=True,
 ):
@@ -404,6 +405,18 @@ def generate_comparison_page(
 
     table_html = ""
 
+    latex = """\\begin{table}[tp]
+  \\centering
+  \\caption{List of all datasets in the \\celegans{} Connectome Toolbox}\\label{tab:dataset-table}
+  \\rowcolors{1}{table-shade}{white}
+  \\footnotesize
+  \\begin{tabularx}{\\textwidth}{lXXXl}
+    \\toprule%
+    \\hiderowcolors%
+    \\textbf{Original publication} & \\textbf{Reference/link} & \\textbf{Description} & \\textbf{Weight} \\\\
+    \\midrule%
+"""
+
     to_include = []
     for dataset in readers.keys():
         to_include.append(dataset)
@@ -445,6 +458,27 @@ def generate_comparison_page(
 
         if reader_name in reader_pages:
             connectomes[reader_name] = connectome
+
+            if latex_table:
+                if (
+                    "SSData" not in reader_name
+                    and "Test" not in reader_name
+                    and "OpenWormUnified" not in reader_name
+                ):
+                    pub = (
+                        readers[reader_name][1]
+                        .replace("_", "")
+                        .replace("GleesonModel", "Gleeson2018")
+                        .replace("OlivaresModel", "Olivares2021")
+                    )
+
+                    ref = reader_name.replace("_", "\\_")
+                    description = f"{reader_module.READER_DESCRIPTION[:6]}"
+                    weight = "???" if connectome is None else "wwwww"
+                    ref_url = f"\\href{{https://openworm.org/ConnectomeToolbox/{reader_name}_data}}{{{ref}}}"
+
+                    latex += f"    \\cite{{{pub}}} & {ref_url} & {description} & "
+                    latex += f" {weight} \\\\ \n    \midrule%\n"
 
             if dataset_pages:
                 if connectome is not None:
@@ -1029,6 +1063,11 @@ def generate_comparison_page(
         )
 
     print_("Written page: %s" % filename)
+
+    if latex_table:
+        filename = "docs/dataset-table.tex"
+        with open(filename, "w") as f:
+            f.write(latex + "    \\showrowcolors%\n  \\end{tabularx}\n\\end{table}\n")
 
     from cect.Analysis import save_symmetry_info
 

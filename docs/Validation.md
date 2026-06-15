@@ -53,7 +53,7 @@ Expected number of nonzero connection weights: 2194 (matches)
 
 Expected number of nonzero connection weights: 1031 (matches)
 
-_Validation PASSED on 2026-06-08 with cect v0.3.2_
+_Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 
 
@@ -137,7 +137,7 @@ TODO: add total num nonzero connections
 
 TODO: add total num nonzero connections
 
-_Validation PASSED on 2026-06-08 with cect v0.3.2_
+_Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 
 
@@ -177,7 +177,7 @@ The M<sup>4</sup> graph is the example used in Connectome Toolbox. Values for th
 
 Expected number of nonzero connection weights: 3850 (matches)
 
-_Validation PASSED on 2026-06-08 with cect v0.3.2_
+_Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 
 
@@ -219,7 +219,7 @@ Expected number of nonzero connection weights: 775 (matches)
 
 Expected number of nonzero connection weights: 164 (matches)
 
-_Validation PASSED on 2026-06-08 with cect v0.3.2_
+_Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 
 
@@ -247,7 +247,7 @@ Expected number of nonzero connection weights: 986 (matches)
 
 Expected number of nonzero connection weights: 246 (matches)
 
-_Validation PASSED on 2026-06-08 with cect v0.3.2_
+_Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 
 
@@ -275,7 +275,7 @@ Expected number of nonzero connection weights: 1012 (matches)
 
 Expected number of nonzero connection weights: 186 (matches)
 
-_Validation PASSED on 2026-06-08 with cect v0.3.2_
+_Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 
 
@@ -303,7 +303,7 @@ Expected number of nonzero connection weights: 1136 (matches)
 
 Expected number of nonzero connection weights: 415 (matches)
 
-_Validation PASSED on 2026-06-08 with cect v0.3.2_
+_Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 
 
@@ -331,7 +331,7 @@ Expected number of nonzero connection weights: 1515 (matches)
 
 Expected number of nonzero connection weights: 578 (matches)
 
-_Validation PASSED on 2026-06-08 with cect v0.3.2_
+_Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 
 
@@ -359,7 +359,7 @@ Expected number of nonzero connection weights: 1525 (matches)
 
 Expected number of nonzero connection weights: 426 (matches)
 
-_Validation PASSED on 2026-06-08 with cect v0.3.2_
+_Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 
 
@@ -387,7 +387,7 @@ Expected number of nonzero connection weights: 2202 (matches)
 
 Expected number of nonzero connection weights: 576 (matches)
 
-_Validation PASSED on 2026-06-08 with cect v0.3.2_
+_Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 
 
@@ -415,7 +415,7 @@ Expected number of nonzero connection weights: 2186 (matches)
 
 Expected number of nonzero connection weights: 612 (matches)
 
-_Validation PASSED on 2026-06-08 with cect v0.3.2_
+_Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 
 
@@ -454,7 +454,7 @@ For each of these CSV files, the file was opened in Apple Numbers, and the weigh
 
 Expected number of nonzero connection weights: 31417 (matches)
 
-_Validation PASSED on 2026-06-08 with cect v0.3.2_
+_Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 
 
@@ -472,7 +472,7 @@ _Validation PASSED on 2026-06-08 with cect v0.3.2_
 
 Expected number of nonzero connection weights: 40425 (matches)
 
-_Validation PASSED on 2026-06-08 with cect v0.3.2_
+_Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 
 
@@ -495,7 +495,7 @@ _Validation PASSED on 2026-06-08 with cect v0.3.2_
 
 Expected number of nonzero connection weights: 53558 (matches)
 
-_Validation PASSED on 2026-06-08 with cect v0.3.2_
+_Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 
 
@@ -532,7 +532,7 @@ This file was opened in Excel and weights of selected connections were visually 
 
 Expected number of nonzero connection weights: 2198 (matches)
 
-_Validation PASSED on 2026-06-08 with cect v0.3.2_
+_Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 
 
@@ -550,7 +550,7 @@ _Validation PASSED on 2026-06-08 with cect v0.3.2_
 
 Expected number of nonzero connection weights: 2198 (matches)
 
-_Validation PASSED on 2026-06-08 with cect v0.3.2_
+_Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 
 

@@ -32,6 +32,27 @@ connection_lists:
   - pre: PVDL
     post: ALA
     weight: 250
+  - pre: PVDL
+    post: hmc
+    weight: 0
+  - pre: PVDR
+    post: hmc
+    weight: 0
+  - pre: DD6
+    post: PDB
+    weight: 0
+  - pre: PDB
+    post: DD6
+    weight: 2
+  - pre: ALA
+    post: exc_gl
+    weight: 0
+  - pre: exc_gl
+    post: ALA
+    weight: 1
+  - pre: BDUL
+    post: PLML
+    weight: 23
   - pre: RMDVR
     post: SMDVR
     weight: 8

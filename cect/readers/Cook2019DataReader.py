@@ -29,6 +29,8 @@ from cect import print_
 
 HERM_CHEM = "hermaphrodite chemical"
 HERM_GAP_SYMM = "herm gap jn symmetric"
+HERM_GAP_SYMM_CORRECTED = "hermaphrodite gap jn symmetric"
+
 MALE_CHEM = "male chemical"
 MALE_GAP_SYMM = "male gap jn symmetric"
 
@@ -72,12 +74,18 @@ class Cook2019DataReader(ConnectomeDataset):
     """
 
     spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
+    filename = "%s41586_2019_1352_MOESM9_ESM.xlsx" % spreadsheet_location
+    filename = (
+        "%sSI 5 Connectome adjacency matrices, corrected July 2020.xlsx"
+        % spreadsheet_location
+    )
     filename = "%sSI 5 Connectome adjacency matrices.xlsx" % spreadsheet_location
 
     verbose = False
 
     def __init__(self, sex):
         ConnectomeDataset.__init__(self)
+
         self.sex = sex
 
         wb = load_workbook(self.filename)
@@ -90,7 +98,14 @@ class Cook2019DataReader(ConnectomeDataset):
         self.conn_nums = {}
 
         for conn_type in SEX_SPECIFIC_SHEETS[self.sex]:
-            sheet = wb.get_sheet_by_name(conn_type)
+            sheet_name = conn_type
+            if "corrected" in self.filename:
+                if sheet_name == HERM_GAP_SYMM:
+                    sheet_name = HERM_GAP_SYMM_CORRECTED
+                pre_range[HERM_GAP_SYMM] = range(4, 473)
+                post_range[HERM_GAP_SYMM] = range(4, 473)
+
+            sheet = wb.get_sheet_by_name(sheet_name)
             print_("Looking at the sheet: %s" % conn_type)
 
             self.pre_cells[conn_type] = []

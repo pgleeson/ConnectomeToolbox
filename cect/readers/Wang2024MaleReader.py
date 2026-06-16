@@ -17,6 +17,8 @@ import os
 import pprint as pp
 
 
+NAME = "Wang2024Male"
+
 READER_DESCRIPTION = "???"
 
 

@@ -66,9 +66,9 @@ class ConnectomeDataset:
     verbose = False
 
     def __init__(self):
-        self.nodes = []
-        self.connections = {}
-        self.original_connection_infos = []
+        self.nodes: list[str] = []
+        self.connections: dict[str, np.ndarray] = {}
+        self.original_connection_infos: list[ConnectionInfo] = []
 
         self.view = None
 

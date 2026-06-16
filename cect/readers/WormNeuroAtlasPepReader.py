@@ -11,6 +11,7 @@ from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 import logging
 import sys
 
+NAME = "Bentley2016_PEP"
 
 LOGGER = logging.getLogger(__name__)
 

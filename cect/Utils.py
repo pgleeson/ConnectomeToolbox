@@ -46,11 +46,14 @@ for reader in readers:
 
 
 def get_connectome_dataset(name, from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
+    name_no_reader = name.replace("Reader", "")
     if name not in all_known_connectome_datasets:
-        raise Exception(
-            "No such connectome dataset registered: %s\nKnown datasets: %s"
-            % (name, list(all_known_connectome_datasets.keys()))
-        )
+        if name_no_reader not in all_known_connectome_datasets:
+            raise Exception(
+                "No such connectome dataset registered: %s (or %s)\nKnown datasets: %s"
+                % (name, name_no_reader, list(all_known_connectome_datasets.keys()))
+            )
+        name = name_no_reader
     cds_instance = all_known_connectome_datasets[name]
     if callable(cds_instance):
         return cds_instance(from_cache=from_cache)

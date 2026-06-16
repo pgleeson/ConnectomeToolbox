@@ -1,4 +1,4 @@
-reader: Cook2019HermDataReader
+reader: Cook2019HermReader
 connection_lists:
 - connections:
   - pre: I1R
@@ -34,28 +34,28 @@ connection_lists:
     weight: 250
   - pre: PVDL
     post: hmc
-    weight: 0
+    weight: 400
   - pre: PVDR
     post: hmc
-    weight: 0
+    weight: 400
   - pre: DD6
     post: PDB
-    weight: 0
+    weight: 2
   - pre: PDB
     post: DD6
     weight: 2
   - pre: ALA
     post: exc_gl
-    weight: 0
+    weight: 1
   - pre: exc_gl
     post: ALA
     weight: 1
   - pre: BDUL
     post: PLML
-    weight: 23
+    weight: 0
   - pre: RMDVR
     post: SMDVR
     weight: 8
   synapse: Generic_GJ
-  total_nonzero_conns: 2881
-  total_weight: 21801
+  total_nonzero_conns: 2883
+  total_weight: 23313

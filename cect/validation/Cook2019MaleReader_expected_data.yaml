@@ -1,4 +1,4 @@
-reader: Cook2019MaleDataReader
+reader: Cook2019MaleReader
 connection_lists:
 - connections:
   - pre: I1R
@@ -22,6 +22,9 @@ connection_lists:
   - pre: URBL
     post: OLLL
     weight: 4
+  - pre: R9BR
+    post: R7stR
+    weight: 2
   synapse: Generic_CS
   total_nonzero_conns: 5306
   total_weight: 45959
@@ -41,6 +44,30 @@ connection_lists:
   - pre: URBL
     post: IL2L
     weight: 17
+  - pre: DD1
+    post: MVL08
+    weight: 2
+  - pre: RIVR
+    post: FLPL
+    weight: 0
+  - pre: DD1
+    post: MVR08
+    weight: 2
+  - pre: R8AL
+    post: R8BL
+    weight: 5
+  - pre: RIVL
+    post: FLPL
+    weight: 1
+  - pre: VB6
+    post: VB7
+    weight: 5
+  - pre: VB7
+    post: VB5
+    weight: 1
+  - pre: MDR08
+    post: DD1
+    weight: 2
   synapse: Generic_GJ
-  total_nonzero_conns: 3476
-  total_weight: 31684
+  total_nonzero_conns: 3482
+  total_weight: 31702

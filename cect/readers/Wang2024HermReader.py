@@ -10,6 +10,7 @@
 from cect.readers.Wang2024Reader import Wang2024Reader
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
+NAME = "Wang2024Herm"
 
 READER_DESCRIPTION = "???"
 

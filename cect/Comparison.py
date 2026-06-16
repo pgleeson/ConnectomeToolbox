@@ -234,9 +234,12 @@ def get_improved_reader_name(reader_name):
         .replace("Herm", " (herm.)")
         .replace("Male", " (male)")
         .replace("ShortRange", " (short range)")
+        .replace("MidRange", " (mid range)")
+        .replace("LongRange", " (long range)")
         .replace("liet", "liet ")
         .replace("MA", " (monoamin.)")
         .replace("PEP", " (peptid.)")
+        .replace("NonNorm", " (non norm.)")
         .replace("ite A", "ite et al. 1986 N2U/adult")
         .replace("ite L4", "ite et al. 1986 JSH/L4")
         .replace("ite whole", "ite et al. 1986 (whole worm)")
@@ -257,26 +260,10 @@ def get_improved_reader_name(reader_name):
     return better_name
 
 
-def _latexify(text):
-    return (
-        text.replace("_", "\\_")
-        .replace("&", "\\&")
-        .replace("%", "\\%")
-        .replace("$", "\\$")
-        .replace("#", "\\#")
-        .replace("{", "\\{")
-        .replace("}", "\\}")
-        .replace("~", "\\textasciitilde{}")
-        .replace("^", "\\textasciicircum{}")
-        .replace("C. elegans", "\\celegans{}")
-    )
-
-
 def generate_comparison_page(
     quick: int,
     color_table=True,
     dataset_pages=True,
-    latex_table=True,
     save_to_cache=False,
     load_from_cache=True,
 ):
@@ -420,20 +407,6 @@ def generate_comparison_page(
 
     table_html = ""
 
-    latex = """\\newcolumntype{b}{X}
-\\newcolumntype{s}{>{\hsize=.5\hsize}X}
-\\begin{table}[tp]
-  \\centering
-  \\caption{List of all datasets in the \\celegans{} Connectome Toolbox}\\label{tab:dataset-table}
-  \\rowcolors{1}{table-shade}{white}
-  \\footnotesize
-  \\begin{tabularx}{\\textwidth}{ssbb}
-    \\toprule%
-    \\hiderowcolors%
-    \\textbf{Original publication} & \\textbf{Reference/link} & \\textbf{Description} & \\textbf{Weight} \\\\
-    \\midrule%
-"""
-
     to_include = []
     for dataset in readers.keys():
         to_include.append(dataset)
@@ -475,33 +448,6 @@ def generate_comparison_page(
 
         if reader_name in reader_pages:
             connectomes[reader_name] = connectome
-
-            if latex_table:
-                if (
-                    "SSData" not in reader_name
-                    and "Test" not in reader_name
-                    and "OpenWormUnified" not in reader_name
-                ):
-                    pub = (
-                        readers[reader_name][1]
-                        .replace("_", "")
-                        .replace("GleesonModel", "Gleeson2018")
-                        .replace("OlivaresModel", "Olivares2021")
-                    )
-
-                    ref = get_improved_reader_name(reader_name)
-                    description = "TODO"
-                    if hasattr(reader_module, "DATASET_DESCRIPTION"):
-                        description = reader_module.DATASET_DESCRIPTION
-                    weight = "TODO"
-                    if hasattr(reader_module, "WEIGHTS"):
-                        weight = reader_module.WEIGHTS
-                    ref_url = f"\\href{{https://openworm.org/ConnectomeToolbox/{reader_name}_data}}{{{ref}}}"
-
-                    latex += (
-                        f"    \\cite{{{pub}}} & {ref_url} & {_latexify(description)} & "
-                    )
-                    latex += f" {_latexify(weight)} \\\\ \n    \midrule%\n"
 
             if dataset_pages:
                 if connectome is not None:
@@ -1086,11 +1032,6 @@ def generate_comparison_page(
         )
 
     print_("Written page: %s" % filename)
-
-    if latex_table:
-        filename = "docs/dataset-table.tex"
-        with open(filename, "w") as f:
-            f.write(latex + "    \\showrowcolors%\n  \\end{tabularx}\n\\end{table}\n")
 
     from cect.Analysis import save_symmetry_info
 

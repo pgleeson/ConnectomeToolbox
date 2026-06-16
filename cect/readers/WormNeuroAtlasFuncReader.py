@@ -20,6 +20,8 @@ from cect.Neurotransmitters import FUNCTIONAL_SYN_TYPE
 
 ############################################################
 
+NAME = "Randi2023"
+
 LOGGER = logging.getLogger(__name__)
 
 READER_DESCRIPTION = """Data on functional connectivity from the <b><a href="https://github.com/francescorandi/wormneuroatlas">WormNeuroAtlas package</a></b>"""

@@ -15,7 +15,7 @@ import sys
 
 LOGGER = logging.getLogger(__name__)
 
-NAME = "WormNeuroAtlasMAReader"
+NAME = "Bentley2016_MA"
 
 READER_DESCRIPTION = """Data on monoaminergic connectivity from the <b><a href="https://github.com/francescorandi/wormneuroatlas">WormNeuroAtlas package</a></b>"""
 

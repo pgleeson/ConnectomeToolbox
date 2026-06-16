@@ -51,9 +51,11 @@ Expected number of nonzero connection weights: 2194 (matches)
 |----------|------|-----------------|-------|
 | AVAL | AVAR | 5 | Yes |
 
+Electrical synapse. Symmetric connectivity matrix: True
+
 Expected number of nonzero connection weights: 1031 (matches)
 
-_Validation PASSED on 2026-06-15 with cect v0.3.2_
+_Validation PASSED on 2026-06-16 with cect v0.3.2_
 
 
 
@@ -72,8 +74,8 @@ Data on the extrasynaptic connections was accessed using the [Worm Neuro Atlas](
 
 
 
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WormNeuroAtlasMAReader_expected_data.yaml**: No such connectome dataset registered: WormNeuroAtlasMAReader
-Known datasets: ['White_A', 'White_L4', 'White_whole', 'Witvliet1', 'Witvliet2', 'Witvliet3', 'Witvliet4', 'Witvliet5', 'Witvliet6', 'Witvliet7', 'Witvliet8', 'Varshney', 'Cook2019Herm', 'Cook2019Male', 'Cook2020', 'Brittin', 'RipollSanchezShortRangeReader', 'RipollSanchezMidRangeReader', 'RipollSanchezLongRangeReader', 'Yim2024', 'Yim2024NonNorm']
+**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WormNeuroAtlasMAReader_expected_data.yaml**: No such connectome dataset registered: Bentley2016_MA (or Bentley2016_MA)
+Known datasets: ['White_A', 'White_L4', 'White_whole', 'Witvliet1', 'Witvliet2', 'Witvliet3', 'Witvliet4', 'Witvliet5', 'Witvliet6', 'Witvliet7', 'Witvliet8', 'Varshney', 'Cook2019Herm', 'Cook2019Male', 'Cook2020', 'Brittin2021', 'RipollSanchezShortRange', 'RipollSanchezMidRange', 'RipollSanchezLongRange', 'Yim2024', 'Yim2024NonNorm']
 
 
 
@@ -86,14 +88,54 @@ Known datasets: ['White_A', 'White_L4', 'White_whole', 'Witvliet1', 'Witvliet2',
 
 Data was taken from: Cook et al. 2019, Whole-animal connectomes of both Caenorhabditis elegans sexes. [Nature 571, 63–71](https://doi.org/10.1038/s41586-019-1352-7).
 
+Three spreadsheets with these connections have been identified:
+
+1) Original Supplementary information 5
+
 Connectivity matrices were released in the following supplementary information file with the publication: [41586_2019_1352_MOESM9_ESM.xlsx](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-019-1352-7/MediaObjects/41586_2019_1352_MOESM9_ESM.xlsx).
 
+**Note:** there is a slight internal consistency issue this file - some of the male ray structural cells are named R1stL, R2stR, etc. ), but in other locations the names R1shL, R2shR, etc. are used.
+
+
+2) WormWiring original adjacency matrices
+
 On WormWiring (Emmons lab), there is a link: Original Connectome Adjacency Matrices (ref 1, SI5) [SI 5 Connectome adjacency matrices.xlsx](https://wormwiring.org/si/SI%205%20Connectome%20adjacency%20matrices.xlsx).
-**Note: there is a difference between this file and the original - male ray structural cells are named R1stL, R2stR, etc. in the original file (these are the names used [on WormAtlas](https://www.wormatlas.org/male/rays/mainframe.htm#Celllist5)). However these cells are named R1shL, R2shR, etc. in this file.**
+
+**Note:** there is a slight difference between this file and the original - some of the male ray structural cells R1stL, R2stR cells have been changed to R1shL, R2shR, etc. in this file.
+
+3) WormWiring corrected adjacency matrices
+
+There is also a file: Hermaphrodite and Male Connectomes (Adjacency Matrices), Adults (corrected July 2020) [[SI 5 Connectome adjacency matrices, corrected July 2020.xlsx](https://wormwiring.org/si/SI%205%20Connectome%20adjacency%20matrices,%20corrected%20July%202020.xlsx)].
+
+The differences in this file are as follows: 
+
+_Hermaphrodite gap junctions_
+- Added: PVDL ↔ hmc: weight 400
+- Added: PVDR ↔ hmc: weight 400
+- Removed: BDUR ↔ PLMR: weight 23
+- The following connections were not originally present in both directions (i.e. a fully symmetrical electrical connection was not present): 
+    - DD06 ↔ PDB
+    - ALA ↔ exc_gl
+    - VA09 ↔ PVCR
+
+_Male gap junctions_
+- Added: DD1 ↔ MVL08: weight 2
+- Removed: RIVR ↔ FLPL: weight 1
+- The following connections were not originally present in both directions (i.e. a fully symmetrical electrical connection was not present): 
+    - DD1 ↔ MVR08
+    - R8AL ↔ R8BL
+    - RIVL ↔ FLPL
+    - VB6 ↔ VB7
+    - VB7 ↔ VB5
+    - MDR08 ↔ DD1
+    
+**In Connectome Toolbox, we use spreadsheet 3), and use R1stL, R2stR, etc., as these are the names used [on WormAtlas](https://www.wormatlas.org/male/rays/mainframe.htm#Celllist5).**
+
+This file was opened in Excel and weights of selected connections were visually read from the cells on the specific sheets (e.g. hermaphrodite chemical, male gap jn symmetric), 
+noting the pre and post cells and these added to the connection test yaml file, along with the total number of nonzero connections in each adjacency matrix as well as the total weights. 
 
 
-
-### Validation tests for Cook2019HermDataReader 
+### Validation tests for Cook2019HermReader 
 
 
 #### Chemical synaptic connections
@@ -118,25 +160,27 @@ Expected number of nonzero connection weights: 4879 (matches)
 | g1AL | M4 | 7 | Yes |
 | PLNL | PHCL | 2 | Yes |
 | PVDL | ALA | 250 | Yes |
-| PVDL | hmc | 0 | Yes |
-| PVDR | hmc | 0 | Yes |
-| DD6 | PDB | 0 | Yes |
+| PVDL | hmc | 400 | Yes |
+| PVDR | hmc | 400 | Yes |
+| DD6 | PDB | 2 | Yes |
 | PDB | DD6 | 2 | Yes |
-| ALA | exc_gl | 0 | Yes |
+| ALA | exc_gl | 1 | Yes |
 | exc_gl | ALA | 1 | Yes |
-| BDUL | PLML | 23 | Yes |
+| BDUL | PLML | 0 | Yes |
 | RMDVR | SMDVR | 8 | Yes |
 
-Expected total weight of connections: 21801 (matches)
+Electrical synapse. Symmetric connectivity matrix: True
 
-Expected number of nonzero connection weights: 2881 (matches)
+Expected total weight of connections: 23313 (matches)
 
-_Validation PASSED on 2026-06-15 with cect v0.3.2_
+Expected number of nonzero connection weights: 2883 (matches)
+
+_Validation PASSED on 2026-06-16 with cect v0.3.2_
 
 
 
 
-### Validation tests for Cook2019MaleDataReader 
+### Validation tests for Cook2019MaleReader 
 
 
 #### Chemical synaptic connections
@@ -150,6 +194,7 @@ _Validation PASSED on 2026-06-15 with cect v0.3.2_
 | RIMR | MDL05 | 15 | Yes |
 | CEPDR | RMHL | 6 | Yes |
 | URBL | OLLL | 4 | Yes |
+| R9BR | R7stR | 2 | Yes |
 
 Expected total weight of connections: 45959 (matches)
 
@@ -164,12 +209,22 @@ Expected number of nonzero connection weights: 5306 (matches)
 | CANL | exc_cell | 200 | Yes |
 | PVDL | ALA | 250 | Yes |
 | URBL | IL2L | 17 | Yes |
+| DD1 | MVL08 | 2 | Yes |
+| RIVR | FLPL | 0 | Yes |
+| DD1 | MVR08 | 2 | Yes |
+| R8AL | R8BL | 5 | Yes |
+| RIVL | FLPL | 1 | Yes |
+| VB6 | VB7 | 5 | Yes |
+| VB7 | VB5 | 1 | Yes |
+| MDR08 | DD1 | 2 | Yes |
 
-Expected total weight of connections: 31684 (matches)
+Electrical synapse. Symmetric connectivity matrix: True
 
-Expected number of nonzero connection weights: 3476 (matches)
+Expected total weight of connections: 31702 (matches)
 
-_Validation PASSED on 2026-06-15 with cect v0.3.2_
+Expected number of nonzero connection weights: 3482 (matches)
+
+_Validation PASSED on 2026-06-16 with cect v0.3.2_
 
 
 
@@ -212,13 +267,15 @@ TODO: add total num nonzero connections
 | mc1V | pm3VL | 3 | Yes |
 | mc3V | pm7VL | 3 | Yes |
 
+Electrical synapse. Symmetric connectivity matrix: True
+
 TODO: add total num nonzero connections
 
-_Validation PASSED on 2026-06-15 with cect v0.3.2_
+_Validation PASSED on 2026-06-16 with cect v0.3.2_
 
 
 
-## BrittinEtAl2021
+## Brittin2021
 
 Data taken from: A multi-scale brain map derived from whole-brain volumetric reconstructions, 
 Christopher A. Brittin, Steven J. Cook, David H. Hall, Scott W. Emmons & Netta Cohen, [Nature 591, 105–110, 2021](https://www.nature.com/articles/s41586-021-03284-x).
@@ -254,7 +311,7 @@ The M<sup>4</sup> graph is the example used in Connectome Toolbox. Values for th
 
 Expected number of nonzero connection weights: 3850 (matches)
 
-_Validation PASSED on 2026-06-15 with cect v0.3.2_
+_Validation PASSED on 2026-06-16 with cect v0.3.2_
 
 
 
@@ -294,9 +351,11 @@ Expected number of nonzero connection weights: 775 (matches)
 | RMDR | SMDVR | 1 | Yes |
 | IL1R | IL1VR | 2 | Yes |
 
+Electrical synapse. Symmetric connectivity matrix: True
+
 Expected number of nonzero connection weights: 164 (matches)
 
-_Validation PASSED on 2026-06-15 with cect v0.3.2_
+_Validation PASSED on 2026-06-16 with cect v0.3.2_
 
 
 
@@ -322,9 +381,11 @@ Expected number of nonzero connection weights: 986 (matches)
 | OLLL | OLLR | 2 | Yes |
 | RIH | RIR | 1 | Yes |
 
+Electrical synapse. Symmetric connectivity matrix: True
+
 Expected number of nonzero connection weights: 246 (matches)
 
-_Validation PASSED on 2026-06-15 with cect v0.3.2_
+_Validation PASSED on 2026-06-16 with cect v0.3.2_
 
 
 
@@ -350,9 +411,11 @@ Expected number of nonzero connection weights: 1012 (matches)
 | OLLL | OLLR | 2 | Yes |
 | SMDDL | SMDDR | 1 | Yes |
 
+Electrical synapse. Symmetric connectivity matrix: True
+
 Expected number of nonzero connection weights: 186 (matches)
 
-_Validation PASSED on 2026-06-15 with cect v0.3.2_
+_Validation PASSED on 2026-06-16 with cect v0.3.2_
 
 
 
@@ -378,9 +441,11 @@ Expected number of nonzero connection weights: 1136 (matches)
 | AVER | URYVL | 1 | Yes |
 | SMDDL | SMDDR | 1 | Yes |
 
+Electrical synapse. Symmetric connectivity matrix: True
+
 Expected number of nonzero connection weights: 415 (matches)
 
-_Validation PASSED on 2026-06-15 with cect v0.3.2_
+_Validation PASSED on 2026-06-16 with cect v0.3.2_
 
 
 
@@ -406,9 +471,11 @@ Expected number of nonzero connection weights: 1515 (matches)
 | ADLL | CEPshVL | 1 | Yes |
 | OLQVL | RIGL | 2 | Yes |
 
+Electrical synapse. Symmetric connectivity matrix: True
+
 Expected number of nonzero connection weights: 578 (matches)
 
-_Validation PASSED on 2026-06-15 with cect v0.3.2_
+_Validation PASSED on 2026-06-16 with cect v0.3.2_
 
 
 
@@ -434,9 +501,11 @@ Expected number of nonzero connection weights: 1525 (matches)
 | BAGR | RIR | 1 | Yes |
 | DVA | OLQVL | 1 | Yes |
 
+Electrical synapse. Symmetric connectivity matrix: True
+
 Expected number of nonzero connection weights: 426 (matches)
 
-_Validation PASSED on 2026-06-15 with cect v0.3.2_
+_Validation PASSED on 2026-06-16 with cect v0.3.2_
 
 
 
@@ -462,9 +531,11 @@ Expected number of nonzero connection weights: 2202 (matches)
 | SIAVL | SMDVR | 1 | Yes |
 | SAADL | SMBDL | 2 | Yes |
 
+Electrical synapse. Symmetric connectivity matrix: True
+
 Expected number of nonzero connection weights: 576 (matches)
 
-_Validation PASSED on 2026-06-15 with cect v0.3.2_
+_Validation PASSED on 2026-06-16 with cect v0.3.2_
 
 
 
@@ -490,9 +561,11 @@ Expected number of nonzero connection weights: 2186 (matches)
 | AFDR | AIZR | 1 | Yes |
 | PVT | RIBL | 2 | Yes |
 
+Electrical synapse. Symmetric connectivity matrix: True
+
 Expected number of nonzero connection weights: 612 (matches)
 
-_Validation PASSED on 2026-06-15 with cect v0.3.2_
+_Validation PASSED on 2026-06-16 with cect v0.3.2_
 
 
 
@@ -531,7 +604,7 @@ For each of these CSV files, the file was opened in Apple Numbers, and the weigh
 
 Expected number of nonzero connection weights: 31417 (matches)
 
-_Validation PASSED on 2026-06-15 with cect v0.3.2_
+_Validation PASSED on 2026-06-16 with cect v0.3.2_
 
 
 
@@ -549,7 +622,7 @@ _Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 Expected number of nonzero connection weights: 40425 (matches)
 
-_Validation PASSED on 2026-06-15 with cect v0.3.2_
+_Validation PASSED on 2026-06-16 with cect v0.3.2_
 
 
 
@@ -572,7 +645,7 @@ _Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 Expected number of nonzero connection weights: 53558 (matches)
 
-_Validation PASSED on 2026-06-15 with cect v0.3.2_
+_Validation PASSED on 2026-06-16 with cect v0.3.2_
 
 
 
@@ -609,7 +682,7 @@ This file was opened in Excel and weights of selected connections were visually 
 
 Expected number of nonzero connection weights: 2198 (matches)
 
-_Validation PASSED on 2026-06-15 with cect v0.3.2_
+_Validation PASSED on 2026-06-16 with cect v0.3.2_
 
 
 
@@ -627,21 +700,21 @@ _Validation PASSED on 2026-06-15 with cect v0.3.2_
 
 Expected number of nonzero connection weights: 2198 (matches)
 
-_Validation PASSED on 2026-06-15 with cect v0.3.2_
+_Validation PASSED on 2026-06-16 with cect v0.3.2_
 
 
 
-## WangEtAl2025
+## WangEtAl2024
 
 TODO...
 
 
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//Wang2024HermDataReader_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//Wang2024HermDataReader_expected_data.yaml'
+**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//Wang2024HermReader_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//Wang2024HermReader_expected_data.yaml'
 
 
 
 
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//Wang2024MaleDataReader_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//Wang2024MaleDataReader_expected_data.yaml'
+**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//Wang2024MaleReader_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//Wang2024MaleReader_expected_data.yaml'
 
 
 

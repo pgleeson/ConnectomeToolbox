@@ -68,18 +68,33 @@ def get_synclass(cell, syntype):
         return GENERIC_CHEM_SYN_CLASS
 
 
+ORIGINAL_SUPP_INFO_5 = "41586_2019_1352_MOESM9_ESM.xlsx"
+WORMWIRING_ADJ_MATRICES = "SI 5 Connectome adjacency matrices.xlsx"
+WORMWIRING_ADJ_MATRICES_CORRECTED = (
+    "SI 5 Connectome adjacency matrices, corrected July 2020.xlsx"
+)
+
+
+def _check_ray_st_cell(cell_name):
+    """
+    Check to make sure R1stL, R7stR etc are not used, but R1shL, R7shR etc are used, as in some of the spreadsheet data.
+    """
+    if cell_name.startswith("R") and (
+        cell_name.endswith("shL") or cell_name.endswith("shR")
+    ):
+        cell_name = cell_name.replace("sh", "st")
+    return cell_name
+
+
 class Cook2019DataReader(ConnectomeDataset):
     """
     Reader of data from Cook et al. 2019 - Whole-animal connectomes of both Caenorhabditis elegans sexes
     """
 
     spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
-    filename = "%s41586_2019_1352_MOESM9_ESM.xlsx" % spreadsheet_location
-    filename = (
-        "%sSI 5 Connectome adjacency matrices, corrected July 2020.xlsx"
-        % spreadsheet_location
-    )
-    filename = "%sSI 5 Connectome adjacency matrices.xlsx" % spreadsheet_location
+    filename = "%s%s" % (spreadsheet_location, ORIGINAL_SUPP_INFO_5)
+    filename = "%s%s" % (spreadsheet_location, WORMWIRING_ADJ_MATRICES)
+    filename = "%s%s" % (spreadsheet_location, WORMWIRING_ADJ_MATRICES_CORRECTED)
 
     verbose = False
 
@@ -103,6 +118,7 @@ class Cook2019DataReader(ConnectomeDataset):
                 if sheet_name == HERM_GAP_SYMM:
                     sheet_name = HERM_GAP_SYMM_CORRECTED
                 pre_range[HERM_GAP_SYMM] = range(4, 473)
+                post_range[HERM_CHEM] = range(4, 458)
                 post_range[HERM_GAP_SYMM] = range(4, 473)
 
             sheet = wb.get_sheet_by_name(sheet_name)
@@ -112,7 +128,8 @@ class Cook2019DataReader(ConnectomeDataset):
             self.post_cells[conn_type] = []
 
             for i in pre_range[conn_type]:
-                self.pre_cells[conn_type].append(sheet["C%i" % i].value)
+                pre_cell = _check_ray_st_cell(sheet["C%i" % i].value)
+                self.pre_cells[conn_type].append(pre_cell)
 
             if self.verbose:
                 print_(
@@ -125,7 +142,8 @@ class Cook2019DataReader(ConnectomeDataset):
                 )
 
             for i in post_range[conn_type]:
-                self.post_cells[conn_type].append(sheet.cell(row=3, column=i).value)
+                post_cell = _check_ray_st_cell(sheet.cell(row=3, column=i).value)
+                self.post_cells[conn_type].append(post_cell)
 
             if self.verbose:
                 print_(

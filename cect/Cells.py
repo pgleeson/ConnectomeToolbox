@@ -1271,7 +1271,6 @@ cell_notes["gonad"] = "gonad (male specific)"
 PROCTODEUM_CELL_MALE = ["proctodeum"]
 cell_notes["proctodeum"] = "proctodeum (male specific)"
 
-# TODO: remove sh versions, R1shL, etc from here!!!
 MALE_RAY_STRUCTURAL_CELLS = [
     "R1stL",
     "R1stR",
@@ -1291,24 +1290,6 @@ MALE_RAY_STRUCTURAL_CELLS = [
     "R8stR",
     "R9stL",
     "R9stR",
-    "R1shL",
-    "R1shR",
-    "R2shL",
-    "R2shR",
-    "R3shL",
-    "R3shR",
-    "R4shL",
-    "R4shR",
-    "R5shL",
-    "R5shR",
-    "R6shL",
-    "R6shR",
-    "R7shL",
-    "R7shR",
-    "R8shL",
-    "R8shR",
-    "R9shL",
-    "R9shR",
 ]
 
 for cell in MALE_RAY_STRUCTURAL_CELLS:

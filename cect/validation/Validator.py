@@ -3,6 +3,8 @@ from cect import print_
 from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS, GENERIC_ELEC_SYN_CLASS
 from cect.Utils import get_connectome_dataset
 from cect import __version__ as cect_version
+from cect.Cells import is_known_cell
+from cect.Comparison import get_improved_reader_name
 
 import modelspec
 from modelspec import field, instance_of
@@ -12,8 +14,25 @@ from datetime import date
 import yaml
 import sys
 import numpy as np
+import importlib
 
 import unittest
+
+
+def _latexify(text):
+    return (
+        text.replace("_", "\\_")
+        .replace("&", "\\&")
+        .replace("%", "\\%")
+        .replace("$", "\\$")
+        .replace("<sup>", "$^")
+        .replace("</sup>", "$")
+        .replace("#", "\\#")
+        .replace("{", "\\{")
+        .replace("}", "\\}")
+        .replace("~", "\\textasciitilde{}")
+        .replace("C. elegans", "\\celegans{}")
+    )
 
 
 class TestExpectedConnections(unittest.TestCase):
@@ -23,13 +42,27 @@ class TestExpectedConnections(unittest.TestCase):
 
         validation_md = "# Validation status of Data Readers\n\n"
 
+        latex_md = """\\newcolumntype{b}{X}
+\\newcolumntype{s}{>{\hsize=.5\hsize}X}
+\\begin{table}[tp]
+  \\centering
+  \\caption{List of all datasets in the \\celegans{} Connectome Toolbox}\\label{tab:dataset-table}
+  \\rowcolors{1}{table-shade}{white}
+  \\footnotesize
+  \\begin{tabularx}{\\textwidth}{ssbb}
+    \\toprule%
+    \\hiderowcolors%
+    \\textbf{Original publication} & \\textbf{Reference/link} & \\textbf{Description} & \\textbf{Weight} \\\\
+    \\midrule%
+"""
+
         data_readers = {
             "WhiteEtAl1986": ["White_A", "White_L4", "White_whole"],
             "VarshneyEtAl2011": ["VarshneyDataReader"],
             "BentleyEtAl2016": ["WormNeuroAtlasMAReader", "WormNeuroAtlasPepReader"],
-            "CookEtAl2019": ["Cook2019HermDataReader", "Cook2019MaleDataReader"],
+            "CookEtAl2019": ["Cook2019HermReader", "Cook2019MaleReader"],
             "CookEtAl2020": ["Cook2020DataReader"],
-            "BrittinEtAl2021": ["BrittinDataReader"],
+            "Brittin2021": ["BrittinDataReader"],
             "WitvlietEtAl2021": [
                 "WitvlietDataReader1",
                 "WitvlietDataReader2",
@@ -50,7 +83,7 @@ class TestExpectedConnections(unittest.TestCase):
                 "Yim2024NonNormDataReader",
                 "Yim2024DataReader",
             ],
-            "WangEtAl2025": ["Wang2024HermDataReader", "Wang2024MaleDataReader"],
+            "WangEtAl2024": ["Wang2024HermReader", "Wang2024MaleReader"],
         }
         """
         data_readers = {
@@ -79,20 +112,54 @@ class TestExpectedConnections(unittest.TestCase):
             for data_reader in data_readers[data_set]:
                 print_(f"Validating reader: {data_reader}...")
 
-                report = self.load_and_check_expected_data(data_reader)
+                report, latex = self.load_and_check_expected_data(data_reader, data_set)
                 validation_md += report + "\n\n"
+                latex_md += latex
+
         val_md = __file__.replace("Validator.py", "../../docs/Validation.md")
         with open(val_md, "w") as f:
             f.write(validation_md)
             print_(f"Validation report written to {val_md}")
 
-        assert self.MISMATCH not in validation_md, (
+        tex_md = __file__.replace("Validator.py", "../../docs/dataset-table.tex")
+        with open(tex_md, "w") as f:
+            f.write(
+                latex_md + "    \\showrowcolors%\n  \\end{tabularx}\n\\end{table}\n"
+            )
+            print_(f"Latex table written to {tex_md}")
+
+        assert self.MISMATCH not in validation_md and "False" not in validation_md, (
             "Validation failed for some connections. See Validation.md for details."
         )
 
-    def load_and_check_expected_data(self, data_reader):
+    def load_and_check_expected_data(self, data_reader, data_set):
 
         report = ""
+        latex = ""
+
+        pub = (
+            data_set.replace("_", "")
+            .replace("EtAl", "")
+            .replace("GleesonModel", "Gleeson2018")
+            .replace("OlivaresModel", "Olivares2021")
+        )
+
+        reader_module = importlib.import_module(f"cect.readers.{data_reader}")
+
+        reader_ref = reader_module.NAME
+        ref = get_improved_reader_name(reader_ref)
+
+        description = "TODO"
+        if hasattr(reader_module, "DATASET_DESCRIPTION"):
+            description = reader_module.DATASET_DESCRIPTION
+        weight = "TODO"
+        if hasattr(reader_module, "WEIGHTS"):
+            weight = reader_module.WEIGHTS
+
+        ref_url = f"\\href{{https://openworm.org/ConnectomeToolbox/{reader_ref}_data}}{{{ref}}}"
+
+        latex += f"    \\cite{{{pub}}} & {ref_url} & {_latexify(description)} & "
+        latex += f" {_latexify(weight)} \\\\ \n    \midrule%\n"
 
         expected_data_folder = __file__.replace("Validator.py", "")
         expected_data_file = f"{expected_data_folder}/{data_reader}_expected_data.yaml"
@@ -107,20 +174,16 @@ class TestExpectedConnections(unittest.TestCase):
             self.assertIsInstance(expected_data, ReaderExpectedData)
             self.assertEqual(expected_data.reader, data_reader)
 
-            data_reader_ref = data_reader.replace("DataReader", "")
-
             if len(sys.argv) > 1 and sys.argv[1] == "0":  # so not quick...
                 from_cache = False
             else:
                 from_cache = True
             print_(
                 " --- Loading connectome dataset for reader %s with from_cache=%s... (%s)"
-                % (data_reader_ref, from_cache, sys.argv)
+                % (reader_ref, from_cache, sys.argv)
             )
 
-            conn_dataset = get_connectome_dataset(
-                data_reader_ref, from_cache=from_cache
-            )
+            conn_dataset = get_connectome_dataset(reader_ref, from_cache=from_cache)
 
             print_(conn_dataset.summary())
 
@@ -153,6 +216,15 @@ class TestExpectedConnections(unittest.TestCase):
                     )
                     print_(match_info)
                     report += f"| {conn['pre']} | {conn['post']} | {conn['weight']} | {match_info} |\n"
+
+                if syn_class == GENERIC_ELEC_SYN_CLASS:
+                    arr = conn_dataset.connections[syn_class]
+                    arrT = arr.T
+                    report += f"\nElectrical synapse. Symmetric connectivity matrix: {np.array_equal(arr, arrT)}\n"
+
+                for node in conn_dataset.nodes:
+                    if not is_known_cell(node, allow_modelled_neurons=True):
+                        report += f"\nError: Cell {node} is not in the list of known cells (from Cook et al. 2019)!\n"
 
                 if "total_weight" in conn_list:
                     total_w = conn_list["total_weight"]
@@ -192,7 +264,7 @@ class TestExpectedConnections(unittest.TestCase):
                 f"\n**TODO: add expected data file: {expected_data_file}**: {e}\n\n"
             )
 
-        return report
+        return report, latex
 
 
 @modelspec.define

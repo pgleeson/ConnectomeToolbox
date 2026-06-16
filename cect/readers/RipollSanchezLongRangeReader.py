@@ -14,7 +14,7 @@ from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 MODEL = "long_range_model"
 
-NAME = "RipollSanchezLongRangeReader"
+NAME = "RipollSanchezLongRange"
 
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):

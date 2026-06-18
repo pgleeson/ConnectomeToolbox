@@ -43,5 +43,7 @@ _Male gap junctions_
     
 **In Connectome Toolbox, we use spreadsheet 3), and use R1stL, R2stR, etc., as these are the names used [on WormAtlas](https://www.wormatlas.org/male/rays/mainframe.htm#Celllist5).**
 
+Additionally, we used **g1P**, not **g1p** for the name of this pharyngeal glial cell, as this is the form used in Cook et al. 2020, as well as on WormWiring. 
+
 This file was opened in Excel and weights of selected connections were visually read from the cells on the specific sheets (e.g. hermaphrodite chemical, male gap jn symmetric), 
 noting the pre and post cells and these added to the connection test yaml file, along with the total number of nonzero connections in each adjacency matrix as well as the total weights. 

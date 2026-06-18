@@ -15,7 +15,7 @@ from cect.Cells import is_potential_muscle
 
 # ruff: noqa: F401
 from cect.Cells import is_known_muscle
-from cect.Cells import is_marginal_cell
+from cect.Cells import is_marginal_epithelial_gland_cell
 from cect.Cells import convert_to_preferred_phar_cell_name
 from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS, CHEMICAL_SYN_TYPE
 from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS, ELECTRICAL_SYN_TYPE
@@ -83,7 +83,7 @@ class Cook2020DataReader(ConnectomeDataset):
                 post = str.strip(row["Target"])
                 if is_potential_muscle(post):
                     post = convert_to_preferred_muscle_name(post)
-                if is_marginal_cell(post):
+                if is_marginal_epithelial_gland_cell(post):
                     post = convert_to_preferred_phar_cell_name(post)
                 num = float(row["Weight"])
                 syntype = str.strip(row["Type"])
@@ -117,13 +117,13 @@ class Cook2020DataReader(ConnectomeDataset):
                 pre = str.strip(row["Source"])
                 if is_potential_muscle(pre):
                     pre = convert_to_preferred_muscle_name(pre)
-                if is_marginal_cell(pre):
+                if is_marginal_epithelial_gland_cell(pre):
                     pre = convert_to_preferred_phar_cell_name(pre)
                 post = str.strip(row["Target"])
 
                 if is_potential_muscle(post):
                     post = convert_to_preferred_muscle_name(post)
-                if is_marginal_cell(post):
+                if is_marginal_epithelial_gland_cell(post):
                     post = convert_to_preferred_phar_cell_name(post)
 
                 num = float(row["Weight"])

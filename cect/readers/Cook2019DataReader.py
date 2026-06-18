@@ -14,6 +14,8 @@ from cect.Cells import is_any_neuron
 from cect.Cells import remove_leading_index_zero
 from cect.Cells import is_potential_muscle
 from cect.Cells import is_known_muscle
+from cect.Cells import is_marginal_epithelial_gland_cell
+from cect.Cells import convert_to_preferred_phar_cell_name
 
 from cect.ConnectomeDataset import ConnectomeDataset
 
@@ -220,6 +222,9 @@ class Cook2019DataReader(ConnectomeDataset):
 
                     if is_potential_muscle(post):
                         post = convert_to_preferred_muscle_name(post)
+
+                    if is_marginal_epithelial_gland_cell(post):
+                        post = convert_to_preferred_phar_cell_name(post)
 
                     if num > 0:
                         syntype = (

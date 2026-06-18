@@ -1383,11 +1383,15 @@ PHARYNGEAL_EPITHELIUM = [
 for cell in PHARYNGEAL_EPITHELIUM:
     cell_notes[cell] = "pharyngeal epithelium"
 
+
+# note: g1p is used in Cook 2019, but g1P is used in Cook2020 & on WormAtlas - we'll go with the latter
+g1p_COOK2019 = "g1p"
+g1P_COOK2020 = "g1P"
+
 PHARYNGEAL_GLIAL_CELL = [
     "g1AL",
     "g1AR",
-    "g1p",  # TODO remove!
-    "g1P",
+    g1P_COOK2020,
     "g2L",
     "g2R",
 ]
@@ -1897,10 +1901,10 @@ def convert_to_preferred_phar_cell_name(cell: str):
         return "mc3DR"
     elif cell == "mc3dl":
         return "mc3DL"
-    elif cell.lower() == "g1p":  # Different between cook 19 & 20
-        return "g1P"
+    elif cell == g1p_COOK2019:  # Different between cook 19 & 20 - see note above
+        return g1P_COOK2020
     else:
-        if is_marginal_cell(cell):
+        if is_marginal_epithelial_gland_cell(cell):
             return cell
 
 
@@ -1908,9 +1912,11 @@ def get_marginal_cell_prefixes():
     return ["mc"]
 
 
-def is_marginal_cell(cell: str):
+def is_marginal_epithelial_gland_cell(cell: str):
     known_mc_prefix = get_marginal_cell_prefixes()
-    return cell.startswith(tuple(known_mc_prefix))
+    return cell.startswith(
+        tuple(known_mc_prefix)
+    ) or cell in PHARYNGEAL_EPITHELIUM + PHARYNGEAL_GLIAL_CELL + [g1p_COOK2019]
 
 
 def get_all_muscle_prefixes():

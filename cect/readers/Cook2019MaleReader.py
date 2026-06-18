@@ -49,7 +49,7 @@ def main1():
         neurons2muscles,
         muscles,
         muscle_conns,
-        print_details_on=["R9BR", "R7shR"],
+        print_details_on=["R9BR", "R7shR", "M4"],
     )
 
 

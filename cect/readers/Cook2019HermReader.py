@@ -58,6 +58,16 @@ def main1():
 
     print(my_instance.summary())
 
+    cells = ["M4"]
+    syntypes = ["Generic_CS", "Generic_GJ"]
+
+    for cell in cells:
+        for syntype in syntypes:
+            conns = my_instance.get_connections_from(cell, syntype)
+            print(f"There are {len(conns)} connections from {cell} of type {syntype}:")
+            for c in sorted(conns.keys()):
+                print(f" {cell} -> {c}: {conns[c]}")
+
 
 if __name__ == "__main__":
     main1()

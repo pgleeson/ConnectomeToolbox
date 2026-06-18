@@ -16,6 +16,12 @@ connection_lists:
   - pre: RIMR
     post: MDL05
     weight: 15
+  - pre: M1
+    post: g1P
+    weight: 5
+  - pre: I6
+    post: g1P
+    weight: 2
   synapse: Generic_CS
   total_nonzero_conns: 4879
   total_weight: 28113

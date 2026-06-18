@@ -16,6 +16,9 @@ connection_lists:
   - pre: I5
     post: g1AL
     weight: 8
+  - pre: I6
+    post: g1P
+    weight: 2
   synapse: Generic_CS
 - connections:
   - pre: M4

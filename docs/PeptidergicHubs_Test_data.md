@@ -23,7 +23,7 @@ search:
 
     <a href="../Test_data"> Raw Data</a> - <a href="../Neurons_Test_data"> Neurons</a> - <a href="../Pharynx_Test_data"> Pharynx</a> - <a href="../Social_Test_data"> Social Network</a> - <a href="../Escape_Test_data"> Escape Response Circuit</a> - <a href="../Full1_Test_data"> Cook 2019 Fig 3</a> - <a href="../BrainmapA_Test_data"> BrainMap A</a> - <a href="../Brainmap_Test_data"> BrainMap B</a> - <a href="../Loco1_Test_data"> Locomotion 1</a> - <a href="../Loco2_Test_data"> Locomotion 2</a> - <a href="../Loco3_Test_data"> Locomotion 3</a> - <b><a href="../PeptidergicHubs_Test_data"> Peptidergic Hubs</a></b> - <a href="../NonpharyngealH_Test_data"> Nonpharyngeal Neurons (herm)</a> - <a href="../SensorySomaticH_Test_data"> Sensory Neurons (somatic)</a> - <a href="../MotorSomaticH_Test_data"> Motor Neurons (somatic)</a> - <a href="../MotorMuscles_Test_data"> Motor Neurons and muscles</a> - <a href="../InterneuronsSomaticH_Test_data"> Interneurons (somatic)</a> - 
 
-    <i>Peptidergic hubs as outlined in in [Ripoll-Sánchez et al. 2023](../RipollSanchez_2023.md), Fig 7E</i>
+    <i>Peptidergic hubs as outlined in in [Ripoll-Sánchez et al. 2023](RipollSanchez_2023.md), Fig 7E</i>
 === "Chemical"
 
     <br/>
@@ -56,7 +56,7 @@ search:
 
     **Peptidergic Hubs** (PeptidergicHubs)
     
-    _Peptidergic hubs as outlined in in [Ripoll-Sánchez et al. 2023](../RipollSanchez_2023.md), Fig 7E_
+    _Peptidergic hubs as outlined in in [Ripoll-Sánchez et al. 2023](RipollSanchez_2023.md), Fig 7E_
     
     
     

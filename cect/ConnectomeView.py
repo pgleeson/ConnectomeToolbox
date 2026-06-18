@@ -682,7 +682,7 @@ for cell_set in sorted(loco3_positions.keys()):
 PEP_HUBS_VIEW = View(
     "PeptidergicHubs",
     "Peptidergic Hubs",
-    "Peptidergic hubs as outlined in in [Ripoll-Sánchez et al. 2023](../RipollSanchez_2023.md), Fig 7E",
+    "Peptidergic hubs as outlined in in [Ripoll-Sánchez et al. 2023](RipollSanchez_2023.md), Fig 7E",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
     text_scale=1.2,

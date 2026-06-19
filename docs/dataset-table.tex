@@ -1,68 +1,71 @@
-\newcolumntype{b}{X}
-\newcolumntype{s}{>{\hsize=.5\hsize}X}
-\begin{table}[tp]
-  \centering
-  \caption{List of all datasets in the \celegans{} Connectome Toolbox}\label{tab:dataset-table}
-  \rowcolors{1}{table-shade}{white}
-  \footnotesize
-  \begin{tabularx}{\textwidth}{ssbb}
-    \toprule%
-    \hiderowcolors%
-    \textbf{Original publication} & \textbf{Reference/link} & \textbf{Description} & \textbf{Weight} \\
-    \midrule%
-    \cite{White1986} & \href{https://openworm.org/ConnectomeToolbox/White_A_data}{White et al. 1986 N2U/adult} & TODO &  TODO \\ 
-    \midrule%
-    \cite{White1986} & \href{https://openworm.org/ConnectomeToolbox/White_L4_data}{White et al. 1986 JSH/L4} & TODO &  TODO \\ 
-    \midrule%
-    \cite{White1986} & \href{https://openworm.org/ConnectomeToolbox/White_whole_data}{White et al. 1986 (whole worm)} & TODO &  TODO \\ 
-    \midrule%
-    \cite{Varshney2011} & \href{https://openworm.org/ConnectomeToolbox/Varshney_data}{Varshney et al. 2011} & TODO &  TODO \\ 
-    \midrule%
-    \cite{Bentley2016} & \href{https://openworm.org/ConnectomeToolbox/Bentley2016_MA_data}{Bentley et al. 2016  (monoamin.)} & TODO &  TODO \\ 
-    \midrule%
-    \cite{Bentley2016} & \href{https://openworm.org/ConnectomeToolbox/Bentley2016_PEP_data}{Bentley et al. 2016  (peptid.)} & TODO &  TODO \\ 
-    \midrule%
-    \cite{Cook2019} & \href{https://openworm.org/ConnectomeToolbox/Cook2019Herm_data}{Cook et al. 2019 (herm.)} & Chemical and electrical connectivity of the hermaphrodite from Cook et al 2019, including connections between neurons, muscles and other cells. &  Weights are the total number of EM serial sections of connectivity, taking into account both the number of synapses and the sizes of synapses. \\ 
-    \midrule%
-    \cite{Cook2019} & \href{https://openworm.org/ConnectomeToolbox/Cook2019Male_data}{Cook et al. 2019 (male)} & Chemical and electrical connectivity of the male from Cook et al 2019, including connections between neurons, muscles and other cells. &  Weights are the total number of EM serial sections of connectivity, taking into account both the number of synapses and the sizes of synapses. \\ 
-    \midrule%
-    \cite{Cook2020} & \href{https://openworm.org/ConnectomeToolbox/Cook2020_data}{Cook et al. 2020} & Chemical and electrical connectivity of the \celegans{} pharynx, from Cook et al 2020, including connections between pharyngeal neurons, muscles and other cells. &  TODO... \\ 
-    \midrule%
-    \cite{Brittin2021} & \href{https://openworm.org/ConnectomeToolbox/Brittin2021_data}{Brittin et al. 2021} & Membrane contact information from Brittin et al. 2021. This dataset contains information on the contact area between pairs of cells in the \celegans{} nerve ring, as measured by electron microscopy. The M$^4$ graph as described in the paper is used here. 
- &  Weights represent the contact area between pairs of cells \\ 
-    \midrule%
-    \cite{Witvliet2021} & \href{https://openworm.org/ConnectomeToolbox/Witvliet1_data}{Witvliet et al. 2021 1 (L1)} & TODO &  TODO \\ 
-    \midrule%
-    \cite{Witvliet2021} & \href{https://openworm.org/ConnectomeToolbox/Witvliet2_data}{Witvliet et al. 2021 2 (L1)} & TODO &  TODO \\ 
-    \midrule%
-    \cite{Witvliet2021} & \href{https://openworm.org/ConnectomeToolbox/Witvliet3_data}{Witvliet et al. 2021 3 (L1)} & TODO &  TODO \\ 
-    \midrule%
-    \cite{Witvliet2021} & \href{https://openworm.org/ConnectomeToolbox/Witvliet4_data}{Witvliet et al. 2021 4 (L1)} & TODO &  TODO \\ 
-    \midrule%
-    \cite{Witvliet2021} & \href{https://openworm.org/ConnectomeToolbox/Witvliet5_data}{Witvliet et al. 2021 5 (L2)} & TODO &  TODO \\ 
-    \midrule%
-    \cite{Witvliet2021} & \href{https://openworm.org/ConnectomeToolbox/Witvliet6_data}{Witvliet et al. 2021 6 (L3)} & TODO &  TODO \\ 
-    \midrule%
-    \cite{Witvliet2021} & \href{https://openworm.org/ConnectomeToolbox/Witvliet7_data}{Witvliet et al. 2021 7 (adult)} & TODO &  TODO \\ 
-    \midrule%
-    \cite{Witvliet2021} & \href{https://openworm.org/ConnectomeToolbox/Witvliet8_data}{Witvliet et al. 2021 8 (adult)} & TODO &  TODO \\ 
-    \midrule%
-    \cite{Randi2023} & \href{https://openworm.org/ConnectomeToolbox/Randi2023_data}{Randi et al. 2023} & TODO &  TODO \\ 
-    \midrule%
-    \cite{RipollSanchez2023} & \href{https://openworm.org/ConnectomeToolbox/RipollSanchezShortRange_data}{Ripoll Sanchez et al. 2023 (short range)} & TODO &  TODO \\ 
-    \midrule%
-    \cite{RipollSanchez2023} & \href{https://openworm.org/ConnectomeToolbox/RipollSanchezMidRange_data}{Ripoll Sanchez et al. 2023 (mid range)} & TODO &  TODO \\ 
-    \midrule%
-    \cite{RipollSanchez2023} & \href{https://openworm.org/ConnectomeToolbox/RipollSanchezLongRange_data}{Ripoll Sanchez et al. 2023 (long range)} & TODO &  TODO \\ 
-    \midrule%
-    \cite{Yim2024} & \href{https://openworm.org/ConnectomeToolbox/Yim2024NonNorm_data}{Yim et al. 2024 (non norm.)} & TODO &  TODO \\ 
-    \midrule%
-    \cite{Yim2024} & \href{https://openworm.org/ConnectomeToolbox/Yim2024_data}{Yim et al. 2024} & TODO &  TODO \\ 
-    \midrule%
-    \cite{Wang2024} & \href{https://openworm.org/ConnectomeToolbox/Wang2024Herm_data}{Wang et al. 2024 (herm.)} & TODO &  TODO \\ 
-    \midrule%
-    \cite{Wang2024} & \href{https://openworm.org/ConnectomeToolbox/Wang2024Male_data}{Wang et al. 2024 (male)} & TODO &  TODO \\ 
-    \midrule%
-    \showrowcolors%
-  \end{tabularx}
-\end{table}
+\footnotesize
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.14\textwidth}>{\raggedright\arraybackslash}p{0.14\textwidth}>{\raggedright\arraybackslash}p{0.30\textwidth}>{\raggedright\arraybackslash}p{0.30\textwidth}}
+  \caption{List of all datasets in the \celegans{} Connectome Toolbox}\label{tab:dataset-table}\\
+  \toprule%
+  \textbf{Original publication} & \textbf{Reference/link} & \textbf{Description} & \textbf{Weight} \\
+  \midrule%
+  \endfirsthead
+  \caption[]{(continued)}\\
+  \toprule%
+  \textbf{Original publication} & \textbf{Reference/link} & \textbf{Description} & \textbf{Weight} \\
+  \midrule%
+  \endhead
+  \midrule
+  \multicolumn{4}{r}{\footnotesize\itshape Continued on next page}\\
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  \cite{White1986} & \href{https://openworm.org/ConnectomeToolbox/White_A_data}{White et al. 1986 N2U/adult} & TODO &  TODO \\
+  \midrule%
+  \cite{White1986} & \href{https://openworm.org/ConnectomeToolbox/White_L4_data}{White et al. 1986 JSH/L4} & TODO &  TODO \\
+  \midrule%
+  \cite{White1986} & \href{https://openworm.org/ConnectomeToolbox/White_whole_data}{White et al. 1986 (whole worm)} & TODO &  TODO \\
+  \midrule%
+  \cite{Varshney2011} & \href{https://openworm.org/ConnectomeToolbox/Varshney_data}{Varshney et al. 2011} & TODO &  TODO \\
+  \midrule%
+  \cite{Bentley2016} & \href{https://openworm.org/ConnectomeToolbox/Bentley2016_MA_data}{Bentley et al. 2016  (monoamin.)} & TODO &  TODO \\
+  \midrule%
+  \cite{Bentley2016} & \href{https://openworm.org/ConnectomeToolbox/Bentley2016_PEP_data}{Bentley et al. 2016  (peptid.)} & TODO &  TODO \\
+  \midrule%
+  \cite{Cook2019} & \href{https://openworm.org/ConnectomeToolbox/Cook2019Herm_data}{Cook et al. 2019 (herm.)} & Chemical and electrical connectivity of the hermaphrodite from Cook et al 2019, including connections between neurons, muscles and other cells. &  Weights are the total number of EM serial sections of connectivity, taking into account both the number of synapses and the sizes of synapses. \\
+  \midrule%
+  \cite{Cook2019} & \href{https://openworm.org/ConnectomeToolbox/Cook2019Male_data}{Cook et al. 2019 (male)} & Chemical and electrical connectivity of the male from Cook et al 2019, including connections between neurons, muscles and other cells. &  Weights are the total number of EM serial sections of connectivity, taking into account both the number of synapses and the sizes of synapses. \\
+  \midrule%
+  \cite{Cook2020} & \href{https://openworm.org/ConnectomeToolbox/Cook2020_data}{Cook et al. 2020} & Chemical and electrical connectivity of the \celegans{} pharynx, from Cook et al 2020, including connections between pharyngeal neurons, muscles and other cells. &  TODO... \\
+  \midrule%
+  \cite{Brittin2021} & \href{https://openworm.org/ConnectomeToolbox/Brittin2021_data}{Brittin et al. 2021} & Membrane contact information from Brittin et al. 2021. This dataset contains information on the contact area between pairs of cells in the \celegans{} nerve ring, as measured by electron microscopy. The M$^4$ graph as described in the paper is used here. 
+ &  Weights represent the contact area between pairs of cells \\
+  \midrule%
+  \cite{Witvliet2021} & \href{https://openworm.org/ConnectomeToolbox/Witvliet1_data}{Witvliet et al. 2021 1 (L1)} & TODO &  TODO \\
+  \midrule%
+  \cite{Witvliet2021} & \href{https://openworm.org/ConnectomeToolbox/Witvliet2_data}{Witvliet et al. 2021 2 (L1)} & TODO &  TODO \\
+  \midrule%
+  \cite{Witvliet2021} & \href{https://openworm.org/ConnectomeToolbox/Witvliet3_data}{Witvliet et al. 2021 3 (L1)} & TODO &  TODO \\
+  \midrule%
+  \cite{Witvliet2021} & \href{https://openworm.org/ConnectomeToolbox/Witvliet4_data}{Witvliet et al. 2021 4 (L1)} & TODO &  TODO \\
+  \midrule%
+  \cite{Witvliet2021} & \href{https://openworm.org/ConnectomeToolbox/Witvliet5_data}{Witvliet et al. 2021 5 (L2)} & TODO &  TODO \\
+  \midrule%
+  \cite{Witvliet2021} & \href{https://openworm.org/ConnectomeToolbox/Witvliet6_data}{Witvliet et al. 2021 6 (L3)} & TODO &  TODO \\
+  \midrule%
+  \cite{Witvliet2021} & \href{https://openworm.org/ConnectomeToolbox/Witvliet7_data}{Witvliet et al. 2021 7 (adult)} & TODO &  TODO \\
+  \midrule%
+  \cite{Witvliet2021} & \href{https://openworm.org/ConnectomeToolbox/Witvliet8_data}{Witvliet et al. 2021 8 (adult)} & TODO &  TODO \\
+  \midrule%
+  \cite{Randi2023} & \href{https://openworm.org/ConnectomeToolbox/Randi2023_data}{Randi et al. 2023} & TODO &  TODO \\
+  \midrule%
+  \cite{RipollSanchez2023} & \href{https://openworm.org/ConnectomeToolbox/RipollSanchezShortRange_data}{Ripoll Sanchez et al. 2023 (short range)} & TODO &  TODO \\
+  \midrule%
+  \cite{RipollSanchez2023} & \href{https://openworm.org/ConnectomeToolbox/RipollSanchezMidRange_data}{Ripoll Sanchez et al. 2023 (mid range)} & TODO &  TODO \\
+  \midrule%
+  \cite{RipollSanchez2023} & \href{https://openworm.org/ConnectomeToolbox/RipollSanchezLongRange_data}{Ripoll Sanchez et al. 2023 (long range)} & TODO &  TODO \\
+  \midrule%
+  \cite{Yim2024} & \href{https://openworm.org/ConnectomeToolbox/Yim2024NonNorm_data}{Yim et al. 2024 (non norm.)} & TODO &  Weights represent the contact area (nm3) between pairs of cells \\
+  \midrule%
+  \cite{Yim2024} & \href{https://openworm.org/ConnectomeToolbox/Yim2024_data}{Yim et al. 2024} & TODO &  Weights represent the contact area between pairs of cells, normalized by the standard deviation of connection weights without the top 5th percentile to remove the bias due to the big outliers \\
+  \midrule%
+  \cite{Wang2024} & \href{https://openworm.org/ConnectomeToolbox/Wang2024Herm_data}{Wang et al. 2024 (herm.)} & TODO &  fff \\
+  \midrule%
+  \cite{Wang2024} & \href{https://openworm.org/ConnectomeToolbox/Wang2024Male_data}{Wang et al. 2024 (male)} & TODO &  TODO \\
+  \midrule%
+\end{longtable}

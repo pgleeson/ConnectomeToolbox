@@ -713,11 +713,9 @@ _Validation PASSED on 2026-06-19 with cect v0.3.2_
 
 This reader combines neurotransmitter atlas values from: Wang et al. 2024 (A neurotransmitter atlas of C. elegans males and hermaphrodites, [eLife 13:RP95402](https://doi.org/10.7554/eLife.95402.3)) with basic anatomical connectivity information from Cook et al. 2019, and monoaminergic receptor expression information from Bentley et al 2015.
 
-
 [Supplementary file 2](https://cdn.elifesciences.org/articles/95402/elife-95402-supp2-v1.xlsx) in that publication contains the expression patterns of neurotransmitter pathway genes in hermaphrodites.
     
 This has been added to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/elife-95402-supp2-v1.xlsx). 
-
 
 
 [Supplementary file 3](https://cdn.elifesciences.org/articles/95402/elife-95402-supp3-v1.xlsx) contains the expression patterns of neurotransmitter pathway genes in male-specific neurons.
@@ -757,6 +755,78 @@ Expected total weight of connections: 1334 (matches)
 
 Expected number of nonzero connection weights: 1334 (matches)
 
+#### Betaine connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ASIL | AIBL | 1 | Yes |
+| NSMR | pm5VR | 1 | Yes |
+| RIR | AQR | 1 | Yes |
+
+Expected total weight of connections: 150 (matches)
+
+Expected number of nonzero connection weights: 150 (matches)
+
+#### GABA connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| RIBL | CEPVL | 1 | Yes |
+| VD10 | MVR20 | 1 | Yes |
+| SMDDL | SIBDL | 1 | Yes |
+
+Expected total weight of connections: 506 (matches)
+
+Expected number of nonzero connection weights: 506 (matches)
+
+#### Dopamine connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| CEPVL | AIMR | 1 | Yes |
+| PDEL | RICR | 1 | Yes |
+| ADEL | DD4 | 1 | Yes |
+
+Expected total weight of connections: 1160 (matches)
+
+Expected number of nonzero connection weights: 1160 (matches)
+
+#### Serotonin connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| HSNL | PVQL | 1 | Yes |
+| NSML | VD3 | 1 | Yes |
+| ADFR | RID | 1 | Yes |
+
+Expected total weight of connections: 492 (matches)
+
+Expected number of nonzero connection weights: 492 (matches)
+
+#### Tyramine connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| RIMR | RMEV | 1 | Yes |
+| RIMR | SIADL | 1 | Yes |
+| RIML | VD5 | 1 | Yes |
+
+Expected total weight of connections: 224 (matches)
+
+Expected number of nonzero connection weights: 224 (matches)
+
+#### Octopamine connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| RICR | ASIL | 1 | Yes |
+| RICL | SIAVR | 1 | Yes |
+| RICL | PVQL | 1 | Yes |
+
+Expected total weight of connections: 56 (matches)
+
+Expected number of nonzero connection weights: 56 (matches)
+
 _Validation PASSED on 2026-06-19 with cect v0.3.2_
 
 
@@ -790,6 +860,78 @@ Expected number of nonzero connection weights: 3889 (matches)
 Expected total weight of connections: 1722 (matches)
 
 Expected number of nonzero connection weights: 1722 (matches)
+
+#### Betaine connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ASIL | AIBL | 1 | Yes |
+| NSMR | pm5VR | 1 | Yes |
+| RIR | AQR | 1 | Yes |
+
+Expected total weight of connections: 150 (matches)
+
+Expected number of nonzero connection weights: 150 (matches)
+
+#### GABA connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| RIBL | CEPVL | 1 | Yes |
+| VD10 | MVR20 | 1 | Yes |
+| SMDDL | SIBDL | 1 | Yes |
+
+Expected total weight of connections: 691 (matches)
+
+Expected number of nonzero connection weights: 691 (matches)
+
+#### Dopamine connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| CEPVL | AIMR | 1 | Yes |
+| PDEL | RICR | 1 | Yes |
+| ADEL | DD4 | 1 | Yes |
+
+Expected total weight of connections: 1160 (matches)
+
+Expected number of nonzero connection weights: 1160 (matches)
+
+#### Serotonin connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| HSNL | PVQL | 1 | Yes |
+| NSML | VD3 | 1 | Yes |
+| ADFR | RID | 1 | Yes |
+
+Expected total weight of connections: 492 (matches)
+
+Expected number of nonzero connection weights: 492 (matches)
+
+#### Tyramine connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| RIMR | RMEV | 1 | Yes |
+| RIMR | SIADL | 1 | Yes |
+| RIML | VD5 | 1 | Yes |
+
+Expected total weight of connections: 224 (matches)
+
+Expected number of nonzero connection weights: 224 (matches)
+
+#### Octopamine connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| RICR | ASIL | 1 | Yes |
+| RICL | SIAVR | 1 | Yes |
+| RICL | PVQL | 1 | Yes |
+
+Expected total weight of connections: 56 (matches)
+
+Expected number of nonzero connection weights: 56 (matches)
 
 _Validation PASSED on 2026-06-19 with cect v0.3.2_
 

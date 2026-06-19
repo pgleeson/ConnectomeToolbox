@@ -35,3 +35,81 @@ connection_lists:
   synapse: Glutamate
   total_nonzero_conns: 1334
   total_weight: 1334
+- connections:
+  - pre: ASIL
+    post: AIBL
+    weight: 1
+  - pre: NSMR
+    post: pm5VR
+    weight: 1
+  - pre: RIR
+    post: AQR
+    weight: 1
+  synapse: Betaine
+  total_nonzero_conns: 150
+  total_weight: 150
+- connections:
+  - pre: RIBL
+    post: CEPVL
+    weight: 1
+  - pre: VD10
+    post: MVR20
+    weight: 1
+  - pre: SMDDL
+    post: SIBDL
+    weight: 1
+  synapse: GABA
+  total_nonzero_conns: 506
+  total_weight: 506
+- connections:
+  - pre: CEPVL
+    post: AIMR
+    weight: 1
+  - pre: PDEL
+    post: RICR
+    weight: 1
+  - pre: ADEL
+    post: DD4
+    weight: 1
+  synapse: Dopamine
+  total_nonzero_conns: 1160
+  total_weight: 1160
+- connections:
+  - pre: HSNL
+    post: PVQL
+    weight: 1
+  - pre: NSML
+    post: VD3
+    weight: 1
+  - pre: ADFR
+    post: RID
+    weight: 1
+  synapse: Serotonin
+  total_nonzero_conns: 492
+  total_weight: 492
+- connections:
+  - pre: RIMR
+    post: RMEV
+    weight: 1
+  - pre: RIMR
+    post: SIADL
+    weight: 1
+  - pre: RIML
+    post: VD5
+    weight: 1
+  synapse: Tyramine
+  total_nonzero_conns: 224
+  total_weight: 224
+- connections:
+  - pre: RICR
+    post: ASIL
+    weight: 1
+  - pre: RICL
+    post: SIAVR
+    weight: 1
+  - pre: RICL
+    post: PVQL
+    weight: 1
+  synapse: Octopamine
+  total_nonzero_conns: 56
+  total_weight: 56

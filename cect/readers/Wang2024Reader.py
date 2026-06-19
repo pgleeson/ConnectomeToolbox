@@ -42,7 +42,7 @@ from openpyxl import load_workbook
 import os
 
 
-READER_DESCRIPTION = "--None--" # added in herm/male
+READER_DESCRIPTION = "--None--"  # added in herm/male
 
 
 class Wang2024Reader(ConnectomeDataset):
@@ -297,7 +297,6 @@ class Wang2024Reader(ConnectomeDataset):
 
             print_("Adding %i conns from %s" % (len(anat_conns), BASIS_ANATOMICAL_CONN))
             for conn in anat_conns[:]:
-                # print_("Original conn: %s" % conn)
 
                 if conn.synclass == GENERIC_ELEC_SYN_CLASS:
                     if include_electrical_connections:

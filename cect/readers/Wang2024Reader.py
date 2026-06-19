@@ -297,7 +297,6 @@ class Wang2024Reader(ConnectomeDataset):
 
             print_("Adding %i conns from %s" % (len(anat_conns), BASIS_ANATOMICAL_CONN))
             for conn in anat_conns[:]:
-
                 if conn.synclass == GENERIC_ELEC_SYN_CLASS:
                     if include_electrical_connections:
                         # print_("    Adding electrical conn: %s" % conn)

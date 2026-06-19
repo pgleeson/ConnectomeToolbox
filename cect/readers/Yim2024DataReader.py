@@ -59,7 +59,7 @@ READER_DESCRIPTION = (
     % get_dataset_source_on_github(filename.split("/")[-1])
 )
 
-DATASET_DESCRIPTION = """Reconstruction of the chemical connectome of the dauer, a distinct developmental stage of C. elegans, with the weights normalized to ease comparison to other datasets."""
+DATASET_DESCRIPTION = """Reconstruction of the chemical connectome of the dauer, a distinct developmental stage of _C. elegans_, with the weights normalized to ease comparison to other datasets."""
 
 WEIGHTS = "Weights represent the contact area between pairs of cells, normalized by the standard deviation of connection weights without the top 5th percentile to remove the bias due to the big outliers"
 

@@ -278,6 +278,8 @@ def generate_comparison_page(
     readers = {}
 
     if quick == 2:  # very quick...
+        readers["Yim2024"] = ["cect.readers.Yim2024DataReader", "Yim_2024"]
+        # readers["Yim2024NonNorm"] = ["cect.readers.Yim2024NonNormDataReader", "Yim_2024"]
         # readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
         # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
         # readers["Bentley2016_MA"] = ["cect.readers.WormNeuroAtlasMAReader", "Bentley_2016"]
@@ -292,15 +294,13 @@ def generate_comparison_page(
         # readers["Randi2023"] = ["cect.readers.WormNeuroAtlasFuncReader", "Randi_2023"]
 
         # readers["Brittin2021"] = ["cect.readers.BrittinDataReader", "Brittin_2021"]
-        # readers["Yim2024"] = ["cect.readers.Yim2024DataReader", "Yim_2024"]
-        # readers["Yim2024NonNorm"] = ["cect.readers.Yim2024NonNormDataReader", "Yim_2024"]
 
         # readers["White_whole"] = ["cect.readers.White_whole", "White_1986"]
         # readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
         # readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 
-        readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
-        readers["Cook2019Male"] = ["cect.readers.Cook2019MaleReader", "Cook_2019"]
+        # readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
+        # readers["Cook2019Male"] = ["cect.readers.Cook2019MaleReader", "Cook_2019"]
         readers["Cook2020"] = ["cect.readers.Cook2020DataReader", "Cook_2020"]
 
         # readers["OpenWormUnified"] = ["cect.readers.OpenWormUnifiedReader", "OpenWorm_Unified"]
@@ -506,6 +506,12 @@ def generate_comparison_page(
                                     '---\ntitle: "Dataset: %s"\nsearch:\n  exclude: true\n---\n\n'
                                     % get_improved_reader_name(reader_name)
                                 )
+
+                                desc_info = "TODO"
+                                if hasattr(reader_module, "DATASET_DESCRIPTION"):
+                                    desc_info = reader_module.DATASET_DESCRIPTION
+
+                                f.write(f"{desc_info}\n")
 
                                 desc_full = ""
 
@@ -821,6 +827,13 @@ def generate_comparison_page(
                                     '=== "View info"\n\n    %s\n\n'
                                     % (view_info.replace("\n", "\n    "))
                                 )
+
+                                if graph or matrix:
+                                    weight_info = "TODO"
+                                    if hasattr(reader_module, "WEIGHTS"):
+                                        weight_info = reader_module.WEIGHTS
+
+                                    f.write(f"**Weight definition:** {weight_info}\n")
 
                                 cell_types = {
                                     "Neurons (herm)": preferred,

@@ -22,7 +22,7 @@ filename = "%s41467_2024_45943_MOESM6_ESM.xlsx" % spreadsheet_location
 
 NAME = "Yim2024NonNorm"
 
-DATASET_DESCRIPTION = """Reconstruction of the chemical connectome of the dauer, a distinct developmental stage of C. elegans."""
+DATASET_DESCRIPTION = """Reconstruction of the chemical connectome of the dauer, a distinct developmental stage of _C. elegans_."""
 
 WEIGHTS = "Weights represent the contact area (nm<sup>3</sup>) between pairs of cells"
 

@@ -21,22 +21,25 @@ import unittest
 
 def _latexify(text):
     return (
-        text.replace("_", "\\_")
+        text.replace("{", "\\{")
+        .replace("}", "\\}")
+        .replace("_C. elegans_", "\\celegans{}")
+        .replace("C. elegans", "\\celegans{}")
+        .replace("_", "\\_")
         .replace("&", "\\&")
         .replace("%", "\\%")
         .replace("$", "\\$")
         .replace("<sup>", "$^")
         .replace("</sup>", "$")
         .replace("#", "\\#")
-        .replace("{", "\\{")
-        .replace("}", "\\}")
         .replace("~", "\\textasciitilde{}")
-        .replace("C. elegans", "\\celegans{}")
     )
 
 
 class TestExpectedConnections(unittest.TestCase):
     MISMATCH = "Mismatch"
+
+    last_weight = None
 
     def test_all(self):
 
@@ -128,9 +131,7 @@ class TestExpectedConnections(unittest.TestCase):
 
         tex_md = __file__.replace("Validator.py", "../../docs/dataset-table.tex")
         with open(tex_md, "w") as f:
-            f.write(
-                latex_md + "\\end{longtable}\n"
-            )
+            f.write(latex_md + "\\end{longtable}\n")
             print_(f"Latex table written to {tex_md}")
 
         assert self.MISMATCH not in validation_md and "False" not in validation_md, (
@@ -160,6 +161,11 @@ class TestExpectedConnections(unittest.TestCase):
         weight = "TODO"
         if hasattr(reader_module, "WEIGHTS"):
             weight = reader_module.WEIGHTS
+
+            if weight == self.last_weight:
+                weight = "(Same as above)"
+            else:
+                self.last_weight = weight
 
         ref_url = f"\\href{{https://openworm.org/ConnectomeToolbox/{reader_ref}_data}}{{{ref}}}"
 

@@ -42,18 +42,23 @@ class TestExpectedConnections(unittest.TestCase):
 
         validation_md = "# Validation status of Data Readers\n\n"
 
-        latex_md = """\\newcolumntype{b}{X}
-\\newcolumntype{s}{>{\hsize=.5\hsize}X}
-\\begin{table}[tp]
-  \\centering
-  \\caption{List of all datasets in the \\celegans{} Connectome Toolbox}\\label{tab:dataset-table}
-  \\rowcolors{1}{table-shade}{white}
-  \\footnotesize
-  \\begin{tabularx}{\\textwidth}{ssbb}
-    \\toprule%
-    \\hiderowcolors%
-    \\textbf{Original publication} & \\textbf{Reference/link} & \\textbf{Description} & \\textbf{Weight} \\\\
-    \\midrule%
+        latex_md = """\\footnotesize
+\\begin{longtable}{>{\\raggedright\\arraybackslash}p{0.14\\textwidth}>{\\raggedright\\arraybackslash}p{0.14\\textwidth}>{\\raggedright\\arraybackslash}p{0.30\\textwidth}>{\\raggedright\\arraybackslash}p{0.30\\textwidth}}
+  \\caption{List of all datasets in the \\celegans{} Connectome Toolbox}\\label{tab:dataset-table}\\\\
+  \\toprule%
+  \\textbf{Original publication} & \\textbf{Reference/link} & \\textbf{Description} & \\textbf{Weight} \\\\
+  \\midrule%
+  \\endfirsthead
+  \\caption[]{(continued)}\\\\
+  \\toprule%
+  \\textbf{Original publication} & \\textbf{Reference/link} & \\textbf{Description} & \\textbf{Weight} \\\\
+  \\midrule%
+  \\endhead
+  \\midrule
+  \\multicolumn{4}{r}{\\footnotesize\\itshape Continued on next page}\\\\
+  \\endfoot
+  \\bottomrule
+  \\endlastfoot
 """
 
         data_readers = {
@@ -124,7 +129,7 @@ class TestExpectedConnections(unittest.TestCase):
         tex_md = __file__.replace("Validator.py", "../../docs/dataset-table.tex")
         with open(tex_md, "w") as f:
             f.write(
-                latex_md + "    \\showrowcolors%\n  \\end{tabularx}\n\\end{table}\n"
+                latex_md + "\\end{longtable}\n"
             )
             print_(f"Latex table written to {tex_md}")
 
@@ -158,8 +163,8 @@ class TestExpectedConnections(unittest.TestCase):
 
         ref_url = f"\\href{{https://openworm.org/ConnectomeToolbox/{reader_ref}_data}}{{{ref}}}"
 
-        latex += f"    \\cite{{{pub}}} & {ref_url} & {_latexify(description)} & "
-        latex += f" {_latexify(weight)} \\\\ \n    \midrule%\n"
+        latex += f"  \\cite{{{pub}}} & {ref_url} & {_latexify(description)} & "
+        latex += f" {_latexify(weight)} \\\\\n  \midrule%\n"
 
         expected_data_folder = __file__.replace("Validator.py", "")
         expected_data_file = f"{expected_data_folder}/{data_reader}_expected_data.yaml"

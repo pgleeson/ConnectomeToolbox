@@ -22,6 +22,11 @@ filename = "%s41467_2024_45943_MOESM6_ESM.xlsx" % spreadsheet_location
 
 NAME = "Yim2024NonNorm"
 
+DATASET_DESCRIPTION = """Reconstruction of the chemical connectome of the dauer, a distinct developmental stage of C. elegans."""
+
+WEIGHTS = "Weights represent the contact area (nm<sup>3</sup>) between pairs of cells"
+
+
 READER_DESCRIPTION = (
     """Data extracted from %s Yim et al. 2024 on Dauer connectome **(Non-normalized)**"""
     % get_dataset_source_on_github(filename.split("/")[-1])

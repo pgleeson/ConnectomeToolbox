@@ -41,11 +41,8 @@ from openpyxl import load_workbook
 
 import os
 
-# spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
-# wang24_filename = "%selife-95402-supp2-v1.xlsx" % spreadsheet_location
 
-
-READER_DESCRIPTION = "????"
+READER_DESCRIPTION = "--None--" # added in herm/male
 
 
 class Wang2024Reader(ConnectomeDataset):

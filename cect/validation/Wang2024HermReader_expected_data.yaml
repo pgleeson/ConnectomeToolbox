@@ -1,0 +1,37 @@
+reader: Wang2024HermReader
+connection_lists:
+- connections:
+  - pre: I1R
+    post: I2R
+    weight: 1
+  - pre: SMBDL
+    post: SDQR
+    weight: 1
+  - pre: VC2
+    post: PVT
+    weight: 1
+  - pre: DB4
+    post: MDL13
+    weight: 1
+  - pre: M1
+    post: g1P
+    weight: 1
+  synapse: Acetylcholine
+  total_nonzero_conns: 2756
+  total_weight: 2756
+- connections:
+  - pre: RIMR
+    post: MDL05
+    weight: 1
+  - pre: PHBR
+    post: AVAR
+    weight: 1
+  - pre: URYDL
+    post: OLQDL
+    weight: 1
+  - pre: PVR
+    post: IL1DR
+    weight: 1
+  synapse: Glutamate
+  total_nonzero_conns: 1334
+  total_weight: 1334

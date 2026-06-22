@@ -9,4 +9,6 @@ This has been added to our repository [here](https://github.com/openworm/Connect
 
 This has been added to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/elife-95402-supp3-v1.xlsx).
 
+These files were used to identify potential presynaptic cells for each neurotransmitter, and then validation tests were added towards known connected anatomical (or monoaminergic) postsynaptic targets of these. 
+
     

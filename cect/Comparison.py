@@ -279,6 +279,10 @@ def generate_comparison_page(
 
     if quick == 2:  # very quick...
         readers["Yim2024"] = ["cect.readers.Yim2024DataReader", "Yim_2024"]
+        readers["Yim2024NonNorm"] = [
+            "cect.readers.Yim2024NonNormDataReader",
+            "Yim_2024",
+        ]
         # readers["Yim2024NonNorm"] = ["cect.readers.Yim2024NonNormDataReader", "Yim_2024"]
         # readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
         # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
@@ -833,7 +837,11 @@ def generate_comparison_page(
                                     if hasattr(reader_module, "WEIGHTS"):
                                         weight_info = reader_module.WEIGHTS
 
-                                    f.write(f"**Weight definition:** {weight_info}\n")
+                                    f.write(f"**Weight definition:** {weight_info}\n\n")
+
+                                f.write(
+                                    f"**Validation tests:** [See here](../Validation#{description_page.lower()})\n"
+                                )
 
                                 cell_types = {
                                     "Neurons (herm)": preferred,

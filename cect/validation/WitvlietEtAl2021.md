@@ -5,6 +5,6 @@ While the paper's supplementary information contained connectivity matrices ([he
 
 The 8 spreadsheet files (witvliet_2020_1 L1.xlsx, witvliet_2020_2 L1.xlsx, ..., witvliet_2020_8 adult.xlsx) hosted on [WormWiring](https://wormwiring.org/pages/witvliet.html), also contain electrical connectivity, and are saved to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data), and used for the readers.
 
-The chemical connection weights below were read from the supplementary information spreadsheet, and the electrial connection weights were taken from the WormWiring spreadheet.
+The chemical connection weights below were read from the supplementary information spreadsheet, and the electrical connection weights were taken from the WormWiring spreadsheet.
 
 

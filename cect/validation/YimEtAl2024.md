@@ -5,7 +5,7 @@ Supplementary Data 3 links to file [41467_2024_45943_MOESM6_ESM.xlsx](https://st
 
 This file has been added to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/41467_2024_45943_MOESM6_ESM.xlsx).
 
-### Contactome based/non-normalised data
+#### Contactome based/non-normalised data
 
 The spreadsheet above contained a sheet named "Dauer", from where the values for the contact area of connections were read. 
 This file was opened in Excel and weights of selected connections were visually read from the cells, noting the pre and post cells and added to the connection test yaml file. 

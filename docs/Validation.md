@@ -31,7 +31,7 @@ TODO...
 The dataset...
 
 
-### Validation tests for VarshneyDataReader 
+### Validation tests for [VarshneyDataReader](../Varshney_data) 
 
 
 #### Chemical synaptic connections
@@ -55,7 +55,7 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 Expected number of nonzero connection weights: 1031 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
@@ -137,7 +137,7 @@ This file was opened in Excel and weights of selected connections were visually 
 noting the pre and post cells and these added to the connection test yaml file, along with the total number of nonzero connections in each adjacency matrix as well as the total weights. 
 
 
-### Validation tests for Cook2019HermReader 
+### Validation tests for [Cook2019HermReader](../Cook2019Herm_data) 
 
 
 #### Chemical synaptic connections
@@ -179,12 +179,12 @@ Expected total weight of connections: 23313 (matches)
 
 Expected number of nonzero connection weights: 2883 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
 
-### Validation tests for Cook2019MaleReader 
+### Validation tests for [Cook2019MaleReader](../Cook2019Male_data) 
 
 
 #### Chemical synaptic connections
@@ -228,7 +228,7 @@ Expected total weight of connections: 31702 (matches)
 
 Expected number of nonzero connection weights: 3482 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
@@ -245,7 +245,7 @@ The connectivity data was released in 2 CSV files in the supplementary informati
 These files were opened in Apple Numbers, and the weights (numbers of connections between pairs of cells, electrical or chemical) were read off, to provide checks listed below. 
 
 
-### Validation tests for Cook2020DataReader 
+### Validation tests for [Cook2020DataReader](../Cook2020_data) 
 
 
 #### Chemical synaptic connections
@@ -276,7 +276,7 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 TODO: add total num nonzero connections
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
@@ -293,7 +293,7 @@ The M<sup>4</sup> graph is the example used in Connectome Toolbox. Values for th
 
 
 
-### Validation tests for BrittinDataReader 
+### Validation tests for [BrittinDataReader](../Brittin2021_data) 
 
 
 #### Contact connections
@@ -316,7 +316,7 @@ The M<sup>4</sup> graph is the example used in Connectome Toolbox. Values for th
 
 Expected number of nonzero connection weights: 3850 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
@@ -329,13 +329,13 @@ While the paper's supplementary information contained connectivity matrices ([he
 
 The 8 spreadsheet files (witvliet_2020_1 L1.xlsx, witvliet_2020_2 L1.xlsx, ..., witvliet_2020_8 adult.xlsx) hosted on [WormWiring](https://wormwiring.org/pages/witvliet.html), also contain electrical connectivity, and are saved to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data), and used for the readers.
 
-The chemical connection weights below were read from the supplementary information spreadsheet, and the electrial connection weights were taken from the WormWiring spreadheet.
+The chemical connection weights below were read from the supplementary information spreadsheet, and the electrical connection weights were taken from the WormWiring spreadsheet.
 
 
 
 
 
-### Validation tests for WitvlietDataReader1 
+### Validation tests for [WitvlietDataReader1](../Witvliet1_data) 
 
 
 #### Chemical synaptic connections
@@ -360,12 +360,12 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 Expected number of nonzero connection weights: 164 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
 
-### Validation tests for WitvlietDataReader2 
+### Validation tests for [WitvlietDataReader2](../Witvliet2_data) 
 
 
 #### Chemical synaptic connections
@@ -390,12 +390,12 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 Expected number of nonzero connection weights: 246 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
 
-### Validation tests for WitvlietDataReader3 
+### Validation tests for [WitvlietDataReader3](../Witvliet3_data) 
 
 
 #### Chemical synaptic connections
@@ -420,12 +420,12 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 Expected number of nonzero connection weights: 186 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
 
-### Validation tests for WitvlietDataReader4 
+### Validation tests for [WitvlietDataReader4](../Witvliet4_data) 
 
 
 #### Chemical synaptic connections
@@ -450,12 +450,12 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 Expected number of nonzero connection weights: 415 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
 
-### Validation tests for WitvlietDataReader5 
+### Validation tests for [WitvlietDataReader5](../Witvliet5_data) 
 
 
 #### Chemical synaptic connections
@@ -480,12 +480,12 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 Expected number of nonzero connection weights: 578 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
 
-### Validation tests for WitvlietDataReader6 
+### Validation tests for [WitvlietDataReader6](../Witvliet6_data) 
 
 
 #### Chemical synaptic connections
@@ -510,12 +510,12 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 Expected number of nonzero connection weights: 426 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
 
-### Validation tests for WitvlietDataReader7 
+### Validation tests for [WitvlietDataReader7](../Witvliet7_data) 
 
 
 #### Chemical synaptic connections
@@ -540,12 +540,12 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 Expected number of nonzero connection weights: 576 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
 
-### Validation tests for WitvlietDataReader8 
+### Validation tests for [WitvlietDataReader8](../Witvliet8_data) 
 
 
 #### Chemical synaptic connections
@@ -570,7 +570,7 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 Expected number of nonzero connection weights: 612 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
@@ -596,7 +596,7 @@ There is a GitHub repository referenced in the paper: https://github.com/LidiaRi
 For each of these CSV files, the file was opened in Apple Numbers, and the weights (numbers of matched peptides expressed in pre cell with corresponding receptor in post cell) read off, to provide checks listed below. 
 
 
-### Validation tests for RipollSanchezShortRangeReader 
+### Validation tests for [RipollSanchezShortRangeReader](../RipollSanchezShortRange_data) 
 
 
 #### Peptidergic connections
@@ -609,12 +609,12 @@ For each of these CSV files, the file was opened in Apple Numbers, and the weigh
 
 Expected number of nonzero connection weights: 31417 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
 
-### Validation tests for RipollSanchezMidRangeReader 
+### Validation tests for [RipollSanchezMidRangeReader](../RipollSanchezMidRange_data) 
 
 
 #### Peptidergic connections
@@ -627,12 +627,12 @@ _Validation PASSED on 2026-06-19 with cect v0.3.2_
 
 Expected number of nonzero connection weights: 40425 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
 
-### Validation tests for RipollSanchezLongRangeReader 
+### Validation tests for [RipollSanchezLongRangeReader](../RipollSanchezLongRange_data) 
 
 
 #### Peptidergic connections
@@ -650,7 +650,7 @@ _Validation PASSED on 2026-06-19 with cect v0.3.2_
 
 Expected number of nonzero connection weights: 53558 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
@@ -663,7 +663,7 @@ Supplementary Data 3 links to file [41467_2024_45943_MOESM6_ESM.xlsx](https://st
 
 This file has been added to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/41467_2024_45943_MOESM6_ESM.xlsx).
 
-### Contactome based/non-normalised data
+#### Contactome based/non-normalised data
 
 The spreadsheet above contained a sheet named "Dauer", from where the values for the contact area of connections were read. 
 This file was opened in Excel and weights of selected connections were visually read from the cells, noting the pre and post cells and added to the connection test yaml file. 
@@ -674,7 +674,7 @@ The spreadsheet above contained a sheet named "Dauer_normalized", from where the
 This file was opened in Excel and weights of selected connections were visually read from the cells, noting the pre and post cells and added to the connection test yaml file. 
 
 
-### Validation tests for Yim2024NonNormDataReader 
+### Validation tests for [Yim2024NonNormDataReader](../Yim2024NonNorm_data) 
 
 
 #### Contact connections
@@ -687,12 +687,12 @@ This file was opened in Excel and weights of selected connections were visually 
 
 Expected number of nonzero connection weights: 2198 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
 
-### Validation tests for Yim2024DataReader 
+### Validation tests for [Yim2024DataReader](../Yim2024_data) 
 
 
 #### Chemical synaptic connections
@@ -705,7 +705,7 @@ _Validation PASSED on 2026-06-19 with cect v0.3.2_
 
 Expected number of nonzero connection weights: 2198 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
@@ -722,10 +722,12 @@ This has been added to our repository [here](https://github.com/openworm/Connect
 
 This has been added to our repository [here](https://github.com/openworm/ConnectomeToolbox/blob/main/cect/data/elife-95402-supp3-v1.xlsx).
 
+These files were used to identify potential presynaptic cells for each neurotransmitter, and then validation tests were added towards known connected anatomical (or monoaminergic) postsynaptic targets of these. 
+
     
 
 
-### Validation tests for Wang2024HermReader 
+### Validation tests for [Wang2024HermReader](../Wang2024Herm_data) 
 
 
 #### Acetylcholine connections
@@ -827,12 +829,12 @@ Expected total weight of connections: 56 (matches)
 
 Expected number of nonzero connection weights: 56 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 
 
-### Validation tests for Wang2024MaleReader 
+### Validation tests for [Wang2024MaleReader](../Wang2024Male_data) 
 
 
 #### Acetylcholine connections
@@ -933,7 +935,7 @@ Expected total weight of connections: 56 (matches)
 
 Expected number of nonzero connection weights: 56 (matches)
 
-_Validation PASSED on 2026-06-19 with cect v0.3.2_
+_Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 
 

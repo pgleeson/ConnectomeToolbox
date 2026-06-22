@@ -46,7 +46,7 @@ class TestExpectedConnections(unittest.TestCase):
         validation_md = "# Validation status of Data Readers\n\n"
 
         latex_md = """\\footnotesize
-\\begin{longtable}{>{\\raggedright\\arraybackslash}p{0.14\\textwidth}>{\\raggedright\\arraybackslash}p{0.14\\textwidth}>{\\raggedright\\arraybackslash}p{0.30\\textwidth}>{\\raggedright\\arraybackslash}p{0.30\\textwidth}}
+\\begin{longtable}{>{\\raggedright\\arraybackslash}p{0.16\\textwidth}>{\\raggedright\\arraybackslash}p{0.16\\textwidth}>{\\raggedright\\arraybackslash}p{0.30\\textwidth}>{\\raggedright\\arraybackslash}p{0.30\\textwidth}}
   \\caption{List of all datasets in the \\celegans{} Connectome Toolbox}\\label{tab:dataset-table}\\\\
   \\toprule%
   \\textbf{Original publication} & \\textbf{Reference/link} & \\textbf{Description} & \\textbf{Weight} \\\\
@@ -117,12 +117,25 @@ class TestExpectedConnections(unittest.TestCase):
             with open(__file__.replace("Validator.py", f"{data_set}.md"), "r") as f:
                 validation_md += f.read() + "\n\n"
 
+            pub = (
+                data_set.replace("_", "")
+                .replace("EtAl", "")
+                .replace("GleesonModel", "Gleeson2018")
+                .replace("OlivaresModel", "Olivares2021")
+            )
+            latex_md += "\n  \multirow{%i}{15em}{\\cite{%s}}" % (
+                len(data_readers[data_set]),
+                pub,
+            )
+
             for data_reader in data_readers[data_set]:
                 print_(f"Validating reader: {data_reader}...")
 
                 report, latex = self.load_and_check_expected_data(data_reader, data_set)
                 validation_md += report + "\n\n"
                 latex_md += latex
+
+            latex_md += "  \midrule%\n"
 
         val_md = __file__.replace("Validator.py", "../../docs/Validation.md")
         with open(val_md, "w") as f:
@@ -143,13 +156,6 @@ class TestExpectedConnections(unittest.TestCase):
         report = ""
         latex = ""
 
-        pub = (
-            data_set.replace("_", "")
-            .replace("EtAl", "")
-            .replace("GleesonModel", "Gleeson2018")
-            .replace("OlivaresModel", "Olivares2021")
-        )
-
         reader_module = importlib.import_module(f"cect.readers.{data_reader}")
 
         reader_ref = reader_module.NAME
@@ -169,8 +175,8 @@ class TestExpectedConnections(unittest.TestCase):
 
         ref_url = f"\\href{{https://openworm.org/ConnectomeToolbox/{reader_ref}_data}}{{{ref}}}"
 
-        latex += f"  \\cite{{{pub}}} & {ref_url} & {_latexify(description)} & "
-        latex += f" {_latexify(weight)} \\\\\n  \midrule%\n"
+        latex += f"  & {ref_url} & {_latexify(description)} & "
+        latex += f" {_latexify(weight)} \\\\\n"
 
         expected_data_folder = __file__.replace("Validator.py", "")
         expected_data_file = f"{expected_data_folder}/{data_reader}_expected_data.yaml"
@@ -198,7 +204,9 @@ class TestExpectedConnections(unittest.TestCase):
 
             print_(conn_dataset.summary())
 
-            report += f"\n### Validation tests for {data_reader} \n\n"
+            ref = reader_ref
+
+            report += f"\n### Validation tests for [{data_reader}](../{ref}_data) \n\n"
 
             for conn_list in expected_data.connection_lists:
                 syn_class = conn_list["synapse"]

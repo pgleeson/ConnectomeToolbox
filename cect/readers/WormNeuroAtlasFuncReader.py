@@ -22,9 +22,15 @@ from cect.Neurotransmitters import FUNCTIONAL_SYN_TYPE
 
 NAME = "Randi2023"
 
+DEFAULT_MAX_Q = 0.05
+
 LOGGER = logging.getLogger(__name__)
 
 READER_DESCRIPTION = """Data on functional connectivity from the <b><a href="https://github.com/francescorandi/wormneuroatlas">WormNeuroAtlas package</a></b>"""
+
+DATASET_DESCRIPTION = "Data on functional connectivity of _C. elegans_ from WormNeuroAtlas package (extracted with get_signal_propagation_map & get_signal_propagation_q, with max_q = %s)" % DEFAULT_MAX_Q
+
+WEIGHTS = "Weights represent the mean post-stimulus calcium response amplitude measured in a downstream neuron following two-photon optogenetic stimulation of an upstream neuron"
 
 
 class WormNeuroAtlasFuncReader(ConnectomeDataset):
@@ -120,7 +126,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
         )
     else:
         try:
-            return WormNeuroAtlasFuncReader(0.05)
+            return WormNeuroAtlasFuncReader(DEFAULT_MAX_Q)
         except Exception as e:
             print(
                 "Problem loading WormNeuroAtlas data. Can be caused by WormBase url not working. Defaulting to loading from cache... Issue: %s"

@@ -839,9 +839,10 @@ def generate_comparison_page(
 
                                     f.write(f"**Weight definition:** {weight_info}\n\n")
 
-                                f.write(
-                                    f"**Validation tests:** [See here](../Validation#{description_page.lower()})\n"
-                                )
+                                if description_page is not None:
+                                    f.write(
+                                        f"**Validation tests:** [See here](../Validation#{description_page.lower()})\n"
+                                    )
 
                                 cell_types = {
                                     "Neurons (herm)": preferred,

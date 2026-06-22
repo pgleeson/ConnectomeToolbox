@@ -20,6 +20,9 @@ import unittest
 
 
 def _latexify(text):
+    """
+    Convert a string to a LaTeX-friendly format by escaping special characters and replacing certain substrings.
+    """
     return (
         text.replace("{", "\\{")
         .replace("}", "\\}")
@@ -29,8 +32,11 @@ def _latexify(text):
         .replace("&", "\\&")
         .replace("%", "\\%")
         .replace("$", "\\$")
+        .replace("Δ", "\\Delta{}")
         .replace("<sup>", "$^")
         .replace("</sup>", "$")
+        .replace("<sub>", "$_")
+        .replace("</sub>", "$")
         .replace("#", "\\#")
         .replace("~", "\\textasciitilde{}")
     )

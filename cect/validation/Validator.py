@@ -52,15 +52,15 @@ class TestExpectedConnections(unittest.TestCase):
         validation_md = "# Validation status of Data Readers\n\n"
 
         latex_md = """\\footnotesize
-\\begin{longtable}{>{\\raggedright\\arraybackslash}m{0.16\\textwidth}>{\\raggedright\\arraybackslash}m{0.16\\textwidth}>{\\raggedright\\arraybackslash}m{0.30\\textwidth}>{\\raggedright\\arraybackslash}m{0.30\\textwidth}}
+\\begin{longtable}{>{\\raggedright\\arraybackslash}p{0.12\\textwidth}>{\\raggedright\\arraybackslash}p{0.16\\textwidth}>{\\raggedright\\arraybackslash}p{0.30\\textwidth}>{\\raggedright\\arraybackslash}p{0.30\\textwidth}}
   \\caption{List of all datasets in the \\celegans{} Connectome Toolbox}\\label{tab:dataset-table}\\\\
   \\toprule%
-  \\textbf{Original publication} & \\textbf{Reference/link} & \\textbf{Description} & \\textbf{Weight} \\\\
+  \\textbf{Original publication} & \\textbf{Reference/links} & \\textbf{Description} & \\textbf{Weight} \\\\
   \\midrule%
   \\endfirsthead
   \\caption[]{(continued)}\\\\
   \\toprule%
-  \\textbf{Original publication} & \\textbf{Reference/link} & \\textbf{Description} & \\textbf{Weight} \\\\
+  \\textbf{Original publication} & \\textbf{Reference/links} & \\textbf{Description} & \\textbf{Weight} \\\\
   \\midrule%
   \\endhead
   \\midrule
@@ -150,7 +150,7 @@ class TestExpectedConnections(unittest.TestCase):
 
         tex_md = __file__.replace("Validator.py", "../../docs/dataset-table.tex")
         with open(tex_md, "w") as f:
-            f.write(latex_md + "\\end{longtable}\n")
+            f.write(latex_md + "\\end{longtable}\n\\normalsize\n")
             print_(f"Latex table written to {tex_md}")
 
         assert self.MISMATCH not in validation_md and "False" not in validation_md, (
@@ -179,9 +179,15 @@ class TestExpectedConnections(unittest.TestCase):
             else:
                 self.last_weight = weight
 
-        ref_url = f"\\href{{https://openworm.org/ConnectomeToolbox/{reader_ref}_data}}{{{ref}}}"
+        matrix_url = f"https://openworm.org/ConnectomeToolbox/{reader_ref}_data"
+        val_ref = data_set.lower()
+        if "etal" not in val_ref:
+            val_ref = val_ref.replace("202", "etal202")
+        validation_url = f"https://openworm.org/ConnectomeToolbox/Validation#{val_ref}"
 
-        latex += f"  & {ref_url} & {_latexify(description)} & "
+        ref_url = f"{ref} \\newline \\href{{{matrix_url}}}{{Matrix}} | \\href{{{validation_url}}}{{Validation}} \\newline "
+
+        latex += f"  & {ref_url} & {_latexify(description)} \\newline & "
         latex += f" {_latexify(weight)} \\\\\n"
 
         expected_data_folder = __file__.replace("Validator.py", "")

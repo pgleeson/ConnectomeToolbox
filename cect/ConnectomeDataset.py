@@ -72,6 +72,8 @@ class ConnectomeDataset:
 
         self.view = None
 
+        self.validation_info = ""
+
     def _expand_conn_arrays(self):
         for c in self.connections:
             conn_array = self.connections[c]
@@ -127,6 +129,10 @@ class ConnectomeDataset:
                     # print_("  RE Determined SIM class of %s: %s" % (nn_id, nn["SIM_class"])                    )
 
         return Gn
+
+    def _append_validation_info(self, info, newline=True):
+        print_("%s" % info)
+        self.validation_info += info + ("\n" if newline else "")
 
     def add_connection_info(
         self,
@@ -186,47 +192,52 @@ class ConnectomeDataset:
                 )
             )
             if fail_on_any_repeated_connection:
-                raise Exception(
-                    "Connection already exists at (%i,%i) (%s,%s), weight: %f, new connection: %s"
+                issue = (
+                    "Connection already exists at (%i,%i,%s) (%s,%s), weight: %f, new connection: %s"
                     % (
                         pre_index,
                         post_index,
+                        conn.synclass,
                         conn.pre_cell,
                         conn.post_cell,
                         conn_array[pre_index, post_index],
                         conn,
                     )
                 )
+                self._append_validation_info(issue)
+
+                raise Exception(issue)
 
             info = (
-                "     *** Existing connection at (%i,%i) (%s,%s), was: %s, changing to: %s (checking: %s, appending: %s)"
+                ">\n> Existing connection at (%i,%i) (%s->%s, %s), was: %s, new conn weight: %s"
                 % (
                     pre_index,
                     post_index,
                     conn.pre_cell,
                     conn.post_cell,
+                    conn.syntype,
                     conn_array[pre_index, post_index],
                     conn.number,
-                    check_overwritten_connections,
-                    append_existing_connections,
                 )
             )
+            self._append_validation_info(info, newline=False)
 
             if append_existing_connections:
                 conn_array[pre_index, post_index] += conn.number
-                print_(
-                    "  ++++ New, appended weight is: %f"
-                    % conn_array[pre_index, post_index]
+                self._append_validation_info(
+                    ", appended weight is: %f" % conn_array[pre_index, post_index]
                 )
 
             elif conn_array[pre_index, post_index] == conn.number:
-                print_("  Connection is the same as existing, no change.")
+                self._append_validation_info(
+                    "  Connection is the same as existing, no change."
+                )
 
             elif check_overwritten_connections:
-                print_("  Overwritten connection!")
+                self._append_validation_info("  Overwritten connection!")
                 raise Exception(info)
             else:
-                print_(info)
+                self._append_validation_info(info)
 
         else:
             conn_array[pre_index, post_index] = conn.number

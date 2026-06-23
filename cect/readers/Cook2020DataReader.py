@@ -64,6 +64,10 @@ class Cook2020DataReader(ConnectomeDataset):
                 fail_on_any_repeated_connection=False,
             )
 
+        print_("\n*********************** Validation Info ************************")
+        print(self.validation_info)
+        print_("****************************************************************")
+
     def read_data(self):
         """
         Returns:
@@ -141,7 +145,6 @@ class Cook2020DataReader(ConnectomeDataset):
                     cells.append(post)
 
         return cells, conns
-
 
     def read_muscle_data(self):
         return self._read_muscle_data()

@@ -1,0 +1,20 @@
+reader: WormNeuroAtlasFuncReader
+connection_lists:
+- connections:
+  - pre: ASER
+    post: ASHL
+    weight: 0
+  - pre: I1L     
+    post: MI
+    weight: -0.12525142862743782
+  - pre: MCR
+    post: M2R
+    weight: 1.1917423178652604
+  - pre: AVBR
+    post: AVEL
+    weight: -0.14791430582009063
+  - pre: AVEL
+    post: AVEL
+    weight: 0
+  synapse: Functional
+  total_nonzero_conns: 1150

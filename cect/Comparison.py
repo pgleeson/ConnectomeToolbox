@@ -295,7 +295,7 @@ def generate_comparison_page(
 
         # readers["WormNeuroAtlas"] = ["cect.readers.WormNeuroAtlasReader", "Randi_2023"]
 
-        # readers["Randi2023"] = ["cect.readers.WormNeuroAtlasFuncReader", "Randi_2023"]
+        readers["Randi2023"] = ["cect.readers.WormNeuroAtlasFuncReader", "Randi_2023"]
 
         # readers["Brittin2021"] = ["cect.readers.BrittinDataReader", "Brittin_2021"]
 
@@ -840,8 +840,12 @@ def generate_comparison_page(
                                     f.write(f"**Weight definition:** {weight_info}\n\n")
 
                                 if description_page is not None:
+                                    ref_val = description_page.lower()
+                                    ref_val = ref_val.replace("_2", "etal2").replace(
+                                        "_1", "etal1"
+                                    )
                                     f.write(
-                                        f"**Validation tests:** [See here](../Validation#{description_page.lower()})\n"
+                                        f"**Validation tests:** [See here](../Validation#{ref_val})\n"
                                     )
 
                                 cell_types = {

@@ -24,6 +24,7 @@ readers = [
     "Cook2019MaleReader",
     "Cook2020DataReader",
     "BrittinDataReader",
+    "WormNeuroAtlasFuncReader",
     "RipollSanchezShortRangeReader",
     "RipollSanchezMidRangeReader",
     "RipollSanchezLongRangeReader",

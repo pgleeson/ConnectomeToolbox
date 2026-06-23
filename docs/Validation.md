@@ -55,7 +55,7 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 Expected number of nonzero connection weights: 1031 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -75,7 +75,7 @@ Data on the extrasynaptic connections was accessed using the [Worm Neuro Atlas](
 
 
 **TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WormNeuroAtlasMAReader_expected_data.yaml**: No such connectome dataset registered: Bentley2016_MA (or Bentley2016_MA)
-Known datasets: ['White_A', 'White_L4', 'White_whole', 'Witvliet1', 'Witvliet2', 'Witvliet3', 'Witvliet4', 'Witvliet5', 'Witvliet6', 'Witvliet7', 'Witvliet8', 'Varshney', 'Cook2019Herm', 'Cook2019Male', 'Cook2020', 'Brittin2021', 'RipollSanchezShortRange', 'RipollSanchezMidRange', 'RipollSanchezLongRange', 'Yim2024', 'Yim2024NonNorm', 'Wang2024Herm', 'Wang2024Male']
+Known datasets: ['White_A', 'White_L4', 'White_whole', 'Witvliet1', 'Witvliet2', 'Witvliet3', 'Witvliet4', 'Witvliet5', 'Witvliet6', 'Witvliet7', 'Witvliet8', 'Varshney', 'Cook2019Herm', 'Cook2019Male', 'Cook2020', 'Brittin2021', 'Randi2023', 'RipollSanchezShortRange', 'RipollSanchezMidRange', 'RipollSanchezLongRange', 'Yim2024', 'Yim2024NonNorm', 'Wang2024Herm', 'Wang2024Male']
 
 
 
@@ -179,7 +179,7 @@ Expected total weight of connections: 23313 (matches)
 
 Expected number of nonzero connection weights: 2883 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -228,7 +228,7 @@ Expected total weight of connections: 31702 (matches)
 
 Expected number of nonzero connection weights: 3482 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -276,7 +276,7 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 TODO: add total num nonzero connections
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -316,7 +316,7 @@ The M<sup>4</sup> graph is the example used in Connectome Toolbox. Values for th
 
 Expected number of nonzero connection weights: 3850 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -360,7 +360,7 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 Expected number of nonzero connection weights: 164 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -390,7 +390,7 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 Expected number of nonzero connection weights: 246 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -420,7 +420,7 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 Expected number of nonzero connection weights: 186 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -450,7 +450,7 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 Expected number of nonzero connection weights: 415 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -480,7 +480,7 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 Expected number of nonzero connection weights: 578 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -510,7 +510,7 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 Expected number of nonzero connection weights: 426 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -540,7 +540,7 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 Expected number of nonzero connection weights: 576 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -570,16 +570,37 @@ Electrical synapse. Symmetric connectivity matrix: True
 
 Expected number of nonzero connection weights: 612 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
 ## RandiEtAl2023
 
-TODO...
+Functional connectivity data of _C. elegans_ from: Randi et al. 2023, Neural signal propagation atlas of _Caenorhabditis elegans_, [Nature 623, 406–414 (2023)](https://doi.org/10.1038/s41586-023-06683-4).
+
+We used the [WormNeuroAtlas package](https://github.com/francescorandi/wormneuroatlas) as discussed in the paper to provide the signal propagation map values. 
+The method _get_signal_propagation_map()_ specifying the wildtype data (strain="wt") was used to get the post-stimulus calcium response amplitude (⟨ΔF/F₀⟩ₜ) matrix, while 
+_get_signal_propagation_q()_ was used to get the q-values (the false discovery rate, i.e. the probability that a neuron pair declared "functionally connected" is actually a false positive). We used a q_max = 0.05 and just added that to the adjacency matrix used in this example.
+
+We obtained the validation values below by calling the above functions and printing the value in the signal propagation for specific connections, checking q < 0.05. 
 
 
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WormNeuroAtlasFuncReader_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WormNeuroAtlasFuncReader_expected_data.yaml'
+### Validation tests for [WormNeuroAtlasFuncReader](../Randi2023_data) 
+
+
+#### Functional connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ASER | ASHL | 0 | Yes |
+| I1L | MI | -0.12525142862743782 | Yes |
+| MCR | M2R | 1.1917423178652604 | Yes |
+| AVBR | AVEL | -0.14791430582009063 | Yes |
+| AVEL | AVEL | 0 | Yes |
+
+Expected number of nonzero connection weights: 1150 (matches)
+
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -609,7 +630,7 @@ For each of these CSV files, the file was opened in Apple Numbers, and the weigh
 
 Expected number of nonzero connection weights: 31417 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -627,7 +648,7 @@ _Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 Expected number of nonzero connection weights: 40425 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -650,7 +671,7 @@ _Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 Expected number of nonzero connection weights: 53558 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -687,7 +708,7 @@ This file was opened in Excel and weights of selected connections were visually 
 
 Expected number of nonzero connection weights: 2198 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -705,7 +726,7 @@ _Validation PASSED on 2026-06-22 with cect v0.3.2_
 
 Expected number of nonzero connection weights: 2198 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -829,7 +850,7 @@ Expected total weight of connections: 56 (matches)
 
 Expected number of nonzero connection weights: 56 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
@@ -935,7 +956,7 @@ Expected total weight of connections: 56 (matches)
 
 Expected number of nonzero connection weights: 56 (matches)
 
-_Validation PASSED on 2026-06-22 with cect v0.3.2_
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 

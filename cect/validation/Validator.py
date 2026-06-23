@@ -52,7 +52,7 @@ class TestExpectedConnections(unittest.TestCase):
         validation_md = "# Validation status of Data Readers\n\n"
 
         latex_md = """\\footnotesize
-\\begin{longtable}{>{\\raggedright\\arraybackslash}p{0.16\\textwidth}>{\\raggedright\\arraybackslash}p{0.16\\textwidth}>{\\raggedright\\arraybackslash}p{0.30\\textwidth}>{\\raggedright\\arraybackslash}p{0.30\\textwidth}}
+\\begin{longtable}{>{\\raggedright\\arraybackslash}m{0.16\\textwidth}>{\\raggedright\\arraybackslash}m{0.16\\textwidth}>{\\raggedright\\arraybackslash}m{0.30\\textwidth}>{\\raggedright\\arraybackslash}m{0.30\\textwidth}}
   \\caption{List of all datasets in the \\celegans{} Connectome Toolbox}\\label{tab:dataset-table}\\\\
   \\toprule%
   \\textbf{Original publication} & \\textbf{Reference/link} & \\textbf{Description} & \\textbf{Weight} \\\\
@@ -129,7 +129,7 @@ class TestExpectedConnections(unittest.TestCase):
                 .replace("GleesonModel", "Gleeson2018")
                 .replace("OlivaresModel", "Olivares2021")
             )
-            latex_md += "\n  \multirow{%i}{15em}{\\cite{%s}}" % (
+            latex_md += "\n  \multirow{%i}{\\linewidth}{\\cite{%s}}" % (
                 len(data_readers[data_set]),
                 pub,
             )

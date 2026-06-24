@@ -19,6 +19,10 @@ NAME = "Bentley2016_MA"
 
 READER_DESCRIPTION = """Data on monoaminergic connectivity from the <b><a href="https://github.com/francescorandi/wormneuroatlas">WormNeuroAtlas package</a></b>"""
 
+DATASET_DESCRIPTION = """Data on monoaminergic connectivity from Bentley et al. 2016 (i.e. dopaminergic, tyraminergic, octopaminergic & serotonergic extracellular transmission), accessed via the WormNeuroAtlas package"""
+
+WEIGHTS = "Adjacency matrices are binary and directed; a weight of 1 between neurons A and B signifies that cell A expresses a biosynthetic enzyme or transporter for the specific monoamine and neuron B expresses a cognate receptor for that monoamine."
+
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``WormNeuroAtlasExtSynReader`` to load data on monoaminergic connectivity using the **[WormNeuroAtlas package](https://github.com/francescorandi/wormneuroatlas)**
@@ -47,58 +51,71 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
 
 
 if __name__ == "__main__":
-    my_instance = get_instance(from_cache=False)
+    my_instance = get_instance(from_cache=True)
     cells, neuron_conns = my_instance._read_data()
     print("Loaded %s connections" % len(neuron_conns))
 
     # from cect.ConnectomeReader import analyse_connections
     # analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
-    to_test = ["ADAL", "MCL", "RIML"]
+    to_test = ["ADEL", "RIML", "CEPVR"]
 
-    synclass = "dopamine"  # or 'Tyramine', 'Octopamine', 'Serotonin'
+    synclass = DOPAMINE  # or 'Tyramine', 'Octopamine', 'Serotonin'
 
     for cell in to_test:
         # my_instance.atlas.all_about(cell)
 
         print(
-            "MA conns from %s: %s"
+            "MA conns from %s:\n%s"
             % (
                 cell,
-                my_instance.get_connections_from(
-                    cell, synclass, ordered_by_weight=True
+                "\n".join(
+                    [
+                        f"   {c}:  \t{float(w)}"
+                        for c, w in my_instance.get_connections_from(
+                            cell, synclass, ordered_by_weight=True
+                        ).items()
+                    ]
                 ),
             )
         )
+
         print(
-            "MA conns to %s: %s"
+            "MA conns to %s:\n%s"
             % (
                 cell,
-                my_instance.get_connections_to(cell, synclass, ordered_by_weight=True),
+                "\n".join(
+                    [
+                        f"   {c}:  \t{float(w)}"
+                        for c, w in my_instance.get_connections_to(
+                            cell, synclass, ordered_by_weight=True
+                        ).items()
+                    ]
+                ),
             )
         )
 
-    print(my_instance.summary())
-
-    # from cect.ConnectomeView import RAW_VIEW as view
-    from cect.ConnectomeView import NEURONS_VIEW as view
-
-    cds2 = my_instance.get_connectome_view(view)
-
-    print(cds2.summary())
-
-    fig = cds2.to_plotly_graph_fig(DOPAMINE, view)
-    """
-
-    fig, _ = cds2.to_plotly_matrix_fig(
-        list(view.synclass_sets.keys())[2],
-        view,
-    )
-   """
-    import plotly.io as pio
-
-    pio.renderers.default = "browser"
-    import sys
-
     if "-nogui" not in sys.argv:
+        print(my_instance.summary())
+
+        # from cect.ConnectomeView import RAW_VIEW as view
+        from cect.ConnectomeView import NEURONS_VIEW as view
+
+        cds2 = my_instance.get_connectome_view(view)
+
+        print(cds2.summary())
+
+        fig = cds2.to_plotly_graph_fig(DOPAMINE, view)
+        """
+
+        fig, _ = cds2.to_plotly_matrix_fig(
+            list(view.synclass_sets.keys())[2],
+            view,
+        )
+        """
+        import plotly.io as pio
+
+        pio.renderers.default = "browser"
+        import sys
+
         fig.show()

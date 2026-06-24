@@ -23,7 +23,11 @@ from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
 LOGGER = logging.getLogger(__name__)
 
-READER_DESCRIPTION = """Data from the <b><a href="https://github.com/francescorandi/wormneuroatlas">WormNeuroAtlas package</a></b> for neuronal connectivity"""
+READER_DESCRIPTION = """Data from the <b><a href="https://github.com/francescorandi/wormneuroatlas">WormNeuroAtlas package</a></b> for neuronal connectivity. NOTE: only for testing, not validated against a specific published dataset."""
+
+DATASET_DESCRIPTION = READER_DESCRIPTION
+
+WEIGHTS = "This dataset is only for testing WormNeuroAtlas. It is not validated against a specific published dataset."
 
 
 def get_all_cells(watlas):

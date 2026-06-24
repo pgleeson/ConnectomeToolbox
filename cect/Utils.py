@@ -20,6 +20,8 @@ readers = [
     "WitvlietDataReader7",
     "WitvlietDataReader8",
     "VarshneyDataReader",
+    "WormNeuroAtlasMAReader",
+    "WormNeuroAtlasPepReader",
     "Cook2019HermReader",
     "Cook2019MaleReader",
     "Cook2020DataReader",

@@ -65,22 +65,69 @@ Data from: The Multilayer Connectome of Caenorhabditis elegans, Bentley et al. 2
 
 Connectivity was originally released in supplementary information: [S1 Dataset](https://doi.org/10.1371/journal.pcbi.1005283.s004) ("Included are edge lists for monoamine and neuropeptide networks").
 
-Data on the extrasynaptic connections was accessed using the [Worm Neuro Atlas](https://github.com/francescorandi/wormneuroatlas) package in the WormNeuroAtlasMAReader.
+Data on the extrasynaptic connections was accessed using the [WormNeuroAtlas](https://github.com/francescorandi/wormneuroatlas) Python package in the WormNeuroAtlasMAReader for the DataReader.
+
+For the validation tests below, specific connections between pre and postsynaptic cells were read out from the edgelist_MA.csv file in [S1 Dataset](https://doi.org/10.1371/journal.pcbi.1005283.s004) above and a weight of 1 was added to the connection test yaml file for these. 
+
+
+
+### Validation tests for [WormNeuroAtlasMAReader](../Bentley2016_MA_data) 
+
+
+#### Dopamine connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| CEPDR | ALNR | 1 | Yes |
+| ADER | VA11 | 1 | Yes |
+| PDEL | SIBDR | 1 | Yes |
+
+Expected number of nonzero connection weights: 1160 (matches)
+
+#### Tyramine connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| RIML | IL1DL | 1 | Yes |
+| RIML | PVT | 1 | Yes |
+| RIMR | AFDL | 1 | Yes |
+
+Expected number of nonzero connection weights: 224 (matches)
+
+#### Octopamine connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| RICL | PHAL | 1 | Yes |
+| RICL | ADEL | 1 | Yes |
+| RICR | SIAVL | 1 | Yes |
+
+Expected number of nonzero connection weights: 56 (matches)
+
+#### Serotonin connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ADFR | M2R | 1 | Yes |
+| NSMR | AIBL | 1 | Yes |
+| HSNL | M3L | 1 | Yes |
+
+Expected number of nonzero connection weights: 492 (matches)
+
+_Validation PASSED on 2026-06-23 with cect v0.3.2_
 
 
 
 
+### Validation tests for [WormNeuroAtlasPepReader](../Bentley2016_PEP_data) 
 
 
+#### Dopamine connections
 
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
 
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WormNeuroAtlasMAReader_expected_data.yaml**: No such connectome dataset registered: Bentley2016_MA (or Bentley2016_MA)
-Known datasets: ['White_A', 'White_L4', 'White_whole', 'Witvliet1', 'Witvliet2', 'Witvliet3', 'Witvliet4', 'Witvliet5', 'Witvliet6', 'Witvliet7', 'Witvliet8', 'Varshney', 'Cook2019Herm', 'Cook2019Male', 'Cook2020', 'Brittin2021', 'Randi2023', 'RipollSanchezShortRange', 'RipollSanchezMidRange', 'RipollSanchezLongRange', 'Yim2024', 'Yim2024NonNorm', 'Wang2024Herm', 'Wang2024Male']
-
-
-
-
-**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WormNeuroAtlasPepReader_expected_data.yaml**: [Errno 2] No such file or directory: '/Users/padraig/git/ConnectomeToolbox/cect/validation//WormNeuroAtlasPepReader_expected_data.yaml'
+**TODO: add expected data file: /Users/padraig/git/ConnectomeToolbox/cect/validation//WormNeuroAtlasPepReader_expected_data.yaml**: No connections of synclass Dopamine in this dataset!
 
 
 

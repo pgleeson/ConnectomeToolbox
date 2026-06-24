@@ -214,7 +214,7 @@ class Wang2024Reader(ConnectomeDataset):
                     "%selife-95402-supp2-v1.xlsx" % self.spreadsheet_location,
                     "Supp File 2",
                     ("Cook et al. 2019 Hermaphrodite connectome", "Cook2019HermReader"),
-                    ("Bentley et al. 2015", "WormNeuroAtlasMAReader"),
+                    ("Bentley et al. 2016", "Bentley2016MAReader"),
                 ]
             )
 
@@ -224,7 +224,7 @@ class Wang2024Reader(ConnectomeDataset):
                     "%selife-95402-supp3-v1.xlsx" % self.spreadsheet_location,
                     "Supp File 3",
                     ("Cook et al. 2019 Male connectome", "Cook2019MaleReader"),
-                    ("Bentley et al. 2015", "WormNeuroAtlasMAReader"),
+                    ("Bentley et al. 2016", "Bentley2016MAReader"),
                 ]
             )
 

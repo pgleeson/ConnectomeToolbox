@@ -954,9 +954,9 @@ Expected number of nonzero connection weights: 506 (matches)
 | PDEL | RICR | 1 | Yes |
 | ADEL | DD4 | 1 | Yes |
 
-Expected total weight of connections: 1160 (matches)
+Expected total weight of connections: 1176 (matches)
 
-Expected number of nonzero connection weights: 1160 (matches)
+Expected number of nonzero connection weights: 1176 (matches)
 
 #### Serotonin connections
 
@@ -978,9 +978,9 @@ Expected number of nonzero connection weights: 492 (matches)
 | RIMR | SIADL | 1 | Yes |
 | RIML | VD5 | 1 | Yes |
 
-Expected total weight of connections: 224 (matches)
+Expected total weight of connections: 228 (matches)
 
-Expected number of nonzero connection weights: 224 (matches)
+Expected number of nonzero connection weights: 228 (matches)
 
 #### Octopamine connections
 
@@ -1060,9 +1060,9 @@ Expected number of nonzero connection weights: 691 (matches)
 | PDEL | RICR | 1 | Yes |
 | ADEL | DD4 | 1 | Yes |
 
-Expected total weight of connections: 1160 (matches)
+Expected total weight of connections: 1176 (matches)
 
-Expected number of nonzero connection weights: 1160 (matches)
+Expected number of nonzero connection weights: 1176 (matches)
 
 #### Serotonin connections
 
@@ -1084,9 +1084,9 @@ Expected number of nonzero connection weights: 492 (matches)
 | RIMR | SIADL | 1 | Yes |
 | RIML | VD5 | 1 | Yes |
 
-Expected total weight of connections: 224 (matches)
+Expected total weight of connections: 228 (matches)
 
-Expected number of nonzero connection weights: 224 (matches)
+Expected number of nonzero connection weights: 228 (matches)
 
 #### Octopamine connections
 

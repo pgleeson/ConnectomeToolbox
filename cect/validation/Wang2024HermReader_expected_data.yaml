@@ -72,8 +72,8 @@ connection_lists:
     post: DD4
     weight: 1
   synapse: Dopamine
-  total_nonzero_conns: 1160
-  total_weight: 1160
+  total_nonzero_conns: 1176
+  total_weight: 1176
 - connections:
   - pre: HSNL
     post: PVQL
@@ -98,8 +98,8 @@ connection_lists:
     post: VD5
     weight: 1
   synapse: Tyramine
-  total_nonzero_conns: 224
-  total_weight: 224
+  total_nonzero_conns: 228
+  total_weight: 228
 - connections:
   - pre: RICR
     post: ASIL

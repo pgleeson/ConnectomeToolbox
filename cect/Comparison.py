@@ -331,7 +331,7 @@ def generate_comparison_page(
 
         # readers["Witvliet1"] = ["cect.readers.WitvlietDataReader1", "Witvliet_2021"]
         # readers["Witvliet8"] = ["cect.readers.WitvlietDataReader8", "Witvliet_2021"]
-        # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
+        readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
         # readers["RipollSanchezLongRange"] = [ "cect.readers.RipollSanchezLongRangeReader", "RipollSanchez_2023", ]
         # readers["OpenWormUnified"] = ["cect.readers.OpenWormUnifiedReader", "OpenWorm_Unified"]
 
@@ -349,19 +349,20 @@ def generate_comparison_page(
             "cect.readers.Bentley2016MAReader",
             "Bentley_2016",
         ]
+        """
         readers["Bentley2016_MAwna"] = [
             "cect.readers.WormNeuroAtlasMAReader",
             "Bentley_2016",
-        ]
+        ]"""
         if not quick:
             readers["Bentley2016_PEP"] = [
                 "cect.readers.Bentley2016PepReader",
                 "Bentley_2016",
             ]
-            readers["Bentley2016_PEPwna"] = [
+            """readers["Bentley2016_PEPwna"] = [
                 "cect.readers.WormNeuroAtlasPepReader",
                 "Bentley_2016",
-            ]
+            ]"""
 
         if not quick:
             readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]

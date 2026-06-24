@@ -1,0 +1,10 @@
+
+reader: WormNeuroAtlasPepReader
+connection_lists:
+- connections:
+  - pre: AIAL
+    post: AIAR
+    weight: 1
+  synapse: Peptidergic
+
+  

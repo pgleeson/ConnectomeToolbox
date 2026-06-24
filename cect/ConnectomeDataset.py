@@ -131,7 +131,8 @@ class ConnectomeDataset:
         return Gn
 
     def _append_validation_info(self, info, newline=True):
-        print_("%s" % info)
+        if self.verbose:
+            print_("%s" % info)
         self.validation_info += info + ("\n" if newline else "")
 
     def add_connection_info(
@@ -181,16 +182,17 @@ class ConnectomeDataset:
         post_index = self.nodes.index(conn.post_cell)
 
         if conn_array[pre_index, post_index] != 0:
-            print_(
-                "Preexisting connection (%i conns already) w: %f at (%i,%i) - new one: %s..."
-                % (
-                    len(self.original_connection_infos),
-                    conn_array[pre_index, post_index],
-                    pre_index,
-                    post_index,
-                    conn,
+            if self.verbose:
+                print_(
+                    "Preexisting connection (%i conns already) w: %f at (%i,%i) - new one: %s..."
+                    % (
+                        len(self.original_connection_infos),
+                        conn_array[pre_index, post_index],
+                        pre_index,
+                        post_index,
+                        conn,
+                    )
                 )
-            )
             if fail_on_any_repeated_connection:
                 issue = (
                     "Connection already exists at (%i,%i,%s) (%s,%s), weight: %f, new connection: %s"

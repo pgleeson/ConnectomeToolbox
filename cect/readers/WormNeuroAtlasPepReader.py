@@ -11,7 +11,7 @@ from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 import logging
 import sys
 
-NAME = "Bentley2016_PEP"
+NAME = "Bentley2016_PEPwna"
 
 LOGGER = logging.getLogger(__name__)
 
@@ -90,7 +90,6 @@ if __name__ == "__main__":
         )
 
     if "-nogui" not in sys.argv:
-
         # from cect.ConnectomeView import NEURONS_VIEW as view
         from cect.ConnectomeView import RAW_VIEW as view
         # from cect.ConnectomeView import LOCOMOTION_2_VIEW as view
@@ -99,7 +98,7 @@ if __name__ == "__main__":
 
         # from cect.ConnectomeView import SOCIAL_VIEW as view
         # from cect.ConnectomeView import SOCIAL_VIEW as view
-        #from cect.ConnectomeView import COOK_FIG3_VIEW as view
+        # from cect.ConnectomeView import COOK_FIG3_VIEW as view
         # from cect.ConnectomeView import BRAINMAP_VIEW as view
         # from cect.ConnectomeView import BRAINMAP_A_VIEW as view
         # from cect.ConnectomeView import PEP_HUBS_VIEW as view
@@ -131,7 +130,6 @@ if __name__ == "__main__":
         print("--------------------------------")
         print(cds.__class__.__name__)
 
-
         cds2 = cds.get_connectome_view(view)
 
         print(cds2.summary())
@@ -141,7 +139,7 @@ if __name__ == "__main__":
         # fig = cds2.to_plotly_hive_plot_fig(synclass, view)
 
         # fig = cds2.to_plotly_graph_fig(synclass, view)
-        #fig = cds2.to_plotly_graph_fig(synclass, view)
+        # fig = cds2.to_plotly_graph_fig(synclass, view)
         fig, _ = cds2.to_plotly_matrix_fig("Extrasynaptic", view)
         # fig, info = cds2.to_plotly_matrix_fig(
         #    list(view.synclass_sets.keys())[0], view, symmetry=True

@@ -48,9 +48,18 @@ class WormNeuroAtlasExtSynReader(ConnectomeDataset):
         conns = []
 
         if self.mono_or_pep == PEPTIDERGIC_SYN_CLASS:
-            connectome = self.atlas.get_peptidergic_connectome()
+            connectome = self.atlas._get_esconnectome_bentley(
+                fname=self.atlas.module_folder
+                + "esconnectome_neuropeptides_Bentley_2016.csv",
+            )
 
             connected_cells = []
+            import numpy as np
+
+            for c in connectome:
+                print("-------------")
+                print(c)
+                print(np.count_nonzero(c))
 
             for pre in self.all_cells:
                 apre = self.atlas.ids_to_ai([pre])

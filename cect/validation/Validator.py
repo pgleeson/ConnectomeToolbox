@@ -73,7 +73,10 @@ class TestExpectedConnections(unittest.TestCase):
         data_readers = {
             "WhiteEtAl1986": ["White_A", "White_L4", "White_whole"],
             "VarshneyEtAl2011": ["VarshneyDataReader"],
-            "BentleyEtAl2016": ["WormNeuroAtlasMAReader", "WormNeuroAtlasPepReader"],
+            "BentleyEtAl2016": [
+                "Bentley2016MAReader",
+                "Bentley2016PepReader",
+            ],
             "CookEtAl2019": ["Cook2019HermReader", "Cook2019MaleReader"],
             "CookEtAl2020": ["Cook2020DataReader"],
             "Brittin2021": ["BrittinDataReader"],
@@ -129,7 +132,7 @@ class TestExpectedConnections(unittest.TestCase):
                 .replace("GleesonModel", "Gleeson2018")
                 .replace("OlivaresModel", "Olivares2021")
             )
-            latex_md += "\n  \multirow{%i}{\\linewidth}{\\cite{%s}}" % (
+            latex_md += "\n  \\multirow{%i}{\\linewidth}{\\cite{%s}}" % (
                 len(data_readers[data_set]),
                 pub,
             )
@@ -141,7 +144,7 @@ class TestExpectedConnections(unittest.TestCase):
                 validation_md += report + "\n\n"
                 latex_md += latex
 
-            latex_md += "  \midrule%\n"
+            latex_md += "  \\midrule%\n"
 
         val_md = __file__.replace("Validator.py", "../../docs/Validation.md")
         with open(val_md, "w") as f:

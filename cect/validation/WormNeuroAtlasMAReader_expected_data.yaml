@@ -1,0 +1,52 @@
+
+reader: WormNeuroAtlasMAReader
+connection_lists:
+- connections:
+  - pre: CEPDR
+    post: ALNR
+    weight: 1
+  - pre: ADER
+    post: VA11
+    weight: 1
+  - pre: PDEL
+    post: SIBDR
+    weight: 1
+  synapse: Dopamine
+  total_nonzero_conns: 1160
+- connections:
+  - pre: RIML
+    post: IL1DL
+    weight: 1
+  - pre: RIML
+    post: PVT
+    weight: 1
+  - pre: RIMR
+    post: AFDL
+    weight: 1
+  synapse: Tyramine
+  total_nonzero_conns: 224
+- connections:
+  - pre: RICL
+    post: PHAL
+    weight: 1
+  - pre: RICL
+    post: ADEL
+    weight: 1
+  - pre: RICR
+    post: SIAVL
+    weight: 1
+  synapse: Octopamine
+  total_nonzero_conns: 56
+- connections:
+  - pre: ADFR
+    post: M2R
+    weight: 1
+  - pre: NSMR
+    post: AIBL
+    weight: 1
+  - pre: HSNL
+    post: M3L
+    weight: 1
+  synapse: Serotonin
+  total_nonzero_conns: 492
+  

@@ -175,10 +175,10 @@ class TestExpectedConnections(unittest.TestCase):
             description = reader_module.DATASET_DESCRIPTION
         weight = "TODO"
         if hasattr(reader_module, "WEIGHTS"):
-            weight = reader_module.WEIGHTS
+            weight = _latexify(reader_module.WEIGHTS)
 
             if weight == self.last_weight:
-                weight = "(Same as above)"
+                weight = "\\emph{(Same as above)}"
             else:
                 self.last_weight = weight
 
@@ -191,7 +191,7 @@ class TestExpectedConnections(unittest.TestCase):
         ref_url = f"{ref} \\newline \\href{{{matrix_url}}}{{Matrix}} | \\href{{{validation_url}}}{{Validation}} \\newline "
 
         latex += f"  & {ref_url} & {_latexify(description)} \\newline & "
-        latex += f" {_latexify(weight)} \\\\\n"
+        latex += f" {weight} \\\\\n"
 
         expected_data_folder = __file__.replace("Validator.py", "")
         expected_data_file = f"{expected_data_folder}/{data_reader}_expected_data.yaml"

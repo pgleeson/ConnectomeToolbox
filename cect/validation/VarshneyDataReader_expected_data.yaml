@@ -7,6 +7,15 @@ connection_lists:
   - pre: ADAL
     post: AVBR
     weight: 7
+  - pre: ADFR
+    post: AIZR
+    weight: 8
+  - pre: DVC
+    post: RIGL
+    weight: 5
+  - pre: RMDDR
+    post: RMDVL
+    weight: 12
   synapse: Generic_CS
   total_nonzero_conns: 2194
   total_weight: 6394
@@ -14,5 +23,14 @@ connection_lists:
   - pre: AVAL
     post: AVAR
     weight: 5
+  - pre: RMED
+    post: IL1VL
+    weight: 1
+  - pre: CEPDL
+    post: OLQDL
+    weight: 1
+  - pre: PDER
+    post: PDEL
+    weight: 3
   synapse: Generic_GJ
   total_nonzero_conns: 1031

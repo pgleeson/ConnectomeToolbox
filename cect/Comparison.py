@@ -283,21 +283,18 @@ def generate_comparison_page(
 
     if quick == 2:  # very quick...
         # readers["Yim2024"] = ["cect.readers.Yim2024DataReader", "Yim_2024"]
-        readers["Yim2024NonNorm"] = [
-            "cect.readers.Yim2024NonNormDataReader",
-            "Yim_2024",
-        ]
         # readers["Yim2024NonNorm"] = ["cect.readers.Yim2024NonNormDataReader", "Yim_2024"]
         # readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
         # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
-        # readers["White_A"] = ["cect.readers.White_A", "White_1986"]
-        # readers["White_L4"] = ["cect.readers.White_L4", "White_1986"]
-        # readers["White_whole"] = ["cect.readers.White_whole", "White_1986"]
+        readers["White_A"] = ["cect.readers.White_A", "White_1986"]
+        readers["White_L4"] = ["cect.readers.White_L4", "White_1986"]
+        readers["White_whole"] = ["cect.readers.White_whole", "White_1986"]
         # readers["Test"] = ["cect.readers.TestDataReader", None]
-        # readers["Varshney"] = ["cect.readers.VarshneyDataReader", "Varshney_2011"]
+        readers["Varshney"] = ["cect.readers.VarshneyDataReader", "Varshney_2011"]
 
         # readers["WormNeuroAtlas"] = ["cect.readers.WormNeuroAtlasReader", "Randi_2023"]
 
+        """
         readers["Bentley2016_MA"] = [
             "cect.readers.Bentley2016MAReader",
             "Bentley_2016",
@@ -306,6 +303,8 @@ def generate_comparison_page(
             "cect.readers.Bentley2016PepReader",
             "Bentley_2016",
         ]
+        """
+        """
         readers["Bentley2016_MAwna"] = [
             "cect.readers.WormNeuroAtlasMAReader",
             "Bentley_2016",
@@ -313,13 +312,12 @@ def generate_comparison_page(
         readers["Bentley2016_PEPwna"] = [
             "cect.readers.WormNeuroAtlasPepReader",
             "Bentley_2016",
-        ]
+        ]"""
 
         # readers["Randi2023"] = ["cect.readers.WormNeuroAtlasFuncReader", "Randi_2023"]
 
         # readers["Brittin2021"] = ["cect.readers.BrittinDataReader", "Brittin_2021"]
 
-        # readers["White_whole"] = ["cect.readers.White_whole", "White_1986"]
         # readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
         # readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 
@@ -331,7 +329,7 @@ def generate_comparison_page(
 
         # readers["Witvliet1"] = ["cect.readers.WitvlietDataReader1", "Witvliet_2021"]
         # readers["Witvliet8"] = ["cect.readers.WitvlietDataReader8", "Witvliet_2021"]
-        readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
+        # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
         # readers["RipollSanchezLongRange"] = [ "cect.readers.RipollSanchezLongRangeReader", "RipollSanchez_2023", ]
         # readers["OpenWormUnified"] = ["cect.readers.OpenWormUnifiedReader", "OpenWorm_Unified"]
 

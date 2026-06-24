@@ -16,8 +16,9 @@ import os
 from cect import print_
 
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
-spreadsheet_name = "NeuronConnect.xlsx"  # has old name...
+
 spreadsheet_name = "NeuronConnectFormatted.xlsx"
+spreadsheet_name = "NeuronConnect.xls"  # has old name...
 filename = "%s%s" % (spreadsheet_location, spreadsheet_name)
 
 NAME = "Varshney"
@@ -39,6 +40,17 @@ ELECT_JUNC_SYN = "EJ"
 NMJ_ENDPOINT = "NMJ"
 
 
+def _remove_leading_index_zero(cell):
+    """
+    Returns neuron name with an index without leading zero. E.g. VB01 -> VB1.
+    """
+    if cell[:2] in ["VA", "VB", "VC", "VD", "DA", "DB", "DD", "AS"] and cell[
+        -2:
+    ].startswith("0"):
+        return "%s%s" % (cell[:-2], cell[-1:])
+    return cell
+
+
 class VarshneyDataReader(ConnectomeDataset):
     """Reader for Varshney et al. 2011 connectivity dataset"""
 
@@ -57,6 +69,7 @@ class VarshneyDataReader(ConnectomeDataset):
         }
 
         cells, neuron_conns = self.read_data()
+
         for conn in neuron_conns:
             self.add_connection_info(
                 conn,
@@ -76,15 +89,34 @@ class VarshneyDataReader(ConnectomeDataset):
         cells = []
         conns = []
 
-        wb = load_workbook(filename)
-        sheet = wb.worksheets[0]
+        if filename.endswith(".xls"):
+            from xlrd import open_workbook
+
+            wb = open_workbook(filename)
+            rows = []
+            sheet = wb.sheet_by_index(0)
+            for row in range(1, sheet.nrows):
+                rows.append(
+                    (
+                        str(sheet.cell(row, 0).value),
+                        str(sheet.cell(row, 1).value),
+                        str(sheet.cell(row, 2).value),
+                        int(sheet.cell(row, 3).value),
+                    )
+                )
+        else:
+            wb = load_workbook(filename)
+            sheet = wb.worksheets[0]
+            rows = sheet.iter_rows(min_row=2, values_only=True)
+
         print_("Opened the Excel file: " + filename)
 
-        for row in sheet.iter_rows(
-            min_row=2, values_only=True
-        ):  # Assuming data starts from the second row
+        for row in rows:  # Assuming data starts from the second row
             pre = str(row[0])
             post = str(row[1])
+
+            pre = _remove_leading_index_zero(pre)
+            post = _remove_leading_index_zero(post)
 
             if post == NMJ_ENDPOINT:
                 post = UNSPECIFIED_BODY_WALL_MUSCLE

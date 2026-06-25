@@ -20,6 +20,8 @@ from cect import print_
 import os
 import csv
 
+WEIGHTS = "Weights indicate the number of different NPP-GPCR pathways connecting a neuron pair in a given direction."
+
 
 def standardise_cell_name(cell):
     for pf in ["DA", "DB", "AS", "VA", "VB", "VC", "VD", "DD"]:

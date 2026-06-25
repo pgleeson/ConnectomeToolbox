@@ -14,6 +14,8 @@ from cect.Cells import is_any_neuron
 from cect.Cells import remove_leading_index_zero
 from cect.Cells import is_potential_muscle
 from cect.Cells import is_known_muscle
+from cect.Cells import is_marginal_epithelial_gland_cell
+from cect.Cells import convert_to_preferred_phar_cell_name
 
 from cect.ConnectomeDataset import ConnectomeDataset
 
@@ -29,11 +31,15 @@ from cect import print_
 
 HERM_CHEM = "hermaphrodite chemical"
 HERM_GAP_SYMM = "herm gap jn symmetric"
+HERM_GAP_SYMM_CORRECTED = "hermaphrodite gap jn symmetric"
+
 MALE_CHEM = "male chemical"
 MALE_GAP_SYMM = "male gap jn symmetric"
 
 HERMAPHRODITE = "Hermaphrodite"
 MALE = "Male"
+
+WEIGHTS = "Weights are the total number of EM serial sections of connectivity, taking into account both the number of synapses and the sizes of synapses."
 
 SEX_SPECIFIC_SHEETS = {
     HERMAPHRODITE: [HERM_CHEM, HERM_GAP_SYMM],
@@ -44,7 +50,7 @@ pre_range = {
     HERM_CHEM: range(4, 304),
     HERM_GAP_SYMM: range(4, 472),
     MALE_CHEM: range(4, 386),
-    MALE_GAP_SYMM: range(4, 472),
+    MALE_GAP_SYMM: range(4, 589),
 }
 post_range = {
     HERM_CHEM: range(4, 457),
@@ -64,18 +70,39 @@ def get_synclass(cell, syntype):
         return GENERIC_CHEM_SYN_CLASS
 
 
+ORIGINAL_SUPP_INFO_5 = "41586_2019_1352_MOESM9_ESM.xlsx"
+WORMWIRING_ADJ_MATRICES = "SI 5 Connectome adjacency matrices.xlsx"
+WORMWIRING_ADJ_MATRICES_CORRECTED = (
+    "SI 5 Connectome adjacency matrices, corrected July 2020.xlsx"
+)
+
+
+def _check_ray_st_cell(cell_name):
+    """
+    Check to make sure R1stL, R7stR etc are not used, but R1shL, R7shR etc are used, as in some of the spreadsheet data.
+    """
+    if cell_name.startswith("R") and (
+        cell_name.endswith("shL") or cell_name.endswith("shR")
+    ):
+        cell_name = cell_name.replace("sh", "st")
+    return cell_name
+
+
 class Cook2019DataReader(ConnectomeDataset):
     """
-    Reader of data from Cook et al. 2019 - Whole-animal connectomes of both Caeonrhabditis elegans sexes
+    Reader of data from Cook et al. 2019 - Whole-animal connectomes of both Caenorhabditis elegans sexes
     """
 
     spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
-    filename = "%sSI 5 Connectome adjacency matrices.xlsx" % spreadsheet_location
+    filename = "%s%s" % (spreadsheet_location, ORIGINAL_SUPP_INFO_5)
+    filename = "%s%s" % (spreadsheet_location, WORMWIRING_ADJ_MATRICES)
+    filename = "%s%s" % (spreadsheet_location, WORMWIRING_ADJ_MATRICES_CORRECTED)
 
     verbose = False
 
     def __init__(self, sex):
         ConnectomeDataset.__init__(self)
+
         self.sex = sex
 
         wb = load_workbook(self.filename)
@@ -88,14 +115,23 @@ class Cook2019DataReader(ConnectomeDataset):
         self.conn_nums = {}
 
         for conn_type in SEX_SPECIFIC_SHEETS[self.sex]:
-            sheet = wb.get_sheet_by_name(conn_type)
-            print_("Looking at sheet: %s" % conn_type)
+            sheet_name = conn_type
+            if "corrected" in self.filename:
+                if sheet_name == HERM_GAP_SYMM:
+                    sheet_name = HERM_GAP_SYMM_CORRECTED
+                pre_range[HERM_GAP_SYMM] = range(4, 473)
+                post_range[HERM_CHEM] = range(4, 458)
+                post_range[HERM_GAP_SYMM] = range(4, 473)
+
+            sheet = wb.get_sheet_by_name(sheet_name)
+            print_("Looking at the sheet: %s" % conn_type)
 
             self.pre_cells[conn_type] = []
             self.post_cells[conn_type] = []
 
             for i in pre_range[conn_type]:
-                self.pre_cells[conn_type].append(sheet["C%i" % i].value)
+                pre_cell = _check_ray_st_cell(sheet["C%i" % i].value)
+                self.pre_cells[conn_type].append(pre_cell)
 
             if self.verbose:
                 print_(
@@ -108,7 +144,8 @@ class Cook2019DataReader(ConnectomeDataset):
                 )
 
             for i in post_range[conn_type]:
-                self.post_cells[conn_type].append(sheet.cell(row=3, column=i).value)
+                post_cell = _check_ray_st_cell(sheet.cell(row=3, column=i).value)
+                self.post_cells[conn_type].append(post_cell)
 
             if self.verbose:
                 print_(
@@ -185,6 +222,9 @@ class Cook2019DataReader(ConnectomeDataset):
 
                     if is_potential_muscle(post):
                         post = convert_to_preferred_muscle_name(post)
+
+                    if is_marginal_epithelial_gland_cell(post):
+                        post = convert_to_preferred_phar_cell_name(post)
 
                     if num > 0:
                         syntype = (

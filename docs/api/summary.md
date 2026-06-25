@@ -11,6 +11,8 @@
     * [Utils](cect/Utils.md)
     * [WormAtlasInfo](cect/WormAtlasInfo.md)
     * [readers](cect/readers/index.md)
+        * [Bentley2016MAReader](cect/readers/Bentley2016MAReader.md)
+        * [Bentley2016PepReader](cect/readers/Bentley2016PepReader.md)
         * [BrittinDataReader](cect/readers/BrittinDataReader.md)
         * [Cook2019DataReader](cect/readers/Cook2019DataReader.md)
         * [Cook2019HermReader](cect/readers/Cook2019HermReader.md)

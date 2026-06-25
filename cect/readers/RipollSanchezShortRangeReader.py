@@ -12,7 +12,12 @@ from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
+# ruff: noqa: F401
+from cect.readers.RipollSanchezDataReader import WEIGHTS
+
 MODEL = "short_range_model"
+
+DATASET_DESCRIPTION = "Dataset of neuropeptidergic connections only between neurons whose processes overlap in the same neuronal process bundle"
 
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
@@ -34,7 +39,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
         return RipollSanchezDataReader(MODEL)
 
 
-NAME = "RipollSanchezShortRangeReader"
+NAME = "RipollSanchezShortRange"
 
 READER_DESCRIPTION = (
     """Data extracted from %s for short range model of neuropedtidergic connectome"""

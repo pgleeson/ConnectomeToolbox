@@ -197,11 +197,11 @@
     "Cook2019Herm": {
         "Raw": {
             "Chemical": "67.57",
-            "Electrical": "66.90"
+            "Electrical": "66.92"
         },
         "Neurons": {
             "Chemical": "64.26",
-            "Electrical": "62.01"
+            "Electrical": "61.96"
         },
         "Pharynx": {
             "Chemical": "77.14",
@@ -209,7 +209,7 @@
         },
         "NonpharyngealH": {
             "Chemical": "63.77",
-            "Electrical": "62.21"
+            "Electrical": "62.16"
         },
         "SensorySomaticH": {
             "Chemical": "55.52",
@@ -217,11 +217,11 @@
         },
         "MotorSomaticH": {
             "Chemical": "89.46",
-            "Electrical": "84.49"
+            "Electrical": "84.53"
         },
         "MotorMuscles": {
             "Chemical": "86.43",
-            "Electrical": "88.59"
+            "Electrical": "88.61"
         },
         "InterneuronsSomaticH": {
             "Chemical": "64.17",
@@ -230,12 +230,12 @@
     },
     "Cook2019Male": {
         "Raw": {
-            "Chemical": "63.61",
-            "Electrical": "67.71"
+            "Chemical": "63.52",
+            "Electrical": "66.53"
         },
         "Neurons": {
             "Chemical": "64.66",
-            "Electrical": "66.78"
+            "Electrical": "66.80"
         },
         "Pharynx": {
             "Chemical": "77.14",
@@ -243,7 +243,7 @@
         },
         "NonpharyngealH": {
             "Chemical": "63.81",
-            "Electrical": "67.40"
+            "Electrical": "67.42"
         },
         "SensorySomaticH": {
             "Chemical": "59.38",
@@ -251,11 +251,11 @@
         },
         "MotorSomaticH": {
             "Chemical": "92.03",
-            "Electrical": "92.51"
+            "Electrical": "92.53"
         },
         "MotorMuscles": {
             "Chemical": "86.55",
-            "Electrical": "88.98"
+            "Electrical": "89.06"
         },
         "InterneuronsSomaticH": {
             "Chemical": "55.00",
@@ -979,7 +979,7 @@
     "OpenWormUnified": {
         "Raw": {
             "Chemical": "69.23",
-            "Electrical": "66.90",
+            "Electrical": "66.92",
             "Acetylcholine": "71.80",
             "GABA": "72.91",
             "Glutamate": "62.93",
@@ -987,7 +987,7 @@
         },
         "Neurons": {
             "Chemical": "65.46",
-            "Electrical": "62.01",
+            "Electrical": "61.96",
             "Acetylcholine": "66.79",
             "GABA": "68.71",
             "Glutamate": "62.95",
@@ -1002,7 +1002,7 @@
         },
         "NonpharyngealH": {
             "Chemical": "64.98",
-            "Electrical": "62.21",
+            "Electrical": "62.16",
             "Acetylcholine": "66.37",
             "GABA": "68.71",
             "Glutamate": "62.10",
@@ -1017,13 +1017,13 @@
         },
         "MotorSomaticH": {
             "Chemical": "89.46",
-            "Electrical": "84.49",
+            "Electrical": "84.53",
             "Acetylcholine": "88.98",
             "GABA": "90.22"
         },
         "MotorMuscles": {
             "Chemical": "86.43",
-            "Electrical": "88.59",
+            "Electrical": "88.61",
             "Acetylcholine": "86.83",
             "GABA": "83.22"
         },

@@ -22,6 +22,12 @@ READER_DESCRIPTION = """Dummy dataset used for testing webpage/graph generation.
 
 NMJ_ENDPOINT = "NMJ"
 
+DATASET_DESCRIPTION = (
+    "Note: this is just a test dataset, without real biological meaning."
+)
+
+WEIGHTS = "Note: this is just a test dataset, without real biological meaning."
+
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     if from_cache:

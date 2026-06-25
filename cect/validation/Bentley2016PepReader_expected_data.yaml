@@ -1,0 +1,23 @@
+
+reader: Bentley2016PepReader
+connection_lists:
+- connections:
+  - pre: AIAL
+    post: AIAR
+    weight: 1
+  - pre: RMER
+    post: OLQVR
+    weight: 1
+  - pre: M3R
+    post: RIVR
+    weight: 1
+  - pre: FLPR
+    post: IL2R
+    weight: 1
+  - pre: VD9
+    post: PVWR
+    weight: 1
+  synapse: Peptidergic
+  total_nonzero_conns: 7078
+
+  

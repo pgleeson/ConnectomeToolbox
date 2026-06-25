@@ -20,9 +20,20 @@ from cect.Neurotransmitters import FUNCTIONAL_SYN_TYPE
 
 ############################################################
 
+NAME = "Randi2023"
+
+DEFAULT_MAX_Q = 0.05
+
 LOGGER = logging.getLogger(__name__)
 
 READER_DESCRIPTION = """Data on functional connectivity from the <b><a href="https://github.com/francescorandi/wormneuroatlas">WormNeuroAtlas package</a></b>"""
+
+DATASET_DESCRIPTION = (
+    "Data on functional connectivity of _C. elegans_ from WormNeuroAtlas Python package (values extracted with get_signal_propagation_map() & get_signal_propagation_q(), with max_q = %s)"
+    % DEFAULT_MAX_Q
+)
+
+WEIGHTS = "Weights represent the mean post-stimulus calcium response amplitude measured in a downstream neuron following two-photon optogenetic stimulation of an upstream neuron"
 
 
 class WormNeuroAtlasFuncReader(ConnectomeDataset):
@@ -37,6 +48,8 @@ class WormNeuroAtlasFuncReader(ConnectomeDataset):
             "Initialising WormNeuroAtlasFuncReader with max q value: %s" % self.max_q
         )
         import wormneuroatlas as wa
+
+        self.verbose = False
 
         self.atlas = wa.NeuroAtlas()
 
@@ -78,10 +91,11 @@ class WormNeuroAtlasFuncReader(ConnectomeDataset):
 
                 if abs(num) > -10 and q_ij < self.max_q:
                     if num < 0:
-                        print_(
-                            "Functional conn junc (%s (%i) -> %s (%i):\t%s (orig = %s, q = %s)"
-                            % (pre, apre, post, apost, dff_ij, dff_ij_orig, q_ij)
-                        )
+                        if self.verbose:
+                            print_(
+                                "Functional conn junc (%s (%i) -> %s (%i):\t%s (orig = %s, q = %s)"
+                                % (pre, apre, post, apost, dff_ij, dff_ij_orig, q_ij)
+                            )
                     synclass = FUNCTIONAL_SYN_CLASS
                     syntype = FUNCTIONAL_SYN_TYPE
                     conns.append(
@@ -118,7 +132,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
         )
     else:
         try:
-            return WormNeuroAtlasFuncReader(0.05)
+            return WormNeuroAtlasFuncReader(DEFAULT_MAX_Q)
         except Exception as e:
             print(
                 "Problem loading WormNeuroAtlas data. Can be caused by WormBase url not working. Defaulting to loading from cache... Issue: %s"
@@ -135,29 +149,88 @@ if __name__ == "__main__":
     # from cect.ConnectomeReader import analyse_connections
     # analyse_connections(cells, neuron_conns, neurons2muscles, muscles, muscle_conns)
 
-    to_test = ["ADAL", "MCL", "M5", "AWCL"]
+    to_test = ["I1L", "MI", "MCR", "M2R", "AVBR", "AVEL"]
+
+    import wormneuroatlas as wa
+
+    atlas = wa.NeuroAtlas()
+    dff = atlas.get_signal_propagation_map(strain="wt")
+    q = atlas.get_signal_propagation_q(strain="wt")
 
     for cell in to_test:
         # my_instance.atlas.all_about(cell)
 
         print(
-            "Func conns from %s: %s"
+            "Func conns from %s: \n%s"
             % (
                 cell,
-                my_instance.get_connections_from(
-                    cell, FUNCTIONAL_SYN_CLASS, ordered_by_weight=True
+                "\n".join(
+                    [
+                        f"   {c}:  \t{float(w)}"
+                        for c, w in my_instance.get_connections_from(
+                            cell, FUNCTIONAL_SYN_CLASS, ordered_by_weight=True
+                        ).items()
+                    ]
                 ),
             )
         )
         print(
-            "Func conns to %s: %s"
+            "Func conns to %s: \n%s"
             % (
                 cell,
-                my_instance.get_connections_to(
-                    cell, FUNCTIONAL_SYN_CLASS, ordered_by_weight=True
+                "\n".join(
+                    [
+                        f"   {c}:  \t{float(w)}"
+                        for c, w in my_instance.get_connections_to(
+                            cell, FUNCTIONAL_SYN_CLASS, ordered_by_weight=True
+                        ).items()
+                    ]
                 ),
             )
         )
+
+    for pre in to_test:
+        for post in to_test:
+            apre = atlas.ids_to_ai([pre])
+            apost = atlas.ids_to_ai([post])
+
+            dff_ij_orig = dff[apost, apre][0]
+
+            print(
+                "Func conn from WNA - %s (%i) -> %s (%i):\t%s\t%s(q = %s)"
+                % (
+                    pre,
+                    apre,
+                    post,
+                    apost,
+                    dff_ij_orig,
+                    "" if q[apost, apre] < 0.05 else "     NOT INCLUDED...",
+                    q[apost, apre],
+                )
+            )
+
+    import numpy as np
+
+    # ruff: noqa: E712
+    dff_valid = np.isnan(dff) != True
+    print("Number of valid dff values: %i" % np.count_nonzero(dff_valid))
+    q_low = q < 0.05
+    print("Number of valid q values (q < 0.05): %i" % np.count_nonzero(q_low))
+    q_valid = np.isnan(q) != True
+    print("Number of valid q values (not NaN): %i" % np.count_nonzero(q_valid))
+    to_include_with_diags = np.multiply(dff_valid, q_low)
+
+    print(
+        "Number of connections to include: %i" % np.count_nonzero(to_include_with_diags)
+    )
+    to_include = to_include_with_diags.copy()
+    for i in range(to_include.shape[0]):
+        to_include[i, i] = False
+    # print(to_include)
+    print(
+        "Number of connections to include (self conns excluded): %i"
+        % np.count_nonzero(to_include)
+    )
 
     if "-nogui" not in sys.argv:
         my_instance.connection_number_plot(FUNCTIONAL_SYN_CLASS)

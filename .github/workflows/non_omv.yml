@@ -36,7 +36,7 @@ jobs:
         pip list
         
         
-    - name: Run quick test script
+    - name: Run test script
       if: ${{ matrix.runs-on != 'windows-latest' }}
       run: |
         ./test.sh  # also runs pytest

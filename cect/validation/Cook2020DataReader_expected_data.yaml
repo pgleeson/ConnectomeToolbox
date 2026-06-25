@@ -3,14 +3,24 @@ connection_lists:
 - connections:
   - pre: I1R
     post: I2R
-    weight: 3
+    weight: 8
   - pre: I1R
     post: I2L
     weight: 1
   - pre: RIPL
     post: pm3VL
     weight: 4
+  - pre: I5
+    post: g1AR
+    weight: 5
+  - pre: I5
+    post: g1AL
+    weight: 8
+  - pre: I6
+    post: g1P
+    weight: 2
   synapse: Generic_CS
+  total_nonzero_conns: 259
 - connections:
   - pre: M4
     post: pm5VL
@@ -30,4 +40,8 @@ connection_lists:
   - pre: mc3V
     post: pm7VL
     weight: 3
+  - pre: mc3DR
+    post: pm8
+    weight: 3
   synapse: Generic_GJ
+  total_nonzero_conns: 246

@@ -41,11 +41,8 @@ from openpyxl import load_workbook
 
 import os
 
-# spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
-# wang24_filename = "%selife-95402-supp2-v1.xlsx" % spreadsheet_location
 
-
-READER_DESCRIPTION = "????"
+READER_DESCRIPTION = "--None--"  # added in herm/male
 
 
 class Wang2024Reader(ConnectomeDataset):
@@ -217,7 +214,7 @@ class Wang2024Reader(ConnectomeDataset):
                     "%selife-95402-supp2-v1.xlsx" % self.spreadsheet_location,
                     "Supp File 2",
                     ("Cook et al. 2019 Hermaphrodite connectome", "Cook2019HermReader"),
-                    ("Bentley et al. 2015", "WormNeuroAtlasMAReader"),
+                    ("Bentley et al. 2016", "Bentley2016MAReader"),
                 ]
             )
 
@@ -227,7 +224,7 @@ class Wang2024Reader(ConnectomeDataset):
                     "%selife-95402-supp3-v1.xlsx" % self.spreadsheet_location,
                     "Supp File 3",
                     ("Cook et al. 2019 Male connectome", "Cook2019MaleReader"),
-                    ("Bentley et al. 2015", "WormNeuroAtlasMAReader"),
+                    ("Bentley et al. 2016", "Bentley2016MAReader"),
                 ]
             )
 
@@ -300,8 +297,6 @@ class Wang2024Reader(ConnectomeDataset):
 
             print_("Adding %i conns from %s" % (len(anat_conns), BASIS_ANATOMICAL_CONN))
             for conn in anat_conns[:]:
-                # print_("Original conn: %s" % conn)
-
                 if conn.synclass == GENERIC_ELEC_SYN_CLASS:
                     if include_electrical_connections:
                         # print_("    Adding electrical conn: %s" % conn)

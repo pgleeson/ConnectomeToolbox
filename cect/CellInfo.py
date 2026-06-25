@@ -6,6 +6,8 @@ from cect.Cells import get_cell_notes
 from cect.Cells import get_cell_internal_link
 from cect.Cells import get_cell_wormatlas_link
 from cect.Cells import get_cell_osbv1_link
+from cect.Cells import get_wormwiring_3d_link
+from cect.Cells import get_zhen_tools_link
 from cect.Cells import are_bilateral_pair
 from cect.Cells import is_any_neuron
 from cect.Cells import get_primary_classification
@@ -23,8 +25,14 @@ from cect import print_
 
 import pandas as pd
 import csv
+import plotly.io as pio
 
 pd.options.plotting.backend = "plotly"
+
+# Set the default Plotly template once, rather than passing template="plotly_white"
+# to update_layout() on every figure. Passing it per-figure deep-copies the whole
+# template each call
+pio.templates.default = "plotly_white"
 
 
 def get_dataset_link(dataset):
@@ -90,7 +98,6 @@ def get_weight_table_markdown(w):
             mode="markers",
         )
         fig.update_layout(
-            template="plotly_white",
             plot_bgcolor="rgba(0, 0, 0, 0)",
             paper_bgcolor="rgba(0, 0, 0, 0)",
         )
@@ -255,13 +262,15 @@ def generate_cell_info_pages(connectomes):
                 % nt_info
             )
 
-        cell_info += "    %s " % (
+        cell_info += "    %s" % (
             get_cell_wormatlas_link(cell, text="Info on WormAtlas", button=True)
         )
 
-        cell_info += "%s\n\n" % get_cell_osbv1_link(
+        cell_info += " %s" % get_cell_osbv1_link(
             cell, text="View in 3D on Open Source Brain", button=True
         )
+        cell_info += " %s" % get_wormwiring_3d_link(cell, button=True)
+        cell_info += " %s\n\n" % get_zhen_tools_link(cell, button=True)
 
         all_synclasses = [
             GENERIC_CHEM_SYN_CLASS,

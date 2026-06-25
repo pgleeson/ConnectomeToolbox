@@ -1,0 +1,73 @@
+reader: Cook2019MaleReader
+connection_lists:
+- connections:
+  - pre: I1R
+    post: I2R
+    weight: 6
+  - pre: SMBDL
+    post: SDQR
+    weight: 18
+  - pre: R7BL
+    post: PDC
+    weight: 34
+  - pre: DB4
+    post: MDL13
+    weight: 4
+  - pre: RIMR
+    post: MDL05
+    weight: 15
+  - pre: CEPDR
+    post: RMHL
+    weight: 6
+  - pre: URBL
+    post: OLLL
+    weight: 4
+  - pre: R9BR
+    post: R7stR
+    weight: 2
+  synapse: Generic_CS
+  total_nonzero_conns: 5306
+  total_weight: 45959
+- connections:
+  - pre: M4
+    post: pm5VL
+    weight: 1
+  - pre: g1AL
+    post: M4
+    weight: 7
+  - pre: CANL
+    post: exc_cell
+    weight: 200
+  - pre: PVDL
+    post: ALA
+    weight: 250
+  - pre: URBL
+    post: IL2L
+    weight: 17
+  - pre: DD1
+    post: MVL08
+    weight: 2
+  - pre: RIVR
+    post: FLPL
+    weight: 0
+  - pre: DD1
+    post: MVR08
+    weight: 2
+  - pre: R8AL
+    post: R8BL
+    weight: 5
+  - pre: RIVL
+    post: FLPL
+    weight: 1
+  - pre: VB6
+    post: VB7
+    weight: 5
+  - pre: VB7
+    post: VB5
+    weight: 1
+  - pre: MDR08
+    post: DD1
+    weight: 2
+  synapse: Generic_GJ
+  total_nonzero_conns: 3482
+  total_weight: 31702

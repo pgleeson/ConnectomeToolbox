@@ -237,14 +237,14 @@ class TestExpectedConnections(unittest.TestCase):
                     from cect.ConnectomeView import get_view
 
                     view = get_view(view_id)
-                    view_info = f". **Note:* only cells/connections in ConnectomeView: {view_id} ({view.description})"
+                    view_info = f"\n\n**Note:** only cells/connections in ConnectomeView: **{view_id}** included ({view.description})"
 
                     conn_dataset = conn_dataset.get_connectome_view(view)
 
                 print_(conn_dataset.summary())
 
                 print_(
-                    f"Checking connection list: {conn_list}, {syn_info}{view_info}..."
+                    f"Checking connection list: {conn_list}, {syn_info} {view_info}..."
                 )
 
                 report += f"\n#### {syn_info} connections{view_info}\n\n"

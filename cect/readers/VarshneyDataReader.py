@@ -136,7 +136,7 @@ class VarshneyDataReader(ConnectomeDataset):
             elif syntype_here in [RECEIVE_SYN, RECEIVE_POLY_SYN]:
                 self.typed_conns[RECEIVE_ANY].add(f"{pre}_{post}")
 
-            if syntype_here != NMJ_ENDPOINT and not self.include_nmj:
+            if syntype_here != NMJ_ENDPOINT or self.include_nmj:
                 synclass = (
                     GENERIC_ELEC_SYN_CLASS
                     if syntype_here == ELECT_JUNC_SYN
@@ -184,7 +184,8 @@ class VarshneyDataReader(ConnectomeDataset):
         print_(
             f"  Total chemical synapses: {s_tot} (send) + {r_tot} (receive) = {s_tot + r_tot}"
         )
-        print_(f"  Total electrical synapses: {len(self.typed_conns[ELECT_JUNC_SYN])}")
+        gj = len(self.typed_conns[ELECT_JUNC_SYN])
+        print_(f"  Total electrical synapses: {gj}, half: {gj / 2}")
 
         return cells, conns
 

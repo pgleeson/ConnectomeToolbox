@@ -35,7 +35,7 @@ connection_lists:
   - pre: RMDDR
     post: RMDVL
     weight: 12
-  view: Neurons
+  view: NonpharyngealH
   synapse: Chemical
   total_nonzero_conns: 2194
   total_weight: 6394

@@ -1,0 +1,27 @@
+reader: White_L4
+connection_lists:
+- connections:
+  - pre: ADAL
+    post: AVBR
+    weight: 5
+  - pre: ADFR
+    post: AIZR
+    weight: 10
+  - pre: DVC
+    post: RIGL
+    weight: 8
+  - pre: RMDDR
+    post: RMDVL
+    weight: 10
+  synapse: Generic_CS
+- connections:
+  - pre: AVAL
+    post: AVAR
+    weight: 2
+  - pre: RMED
+    post: IL1VL
+    weight: 2
+  - pre: CEPDL
+    post: OLQDL
+    weight: 4
+  synapse: Generic_GJ

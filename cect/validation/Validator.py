@@ -215,13 +215,9 @@ class TestExpectedConnections(unittest.TestCase):
                 % (reader_ref, from_cache, sys.argv)
             )
 
-            conn_dataset = get_connectome_dataset(reader_ref, from_cache=from_cache)
-
-            print_(conn_dataset.summary())
-
             ref = reader_ref
 
-            report += f"\n### Validation tests for [{data_reader}](../{ref}_data) \n\n"
+            report += f"\n### Validation tests for [{data_reader}]({ref}_data.md) \n\n"
 
             for conn_list in expected_data.connection_lists:
                 syn_class = conn_list["synapse"]
@@ -232,9 +228,27 @@ class TestExpectedConnections(unittest.TestCase):
                 else:
                     syn_info = f"{syn_class}"
 
-                print_(f"Checking connection list: {conn_list}, {syn_info}...")
+                conn_dataset = get_connectome_dataset(reader_ref, from_cache=from_cache)
 
-                report += f"\n#### {syn_info} connections\n\n"
+                view_info = ""
+                if "view" in conn_list:
+                    view_id = conn_list["view"]
+
+                    from cect.ConnectomeView import get_view
+
+                    view = get_view(view_id)
+                    view_info = f". **Note:* only cells/connections in ConnectomeView: {view_id} ({view.description})"
+
+                    conn_dataset = conn_dataset.get_connectome_view(view)
+
+                print_(conn_dataset.summary())
+
+                print_(
+                    f"Checking connection list: {conn_list}, {syn_info}{view_info}..."
+                )
+
+                report += f"\n#### {syn_info} connections{view_info}\n\n"
+
                 report += "| Pre      | Post | Expected weight | Match |\n|----------|------|-----------------|-------|\n"
 
                 for conn in conn_list["connections"]:
@@ -326,6 +340,7 @@ class ConnectionList(Base):
         synapse: The type of synapse
         total_nonzero_conns: Total nonzero conns
         total_weight: Total weight of connections
+        view: An optional string specifying a ConnectomeView to use, e.g. Neurons, Pharynx, etc. Numbers of conns will be checked inside that view
         comment: A comment about how the data was found, e.g. taken from a spreadsheet
         connections: The list of connections of this type
     """
@@ -333,6 +348,7 @@ class ConnectionList(Base):
     synapse: str = field(validator=instance_of(str))
     total_nonzero_conns: int = field(validator=instance_of(int))
     total_weight: float = field(validator=instance_of(float))
+    view: str = field(validator=instance_of(str))
     comment: str = field(validator=instance_of(str))
     connections: List[Connection] = field(factory=list)
 

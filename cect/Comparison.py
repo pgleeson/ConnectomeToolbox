@@ -872,7 +872,7 @@ def generate_comparison_page(
                                         "_1", "etal1"
                                     )
                                     f.write(
-                                        f"**Validation tests:** [See here](../Validation#{ref_val})\n"
+                                        f"**Validation tests:** [See here](Validation.md#{ref_val})\n"
                                     )
 
                                 cell_types = {

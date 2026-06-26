@@ -1,4 +1,4 @@
-reader: VarshneyDataReader
+reader: White_whole
 connection_lists:
 - connections:
   - pre: AVAL
@@ -17,28 +17,6 @@ connection_lists:
     post: RMDVL
     weight: 12
   synapse: Generic_CS
-  total_nonzero_conns: 2194
-  total_weight: 6394
-- connections:
-  - pre: AVAL
-    post: AS5
-    weight: 3
-  - pre: ADAL
-    post: AVBR
-    weight: 7
-  - pre: ADFR
-    post: AIZR
-    weight: 8
-  - pre: DVC
-    post: RIGL
-    weight: 5
-  - pre: RMDDR
-    post: RMDVL
-    weight: 12
-  view: Neurons
-  synapse: Chemical
-  total_nonzero_conns: 2194
-  total_weight: 6394
 - connections:
   - pre: AVAL
     post: AVAR
@@ -53,4 +31,3 @@ connection_lists:
     post: PDEL
     weight: 3
   synapse: Generic_GJ
-  total_nonzero_conns: 1031

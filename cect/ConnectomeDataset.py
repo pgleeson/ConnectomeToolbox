@@ -274,6 +274,14 @@ class ConnectomeDataset:
     def _read_data(self):
         return self.get_neuron_to_neuron_conns()
 
+    def get_synclasses_with_connections(self):
+        synclasses = []
+        for synclass in self.connections:
+            conn_array = self.connections[synclass]
+            if np.count_nonzero(conn_array) > 0:
+                synclasses.append(synclass)
+        return synclasses
+
     def get_neuron_to_neuron_conns(self):
         neurons = set([])
         neuron_conns = []
@@ -306,7 +314,10 @@ class ConnectomeDataset:
 
     def get_connection_weight(self, pre_node, post_node, synclass):
         if synclass not in self.connections:
-            raise Exception("No connections of synclass %s in this dataset!" % synclass)
+            raise Exception(
+                "No connections of synclass %s in this dataset! Existing: %s"
+                % (synclass, self.get_synclasses_with_connections())
+            )
         conn_array = self.connections[synclass]
         if pre_node not in self.nodes:
             raise Exception("Pre node %s not in this dataset!" % pre_node)

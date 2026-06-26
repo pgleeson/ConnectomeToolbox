@@ -58,7 +58,7 @@ def _remove_leading_index_zero(cell):
 class VarshneyDataReader(ConnectomeDataset):
     """Reader for Varshney et al. 2011 connectivity dataset"""
 
-    def __init__(self):
+    def __init__(self, include_nmj=False):
         ConnectomeDataset.__init__(self)
 
         self.typed_conns = {
@@ -71,6 +71,8 @@ class VarshneyDataReader(ConnectomeDataset):
             ELECT_JUNC_SYN: [],
             NMJ_ENDPOINT: [],
         }
+
+        self.include_nmj = include_nmj
 
         cells, neuron_conns = self.read_data()
 
@@ -134,7 +136,7 @@ class VarshneyDataReader(ConnectomeDataset):
             elif syntype_here in [RECEIVE_SYN, RECEIVE_POLY_SYN]:
                 self.typed_conns[RECEIVE_ANY].add(f"{pre}_{post}")
 
-            if not syntype_here == NMJ_ENDPOINT + "":
+            if syntype_here != NMJ_ENDPOINT and not self.include_nmj:
                 synclass = (
                     GENERIC_ELEC_SYN_CLASS
                     if syntype_here == ELECT_JUNC_SYN
@@ -203,7 +205,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
 
         return load_connectome_dataset_file(get_cache_filename(__name__.split(".")[-1]))
     else:
-        return VarshneyDataReader()
+        return VarshneyDataReader(include_nmj=False)
 
 
 """

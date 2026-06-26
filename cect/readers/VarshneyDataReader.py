@@ -171,8 +171,10 @@ class VarshneyDataReader(ConnectomeDataset):
             total += len(conn_list)
             info = ""
             if syn_type in [SEND_SYN, SEND_POLY_SYN, RECEIVE_SYN, RECEIVE_POLY_SYN]:
-                info = f"({', '.join(conn_list[:5])}..., {conn_list[-1]})"
-            print_(f"  {syn_type}: {len(conn_list)} connections {info}")
+                info = f"\t({', '.join(conn_list[:5])}..., {conn_list[-1]})"
+
+            print_(f"  {syn_type}: {len(conn_list)} connections\t({len(set(conn_list))} unique) {info}")
+
         print_(f"  Total: {total} connections (half: {total / 2})")
 
         s_tot = len(self.typed_conns[SEND_SYN]) + len(self.typed_conns[SEND_POLY_SYN])
@@ -206,7 +208,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
 
         return load_connectome_dataset_file(get_cache_filename(__name__.split(".")[-1]))
     else:
-        return VarshneyDataReader(include_nmj=False)
+        return VarshneyDataReader(include_nmj=True)
 
 
 """

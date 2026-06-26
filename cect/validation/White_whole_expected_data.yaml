@@ -16,7 +16,17 @@ connection_lists:
   - pre: RMDDR
     post: RMDVL
     weight: 12
+  - pre: VD3
+    post: BWM
+    weight: 23
+  - pre: URADR
+    post: BWM
+    weight: 7
+  - pre: IL1DL
+    post: BWM
+    weight: 5
   synapse: Generic_CS
+  num_cells: 309
 - connections:
   - pre: AVAL
     post: AS5
@@ -51,3 +61,4 @@ connection_lists:
     post: PDEL
     weight: 3
   synapse: Generic_GJ
+  num_cells: 309

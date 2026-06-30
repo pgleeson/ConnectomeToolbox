@@ -27,6 +27,8 @@ connection_lists:
     weight: 5
   synapse: Generic_CS
   num_cells: 309
+  total_nonzero_conns: 2386
+  total_weight: 7943
 - connections:
   - pre: AVAL
     post: AS5

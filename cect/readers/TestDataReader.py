@@ -176,6 +176,8 @@ def main():
     print(len(tdr_instance.original_connection_infos))
     print(len(tdr_instance.get_current_connection_info_list()))
 
+    print(tdr_instance.get_asymmetric_connections_info(GENERIC_ELEC_SYN_CLASS))
+
 
 if __name__ == "__main__":
     main()

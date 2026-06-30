@@ -1,4 +1,4 @@
-reader: White_A
+reader: DurbinN2UDataReader
 connection_lists:
 - connections:
   - pre: ADAL
@@ -14,6 +14,8 @@ connection_lists:
     post: RMDVL
     weight: 12
   synapse: Generic_CS
+  total_nonzero_conns: 1486
+  total_weight: 4056
 - connections:
   - pre: AVAL
     post: AVAR
@@ -24,4 +26,18 @@ connection_lists:
   - pre: CEPDL
     post: OLQDL
     weight: 1
+  - pre: VA2
+    post: PLNR
+    weight: 1
+  - pre: PLNR
+    post: VA2
+    weight: 1
+  - pre: DVC
+    post: VD1
+    weight: 2
+  - pre: VD1
+    post: DVC
+    weight: 2
   synapse: Generic_GJ
+  total_nonzero_conns: 556
+  total_weight: 692

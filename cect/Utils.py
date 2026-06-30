@@ -10,6 +10,8 @@ all_known_connectome_datasets = {}
 readers = [
     "White_A",
     "White_L4",
+    "DurbinJSHDataReader",
+    "DurbinN2UDataReader",
     "White_whole",
     "WitvlietDataReader1",
     "WitvlietDataReader2",

@@ -18,6 +18,8 @@ GENERATE_PNGS = True
 
 
 reader_colors = {
+    "DurbinN2U": "orange",
+    "DurbinJSH": "darkorange",
     "White_A": "lightpink",
     "White_L4": "darkred",
     "White_whole": "red",
@@ -58,6 +60,8 @@ reader_colors = {
 reader_pages = {
     "White_A": "White_A_data",
     "White_L4": "White_L4_data",
+    "DurbinN2U": "DurbinN2U_data",
+    "DurbinJSH": "DurbinJSH_data",
     "White_whole": "White_whole_data",
     "Varshney": "Varshney_data",
     "Bentley2016_MA": "Bentley2016_MA_data",
@@ -286,6 +290,10 @@ def generate_comparison_page(
         # readers["Yim2024NonNorm"] = ["cect.readers.Yim2024NonNormDataReader", "Yim_2024"]
         # readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
         # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
+
+        readers["DurbinN2U"] = ["cect.readers.DurbinN2UDataReader", "White_1986"]
+        readers["DurbinJSH"] = ["cect.readers.DurbinJSHDataReader", "White_1986"]
+
         readers["White_A"] = ["cect.readers.White_A", "White_1986"]
         readers["White_L4"] = ["cect.readers.White_L4", "White_1986"]
         readers["White_whole"] = ["cect.readers.White_whole", "White_1986"]
@@ -336,9 +344,12 @@ def generate_comparison_page(
         # readers["SSData"] = ["cect.readers.SpreadsheetDataReader", None]
 
     else:
+        readers["DurbinN2U"] = ["cect.readers.DurbinN2UDataReader", "White_1986"]
+        readers["DurbinJSH"] = ["cect.readers.DurbinJSHDataReader", "White_1986"]
+        """
         if not quick:
             readers["White_A"] = ["cect.readers.White_A", "White_1986"]
-            readers["White_L4"] = ["cect.readers.White_L4", "White_1986"]
+            readers["White_L4"] = ["cect.readers.White_L4", "White_1986"]"""
 
         readers["White_whole"] = ["cect.readers.White_whole", "White_1986"]
         readers["Varshney"] = ["cect.readers.VarshneyDataReader", "Varshney_2011"]

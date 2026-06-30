@@ -9,39 +9,38 @@ from cect.Cells import UNSPECIFIED_BODY_WALL_MUSCLE
 from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS, CHEMICAL_SYN_TYPE
 from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS, ELECTRICAL_SYN_TYPE
 
-from openpyxl import load_workbook
 
 import os
 
 from cect import print_
 
-spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
+data_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
 
-spreadsheet_name = "NeuronConnectFormatted.xlsx"
-spreadsheet_name = "NeuronConnect.xls"  # has old name...
-filename = "%s%s" % (spreadsheet_location, spreadsheet_name)
+txt_filename = "neurodata_fixed.txt"
+filename = "%s%s" % (data_location, txt_filename)
 
-NAME = "Varshney"
+NAME = "Durbin"
 
 READER_DESCRIPTION = (
     """Data extracted from %s for neuronal connectivity"""
     % get_dataset_source_on_github(filename.split("/")[-1])
 )
 
-DATASET_DESCRIPTION = "A corrected and extended version of the White et al. chemical and electrical wiring diagram, incorporating original Mind of a Worm data, Durbin's unpublished reconstructions, new EM imaging of previously unimaged dorsal cord regions, and over 3,000 synapse additions or corrections, particularly in the ventral cord motor neuron connectivity. Excludes pharyngeal neurons, but includes neuromuscular junction connections, all to one BWM (body wall muscle cell)."
 
-WEIGHTS = "Weights are the total number of synaptic contacts from neuron A to neuron B. Contacts are given equal weight regardless of the apparent size of the synaptic apposition."
+WEIGHTS = "Weights are... (TODO) "
+N2U_ADULT = "N2U"
+JSH_L4 = "JSH"
 
-SEND_SYN = "S"
-SEND_POLY_SYN = "Sp"
+SEND_SYN = "Send"
+SEND_POLY_SYN = "Send_joint"
 SEND_ANY = "SEND"
-RECEIVE_SYN = "R"
-RECEIVE_POLY_SYN = "Rp"
+RECEIVE_SYN = "Receive"
+RECEIVE_POLY_SYN = "Receive_joint"
 RECEIVE_ANY = "RECEIVE"
 
-ELECT_JUNC_SYN = "EJ"
+ELECT_JUNC_SYN = "Gap_junction"
 
-NMJ_ENDPOINT = "NMJ"
+NMJ_ENDPOINT = "mu_bod"
 
 
 def _remove_leading_index_zero(cell):
@@ -55,10 +54,14 @@ def _remove_leading_index_zero(cell):
     return cell
 
 
-class VarshneyDataReader(ConnectomeDataset):
-    """Reader for Varshney et al. 2011 connectivity dataset"""
+class DurbinDataReader(ConnectomeDataset):
+    """Reader for Durbin connectivity dataset"""
 
-    def __init__(self, include_nmj=False):
+    def __init__(
+        self,
+        worm_strain,
+        include_nmj=True,
+    ):
         ConnectomeDataset.__init__(self)
 
         self.typed_conns = {
@@ -73,7 +76,7 @@ class VarshneyDataReader(ConnectomeDataset):
         }
 
         self.include_nmj = include_nmj
-
+        self.worm_strain = worm_strain
         cells, neuron_conns = self.read_data()
 
         for conn in neuron_conns:
@@ -95,29 +98,15 @@ class VarshneyDataReader(ConnectomeDataset):
         cells = []
         conns = []
 
-        if filename.endswith(".xls"):
-            from xlrd import open_workbook
+        print_("Opening the text file: " + filename)
 
-            wb = open_workbook(filename)
-            rows = []
-            sheet = wb.sheet_by_index(0)
-            for row in range(1, sheet.nrows):
-                rows.append(
-                    (
-                        str(sheet.cell(row, 0).value),
-                        str(sheet.cell(row, 1).value),
-                        str(sheet.cell(row, 2).value),
-                        int(sheet.cell(row, 3).value),
-                    )
-                )
-        else:
-            wb = load_workbook(filename)
-            sheet = wb.worksheets[0]
-            rows = sheet.iter_rows(min_row=2, values_only=True)
-
-        print_("Opened the Excel file: " + filename)
-
-        for row in rows:  # Assuming data starts from the second row
+        for line in open(filename, "r"):
+            if "#" in line:
+                line = line.split("#")[0]
+            if len(line.strip()) == 0:
+                continue
+            row = line.split()
+            print_(f"Processing line: {row}")
             pre = str(row[0])
             post = str(row[1])
 
@@ -128,7 +117,13 @@ class VarshneyDataReader(ConnectomeDataset):
                 post = UNSPECIFIED_BODY_WALL_MUSCLE
 
             syntype_here = self._check_valid_synapse_type(str(row[2]))
-            num = int(row[3])
+
+            worm_strain_here = str(row[3])
+
+            if worm_strain_here != self.worm_strain:
+                continue
+
+            num = int(row[4])
 
             self.typed_conns[syntype_here].append(f"{pre}_{post}_{num}")
             if syntype_here in [SEND_SYN, SEND_POLY_SYN]:
@@ -154,6 +149,10 @@ class VarshneyDataReader(ConnectomeDataset):
 
                 if synclass is not None:
                     conns.append(ConnectionInfo(pre, post, num, syntype, synclass))
+                    """if syntype == ELECTRICAL_SYN_TYPE:
+                        # Note: some electrical connections are only present in one direction in the file, but we will treat them as symmetric when read in
+                        conns.append(ConnectionInfo(post, pre, num, syntype, synclass))
+                        pass"""
                     if pre not in cells:
                         cells.append(pre)
                     if post not in cells:
@@ -201,7 +200,7 @@ class VarshneyDataReader(ConnectomeDataset):
         return neurons, muscles, conns
 
 
-def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
+def _get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     if from_cache:
         from cect.ConnectomeDataset import (
             load_connectome_dataset_file,
@@ -210,16 +209,11 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
 
         return load_connectome_dataset_file(get_cache_filename(__name__.split(".")[-1]))
     else:
-        return VarshneyDataReader(include_nmj=True)
-
-
-"""
-read_data = my_instance.read_data
-read_muscle_data = my_instance.read_muscle_data"""
+        return DurbinDataReader(worm_strain=N2U_ADULT, include_nmj=True)
 
 
 def main():
-    my_instance = get_instance()
+    my_instance = _get_instance()
 
     cells, neuron_conns = my_instance.read_data()
     neurons2muscles, muscles, muscle_conns = my_instance.read_muscle_data()
@@ -242,7 +236,7 @@ def main():
     for syntype in my_instance.connections.keys():
         conn_array = my_instance.connections[syntype]
         print(
-            f" === Connection array for synapse type {syntype} has shape: {conn_array.shape}"
+            f"\n === Connection array for synapse type {syntype} has shape: {conn_array.shape}"
         )
         nonzero = np.count_nonzero(conn_array)
         count_diagonal_entries = np.count_nonzero(np.diag(conn_array))
@@ -252,15 +246,16 @@ def main():
             diagonal_sum = np.sum(np.diag(conn_array))
             unique_sum = (np.sum(conn_array) - diagonal_sum) / 2 + diagonal_sum
 
-            sym_info = f"Matrix is symmetric with <b>{count_diagonal_entries + int((nonzero - count_diagonal_entries) / 2)}</b> unique pairs (total unique pair weight: <b>{unique_sum}</b>)<br/>"
-
+            sym_info = f"\nMatrix is symmetric with <b>{count_diagonal_entries + int((nonzero - count_diagonal_entries) / 2)}</b> unique pairs (total unique pair weight: <b>{unique_sum}</b>)<br/>"
+        else:
+            sym_info = "\nNOT symmetric"
         diag_info = (
             "<b>%s</b> nodes with self-connections<br/>" % count_diagonal_entries
             if count_diagonal_entries > 0
             else ""
         )
         print(
-            f"<b>{nonzero}</b> non-zero entries<br/>{diag_info}{sym_info}Avg. weight: <b>{np.mean(conn_array[conn_array != 0])}</b><br/>Sum of weights: <b>{np.sum(conn_array)}</b>"
+            f"<b>{nonzero}</b> non-zero entries<br/>{diag_info}{sym_info}Avg. weight: <b>{np.mean(conn_array[conn_array != 0])}</b><br/>Sum of weights: <b>{np.sum(conn_array)}</b>\n"
         )
 
 

@@ -13,8 +13,11 @@ from cect.ConnectomeDataset import (
 from cect.ConnectomeReader import analyse_connections
 from cect.readers.WhiteDataReader import WhiteDataReader
 
-
 NAME = "White_whole"
+
+DATASET_DESCRIPTION = "Reanalysis of the White et al. 1986 connectome data by Varshney et al. 2011, but including the pharynx."
+
+WEIGHTS = "Used Varshney et al. 2011 interpretation of weights: the total number of synaptic contacts from neuron A to neuron B. Contacts are given equal weight regardless of the apparent size of the synaptic apposition."
 
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
 filename = "%saconnectome_white_1986_whole.csv" % spreadsheet_location

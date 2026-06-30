@@ -9,38 +9,7 @@ The primary source of this data is https://www.wormatlas.org/neuronalwiring.html
 TODO...
 
 
-### Validation tests for [White_A](White_A_data.md) 
-
-
-#### Chemical synaptic connections
-
-| Pre      | Post | Expected weight | Match |
-|----------|------|-----------------|-------|
-| ADAL | AVBR | 7 | Yes |
-| ADFR | AIZR | 8 | Yes |
-| DVC | RIGL | 5 | Yes |
-| RMDDR | RMDVL | 12 | Yes |
-
-TODO: add total num nonzero connections
-
-#### Electrical connections
-
-| Pre      | Post | Expected weight | Match |
-|----------|------|-----------------|-------|
-| AVAL | AVAR | 1 | Yes |
-| RMED | IL1VL | 1 | Yes |
-| CEPDL | OLQDL | 1 | Yes |
-
-Electrical synapse. Symmetric connectivity matrix: True
-
-TODO: add total num nonzero connections
-
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
-
-
-
-
-### Validation tests for [White_L4](White_L4_data.md) 
+### Validation tests for [DurbinJSHDataReader](DurbinJSH_data.md) 
 
 
 #### Chemical synaptic connections
@@ -52,7 +21,9 @@ _Validation PASSED on 2026-06-26 with cect v0.3.2_
 | DVC | RIGL | 8 | Yes |
 | RMDDR | RMDVL | 10 | Yes |
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: **1350** (matches)
+
+Expected total weight of connections: **4000** (matches)
 
 #### Electrical connections
 
@@ -61,12 +32,55 @@ TODO: add total num nonzero connections
 | AVAL | AVAR | 2 | Yes |
 | RMED | IL1VL | 2 | Yes |
 | CEPDL | OLQDL | 4 | Yes |
+| AVAL | SABD | 2 | Yes |
+| SABD | AVAL | 2 | Yes |
 
-Electrical synapse. Symmetric connectivity matrix: True
+Electrical synapse. Symmetric connectivity matrix: **True**
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: **586** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+Expected total weight of connections: **1546** (matches)
+
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
+
+
+
+
+### Validation tests for [DurbinN2UDataReader](DurbinN2U_data.md) 
+
+
+#### Chemical synaptic connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| ADAL | AVBR | 7 | Yes |
+| ADFR | AIZR | 8 | Yes |
+| DVC | RIGL | 5 | Yes |
+| RMDDR | RMDVL | 12 | Yes |
+
+Expected number of nonzero connection weights: **1486** (matches)
+
+Expected total weight of connections: **4056** (matches)
+
+#### Electrical connections
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| AVAL | AVAR | 1 | Yes |
+| RMED | IL1VL | 1 | Yes |
+| CEPDL | OLQDL | 1 | Yes |
+| VA2 | PLNR | 1 | Yes |
+| PLNR | VA2 | 1 | Yes |
+| DVC | VD1 | 2 | Yes |
+| VD1 | DVC | 2 | Yes |
+
+Electrical synapse. Symmetric connectivity matrix: **True**
+
+Expected number of nonzero connection weights: **556** (matches)
+
+Expected total weight of connections: **692** (matches)
+
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -83,8 +97,31 @@ _Validation PASSED on 2026-06-26 with cect v0.3.2_
 | ADFR | AIZR | 8 | Yes |
 | DVC | RIGL | 5 | Yes |
 | RMDDR | RMDVL | 12 | Yes |
+| VD3 | BWM | 23 | Yes |
+| URADR | BWM | 7 | Yes |
+| IL1DL | BWM | 5 | Yes |
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: **2386** (matches)
+
+Expected total weight of connections: **7943** (matches)
+
+Expected number of cells: **309** (matches)
+
+#### Chemical connections
+
+**Note:** only cells/connections in ConnectomeView: **NonpharyngealH** included (All **hermaphrodite** neurons except those in the pharynx)
+
+| Pre      | Post | Expected weight | Match |
+|----------|------|-----------------|-------|
+| AVAL | AS5 | 3 | Yes |
+| ADAL | AVBR | 7 | Yes |
+| ADFR | AIZR | 8 | Yes |
+| DVC | RIGL | 5 | Yes |
+| RMDDR | RMDVL | 12 | Yes |
+
+Expected number of nonzero connection weights: **2194** (matches)
+
+Expected total weight of connections: **6394** (matches)
 
 #### Electrical connections
 
@@ -95,11 +132,13 @@ TODO: add total num nonzero connections
 | CEPDL | OLQDL | 1 | Yes |
 | PDER | PDEL | 3 | Yes |
 
-Electrical synapse. Symmetric connectivity matrix: True
+Electrical synapse. Symmetric connectivity matrix: **True**
 
-TODO: add total num nonzero connections
+Expected number of nonzero connection weights: **1132** (Mismatch: **1144**)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+Expected number of cells: **309** (matches)
+
+_Validation **FAILED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -126,12 +165,17 @@ The spreadsheet above contained a single sheet, with a list of presynaptic cells
 | ADFR | AIZR | 8 | Yes |
 | DVC | RIGL | 5 | Yes |
 | RMDDR | RMDVL | 12 | Yes |
+| VD3 | BWM | 23 | Yes |
+| URADR | BWM | 7 | Yes |
+| IL1DL | BWM | 5 | Yes |
 
-Expected total weight of connections: 6394 (matches)
+Expected number of nonzero connection weights: **2309** (matches)
 
-Expected number of nonzero connection weights: 2194 (matches)
+Expected total weight of connections: **7804** (matches)
 
-#### Chemical connections. **Note:* only cells/connections in ConnectomeView: Neurons (All 302 **hermaphrodite** neurons (whether present or not in the connectome dataset))
+#### Chemical connections
+
+**Note:** only cells/connections in ConnectomeView: **NonpharyngealH** included (All **hermaphrodite** neurons except those in the pharynx)
 
 | Pre      | Post | Expected weight | Match |
 |----------|------|-----------------|-------|
@@ -141,9 +185,9 @@ Expected number of nonzero connection weights: 2194 (matches)
 | DVC | RIGL | 5 | Yes |
 | RMDDR | RMDVL | 12 | Yes |
 
-Expected total weight of connections: 6394 (matches)
+Expected number of nonzero connection weights: **2194** (matches)
 
-Expected number of nonzero connection weights: 2194 (matches)
+Expected total weight of connections: **6394** (matches)
 
 #### Electrical connections
 
@@ -154,11 +198,13 @@ Expected number of nonzero connection weights: 2194 (matches)
 | CEPDL | OLQDL | 1 | Yes |
 | PDER | PDEL | 3 | Yes |
 
-Electrical synapse. Symmetric connectivity matrix: True
+Electrical synapse. Symmetric connectivity matrix: **True**
 
-Expected number of nonzero connection weights: 1031 (matches)
+Expected number of nonzero connection weights: **1031** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+Expected total weight of connections: **1777** (matches)
+
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -187,7 +233,7 @@ For the validation tests below, specific connections between pre and postsynapti
 | ADEL | CANL | 1 | Yes |
 | CEPDR | CANL | 1 | Yes |
 
-Expected number of nonzero connection weights: 1176 (matches)
+Expected number of nonzero connection weights: **1176** (matches)
 
 #### Tyramine connections
 
@@ -198,7 +244,7 @@ Expected number of nonzero connection weights: 1176 (matches)
 | RIMR | AFDL | 1 | Yes |
 | RIML | CANL | 1 | Yes |
 
-Expected number of nonzero connection weights: 228 (matches)
+Expected number of nonzero connection weights: **228** (matches)
 
 #### Octopamine connections
 
@@ -208,7 +254,7 @@ Expected number of nonzero connection weights: 228 (matches)
 | RICL | ADEL | 1 | Yes |
 | RICR | SIAVL | 1 | Yes |
 
-Expected number of nonzero connection weights: 56 (matches)
+Expected number of nonzero connection weights: **56** (matches)
 
 #### Serotonin connections
 
@@ -218,9 +264,9 @@ Expected number of nonzero connection weights: 56 (matches)
 | NSMR | AIBL | 1 | Yes |
 | HSNL | M3L | 1 | Yes |
 
-Expected number of nonzero connection weights: 492 (matches)
+Expected number of nonzero connection weights: **492** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -238,9 +284,9 @@ _Validation PASSED on 2026-06-26 with cect v0.3.2_
 | FLPR | IL2R | 1 | Yes |
 | VD9 | PVWR | 1 | Yes |
 
-Expected number of nonzero connection weights: 7078 (matches)
+Expected number of nonzero connection weights: **7078** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -312,9 +358,9 @@ noting the pre and post cells and these added to the connection test yaml file, 
 | M1 | g1P | 5 | Yes |
 | I6 | g1P | 2 | Yes |
 
-Expected total weight of connections: 28113 (matches)
+Expected number of nonzero connection weights: **4879** (matches)
 
-Expected number of nonzero connection weights: 4879 (matches)
+Expected total weight of connections: **28113** (matches)
 
 #### Electrical connections
 
@@ -333,13 +379,13 @@ Expected number of nonzero connection weights: 4879 (matches)
 | BDUL | PLML | 0 | Yes |
 | RMDVR | SMDVR | 8 | Yes |
 
-Electrical synapse. Symmetric connectivity matrix: True
+Electrical synapse. Symmetric connectivity matrix: **True**
 
-Expected total weight of connections: 23313 (matches)
+Expected number of nonzero connection weights: **2883** (matches)
 
-Expected number of nonzero connection weights: 2883 (matches)
+Expected total weight of connections: **23313** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -360,9 +406,9 @@ _Validation PASSED on 2026-06-26 with cect v0.3.2_
 | URBL | OLLL | 4 | Yes |
 | R9BR | R7stR | 2 | Yes |
 
-Expected total weight of connections: 45959 (matches)
+Expected number of nonzero connection weights: **5306** (matches)
 
-Expected number of nonzero connection weights: 5306 (matches)
+Expected total weight of connections: **45959** (matches)
 
 #### Electrical connections
 
@@ -382,13 +428,13 @@ Expected number of nonzero connection weights: 5306 (matches)
 | VB7 | VB5 | 1 | Yes |
 | MDR08 | DD1 | 2 | Yes |
 
-Electrical synapse. Symmetric connectivity matrix: True
+Electrical synapse. Symmetric connectivity matrix: **True**
 
-Expected total weight of connections: 31702 (matches)
+Expected number of nonzero connection weights: **3482** (matches)
 
-Expected number of nonzero connection weights: 3482 (matches)
+Expected total weight of connections: **31702** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -505,7 +551,7 @@ This is a summary of the connections which were repeated:
 | I5 | g1AL | 8 | Yes |
 | I6 | g1P | 2 | Yes |
 
-Expected number of nonzero connection weights: 259 (matches)
+Expected number of nonzero connection weights: **259** (matches)
 
 #### Electrical connections
 
@@ -519,11 +565,11 @@ Expected number of nonzero connection weights: 259 (matches)
 | mc3V | pm7VL | 3 | Yes |
 | mc3DR | pm8 | 3 | Yes |
 
-Electrical synapse. Symmetric connectivity matrix: True
+Electrical synapse. Symmetric connectivity matrix: **True**
 
-Expected number of nonzero connection weights: 246 (matches)
+Expected number of nonzero connection weights: **246** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -561,9 +607,9 @@ The M<sup>4</sup> graph is the example used in Connectome Toolbox. Values for th
 | RIAR | AQR | 2010.75 | Yes |
 | RIAL | AQR | 2010.75 | Yes |
 
-Expected number of nonzero connection weights: 3850 (matches)
+Expected number of nonzero connection weights: **3850** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -593,7 +639,7 @@ The chemical connection weights below were read from the supplementary informati
 | AINR | AUAL | 2 | Yes |
 | RIAL | RMDVR | 6 | Yes |
 
-Expected number of nonzero connection weights: 775 (matches)
+Expected number of nonzero connection weights: **775** (matches)
 
 #### Electrical connections
 
@@ -603,11 +649,11 @@ Expected number of nonzero connection weights: 775 (matches)
 | RMDR | SMDVR | 1 | Yes |
 | IL1R | IL1VR | 2 | Yes |
 
-Electrical synapse. Symmetric connectivity matrix: True
+Electrical synapse. Symmetric connectivity matrix: **True**
 
-Expected number of nonzero connection weights: 164 (matches)
+Expected number of nonzero connection weights: **164** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -623,7 +669,7 @@ _Validation PASSED on 2026-06-26 with cect v0.3.2_
 | AUAL | RIBL | 3 | Yes |
 | AWBL | AIZL | 2 | Yes |
 
-Expected number of nonzero connection weights: 986 (matches)
+Expected number of nonzero connection weights: **986** (matches)
 
 #### Electrical connections
 
@@ -633,11 +679,11 @@ Expected number of nonzero connection weights: 986 (matches)
 | OLLL | OLLR | 2 | Yes |
 | RIH | RIR | 1 | Yes |
 
-Electrical synapse. Symmetric connectivity matrix: True
+Electrical synapse. Symmetric connectivity matrix: **True**
 
-Expected number of nonzero connection weights: 246 (matches)
+Expected number of nonzero connection weights: **246** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -653,7 +699,7 @@ _Validation PASSED on 2026-06-26 with cect v0.3.2_
 | FLPR | FLPL | 3 | Yes |
 | RIVL | GLRVR | 2 | Yes |
 
-Expected number of nonzero connection weights: 1012 (matches)
+Expected number of nonzero connection weights: **1012** (matches)
 
 #### Electrical connections
 
@@ -663,11 +709,11 @@ Expected number of nonzero connection weights: 1012 (matches)
 | OLLL | OLLR | 2 | Yes |
 | SMDDL | SMDDR | 1 | Yes |
 
-Electrical synapse. Symmetric connectivity matrix: True
+Electrical synapse. Symmetric connectivity matrix: **True**
 
-Expected number of nonzero connection weights: 186 (matches)
+Expected number of nonzero connection weights: **186** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -683,7 +729,7 @@ _Validation PASSED on 2026-06-26 with cect v0.3.2_
 | RIML | MDR04 | 2 | Yes |
 | RIVL | MVR07 | 1 | Yes |
 
-Expected number of nonzero connection weights: 1136 (matches)
+Expected number of nonzero connection weights: **1136** (matches)
 
 #### Electrical connections
 
@@ -693,11 +739,11 @@ Expected number of nonzero connection weights: 1136 (matches)
 | AVER | URYVL | 1 | Yes |
 | SMDDL | SMDDR | 1 | Yes |
 
-Electrical synapse. Symmetric connectivity matrix: True
+Electrical synapse. Symmetric connectivity matrix: **True**
 
-Expected number of nonzero connection weights: 415 (matches)
+Expected number of nonzero connection weights: **415** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -713,7 +759,7 @@ _Validation PASSED on 2026-06-26 with cect v0.3.2_
 | ALNR | SAAVR | 2 | Yes |
 | BAGR | RIBL | 13 | Yes |
 
-Expected number of nonzero connection weights: 1515 (matches)
+Expected number of nonzero connection weights: **1515** (matches)
 
 #### Electrical connections
 
@@ -723,11 +769,11 @@ Expected number of nonzero connection weights: 1515 (matches)
 | ADLL | CEPshVL | 1 | Yes |
 | OLQVL | RIGL | 2 | Yes |
 
-Electrical synapse. Symmetric connectivity matrix: True
+Electrical synapse. Symmetric connectivity matrix: **True**
 
-Expected number of nonzero connection weights: 578 (matches)
+Expected number of nonzero connection weights: **578** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -743,7 +789,7 @@ _Validation PASSED on 2026-06-26 with cect v0.3.2_
 | ASKR | AIAR | 18 | Yes |
 | ALML | CEPVL | 3 | Yes |
 
-Expected number of nonzero connection weights: 1525 (matches)
+Expected number of nonzero connection weights: **1525** (matches)
 
 #### Electrical connections
 
@@ -753,11 +799,11 @@ Expected number of nonzero connection weights: 1525 (matches)
 | BAGR | RIR | 1 | Yes |
 | DVA | OLQVL | 1 | Yes |
 
-Electrical synapse. Symmetric connectivity matrix: True
+Electrical synapse. Symmetric connectivity matrix: **True**
 
-Expected number of nonzero connection weights: 426 (matches)
+Expected number of nonzero connection weights: **426** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -773,7 +819,7 @@ _Validation PASSED on 2026-06-26 with cect v0.3.2_
 | ALNR | SAAVR | 11 | Yes |
 | CEPDL | OLLL | 7 | Yes |
 
-Expected number of nonzero connection weights: 2202 (matches)
+Expected number of nonzero connection weights: **2202** (matches)
 
 #### Electrical connections
 
@@ -783,11 +829,11 @@ Expected number of nonzero connection weights: 2202 (matches)
 | SIAVL | SMDVR | 1 | Yes |
 | SAADL | SMBDL | 2 | Yes |
 
-Electrical synapse. Symmetric connectivity matrix: True
+Electrical synapse. Symmetric connectivity matrix: **True**
 
-Expected number of nonzero connection weights: 576 (matches)
+Expected number of nonzero connection weights: **576** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -803,7 +849,7 @@ _Validation PASSED on 2026-06-26 with cect v0.3.2_
 | ALNL | SAAVL | 10 | Yes |
 | ALML | BDUL | 9 | Yes |
 
-Expected number of nonzero connection weights: 2186 (matches)
+Expected number of nonzero connection weights: **2186** (matches)
 
 #### Electrical connections
 
@@ -813,11 +859,11 @@ Expected number of nonzero connection weights: 2186 (matches)
 | AFDR | AIZR | 1 | Yes |
 | PVT | RIBL | 2 | Yes |
 
-Electrical synapse. Symmetric connectivity matrix: True
+Electrical synapse. Symmetric connectivity matrix: **True**
 
-Expected number of nonzero connection weights: 612 (matches)
+Expected number of nonzero connection weights: **612** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -845,9 +891,9 @@ We obtained the validation values below by calling the above functions and print
 | AVBR | AVEL | -0.14791430582009063 | Yes |
 | AVEL | AVEL | 0 | Yes |
 
-Expected number of nonzero connection weights: 1150 (matches)
+Expected number of nonzero connection weights: **1150** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -875,9 +921,9 @@ For each of these CSV files, the file was opened in Apple Numbers, and the weigh
 | URBL | RMDDL | 4 | Yes |
 | RIVR | HSNL | 6 | Yes |
 
-Expected number of nonzero connection weights: 31417 (matches)
+Expected number of nonzero connection weights: **31417** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -893,9 +939,9 @@ _Validation PASSED on 2026-06-26 with cect v0.3.2_
 | SABVL | VC1 | 1 | Yes |
 | RIR | AVKR | 5 | Yes |
 
-Expected number of nonzero connection weights: 40425 (matches)
+Expected number of nonzero connection weights: **40425** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -916,9 +962,9 @@ _Validation PASSED on 2026-06-26 with cect v0.3.2_
 | VC4 | I4 | 1 | Yes |
 | ALA | HSNR | 11 | Yes |
 
-Expected number of nonzero connection weights: 53558 (matches)
+Expected number of nonzero connection weights: **53558** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -953,9 +999,9 @@ This file was opened in Excel and weights of selected connections were visually 
 | PVNL | ALMR | 97686.4 | Yes |
 | URYDR | URADR | 33663.09403 | Yes |
 
-Expected number of nonzero connection weights: 2198 (matches)
+Expected number of nonzero connection weights: **2198** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -971,9 +1017,9 @@ _Validation PASSED on 2026-06-26 with cect v0.3.2_
 | SMBDL | RMED | 6.01978135910464 | Yes |
 | ASHL | RIPL | 1.20804164634321 | Yes |
 
-Expected number of nonzero connection weights: 2198 (matches)
+Expected number of nonzero connection weights: **2198** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -1008,9 +1054,9 @@ These files were used to identify potential presynaptic cells for each neurotran
 | DB4 | MDL13 | 1 | Yes |
 | M1 | g1P | 1 | Yes |
 
-Expected total weight of connections: 2756 (matches)
+Expected number of nonzero connection weights: **2756** (matches)
 
-Expected number of nonzero connection weights: 2756 (matches)
+Expected total weight of connections: **2756** (matches)
 
 #### Glutamate connections
 
@@ -1021,9 +1067,9 @@ Expected number of nonzero connection weights: 2756 (matches)
 | URYDL | OLQDL | 1 | Yes |
 | PVR | IL1DR | 1 | Yes |
 
-Expected total weight of connections: 1334 (matches)
+Expected number of nonzero connection weights: **1334** (matches)
 
-Expected number of nonzero connection weights: 1334 (matches)
+Expected total weight of connections: **1334** (matches)
 
 #### Betaine connections
 
@@ -1033,9 +1079,9 @@ Expected number of nonzero connection weights: 1334 (matches)
 | NSMR | pm5VR | 1 | Yes |
 | RIR | AQR | 1 | Yes |
 
-Expected total weight of connections: 150 (matches)
+Expected number of nonzero connection weights: **150** (matches)
 
-Expected number of nonzero connection weights: 150 (matches)
+Expected total weight of connections: **150** (matches)
 
 #### GABA connections
 
@@ -1045,9 +1091,9 @@ Expected number of nonzero connection weights: 150 (matches)
 | VD10 | MVR20 | 1 | Yes |
 | SMDDL | SIBDL | 1 | Yes |
 
-Expected total weight of connections: 506 (matches)
+Expected number of nonzero connection weights: **506** (matches)
 
-Expected number of nonzero connection weights: 506 (matches)
+Expected total weight of connections: **506** (matches)
 
 #### Dopamine connections
 
@@ -1057,9 +1103,9 @@ Expected number of nonzero connection weights: 506 (matches)
 | PDEL | RICR | 1 | Yes |
 | ADEL | DD4 | 1 | Yes |
 
-Expected total weight of connections: 1176 (matches)
+Expected number of nonzero connection weights: **1176** (matches)
 
-Expected number of nonzero connection weights: 1176 (matches)
+Expected total weight of connections: **1176** (matches)
 
 #### Serotonin connections
 
@@ -1069,9 +1115,9 @@ Expected number of nonzero connection weights: 1176 (matches)
 | NSML | VD3 | 1 | Yes |
 | ADFR | RID | 1 | Yes |
 
-Expected total weight of connections: 492 (matches)
+Expected number of nonzero connection weights: **492** (matches)
 
-Expected number of nonzero connection weights: 492 (matches)
+Expected total weight of connections: **492** (matches)
 
 #### Tyramine connections
 
@@ -1081,9 +1127,9 @@ Expected number of nonzero connection weights: 492 (matches)
 | RIMR | SIADL | 1 | Yes |
 | RIML | VD5 | 1 | Yes |
 
-Expected total weight of connections: 228 (matches)
+Expected number of nonzero connection weights: **228** (matches)
 
-Expected number of nonzero connection weights: 228 (matches)
+Expected total weight of connections: **228** (matches)
 
 #### Octopamine connections
 
@@ -1093,11 +1139,11 @@ Expected number of nonzero connection weights: 228 (matches)
 | RICL | SIAVR | 1 | Yes |
 | RICL | PVQL | 1 | Yes |
 
-Expected total weight of connections: 56 (matches)
+Expected number of nonzero connection weights: **56** (matches)
 
-Expected number of nonzero connection weights: 56 (matches)
+Expected total weight of connections: **56** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 
@@ -1115,9 +1161,9 @@ _Validation PASSED on 2026-06-26 with cect v0.3.2_
 | DB4 | MDL13 | 1 | Yes |
 | M1 | g1P | 1 | Yes |
 
-Expected total weight of connections: 3889 (matches)
+Expected number of nonzero connection weights: **3889** (matches)
 
-Expected number of nonzero connection weights: 3889 (matches)
+Expected total weight of connections: **3889** (matches)
 
 #### Glutamate connections
 
@@ -1127,9 +1173,9 @@ Expected number of nonzero connection weights: 3889 (matches)
 | CP05 | AVG | 1 | Yes |
 | R9AL | HOB | 1 | Yes |
 
-Expected total weight of connections: 1722 (matches)
+Expected number of nonzero connection weights: **1722** (matches)
 
-Expected number of nonzero connection weights: 1722 (matches)
+Expected total weight of connections: **1722** (matches)
 
 #### Betaine connections
 
@@ -1139,9 +1185,9 @@ Expected number of nonzero connection weights: 1722 (matches)
 | NSMR | pm5VR | 1 | Yes |
 | RIR | AQR | 1 | Yes |
 
-Expected total weight of connections: 150 (matches)
+Expected number of nonzero connection weights: **150** (matches)
 
-Expected number of nonzero connection weights: 150 (matches)
+Expected total weight of connections: **150** (matches)
 
 #### GABA connections
 
@@ -1151,9 +1197,9 @@ Expected number of nonzero connection weights: 150 (matches)
 | VD10 | MVR20 | 1 | Yes |
 | SMDDL | SIBDL | 1 | Yes |
 
-Expected total weight of connections: 691 (matches)
+Expected number of nonzero connection weights: **691** (matches)
 
-Expected number of nonzero connection weights: 691 (matches)
+Expected total weight of connections: **691** (matches)
 
 #### Dopamine connections
 
@@ -1163,9 +1209,9 @@ Expected number of nonzero connection weights: 691 (matches)
 | PDEL | RICR | 1 | Yes |
 | ADEL | DD4 | 1 | Yes |
 
-Expected total weight of connections: 1176 (matches)
+Expected number of nonzero connection weights: **1176** (matches)
 
-Expected number of nonzero connection weights: 1176 (matches)
+Expected total weight of connections: **1176** (matches)
 
 #### Serotonin connections
 
@@ -1175,9 +1221,9 @@ Expected number of nonzero connection weights: 1176 (matches)
 | NSML | VD3 | 1 | Yes |
 | ADFR | RID | 1 | Yes |
 
-Expected total weight of connections: 492 (matches)
+Expected number of nonzero connection weights: **492** (matches)
 
-Expected number of nonzero connection weights: 492 (matches)
+Expected total weight of connections: **492** (matches)
 
 #### Tyramine connections
 
@@ -1187,9 +1233,9 @@ Expected number of nonzero connection weights: 492 (matches)
 | RIMR | SIADL | 1 | Yes |
 | RIML | VD5 | 1 | Yes |
 
-Expected total weight of connections: 228 (matches)
+Expected number of nonzero connection weights: **228** (matches)
 
-Expected number of nonzero connection weights: 228 (matches)
+Expected total weight of connections: **228** (matches)
 
 #### Octopamine connections
 
@@ -1199,11 +1245,11 @@ Expected number of nonzero connection weights: 228 (matches)
 | RICL | SIAVR | 1 | Yes |
 | RICL | PVQL | 1 | Yes |
 
-Expected total weight of connections: 56 (matches)
+Expected number of nonzero connection weights: **56** (matches)
 
-Expected number of nonzero connection weights: 56 (matches)
+Expected total weight of connections: **56** (matches)
 
-_Validation PASSED on 2026-06-26 with cect v0.3.2_
+_Validation **PASSED** on 2026-06-30 with cect v0.3.2_
 
 
 

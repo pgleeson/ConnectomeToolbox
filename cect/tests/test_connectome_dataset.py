@@ -21,8 +21,6 @@ class TestConnectomeDataset(unittest.TestCase):
             "UpdatedSpreadsheetDataReader",
             "UpdatedSpreadsheetDataReader2",
             "VarshneyDataReader",
-            "White_A",
-            "White_L4",
             "White_whole",
             "WitvlietDataReader1",
             "WitvlietDataReader2",

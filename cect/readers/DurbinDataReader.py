@@ -16,7 +16,7 @@ from cect import print_
 
 data_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
 
-txt_filename = "neurodata_fixed.txt"
+txt_filename = "neurodata_updated.txt"
 filename = "%s%s" % (data_location, txt_filename)
 
 NAME = "Durbin"
@@ -26,8 +26,8 @@ READER_DESCRIPTION = (
     % get_dataset_source_on_github(filename.split("/")[-1])
 )
 
+WEIGHTS = "Weights represent the count of individual presynaptic active zones observed between two neurons across all the serial EM micrographs."
 
-WEIGHTS = "Weights are... (TODO) "
 N2U_ADULT = "N2U"
 JSH_L4 = "JSH"
 

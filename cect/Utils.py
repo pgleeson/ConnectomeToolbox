@@ -8,8 +8,6 @@ all_known_connectome_datasets = {}
 
 
 readers = [
-    "White_A",
-    "White_L4",
     "DurbinJSHDataReader",
     "DurbinN2UDataReader",
     "White_whole",
@@ -24,8 +22,6 @@ readers = [
     "VarshneyDataReader",
     "Bentley2016MAReader",
     "Bentley2016PepReader",
-    "WormNeuroAtlasMAReader",
-    "WormNeuroAtlasPepReader",
     "Cook2019HermReader",
     "Cook2019MaleReader",
     "Cook2020DataReader",

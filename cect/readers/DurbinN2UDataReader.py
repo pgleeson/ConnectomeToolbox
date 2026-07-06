@@ -13,14 +13,11 @@ from cect.ConnectomeReader import analyse_connections
 
 import sys
 
-
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
-NAME = "DurbinN2U"
+NAME = "WhiteN2U"
 
-DATASET_DESCRIPTION = (
-    "Chemical and electrical connectivity of the N2U adult from Durbin ... (TODO)."
-)
+DATASET_DESCRIPTION = "Chemical and electrical connectivity of the N2U (adult hermaphrodite) worm from White et al. 1986 data, taken from the neurodata.txt file from R. Durbin's thesis 1987."
 
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):

@@ -41,6 +41,7 @@ from cect.Neurotransmitters import MONOAMINERGIC_SYN_CLASSES
 from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS
 from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS
 
+
 from cect.Neurotransmitters import CONTACTOME_SYN_TYPE
 from cect.Neurotransmitters import CONTACTOME_SYN_CLASS
 
@@ -196,7 +197,10 @@ putative_exc_syn_class = ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS.copy()
 putative_exc_syn_class.remove("GABA")
 
 EXC_INH_GJ_SYN_CLASSES = {
-    "Chemical": [GENERIC_CHEM_SYN_CLASS] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
+    "Chemical": [
+        GENERIC_CHEM_SYN_CLASS,
+    ]
+    + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
     "Electrical": [GENERIC_ELEC_SYN_CLASS],
     "Extrasynaptic": ALL_KNOWN_EXTRASYNAPTIC_CLASSES,
 }
@@ -682,7 +686,7 @@ for cell_set in sorted(loco3_positions.keys()):
 PEP_HUBS_VIEW = View(
     "PeptidergicHubs",
     "Peptidergic Hubs",
-    "Peptidergic hubs as outlined in in [Ripoll-Sánchez et al. 2023](../RipollSanchez_2023.md), Fig 7E",
+    "Peptidergic hubs as outlined in in [Ripoll-Sánchez et al. 2023](RipollSanchez_2023.md), Fig 7E",
     [],
     EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
     text_scale=1.2,
@@ -1193,6 +1197,7 @@ COOK_FIG3_VIEW.node_sets.append(
         color="#FF00FF",
         shape="circle",
         position=(6.3, 5.9),
+        size=40,
         description="Hermaphrodite specific motorneurons",
     )
 )
@@ -1255,6 +1260,8 @@ QUICK_VIEWS = [
     BRAINMAP_A_VIEW,
     BRAINMAP_VIEW,
     LOCOMOTION_2_VIEW,
+    LOCOMOTION_3_VIEW,
+    NONPHARYNGEAL_NEURONS_HERM_VIEW,
     MOTORNEURONS_SOMATIC_HERM_VIEW,
     MOTORNEURONS_MUSCLES_VIEW,
 ]

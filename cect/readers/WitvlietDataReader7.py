@@ -4,8 +4,13 @@ from cect.ConnectomeReader import analyse_connections
 
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
+# ruff: noqa: F401
+from cect.readers.WitvlietDataReader import WEIGHTS
+
 NAME = "Witvliet7"
 SRC_FILENAME = "witvliet_2020_7 adult.xlsx"
+
+DATASET_DESCRIPTION = "Chemical and electrical connectivity of from Witvliet et al. 2021, dataset 7 (adult stage)"
 
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):

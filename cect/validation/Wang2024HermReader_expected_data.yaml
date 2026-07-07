@@ -1,0 +1,115 @@
+reader: Wang2024HermReader
+connection_lists:
+- connections:
+  - pre: I1R
+    post: I2R
+    weight: 1
+  - pre: SMBDL
+    post: SDQR
+    weight: 1
+  - pre: VC2
+    post: PVT
+    weight: 1
+  - pre: DB4
+    post: MDL13
+    weight: 1
+  - pre: M1
+    post: g1P
+    weight: 1
+  synapse: Acetylcholine
+  total_nonzero_conns: 2756
+  total_weight: 2756
+- connections:
+  - pre: RIMR
+    post: MDL05
+    weight: 1
+  - pre: PHBR
+    post: AVAR
+    weight: 1
+  - pre: URYDL
+    post: OLQDL
+    weight: 1
+  - pre: PVR
+    post: IL1DR
+    weight: 1
+  synapse: Glutamate
+  total_nonzero_conns: 1334
+  total_weight: 1334
+- connections:
+  - pre: ASIL
+    post: AIBL
+    weight: 1
+  - pre: NSMR
+    post: pm5VR
+    weight: 1
+  - pre: RIR
+    post: AQR
+    weight: 1
+  synapse: Betaine
+  total_nonzero_conns: 150
+  total_weight: 150
+- connections:
+  - pre: RIBL
+    post: CEPVL
+    weight: 1
+  - pre: VD10
+    post: MVR20
+    weight: 1
+  - pre: SMDDL
+    post: SIBDL
+    weight: 1
+  synapse: GABA
+  total_nonzero_conns: 506
+  total_weight: 506
+- connections:
+  - pre: CEPVL
+    post: AIMR
+    weight: 1
+  - pre: PDEL
+    post: RICR
+    weight: 1
+  - pre: ADEL
+    post: DD4
+    weight: 1
+  synapse: Dopamine
+  total_nonzero_conns: 1176
+  total_weight: 1176
+- connections:
+  - pre: HSNL
+    post: PVQL
+    weight: 1
+  - pre: NSML
+    post: VD3
+    weight: 1
+  - pre: ADFR
+    post: RID
+    weight: 1
+  synapse: Serotonin
+  total_nonzero_conns: 492
+  total_weight: 492
+- connections:
+  - pre: RIMR
+    post: RMEV
+    weight: 1
+  - pre: RIMR
+    post: SIADL
+    weight: 1
+  - pre: RIML
+    post: VD5
+    weight: 1
+  synapse: Tyramine
+  total_nonzero_conns: 228
+  total_weight: 228
+- connections:
+  - pre: RICR
+    post: ASIL
+    weight: 1
+  - pre: RICL
+    post: SIAVR
+    weight: 1
+  - pre: RICL
+    post: PVQL
+    weight: 1
+  synapse: Octopamine
+  total_nonzero_conns: 56
+  total_weight: 56

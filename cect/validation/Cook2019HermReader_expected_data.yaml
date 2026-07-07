@@ -1,0 +1,67 @@
+reader: Cook2019HermReader
+connection_lists:
+- connections:
+  - pre: I1R
+    post: I2R
+    weight: 6
+  - pre: SMBDL
+    post: SDQR
+    weight: 18
+  - pre: VC2
+    post: PVT
+    weight: 6
+  - pre: DB4
+    post: MDL13
+    weight: 4
+  - pre: RIMR
+    post: MDL05
+    weight: 15
+  - pre: M1
+    post: g1P
+    weight: 5
+  - pre: I6
+    post: g1P
+    weight: 2
+  synapse: Generic_CS
+  total_nonzero_conns: 4879
+  total_weight: 28113
+- connections:
+  - pre: M4
+    post: pm5VL
+    weight: 1
+  - pre: g1AL
+    post: M4
+    weight: 7
+  - pre: PLNL
+    post: PHCL
+    weight: 2
+  - pre: PVDL
+    post: ALA
+    weight: 250
+  - pre: PVDL
+    post: hmc
+    weight: 400
+  - pre: PVDR
+    post: hmc
+    weight: 400
+  - pre: DD6
+    post: PDB
+    weight: 2
+  - pre: PDB
+    post: DD6
+    weight: 2
+  - pre: ALA
+    post: exc_gl
+    weight: 1
+  - pre: exc_gl
+    post: ALA
+    weight: 1
+  - pre: BDUL
+    post: PLML
+    weight: 0
+  - pre: RMDVR
+    post: SMDVR
+    weight: 8
+  synapse: Generic_GJ
+  total_nonzero_conns: 2883
+  total_weight: 23313

@@ -22,6 +22,12 @@ READER_DESCRIPTION = """Dummy dataset used for testing webpage/graph generation.
 
 NMJ_ENDPOINT = "NMJ"
 
+DATASET_DESCRIPTION = (
+    "Note: this is just a test dataset, without real biological meaning."
+)
+
+WEIGHTS = "Note: this is just a test dataset, without real biological meaning."
+
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     if from_cache:
@@ -169,6 +175,8 @@ def main():
 
     print(len(tdr_instance.original_connection_infos))
     print(len(tdr_instance.get_current_connection_info_list()))
+
+    print(tdr_instance.get_asymmetric_connections_info(GENERIC_ELEC_SYN_CLASS))
 
 
 if __name__ == "__main__":

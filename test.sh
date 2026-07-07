@@ -3,7 +3,7 @@ set -ex
 ruff format cect/*.py cect/*/*.py
 ruff check cect/*.py cect/*/*.py
 
-pip install .[docs]
+pip install -e .[docs]
 
 
 quick_test=0
@@ -19,7 +19,7 @@ fi
 
 ##   Test readers
                  
-python -m cect.validation.Validator        
+python -m cect.validation.Validator $quick_test       
 
 python -m cect.Cells $quick_test
 

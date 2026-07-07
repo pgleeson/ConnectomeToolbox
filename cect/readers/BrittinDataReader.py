@@ -30,12 +30,17 @@ spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
 
 filename = "%s41586_2021_3284_MOESM5_ESM.xlsx" % spreadsheet_location
 
-NAME = "Brittin"
+NAME = "Brittin2021"
 
 READER_DESCRIPTION = (
     """Data extracted from %s for membrane contact information."""
     % get_dataset_source_on_github(filename.split("/")[-1])
 )
+
+DATASET_DESCRIPTION = """Membrane contact information from Brittin et al. 2021. This dataset contains information on the contact area between pairs of cells in the C. elegans nerve ring, as measured by electron microscopy. The M<sup>4</sup> graph as described in the paper is used here. 
+"""
+
+WEIGHTS = "Weights represent the contact area between pairs of cells"
 
 pairs_added = []
 repeated_pairs = []

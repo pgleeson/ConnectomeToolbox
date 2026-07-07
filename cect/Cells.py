@@ -28,8 +28,8 @@ connectomes = None
 CORE_ANATOMICAL_CONNECTOMES = [
     "Cook2019Herm",
     "Cook2019Male",
-    "White_A",
-    "White_L4",
+    "WhiteJSH",
+    "WhiteN2U",
     "White_whole",
     "Varshney",
     "Cook2020",
@@ -1180,9 +1180,10 @@ PHARYNGEAL_MUSCLE_NAMES = ODD_PHARYNGEAL_MUSCLE_NAMES + EVEN_PHARYNGEAL_MUSCLE_N
 for cell in PHARYNGEAL_MUSCLE_NAMES:
     cell_notes[cell] = "pharyngeal muscle"
 
-UNSPECIFIED_BODY_WALL_MUSCLES = ["BWM"]
+UNSPECIFIED_BODY_WALL_MUSCLE = "BWM"
+UNSPECIFIED_BODY_WALL_MUSCLES = [UNSPECIFIED_BODY_WALL_MUSCLE]
 
-cell_notes["BWM"] = "unspecified body wall muscle"
+cell_notes[UNSPECIFIED_BODY_WALL_MUSCLE] = "unspecified body wall muscle"
 
 MALE_DIAGONAL_MUSCLES = [
     "dglL1",
@@ -1270,7 +1271,6 @@ cell_notes["gonad"] = "gonad (male specific)"
 PROCTODEUM_CELL_MALE = ["proctodeum"]
 cell_notes["proctodeum"] = "proctodeum (male specific)"
 
-# TODO: remove sh versions, R1shL, etc from here!!!
 MALE_RAY_STRUCTURAL_CELLS = [
     "R1stL",
     "R1stR",
@@ -1290,24 +1290,6 @@ MALE_RAY_STRUCTURAL_CELLS = [
     "R8stR",
     "R9stL",
     "R9stR",
-    "R1shL",
-    "R1shR",
-    "R2shL",
-    "R2shR",
-    "R3shL",
-    "R3shR",
-    "R4shL",
-    "R4shR",
-    "R5shL",
-    "R5shR",
-    "R6shL",
-    "R6shR",
-    "R7shL",
-    "R7shR",
-    "R8shL",
-    "R8shR",
-    "R9shL",
-    "R9shR",
 ]
 
 for cell in MALE_RAY_STRUCTURAL_CELLS:
@@ -1401,11 +1383,15 @@ PHARYNGEAL_EPITHELIUM = [
 for cell in PHARYNGEAL_EPITHELIUM:
     cell_notes[cell] = "pharyngeal epithelium"
 
+
+# note: g1p is used in Cook 2019, but g1P is used in Cook2020 & on WormAtlas - we'll go with the latter
+g1p_COOK2019 = "g1p"
+g1P_COOK2020 = "g1P"
+
 PHARYNGEAL_GLIAL_CELL = [
     "g1AL",
     "g1AR",
-    "g1p",  # TODO remove!
-    "g1P",
+    g1P_COOK2020,
     "g2L",
     "g2R",
 ]
@@ -1520,6 +1506,8 @@ ALL_PREFERRED_CELL_NAMES = (
 
 # Known to be used in computational models
 KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS = [
+    "AS12",
+    "VB12",
     "DB8",
     "DB9",
     "DB10",
@@ -1848,7 +1836,7 @@ def convert_to_preferred_muscle_name(muscle: str):
             else "MV%s0%s" % (muscle[4], muscle[5])
         )
     elif muscle == "LegacyBodyWallMuscles":
-        return "BWM"
+        return UNSPECIFIED_BODY_WALL_MUSCLE
     elif muscle.startswith("pm1"):
         return "pm1"
     elif muscle == "pm2vl":
@@ -1915,10 +1903,10 @@ def convert_to_preferred_phar_cell_name(cell: str):
         return "mc3DR"
     elif cell == "mc3dl":
         return "mc3DL"
-    elif cell.lower() == "g1p":  # Different between cook 19 & 20
-        return "g1P"
+    elif cell == g1p_COOK2019:  # Different between cook 19 & 20 - see note above
+        return g1P_COOK2020
     else:
-        if is_marginal_cell(cell):
+        if is_marginal_epithelial_gland_cell(cell):
             return cell
 
 
@@ -1926,9 +1914,11 @@ def get_marginal_cell_prefixes():
     return ["mc"]
 
 
-def is_marginal_cell(cell: str):
+def is_marginal_epithelial_gland_cell(cell: str):
     known_mc_prefix = get_marginal_cell_prefixes()
-    return cell.startswith(tuple(known_mc_prefix))
+    return cell.startswith(
+        tuple(known_mc_prefix)
+    ) or cell in PHARYNGEAL_EPITHELIUM + PHARYNGEAL_GLIAL_CELL + [g1p_COOK2019]
 
 
 def get_all_muscle_prefixes():
@@ -2207,6 +2197,36 @@ def get_cell_osbv1_link(cell: str, text: str = "OSB 3D", button: bool = False):
     return f'<a href="{osbv1_link}">{text}</a>' if is_herm_neuron(cell) else ""
 
 
+def get_wormwiring_3d_link(
+    cell: str, text: str = "View in WormWiring", button: bool = False
+):
+    wormwiring_link = (
+        f"https://wormwiring.org/apps/neuronMaps/?cell={cell}&sex=1&db=n930"
+    )
+
+    if button:
+        return (
+            f"[{text}]({wormwiring_link}){{ .md-button }}"
+            if is_herm_neuron(cell)
+            else ""
+        )
+    return f'<a href="{wormwiring_link}">{text}</a>' if is_herm_neuron(cell) else ""
+
+
+def get_zhen_tools_link(
+    cell: str, text: str = "View in Zhen Tools", button: bool = False
+):
+    zhen_tools_link = f"https://zhen-tools.com/#/3d-viewer?neurons={cell}"
+
+    if button:
+        return (
+            f"[{text}]({zhen_tools_link}){{ .md-button }}"
+            if is_herm_neuron(cell)
+            else ""
+        )
+    return f'<a href="{zhen_tools_link}">{text}</a>' if is_herm_neuron(cell) else ""
+
+
 def get_cell_wormatlas_link(
     cell_name: str, html: bool = False, text: str = None, button: bool = False
 ):
@@ -2385,6 +2405,8 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
 
     for syn_summary in syn_summaries:
         layout = go.Layout(
+            # Pinned to stock "plotly" to preserve this figure's appearance
+            template="plotly",
             plot_bgcolor="#FFF",  # Sets background color to white
         )
         fig = go.Figure(layout=layout)
@@ -2464,7 +2486,10 @@ def _generate_cell_table(cell_type: str, cells: List[str]):
             with open("./docs/%s" % asset_filename, "w") as asset_file:
                 asset_file.write(_format_json(fig.to_json()))
 
-            fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
+            import cect.Comparison as _comparison
+
+            if _comparison.GENERATE_PNGS:
+                fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
             fig_md += '\n%s```{.plotly .no-auto-theme}\n%s---8<-- "./%s"\n%s```\n\n' % (
                 indent,

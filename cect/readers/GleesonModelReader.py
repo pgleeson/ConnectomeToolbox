@@ -18,6 +18,10 @@ filename = "%sc302_C2_FW.net.nml" % file_location
 
 READER_DESCRIPTION = """Data extracted from a NeuroML file based on <b><a href="https://royalsocietypublishing.org/doi/10.1098/rstb.2017.0379">Gleeson et al. 2018</a></b>"""
 
+DATASET_DESCRIPTION = "Data extracted from a NeuroML file for the computational model from Gleeson et al. 2018"
+
+WEIGHTS = "Weights are based on the scaling factor for the synaptic contacts from neuron A to neuron B, as specified in the NeuroML file."
+
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
     """Uses ``NeuroMLDataReader`` to load data from the NeuroML model

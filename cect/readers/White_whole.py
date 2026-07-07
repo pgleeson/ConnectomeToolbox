@@ -13,8 +13,11 @@ from cect.ConnectomeDataset import (
 from cect.ConnectomeReader import analyse_connections
 from cect.readers.WhiteDataReader import WhiteDataReader
 
-
 NAME = "White_whole"
+
+DATASET_DESCRIPTION = "Reanalysis of the White et al. 1986 connectome data by Varshney et al. 2011, but including the pharynx."
+
+WEIGHTS = "Used Varshney et al. 2011 interpretation of weights: the total number of synaptic contacts from neuron A to neuron B. Contacts are given equal weight regardless of the apparent size of the synaptic apposition."
 
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
 filename = "%saconnectome_white_1986_whole.csv" % spreadsheet_location
@@ -54,6 +57,28 @@ def main1():
     print(f"There are {len(conns)} connections from {cell}:")
     for c in sorted(conns.keys()):
         print(f" {cell} -> {c}: {conns[c]}")
+
+    from cect.ConnectomeView import NONPHARYNGEAL_NEURONS_HERM_VIEW as view
+    # from cect.ConnectomeView import NEURONS_VIEW as view
+
+    cds2 = my_instance.get_connectome_view(view)
+
+    print(cds2.summary())
+    ew = cds2.connections["Electrical"]
+
+    from cect.readers.VarshneyDataReader import get_instance as get_varshney_instance
+
+    var = get_varshney_instance()
+    var_non = var.get_connectome_view(view)
+    print(var_non.summary())
+    ev = var_non.connections["Electrical"]
+    diff = ew - ev
+    print(diff)
+    import numpy as np
+
+    print(np.nonzero(diff))
+    for pre, post in zip(*np.nonzero(diff)):
+        print(f"Diff: {cds2.nodes[pre]} -> {cds2.nodes[post]}: {diff[pre, post]}")
 
 
 if __name__ == "__main__":

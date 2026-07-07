@@ -12,9 +12,14 @@ from cect.ConnectomeDataset import get_dataset_source_on_github
 from cect.ConnectomeReader import analyse_connections
 from cect.ConnectomeDataset import LOAD_READERS_FROM_CACHE_BY_DEFAULT
 
+# ruff: noqa: F401
+from cect.readers.RipollSanchezDataReader import WEIGHTS
+
 MODEL = "mid_range_model"
 
-NAME = "RipollSanchezMidRangeReader"
+NAME = "RipollSanchezMidRange"
+
+DATASET_DESCRIPTION = "Dataset of neuropeptidergic connections between any neurons whose processes lie within the same broad body region (head, midbody, or tail)"
 
 
 def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):

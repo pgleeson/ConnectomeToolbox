@@ -18,6 +18,8 @@ import numpy as np
 
 spreadsheet_location = os.path.dirname(os.path.abspath(__file__)) + "/../data/"
 
+WEIGHTS = "Weights represent the integer number of agreed presynaptic active zones between each pair of cells, counted from electron micrographs and agreed upon by at least two of three independent annotators"
+
 
 def fix_witvliet_cell_naming(cell):
     if cell == "excgl":

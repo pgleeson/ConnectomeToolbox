@@ -11,10 +11,15 @@ import importlib
 
 all_data = {}
 
+# Writing static PNG copies of every figure via kaleido is slow (it drives a
+# headless browser subprocess). The interactive plots are embedded from the JSON
+# assets regardless, so PNG generation can be skipped for quick test runs.
+GENERATE_PNGS = True
+
 
 reader_colors = {
-    "White_A": "lightpink",
-    "White_L4": "darkred",
+    "WhiteN2U": "orange",
+    "WhiteJSH": "darkorange",
     "White_whole": "red",
     "Varshney": "#009e73",
     "Bentley2016_MA": "#56b4e9",
@@ -45,12 +50,14 @@ reader_colors = {
     "SSData": "moccasin",
     "UpdSSData": "papayawhip",
     "UpdSSData2": "mistyrose",
+    "HaspelODonovan": "pink",
+    "HaspelODonovan1Seg": "pink",
     "GleesonModel": "black",
     "OlivaresModel": "black",
 }
 reader_pages = {
-    "White_A": "White_A_data",
-    "White_L4": "White_L4_data",
+    "WhiteN2U": "WhiteN2U_data",
+    "WhiteJSH": "WhiteJSH_data",
     "White_whole": "White_whole_data",
     "Varshney": "Varshney_data",
     "Bentley2016_MA": "Bentley2016_MA_data",
@@ -81,6 +88,8 @@ reader_pages = {
     "SSData": "SSData_data",
     "UpdSSData": "UpdSSData_data",
     "UpdSSData2": "UpdSSData2_data",
+    "HaspelODonovan": "HaspelODonovan_data",
+    "HaspelODonovan1Seg": "HaspelODonovan1Seg_data",
     "GleesonModel": "GleesonModel_data",
     "OlivaresModel": "OlivaresModel_data",
 }
@@ -133,7 +142,8 @@ def get_2d_graph_markdown(reader_name, view, connectome, synclass, indent="    "
     with open("./docs/%s" % asset_filename, "w") as asset_file:
         asset_file.write(_format_json(fig.to_json()))
 
-    fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
+    if GENERATE_PNGS:
+        fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
     return '\n%s```{.plotly .no-auto-theme}\n%s{ "file_path": "./%s" }\n%s```\n' % (
         indent,
@@ -177,7 +187,8 @@ def get_matrix_markdown(
     with open("./docs/%s" % asset_filename, "w") as asset_file:
         asset_file.write(_format_json(fig.to_json()))
 
-    fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
+    if GENERATE_PNGS:
+        fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
     extra = "\n" + indent + extra_info if extra_info is not None else ""
 
@@ -207,7 +218,8 @@ def get_hive_plot_markdown(reader_name, view, connectome, synclass, indent="    
     with open("./docs/%s" % asset_filename, "w") as asset_file:
         asset_file.write(_format_json(fig.to_json()))
 
-    fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
+    if GENERATE_PNGS:
+        fig.write_image("./docs/%s" % asset_filename.replace(".json", ".png"))
 
     return f'\n{indent}<br/>\n{indent}```{{.plotly .no-auto-theme}}\n{indent}{{ "file_path": "./{asset_filename}" }}\n{indent}```\n'
 
@@ -226,9 +238,14 @@ def get_improved_reader_name(reader_name):
         .replace("Herm", " (herm.)")
         .replace("Male", " (male)")
         .replace("ShortRange", " (short range)")
+        .replace("MidRange", " (mid range)")
+        .replace("LongRange", " (long range)")
         .replace("liet", "liet ")
         .replace("MA", " (monoamin.)")
         .replace("PEP", " (peptid.)")
+        .replace("NonNorm", " (non norm.)")
+        .replace("WhiteN2U", "White et al. 1986 N2U/adult")
+        .replace("WhiteJSH", "White et al. 1986 JSH/L4")
         .replace("ite A", "ite et al. 1986 N2U/adult")
         .replace("ite L4", "ite et al. 1986 JSH/L4")
         .replace("ite whole", "ite et al. 1986 (whole worm)")
@@ -242,6 +259,8 @@ def get_improved_reader_name(reader_name):
         .replace("Witvliet 6", "Witvliet et al. 2021 6 (L3)")
         .replace("Witvliet 7", "Witvliet et al. 2021 7 (adult)")
         .replace("Witvliet 8", "Witvliet et al. 2021 8 (adult)")
+        .replace("HaspelODonovan1Seg", "Haspel O'Donovan 2012 (1 segment)")
+        .replace("HaspelODonovan", "Haspel O'Donovan 2012")
         .replace("Gleeson", "Gleeson et al. 2018")
         .replace("Olivares", "Olivares et al. 2021")
         .replace("Model", " (model)")
@@ -259,33 +278,70 @@ def generate_comparison_page(
     connectomes = {}
     all_connectomes = {}
 
+    # Skip the slow static PNG exports for quick test runs (quick != 0); the
+    # interactive figures are still embedded from the JSON assets.
+    global GENERATE_PNGS
+    GENERATE_PNGS = quick < 2
+
     readers = {}
 
     if quick == 2:  # very quick...
+        # readers["Yim2024"] = ["cect.readers.Yim2024DataReader", "Yim_2024"]
+        # readers["Yim2024NonNorm"] = ["cect.readers.Yim2024NonNormDataReader", "Yim_2024"]
         # readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
         # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
-        # readers["Bentley2016_MA"] = ["cect.readers.WormNeuroAtlasMAReader", "Bentley_2016"]
+
+        readers["WhiteN2U"] = ["cect.readers.DurbinN2UDataReader", "White_1986"]
+        readers["WhiteJSH"] = ["cect.readers.DurbinJSHDataReader", "White_1986"]
+
+        """
         readers["White_A"] = ["cect.readers.White_A", "White_1986"]
-        readers["White_L4"] = ["cect.readers.White_L4", "White_1986"]
+        readers["White_L4"] = ["cect.readers.White_L4", "White_1986"]"""
+
         readers["White_whole"] = ["cect.readers.White_whole", "White_1986"]
-        # readers["Test"] = ["cect.readers.TestDataReader", None]
+        readers["Test"] = ["cect.readers.TestDataReader", None]
         readers["Varshney"] = ["cect.readers.VarshneyDataReader", "Varshney_2011"]
 
         # readers["WormNeuroAtlas"] = ["cect.readers.WormNeuroAtlasReader", "Randi_2023"]
 
+        """
+        readers["Bentley2016_MA"] = [
+            "cect.readers.Bentley2016MAReader",
+            "Bentley_2016",
+        ]
+        readers["Bentley2016_PEP"] = [
+            "cect.readers.Bentley2016PepReader",
+            "Bentley_2016",
+        ]
+        """
+        """
+        readers["Bentley2016_MAwna"] = [
+            "cect.readers.WormNeuroAtlasMAReader",
+            "Bentley_2016",
+        ]
+        readers["Bentley2016_PEPwna"] = [
+            "cect.readers.WormNeuroAtlasPepReader",
+            "Bentley_2016",
+        ]"""
+
         # readers["Randi2023"] = ["cect.readers.WormNeuroAtlasFuncReader", "Randi_2023"]
 
         # readers["Brittin2021"] = ["cect.readers.BrittinDataReader", "Brittin_2021"]
-        # readers["Yim2024"] = ["cect.readers.Yim2024DataReader", "Yim_2024"]
-        # readers["Yim2024NonNorm"] = ["cect.readers.Yim2024NonNormDataReader", "Yim_2024"]
 
-        # readers["White_whole"] = ["cect.readers.White_whole", "White_1986"]
-        # readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
-        # readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
+        readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
+        readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 
-        readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
+        readers["HaspelODonovan"] = [
+            "cect.readers.HaspelODonovanDataReader",
+            "HaspelODonovan_2012",
+        ]
+        readers["HaspelODonovan1Seg"] = [
+            "cect.readers.HaspelODonovan1SegDataReader",
+            "HaspelODonovan1Seg_2012",
+        ]
+        # readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
         # readers["Cook2019Male"] = ["cect.readers.Cook2019MaleReader", "Cook_2019"]
-        # readers["Cook2020"] = ["cect.readers.Cook2020DataReader", "Cook_2020"]
+        readers["Cook2020"] = ["cect.readers.Cook2020DataReader", "Cook_2020"]
 
         # readers["OpenWormUnified"] = ["cect.readers.OpenWormUnifiedReader", "OpenWorm_Unified"]
 
@@ -298,22 +354,34 @@ def generate_comparison_page(
         # readers["SSData"] = ["cect.readers.SpreadsheetDataReader", None]
 
     else:
+        readers["WhiteN2U"] = ["cect.readers.DurbinN2UDataReader", "White_1986"]
+        readers["WhiteJSH"] = ["cect.readers.DurbinJSHDataReader", "White_1986"]
+        """
         if not quick:
             readers["White_A"] = ["cect.readers.White_A", "White_1986"]
-            readers["White_L4"] = ["cect.readers.White_L4", "White_1986"]
+            readers["White_L4"] = ["cect.readers.White_L4", "White_1986"]"""
 
         readers["White_whole"] = ["cect.readers.White_whole", "White_1986"]
         readers["Varshney"] = ["cect.readers.VarshneyDataReader", "Varshney_2011"]
 
         readers["Bentley2016_MA"] = [
-            "cect.readers.WormNeuroAtlasMAReader",
+            "cect.readers.Bentley2016MAReader",
             "Bentley_2016",
         ]
+        """
+        readers["Bentley2016_MAwna"] = [
+            "cect.readers.WormNeuroAtlasMAReader",
+            "Bentley_2016",
+        ]"""
         if not quick:
             readers["Bentley2016_PEP"] = [
-                "cect.readers.WormNeuroAtlasPepReader",
+                "cect.readers.Bentley2016PepReader",
                 "Bentley_2016",
             ]
+            """readers["Bentley2016_PEPwna"] = [
+                "cect.readers.WormNeuroAtlasPepReader",
+                "Bentley_2016",
+            ]"""
 
         if not quick:
             readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
@@ -368,6 +436,14 @@ def generate_comparison_page(
         readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
         readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
 
+        readers["HaspelODonovan"] = [
+            "cect.readers.HaspelODonovanDataReader",
+            "HaspelODonovan_2012",
+        ]
+        readers["HaspelODonovan1Seg"] = [
+            "cect.readers.HaspelODonovan1SegDataReader",
+            "HaspelODonovan1Seg_2012",
+        ]
         readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
         readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 
@@ -490,6 +566,12 @@ def generate_comparison_page(
                                     '---\ntitle: "Dataset: %s"\nsearch:\n  exclude: true\n---\n\n'
                                     % get_improved_reader_name(reader_name)
                                 )
+
+                                desc_info = "TODO"
+                                if hasattr(reader_module, "DATASET_DESCRIPTION"):
+                                    desc_info = reader_module.DATASET_DESCRIPTION
+
+                                f.write(f"{desc_info}\n")
 
                                 desc_full = ""
 
@@ -688,7 +770,13 @@ def generate_comparison_page(
                                     )
                                     sym_info = ""
                                     if is_symmetric:
-                                        sym_info = f"Matrix is symmetric with <b>{count_diagonal_entries + int((nonzero - count_diagonal_entries) / 2)}</b> unique pairs<br/>"
+                                        diagonal_sum = np.sum(np.diag(conn_array))
+                                        unique_sum = (
+                                            np.sum(conn_array) - diagonal_sum
+                                        ) / 2 + diagonal_sum
+
+                                        sym_info = f"Matrix is symmetric with <b>{count_diagonal_entries + int((nonzero - count_diagonal_entries) / 2)}</b> unique pairs (total unique pair weight: <b>{unique_sum}</b>)<br/>"
+
                                     diag_info = (
                                         "<b>%s</b> nodes with self-connections<br/>"
                                         % count_diagonal_entries
@@ -799,6 +887,22 @@ def generate_comparison_page(
                                     '=== "View info"\n\n    %s\n\n'
                                     % (view_info.replace("\n", "\n    "))
                                 )
+
+                                if graph or matrix:
+                                    weight_info = "TODO"
+                                    if hasattr(reader_module, "WEIGHTS"):
+                                        weight_info = reader_module.WEIGHTS
+
+                                    f.write(f"**Weight definition:** {weight_info}\n\n")
+
+                                if description_page is not None:
+                                    ref_val = description_page.lower()
+                                    ref_val = ref_val.replace("_2", "etal2").replace(
+                                        "_1", "etal1"
+                                    )
+                                    f.write(
+                                        f"**Validation tests:** [See here](Validation.md#{ref_val})\n"
+                                    )
 
                                 cell_types = {
                                     "Neurons (herm)": preferred,

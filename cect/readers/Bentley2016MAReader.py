@@ -73,7 +73,7 @@ class Bentley2016MAReader(ConnectomeDataset):
             print_("Opened file: " + filename)
 
             for row in reader:
-                print_("Reading row: " + str(row))
+                # print_("Reading row: " + str(row))
                 pre = str.strip(row[0])
                 post = str.strip(row[1])
                 num = 1

@@ -71,6 +71,7 @@ class WhiteDataReader(ConnectomeDataset):
                 conn,
                 append_existing_connections=False,
                 check_overwritten_connections=True,
+                fail_on_any_repeated_connection=True,
             )
 
     def read_data(self):

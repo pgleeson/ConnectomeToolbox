@@ -28,8 +28,8 @@ connectomes = None
 CORE_ANATOMICAL_CONNECTOMES = [
     "Cook2019Herm",
     "Cook2019Male",
-    "White_A",
-    "White_L4",
+    "WhiteJSH",
+    "WhiteN2U",
     "White_whole",
     "Varshney",
     "Cook2020",
@@ -1506,6 +1506,8 @@ ALL_PREFERRED_CELL_NAMES = (
 
 # Known to be used in computational models
 KNOWN_MODELLED_VENTRAL_CORD_MOTORNEURONS = [
+    "AS12",
+    "VB12",
     "DB8",
     "DB9",
     "DB10",

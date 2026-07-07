@@ -18,12 +18,10 @@ GENERATE_PNGS = True
 
 
 reader_colors = {
-    "White_A": "lightpink",
-    "White_L4": "darkred",
+    "WhiteN2U": "orange",
+    "WhiteJSH": "darkorange",
     "White_whole": "red",
     "Varshney": "#009e73",
-    "Bentley2016_MAwna": "#56b4e9",
-    "Bentley2016_PEPwna": "fuchsia",
     "Bentley2016_MA": "#56b4e9",
     "Bentley2016_PEP": "fuchsia",
     "Cook2019Herm": "darkmagenta",
@@ -52,18 +50,18 @@ reader_colors = {
     "SSData": "moccasin",
     "UpdSSData": "papayawhip",
     "UpdSSData2": "mistyrose",
+    "HaspelODonovan": "pink",
+    "HaspelODonovan1Seg": "pink",
     "GleesonModel": "black",
     "OlivaresModel": "black",
 }
 reader_pages = {
-    "White_A": "White_A_data",
-    "White_L4": "White_L4_data",
+    "WhiteN2U": "WhiteN2U_data",
+    "WhiteJSH": "WhiteJSH_data",
     "White_whole": "White_whole_data",
     "Varshney": "Varshney_data",
     "Bentley2016_MA": "Bentley2016_MA_data",
     "Bentley2016_PEP": "Bentley2016_PEP_data",
-    "Bentley2016_MAwna": "Bentley2016_MAwna_data",
-    "Bentley2016_PEPwna": "Bentley2016_PEPwna_data",
     "Cook2019Herm": "Cook2019Herm_data",
     "Cook2019Male": "Cook2019Male_data",
     "Cook2020": "Cook2020_data",
@@ -90,6 +88,8 @@ reader_pages = {
     "SSData": "SSData_data",
     "UpdSSData": "UpdSSData_data",
     "UpdSSData2": "UpdSSData2_data",
+    "HaspelODonovan": "HaspelODonovan_data",
+    "HaspelODonovan1Seg": "HaspelODonovan1Seg_data",
     "GleesonModel": "GleesonModel_data",
     "OlivaresModel": "OlivaresModel_data",
 }
@@ -244,6 +244,8 @@ def get_improved_reader_name(reader_name):
         .replace("MA", " (monoamin.)")
         .replace("PEP", " (peptid.)")
         .replace("NonNorm", " (non norm.)")
+        .replace("WhiteN2U", "White et al. 1986 N2U/adult")
+        .replace("WhiteJSH", "White et al. 1986 JSH/L4")
         .replace("ite A", "ite et al. 1986 N2U/adult")
         .replace("ite L4", "ite et al. 1986 JSH/L4")
         .replace("ite whole", "ite et al. 1986 (whole worm)")
@@ -257,6 +259,8 @@ def get_improved_reader_name(reader_name):
         .replace("Witvliet 6", "Witvliet et al. 2021 6 (L3)")
         .replace("Witvliet 7", "Witvliet et al. 2021 7 (adult)")
         .replace("Witvliet 8", "Witvliet et al. 2021 8 (adult)")
+        .replace("HaspelODonovan1Seg", "Haspel O'Donovan 2012 (1 segment)")
+        .replace("HaspelODonovan", "Haspel O'Donovan 2012")
         .replace("Gleeson", "Gleeson et al. 2018")
         .replace("Olivares", "Olivares et al. 2021")
         .replace("Model", " (model)")
@@ -286,10 +290,16 @@ def generate_comparison_page(
         # readers["Yim2024NonNorm"] = ["cect.readers.Yim2024NonNormDataReader", "Yim_2024"]
         # readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
         # readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
+
+        readers["WhiteN2U"] = ["cect.readers.DurbinN2UDataReader", "White_1986"]
+        readers["WhiteJSH"] = ["cect.readers.DurbinJSHDataReader", "White_1986"]
+
+        """
         readers["White_A"] = ["cect.readers.White_A", "White_1986"]
-        readers["White_L4"] = ["cect.readers.White_L4", "White_1986"]
+        readers["White_L4"] = ["cect.readers.White_L4", "White_1986"]"""
+
         readers["White_whole"] = ["cect.readers.White_whole", "White_1986"]
-        # readers["Test"] = ["cect.readers.TestDataReader", None]
+        readers["Test"] = ["cect.readers.TestDataReader", None]
         readers["Varshney"] = ["cect.readers.VarshneyDataReader", "Varshney_2011"]
 
         # readers["WormNeuroAtlas"] = ["cect.readers.WormNeuroAtlasReader", "Randi_2023"]
@@ -318,9 +328,17 @@ def generate_comparison_page(
 
         # readers["Brittin2021"] = ["cect.readers.BrittinDataReader", "Brittin_2021"]
 
-        # readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
-        # readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
+        readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
+        readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 
+        readers["HaspelODonovan"] = [
+            "cect.readers.HaspelODonovanDataReader",
+            "HaspelODonovan_2012",
+        ]
+        readers["HaspelODonovan1Seg"] = [
+            "cect.readers.HaspelODonovan1SegDataReader",
+            "HaspelODonovan1Seg_2012",
+        ]
         # readers["Cook2019Herm"] = ["cect.readers.Cook2019HermReader", "Cook_2019"]
         # readers["Cook2019Male"] = ["cect.readers.Cook2019MaleReader", "Cook_2019"]
         readers["Cook2020"] = ["cect.readers.Cook2020DataReader", "Cook_2020"]
@@ -336,9 +354,12 @@ def generate_comparison_page(
         # readers["SSData"] = ["cect.readers.SpreadsheetDataReader", None]
 
     else:
+        readers["WhiteN2U"] = ["cect.readers.DurbinN2UDataReader", "White_1986"]
+        readers["WhiteJSH"] = ["cect.readers.DurbinJSHDataReader", "White_1986"]
+        """
         if not quick:
             readers["White_A"] = ["cect.readers.White_A", "White_1986"]
-            readers["White_L4"] = ["cect.readers.White_L4", "White_1986"]
+            readers["White_L4"] = ["cect.readers.White_L4", "White_1986"]"""
 
         readers["White_whole"] = ["cect.readers.White_whole", "White_1986"]
         readers["Varshney"] = ["cect.readers.VarshneyDataReader", "Varshney_2011"]
@@ -415,6 +436,14 @@ def generate_comparison_page(
         readers["Wang2024Herm"] = ["cect.readers.Wang2024HermReader", "Wang_2024"]
         readers["Wang2024Male"] = ["cect.readers.Wang2024MaleReader", "Wang_2024"]
 
+        readers["HaspelODonovan"] = [
+            "cect.readers.HaspelODonovanDataReader",
+            "HaspelODonovan_2012",
+        ]
+        readers["HaspelODonovan1Seg"] = [
+            "cect.readers.HaspelODonovan1SegDataReader",
+            "HaspelODonovan1Seg_2012",
+        ]
         readers["GleesonModel"] = ["cect.readers.GleesonModelReader", "GleesonModel"]
         readers["OlivaresModel"] = ["cect.readers.OlivaresModelReader", "OlivaresModel"]
 
@@ -872,7 +901,7 @@ def generate_comparison_page(
                                         "_1", "etal1"
                                     )
                                     f.write(
-                                        f"**Validation tests:** [See here](../Validation#{ref_val})\n"
+                                        f"**Validation tests:** [See here](Validation.md#{ref_val})\n"
                                     )
 
                                 cell_types = {

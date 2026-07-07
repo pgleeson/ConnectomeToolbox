@@ -28,6 +28,10 @@ READER_DESCRIPTION = (
     % get_dataset_source_on_github(filename.split("/")[-1])
 )
 
+DATASET_DESCRIPTION = "A corrected and extended version of the White et al. 1986 chemical and electrical wiring diagram, incorporating original Mind of a Worm data, Durbin's unpublished reconstructions, new EM imaging of previously unimaged dorsal cord regions, and over 3,000 synapse additions or corrections, particularly in the ventral cord motor neuron connectivity. Excludes pharyngeal neurons, but includes neuromuscular junction connections, all to one BWM (body wall muscle cell)."
+
+WEIGHTS = "Weights are the total number of synaptic contacts from neuron A to neuron B. Contacts are given equal weight regardless of the apparent size of the synaptic apposition."
+
 SEND_SYN = "S"
 SEND_POLY_SYN = "Sp"
 SEND_ANY = "SEND"
@@ -54,7 +58,7 @@ def _remove_leading_index_zero(cell):
 class VarshneyDataReader(ConnectomeDataset):
     """Reader for Varshney et al. 2011 connectivity dataset"""
 
-    def __init__(self):
+    def __init__(self, include_nmj=False):
         ConnectomeDataset.__init__(self)
 
         self.typed_conns = {
@@ -67,6 +71,8 @@ class VarshneyDataReader(ConnectomeDataset):
             ELECT_JUNC_SYN: [],
             NMJ_ENDPOINT: [],
         }
+
+        self.include_nmj = include_nmj
 
         cells, neuron_conns = self.read_data()
 
@@ -130,7 +136,7 @@ class VarshneyDataReader(ConnectomeDataset):
             elif syntype_here in [RECEIVE_SYN, RECEIVE_POLY_SYN]:
                 self.typed_conns[RECEIVE_ANY].add(f"{pre}_{post}")
 
-            if not syntype_here == NMJ_ENDPOINT + "":
+            if syntype_here != NMJ_ENDPOINT or self.include_nmj:
                 synclass = (
                     GENERIC_ELEC_SYN_CLASS
                     if syntype_here == ELECT_JUNC_SYN
@@ -165,8 +171,12 @@ class VarshneyDataReader(ConnectomeDataset):
             total += len(conn_list)
             info = ""
             if syn_type in [SEND_SYN, SEND_POLY_SYN, RECEIVE_SYN, RECEIVE_POLY_SYN]:
-                info = f"({', '.join(conn_list[:5])}..., {conn_list[-1]})"
-            print_(f"  {syn_type}: {len(conn_list)} connections {info}")
+                info = f"\t({', '.join(conn_list[:5])}..., {conn_list[-1]})"
+
+            print_(
+                f"  {syn_type}: {len(conn_list)} connections\t({len(set(conn_list))} unique) {info}"
+            )
+
         print_(f"  Total: {total} connections (half: {total / 2})")
 
         s_tot = len(self.typed_conns[SEND_SYN]) + len(self.typed_conns[SEND_POLY_SYN])
@@ -178,7 +188,8 @@ class VarshneyDataReader(ConnectomeDataset):
         print_(
             f"  Total chemical synapses: {s_tot} (send) + {r_tot} (receive) = {s_tot + r_tot}"
         )
-        print_(f"  Total electrical synapses: {len(self.typed_conns[ELECT_JUNC_SYN])}")
+        gj = len(self.typed_conns[ELECT_JUNC_SYN])
+        print_(f"  Total electrical synapses: {gj}, half: {gj / 2}")
 
         return cells, conns
 
@@ -199,7 +210,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
 
         return load_connectome_dataset_file(get_cache_filename(__name__.split(".")[-1]))
     else:
-        return VarshneyDataReader()
+        return VarshneyDataReader(include_nmj=True)
 
 
 """

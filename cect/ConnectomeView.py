@@ -41,6 +41,7 @@ from cect.Neurotransmitters import MONOAMINERGIC_SYN_CLASSES
 from cect.Neurotransmitters import GENERIC_CHEM_SYN_CLASS
 from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS
 
+
 from cect.Neurotransmitters import CONTACTOME_SYN_TYPE
 from cect.Neurotransmitters import CONTACTOME_SYN_CLASS
 
@@ -196,7 +197,10 @@ putative_exc_syn_class = ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS.copy()
 putative_exc_syn_class.remove("GABA")
 
 EXC_INH_GJ_SYN_CLASSES = {
-    "Chemical": [GENERIC_CHEM_SYN_CLASS] + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
+    "Chemical": [
+        GENERIC_CHEM_SYN_CLASS,
+    ]
+    + ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS,
     "Electrical": [GENERIC_ELEC_SYN_CLASS],
     "Extrasynaptic": ALL_KNOWN_EXTRASYNAPTIC_CLASSES,
 }
@@ -1256,6 +1260,7 @@ QUICK_VIEWS = [
     BRAINMAP_A_VIEW,
     BRAINMAP_VIEW,
     LOCOMOTION_2_VIEW,
+    LOCOMOTION_3_VIEW,
     NONPHARYNGEAL_NEURONS_HERM_VIEW,
     MOTORNEURONS_SOMATIC_HERM_VIEW,
     MOTORNEURONS_MUSCLES_VIEW,

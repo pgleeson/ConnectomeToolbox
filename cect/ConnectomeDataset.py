@@ -21,6 +21,7 @@ from cect.Cells import is_known_cell
 from cect.Cells import get_SIM_class
 
 from cect.Neurotransmitters import FUNCTIONAL_SYN_CLASS, get_syn_type_from_synclass
+from cect.Neurotransmitters import GENERIC_ELEC_SYN_CLASS
 
 import numpy as np
 import math
@@ -194,21 +195,30 @@ class ConnectomeDataset:
                     )
                 )
             if fail_on_any_repeated_connection:
-                issue = (
-                    "Connection already exists at (%i,%i,%s) (%s,%s), weight: %f, new connection: %s"
-                    % (
-                        pre_index,
-                        post_index,
-                        conn.synclass,
-                        conn.pre_cell,
-                        conn.post_cell,
-                        conn_array[pre_index, post_index],
-                        conn,
+                if (
+                    (pre_index == post_index)
+                    and (conn_array[pre_index, post_index] == conn.number)
+                    and conn.synclass == GENERIC_ELEC_SYN_CLASS
+                ):
+                    self._append_validation_info(
+                        "  Self connection, same weight and electrical connection, ignoring."
                     )
-                )
-                self._append_validation_info(issue)
+                else:
+                    issue = (
+                        "Connection already exists at (%i,%i,%s) (%s,%s), weight: %f, new connection: %s"
+                        % (
+                            pre_index,
+                            post_index,
+                            conn.synclass,
+                            conn.pre_cell,
+                            conn.post_cell,
+                            conn_array[pre_index, post_index],
+                            conn,
+                        )
+                    )
+                    self._append_validation_info(issue)
 
-                raise Exception(issue)
+                    raise Exception(issue)
 
             info = (
                 ">\n> Existing connection at (%i,%i) (%s->%s, %s), was: %s, new conn weight: %s"
@@ -274,6 +284,44 @@ class ConnectomeDataset:
     def _read_data(self):
         return self.get_neuron_to_neuron_conns()
 
+    def get_synclasses_with_connections(self):
+        synclasses = []
+        for synclass in self.connections:
+            conn_array = self.connections[synclass]
+            if np.count_nonzero(conn_array) > 0:
+                synclasses.append(synclass)
+        return synclasses
+
+    def get_asymmetric_connections_info(self, synclass):
+        """
+        Checks all connections in synclass, and if any are not symmetric, i.e. the weight from A->B is not equal to the weight from B->A,
+        returns a list of asymmetric connections.
+        """
+        if synclass not in self.connections:
+            raise Exception(
+                "No connections of synclass %s in this dataset! Existing: %s"
+                % (synclass, self.get_synclasses_with_connections())
+            )
+        conn_array = self.connections[synclass]
+        asymmetric_conns = []
+        added_pairs = set()
+        for i in range(len(self.nodes)):
+            for j in range(len(self.nodes)):
+                if (
+                    i != j
+                    and conn_array[i, j] != 0
+                    and conn_array[i, j] != conn_array[j, i]
+                ):
+                    if (self.nodes[i], self.nodes[j]) not in added_pairs and (
+                        self.nodes[j],
+                        self.nodes[i],
+                    ) not in added_pairs:
+                        asymmetric_conns.append(
+                            f"{self.nodes[i]} -> {self.nodes[j]}: {conn_array[i, j]} != {self.nodes[j]} -> {self.nodes[i]}: {conn_array[j, i]}"
+                        )
+                        added_pairs.add((self.nodes[i], self.nodes[j]))
+        return asymmetric_conns
+
     def get_neuron_to_neuron_conns(self):
         neurons = set([])
         neuron_conns = []
@@ -306,7 +354,10 @@ class ConnectomeDataset:
 
     def get_connection_weight(self, pre_node, post_node, synclass):
         if synclass not in self.connections:
-            raise Exception("No connections of synclass %s in this dataset!" % synclass)
+            raise Exception(
+                "No connections of synclass %s in this dataset! Existing: %s"
+                % (synclass, self.get_synclasses_with_connections())
+            )
         conn_array = self.connections[synclass]
         if pre_node not in self.nodes:
             raise Exception("Pre node %s not in this dataset!" % pre_node)

@@ -7,9 +7,9 @@
 
 !!! example "Datasets incorporated"   
 
-    - **[White_A](White_A_data.md) (N2U)**
-    - **[White_L4](White_L4_data.md) (JSH)**
-    - **[White_whole](White_whole_data.md)**
+    - **[JSH/L4 connectivity data (from neurodata.txt in Durbin thesis)](WhiteJSH_data.md)**
+    - **[N2U/Adult connectivity data (from neurodata.txt in Durbin thesis)](WhiteN2U_data.md)**
+    - **[White whole - more complete reconstruction by Varshney and colleagues (including pharynx)](White_whole_data.md)**
     
 
 **Type of Connectomics Data**

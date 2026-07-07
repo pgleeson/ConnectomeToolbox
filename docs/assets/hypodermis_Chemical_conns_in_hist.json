@@ -18,6 +18,38 @@
     },
     {
       "marker": {
+        "color": "orange",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "WhiteN2U",
+      "type": "scatter",
+      "x": [
+        "hyp"
+      ],
+      "y": [
+        4
+      ]
+    },
+    {
+      "marker": {
+        "color": "darkorange",
+        "size": 3,
+        "symbol": "circle"
+      },
+      "mode": "markers",
+      "name": "WhiteJSH",
+      "type": "scatter",
+      "x": [
+        "hyp"
+      ],
+      "y": [
+        3
+      ]
+    },
+    {
+      "marker": {
         "color": "blue",
         "size": 3,
         "symbol": "circle"

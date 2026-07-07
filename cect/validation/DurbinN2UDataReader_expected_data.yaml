@@ -1,0 +1,43 @@
+reader: DurbinN2UDataReader
+connection_lists:
+- connections:
+  - pre: ADAL
+    post: AVBR
+    weight: 7
+  - pre: ADFR
+    post: AIZR
+    weight: 8
+  - pre: DVC
+    post: RIGL
+    weight: 5
+  - pre: RMDDR
+    post: RMDVL
+    weight: 12
+  synapse: Generic_CS
+  total_nonzero_conns: 1486
+  total_weight: 4056
+- connections:
+  - pre: AVAL
+    post: AVAR
+    weight: 1
+  - pre: RMED
+    post: IL1VL
+    weight: 1
+  - pre: CEPDL
+    post: OLQDL
+    weight: 1
+  - pre: VA2
+    post: PLNR
+    weight: 1
+  - pre: PLNR
+    post: VA2
+    weight: 1
+  - pre: DVC
+    post: VD1
+    weight: 2
+  - pre: VD1
+    post: DVC
+    weight: 2
+  synapse: Generic_GJ
+  total_nonzero_conns: 556
+  total_weight: 692

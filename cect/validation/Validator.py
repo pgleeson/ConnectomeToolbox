@@ -71,7 +71,11 @@ class TestExpectedConnections(unittest.TestCase):
 """
 
         data_readers = {
-            "WhiteEtAl1986": ["White_A", "White_L4", "White_whole"],
+            "WhiteEtAl1986": [
+                "DurbinJSHDataReader",
+                "DurbinN2UDataReader",
+                "White_whole",
+            ],
             "VarshneyEtAl2011": ["VarshneyDataReader"],
             "BentleyEtAl2016": [
                 "Bentley2016MAReader",
@@ -215,13 +219,9 @@ class TestExpectedConnections(unittest.TestCase):
                 % (reader_ref, from_cache, sys.argv)
             )
 
-            conn_dataset = get_connectome_dataset(reader_ref, from_cache=from_cache)
-
-            print_(conn_dataset.summary())
-
             ref = reader_ref
 
-            report += f"\n### Validation tests for [{data_reader}](../{ref}_data) \n\n"
+            report += f"\n### Validation tests for [{data_reader}]({ref}_data.md) \n\n"
 
             for conn_list in expected_data.connection_lists:
                 syn_class = conn_list["synapse"]
@@ -232,9 +232,27 @@ class TestExpectedConnections(unittest.TestCase):
                 else:
                     syn_info = f"{syn_class}"
 
-                print_(f"Checking connection list: {conn_list}, {syn_info}...")
+                conn_dataset = get_connectome_dataset(reader_ref, from_cache=from_cache)
 
-                report += f"\n#### {syn_info} connections\n\n"
+                view_info = ""
+                if "view" in conn_list:
+                    view_id = conn_list["view"]
+
+                    from cect.ConnectomeView import get_view
+
+                    view = get_view(view_id)
+                    view_info = f"\n\n**Note:** only cells/connections in ConnectomeView: **{view_id}** included ({view.description})"
+
+                    conn_dataset = conn_dataset.get_connectome_view(view)
+
+                print_(conn_dataset.summary())
+
+                print_(
+                    f"Checking connection list: {conn_list}, {syn_info} {view_info}..."
+                )
+
+                report += f"\n#### {syn_info} connections{view_info}\n\n"
+
                 report += "| Pre      | Post | Expected weight | Match |\n|----------|------|-----------------|-------|\n"
 
                 for conn in conn_list["connections"]:
@@ -254,25 +272,19 @@ class TestExpectedConnections(unittest.TestCase):
                 if syn_class == GENERIC_ELEC_SYN_CLASS:
                     arr = conn_dataset.connections[syn_class]
                     arrT = arr.T
-                    report += f"\nElectrical synapse. Symmetric connectivity matrix: {np.array_equal(arr, arrT)}\n"
+                    symm = np.array_equal(arr, arrT)
+                    asymm = ""
+                    if not symm:
+                        asymm = ", %s" % (
+                            "; ".join(
+                                conn_dataset.get_asymmetric_connections_info(syn_class)
+                            )
+                        )
+                    report += f"\nElectrical synapse. Symmetric connectivity matrix: **{symm}**{asymm}\n"
 
                 for node in conn_dataset.nodes:
                     if not is_known_cell(node, allow_modelled_neurons=True):
                         report += f"\nError: Cell {node} is not in the list of known cells (from Cook et al. 2019)!\n"
-
-                if "total_weight" in conn_list:
-                    total_w = conn_list["total_weight"]
-                    cdarr = conn_dataset.connections[syn_class]
-                    total_w_cd = np.sum(cdarr)
-                    match_info = (
-                        "matches"
-                        if total_w == total_w_cd
-                        else f"{self.MISMATCH}: {total_w_cd}"
-                    )
-                    report += "\nExpected total weight of connections: %g (%s)\n" % (
-                        total_w,
-                        match_info,
-                    )
 
                 if "total_nonzero_conns" in conn_list:
                     num_nz = conn_list["total_nonzero_conns"]
@@ -281,22 +293,60 @@ class TestExpectedConnections(unittest.TestCase):
                     match_info = (
                         "matches"
                         if num_nz == num_nz_cd
-                        else f"{self.MISMATCH}: {num_nz_cd}"
+                        else f"{self.MISMATCH}: **{num_nz_cd}**"
                     )
                     report += (
-                        "\nExpected number of nonzero connection weights: %i (%s)\n"
+                        "\nExpected number of nonzero connection weights: **%i** (%s)\n"
                         % (num_nz, match_info)
                     )
                 else:
                     report += "\nTODO: add total num nonzero connections\n"
 
-            report += f"\n_Validation {'PASSED' if self.MISMATCH not in report else 'FAILED'} on {date.today().isoformat()} with cect v{cect_version}_\n\n"
+                if "total_weight" in conn_list:
+                    total_w = conn_list["total_weight"]
+                    cdarr = conn_dataset.connections[syn_class]
+                    total_w_cd = np.sum(cdarr)
+                    match_info = (
+                        "matches"
+                        if total_w == total_w_cd
+                        else f"{self.MISMATCH}: **{total_w_cd}**"
+                    )
+                    report += (
+                        "\nExpected total weight of connections: **%g** (%s)\n"
+                        % (
+                            total_w,
+                            match_info,
+                        )
+                    )
+
+                if "num_cells" in conn_list:
+                    num_cells = conn_list["num_cells"]
+                    cdarr = conn_dataset.connections[syn_class]
+                    num_cells_cd = cdarr.shape[
+                        0
+                    ]  # number of rows in the connectivity matrix
+                    match_info = (
+                        "matches"
+                        if num_cells == num_cells_cd
+                        else f"{self.MISMATCH}: **{num_cells_cd}**"
+                    )
+                    report += "\nExpected number of cells: **%i** (%s)\n" % (
+                        num_cells,
+                        match_info,
+                    )
+
+            report += f"\n_Validation **{'PASSED' if self.MISMATCH not in report else 'FAILED'}** on {date.today().isoformat()} with cect v{cect_version}_\n\n"
 
         except Exception as e:
-            print_(f"Error loading or checking expected data for {data_reader}: {e}")
-            report += (
-                f"\n**TODO: add expected data file: {expected_data_file}**: {e}\n\n"
-            )
+            if "No such file" in str(e):
+                print_(f"Error loading expected data for {data_reader}: {e}")
+                report += (
+                    f"\n**TODO: add expected data file: {expected_data_file}**: {e}\n\n"
+                )
+            else:
+                raise Exception(
+                    f"Error loading or checking expected data for {data_reader}: {e}"
+                )
 
         return report, latex
 
@@ -324,8 +374,10 @@ class ConnectionList(Base):
 
     Args:
         synapse: The type of synapse
-        total_nonzero_conns: Total nonzero conns
-        total_weight: Total weight of connections
+        total_nonzero_conns: Total nonzero connections
+        total_weight: Total weight of connections (optional)
+        num_cells: Number of cells (optional)
+        view: An optional string specifying a ConnectomeView to use, e.g. Neurons, Pharynx, etc. Numbers of conns will be checked inside that view
         comment: A comment about how the data was found, e.g. taken from a spreadsheet
         connections: The list of connections of this type
     """
@@ -333,6 +385,8 @@ class ConnectionList(Base):
     synapse: str = field(validator=instance_of(str))
     total_nonzero_conns: int = field(validator=instance_of(int))
     total_weight: float = field(validator=instance_of(float))
+    num_cells: int = field(validator=instance_of(int))
+    view: str = field(validator=instance_of(str))
     comment: str = field(validator=instance_of(str))
     connections: List[Connection] = field(factory=list)
 

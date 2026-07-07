@@ -719,6 +719,8 @@ __pycache__
 /docs/assets/OpenWormU*.* 
 /docs/assets/Olivares*.* 
 /docs/assets/Gleeson*.*
+/docs/assets/Durbin*.*
+/docs/assets/Haspel*.*
 /docs/assets/anterior_inner_longitudinal_muscles_Chemical_conns_in_hist.png
 /docs/assets/anterior_inner_longitudinal_muscles_Electrical_conns_hist.png
 /docs/assets/anterior_oblique_muscles_Chemical_conns_in_hist.png
@@ -785,3 +787,7 @@ __pycache__
 /docs/notebooks/.ipynb_checkpoints
 /cect/data/NeuronConnectFormatted_test.xlsx
 /cect/data/SI 5 Connectome adjacency matrices_test.xlsx
+/docs/*Durbin*_data*.md
+/docs/assets/Durbin*.json
+/docs/*Haspel*_data*.md
+/docs/assets/Haspel*.json

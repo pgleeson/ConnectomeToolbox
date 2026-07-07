@@ -18,9 +18,10 @@ from cect.Neurotransmitters import (
     CHEMICAL_SYN_TYPE,
     ELECTRICAL_SYN_TYPE,
 )
-from cect.Neurotransmitters import ACETYLCHOLINE
-from cect.Neurotransmitters import GABA
-
+from cect.Neurotransmitters import (
+    GENERIC_EXCITATORY_CHEM_SYN_CLASS,
+    GENERIC_INHIBITORY_CHEM_SYN_CLASS,
+)
 from pyneuroml import pynml
 import os
 
@@ -127,13 +128,13 @@ class NeuroMLDataReader(ConnectomeDataset):
                 pre = self._get_cell_name(pre_pop, conn.get_pre_cell_id())
                 post = self._get_cell_name(post_pop, conn.get_post_cell_id())
                 w = conn.get_weight()
-                synclass = ACETYLCHOLINE
+                synclass = GENERIC_EXCITATORY_CHEM_SYN_CLASS
                 if w < 0:
                     w = -1 * w
-                    synclass = GABA
+                    synclass = GENERIC_INHIBITORY_CHEM_SYN_CLASS
 
                 elif "inh_syn" in conn.post_component:
-                    synclass = GABA  # e.g. postComponent="neuron_to_neuron_inh_syn",
+                    synclass = GENERIC_INHIBITORY_CHEM_SYN_CLASS  # e.g. postComponent="neuron_to_neuron_inh_syn",
 
                 ci = ConnectionInfo(pre, post, w, CHEMICAL_SYN_TYPE, synclass)
 
@@ -180,7 +181,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
 if __name__ == "__main__":
     #
     tdr_instance = NeuroMLDataReader("Worm2D.net.nml")
-    # tdr_instance = NeuroMLDataReader("c302_C2_FW.net.nml")
+    tdr_instance = NeuroMLDataReader("c302_C2_FW.net.nml")
     cells, neuron_conns = tdr_instance.read_data()
 
     neurons2muscles, muscles, muscle_conns = tdr_instance.read_muscle_data()
@@ -200,7 +201,8 @@ if __name__ == "__main__":
     from cect.ConnectomeView import LOCOMOTION_1_VIEW as view
     """
     # from cect.ConnectomeView import SOCIAL_VIEW as view
-    from cect.ConnectomeView import LOCOMOTION_2_VIEW as view
+    # from cect.ConnectomeView import LOCOMOTION_2_VIEW as view
+    from cect.ConnectomeView import ESCAPE_VIEW as view
 
     print("--- Using view: %s" % view)
     cds2 = tdr_instance.get_connectome_view(view)
@@ -208,14 +210,14 @@ if __name__ == "__main__":
 
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
+    """
     fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
     """
 
     fig, _ = cds2.to_plotly_matrix_fig(
-        list(view.synclass_sets.keys())[2],
+        list(view.synclass_sets.keys())[0],
         view,
     )
-   """
     import plotly.io as pio
 
     pio.renderers.default = "browser"

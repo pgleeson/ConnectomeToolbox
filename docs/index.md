@@ -25,8 +25,8 @@ Papers/datasets highlighted in **bold** have been incorporated into this package
 | Papers                                                     | Features      | Datasets |
 | -------------                                              | -----         | ---- |
 | [Albertson & Thomson 1976](Albertson_1976.md)     | Anatomical | N/A |
-| **[White et al. 1986](White_1986.md)**     | Anatomical | **[White_A](White_A_data.md) - [White_L4](White_L4_data.md) -  [White_whole](White_whole_data.md)** |
-| [Durbin 1987](Durbin_1987.md)    | Anatomical | *[Durbin.txt](https://github.com/dwitvliet/nature2021/blob/0646af9d25896ae660f97d462eab2d67282f5625/data/legacy_data/durbin.txt)* |
+| **[White et al. 1986](White_1986.md)**     | Anatomical | **[White_whole](White_whole_data.md)** |
+| [Durbin 1987](Durbin_1987.md)    | Anatomical | **[Durbin JSH](WhiteJSH_data.md)- [Durbin N2A](DurbinN2A_data.md)** |
 | [Hall & Russell 1991](Hall_1991.md)     | Anatomical | N/A |
 | [Altun et al. 2009](Altun_2009.md)   | Gene Expression |  *[Data](https://docs.google.com/spreadsheets/d/1Jc9pOJAce8DdcgkTgkUXafhsBQdrer2Y47zrHsxlqWg/edit?gid=283505544#gid=283505544)* |
 | **[Varshney et al. 2011](Varshney_2011.md)**  | Anatomical | **[Varshney 2011](Varshney_data.md)** |

@@ -7,8 +7,8 @@
 
 !!! example "Datasets incorporated"   
 
-    - **[JSH/L4 connectivity data (from neurodata.txt in Durbin thesis)](DurbinJSH_data.md)**
-    - **[N2U/Adult connectivity data (from neurodata.txt in Durbin thesis)](DurbinN2U_data.md)**
+    - **[JSH/L4 connectivity data (from neurodata.txt in Durbin thesis)](WhiteJSH_data.md)**
+    - **[N2U/Adult connectivity data (from neurodata.txt in Durbin thesis)](WhiteN2U_data.md)**
     - **[White whole - more complete reconstruction by Varshney and colleagues (including pharynx)](White_whole_data.md)**
     
 

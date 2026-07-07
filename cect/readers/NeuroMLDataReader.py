@@ -181,7 +181,7 @@ def get_instance(from_cache=LOAD_READERS_FROM_CACHE_BY_DEFAULT):
 if __name__ == "__main__":
     #
     tdr_instance = NeuroMLDataReader("Worm2D.net.nml")
-    # tdr_instance = NeuroMLDataReader("c302_C2_FW.net.nml")
+    tdr_instance = NeuroMLDataReader("c302_C2_FW.net.nml")
     cells, neuron_conns = tdr_instance.read_data()
 
     neurons2muscles, muscles, muscle_conns = tdr_instance.read_muscle_data()
@@ -201,7 +201,8 @@ if __name__ == "__main__":
     from cect.ConnectomeView import LOCOMOTION_1_VIEW as view
     """
     # from cect.ConnectomeView import SOCIAL_VIEW as view
-    from cect.ConnectomeView import LOCOMOTION_2_VIEW as view
+    # from cect.ConnectomeView import LOCOMOTION_2_VIEW as view
+    from cect.ConnectomeView import ESCAPE_VIEW as view
 
     print("--- Using view: %s" % view)
     cds2 = tdr_instance.get_connectome_view(view)
@@ -209,14 +210,14 @@ if __name__ == "__main__":
 
     # fig = cds2.to_plotly_hive_plot_fig(list(view.synclass_sets.keys())[0], view)
 
+    """
     fig = cds2.to_plotly_graph_fig(list(view.synclass_sets.keys())[0], view)
     """
 
     fig, _ = cds2.to_plotly_matrix_fig(
-        list(view.synclass_sets.keys())[2],
+        list(view.synclass_sets.keys())[0],
         view,
     )
-   """
     import plotly.io as pio
 
     pio.renderers.default = "browser"

@@ -6,8 +6,8 @@ _Published: April 1987_
 
 !!! example "Datasets incorporated"   
 
-    - **[JSH/L4 connectivity data (from neurodata.txt in Durbin thesis)](DurbinJSH_data.md)**
-    - **[N2U/Adult connectivity data (from neurodata.txt in Durbin thesis)](DurbinN2U_data.md)**
+    - **[JSH/L4 connectivity data (from neurodata.txt in Durbin thesis)](WhiteJSH_data.md)**
+    - **[N2U/Adult connectivity data (from neurodata.txt in Durbin thesis)](WhiteN2U_data.md)**
     
 !!! warning "Resources from publication"   
 

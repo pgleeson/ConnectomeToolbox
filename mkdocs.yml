@@ -87,8 +87,8 @@ nav:
     - '<b>Wang et al. 2024</b>': 'Wang_2024.md'
 
   - 'Data sets':
-    - 'White et al. 1986 -  JSH': 'WhiteJSH_data.md' 
-    - 'White et al. 1986 - N2A': 'WhiteN2A_data.md'
+    - 'White et al. 1986 -  JSH': 'WhiteJSH_data_graph.md' 
+    - 'White et al. 1986 - N2U': 'WhiteN2U_data_graph.md'
     - 'White et al. 1986 - whole': 'White_whole_data_graph.md'
     - 'Varshney et al. 2011': 'Varshney_data_graph.md'
     - 'Bentley et al. 2016 Monoam.': 'Bentley2016_MA_data_graph.md'
@@ -751,6 +751,7 @@ nav:
       - 'R9stR': 'R9stR.md'
 
   - 'Computational models':
+    - "Haspel & O'Donovan 2018": 'HaspelODonovan_data_graph.md'
     - 'Gleeson et al. 2018': 'GleesonModel_data_graph.md'
     - 'Olivares et al. 2021': 'OlivaresModel_data_graph.md'
 

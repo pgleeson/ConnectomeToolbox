@@ -7,6 +7,14 @@
 
 ############################################################
 
+CHEMICAL_SYN_TYPE = "Chemical"
+ELECTRICAL_SYN_TYPE = "GapJunction"
+
+GENERIC_CHEM_SYN_CLASS = "Generic_CS"
+GENERIC_EXCITATORY_CHEM_SYN_CLASS = "ExcitatoryChem"
+GENERIC_INHIBITORY_CHEM_SYN_CLASS = "InhibitoryChem"
+GENERIC_ELEC_SYN_CLASS = "Generic_GJ"
+
 ACETYLCHOLINE = "Acetylcholine"
 GLUTAMATE = "Glutamate"
 GABA = "GABA"
@@ -26,6 +34,8 @@ ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS = [
     "Serotonin_Acetylcholine",
     "Serotonin_Glutamate",
     OTHER_CHEMICAL_NT,
+    GENERIC_EXCITATORY_CHEM_SYN_CLASS,
+    GENERIC_INHIBITORY_CHEM_SYN_CLASS,
 ]
 
 DOPAMINE = "Dopamine"
@@ -51,12 +61,6 @@ WANG_2024_EXTRA_NT_INFO = [
     PEOH,
     FIVE_HTP_FIVE_HT,
 ]
-
-CHEMICAL_SYN_TYPE = "Chemical"
-ELECTRICAL_SYN_TYPE = "GapJunction"
-
-GENERIC_CHEM_SYN_CLASS = "Generic_CS"
-GENERIC_ELEC_SYN_CLASS = "Generic_GJ"
 
 
 CONTACTOME_SYN_TYPE = "Contact"
@@ -102,10 +106,9 @@ ALL_SYN_TYPES = [
 def get_syn_type_from_synclass(synclass):
     if synclass in ALL_KNOWN_EXTRASYNAPTIC_CLASSES:
         return EXTRASYNAPTIC_SYN_TYPE
-    elif (
-        synclass in ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS
-        or synclass == GENERIC_CHEM_SYN_CLASS
-    ):
+    elif synclass in ALL_KNOWN_CHEMICAL_NEUROTRANSMITTERS or synclass in [
+        GENERIC_CHEM_SYN_CLASS,
+    ]:
         return CHEMICAL_SYN_TYPE
     elif synclass == GENERIC_ELEC_SYN_CLASS:
         return ELECTRICAL_SYN_TYPE

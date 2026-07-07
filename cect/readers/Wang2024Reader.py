@@ -245,7 +245,7 @@ class Wang2024Reader(ConnectomeDataset):
                 rows = range(6, 103)
                 col_offset = 1
             for i in rows:
-                print("Reading row %d" % i)
+                # print("Reading row %d" % i)
 
                 cell_wang = sheet.cell(row=i, column=3).value
                 if cell_wang is not None:
@@ -271,16 +271,18 @@ class Wang2024Reader(ConnectomeDataset):
                         snf_3_present,
                     )
 
-                    print_(
-                        f"Reading row {i}: {cell}, NTs: {nt_1}, {nt_2}, {nt_3}; cat_1_present: {cat_1_present}, snf_3_present: {snf_3_present}"
-                    )
+                    if self.verbose:
+                        print_(
+                            f"Reading row {i}: {cell}, NTs: {nt_1}, {nt_2}, {nt_3}; cat_1_present: {cat_1_present}, snf_3_present: {snf_3_present}"
+                        )
 
                     nts = [nt_1]
                     if nt_2 is not None:
                         nts.append(nt_2)
                     if nt_3 is not None:
                         nts.append(nt_3)
-                    print_("  - Cell: %s, nts: %s" % (cell, nts))
+                    if self.verbose:
+                        print_("  - Cell: %s, nts: %s" % (cell, nts))
                     neurotransmitters[cell] = nts
 
             anatomical_conn_reader = load_connectome_dataset_file(
@@ -324,7 +326,8 @@ class Wang2024Reader(ConnectomeDataset):
                         )
                 else:
                     print_(
-                        "     Not a neuron, or not in cells with known neurotransmitters..."
+                        "     Not a neuron, or not in cells with known neurotransmitters:  %s..."
+                        % conn
                     )
 
             if include_monoamine_conns:
@@ -337,7 +340,8 @@ class Wang2024Reader(ConnectomeDataset):
                     % (len(monoamine_conns), BASIS_MONOAMINERGIC_CONN)
                 )
                 for conn in monoamine_conns[:]:
-                    print_("Original conn: %s" % conn)
+                    if self.verbose:
+                        print_("Original conn: %s" % conn)
 
                     if (
                         is_any_neuron(conn.pre_cell)
@@ -348,7 +352,8 @@ class Wang2024Reader(ConnectomeDataset):
                         for nt in neurotransmitters[conn.pre_cell]:
                             if nt in MONOAMINERGIC_SYN_CLASSES:
                                 conn.synclass = nt
-                                print_("    Adding new conn: %s" % conn)
+                                if self.verbose:
+                                    print_("    Adding new conn: %s" % conn)
                                 self.add_connection_info(conn)
 
                     else:

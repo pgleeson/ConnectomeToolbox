@@ -106,7 +106,7 @@ class DurbinDataReader(ConnectomeDataset):
             if len(line.strip()) == 0:
                 continue
             row = line.split()
-            print_(f"Processing line: {row}")
+            # print_(f"Processing line: {row}")
             pre = str(row[0])
             post = str(row[1])
 

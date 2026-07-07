@@ -31,8 +31,6 @@ class TestConnectomeDataset(unittest.TestCase):
             "WitvlietDataReader7",
             "WitvlietDataReader8",
             "WormNeuroAtlasFuncReader",
-            "WormNeuroAtlasMAReader",
-            "WormNeuroAtlasPepReader",
             "WormNeuroAtlasReader",
             "Yim2024DataReader",
             "TestDataReader",

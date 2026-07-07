@@ -338,10 +338,15 @@ class TestExpectedConnections(unittest.TestCase):
             report += f"\n_Validation **{'PASSED' if self.MISMATCH not in report else 'FAILED'}** on {date.today().isoformat()} with cect v{cect_version}_\n\n"
 
         except Exception as e:
-            print_(f"Error loading or checking expected data for {data_reader}: {e}")
-            report += (
-                f"\n**TODO: add expected data file: {expected_data_file}**: {e}\n\n"
-            )
+            if "No such file" in str(e):
+                print_(f"Error loading expected data for {data_reader}: {e}")
+                report += (
+                    f"\n**TODO: add expected data file: {expected_data_file}**: {e}\n\n"
+                )
+            else:
+                raise Exception(
+                    f"Error loading or checking expected data for {data_reader}: {e}"
+                )
 
         return report, latex
 

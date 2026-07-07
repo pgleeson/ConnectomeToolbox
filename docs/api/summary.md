@@ -22,6 +22,8 @@
         * [DurbinJSHDataReader](cect/readers/DurbinJSHDataReader.md)
         * [DurbinN2UDataReader](cect/readers/DurbinN2UDataReader.md)
         * [GleesonModelReader](cect/readers/GleesonModelReader.md)
+        * [HaspelODonovan1SegDataReader](cect/readers/HaspelODonovan1SegDataReader.md)
+        * [HaspelODonovanDataReader](cect/readers/HaspelODonovanDataReader.md)
         * [NeuroMLDataReader](cect/readers/NeuroMLDataReader.md)
         * [OlivaresModelReader](cect/readers/OlivaresModelReader.md)
         * [OpenWormUnifiedReader](cect/readers/OpenWormUnifiedReader.md)

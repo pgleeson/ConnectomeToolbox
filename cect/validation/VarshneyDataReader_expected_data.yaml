@@ -28,6 +28,8 @@ connection_lists:
   synapse: Generic_CS
   total_nonzero_conns: 2309
   total_weight: 7804
+
+
 - connections:
   - pre: AVAL
     post: AS5
@@ -48,6 +50,8 @@ connection_lists:
   synapse: Chemical
   total_nonzero_conns: 2194
   total_weight: 6394
+
+  
 - connections:
   - pre: AVAL
     post: AVAR
@@ -62,5 +66,23 @@ connection_lists:
     post: PDEL
     weight: 3
   synapse: Generic_GJ
-  total_weight: 1777
   total_nonzero_conns: 1031
+  total_weight: 1777
+  
+- connections:
+  - pre: AVAL
+    post: AVAR
+    weight: 5
+  - pre: RMED
+    post: IL1VL
+    weight: 1
+  - pre: CEPDL
+    post: OLQDL
+    weight: 1
+  - pre: PDER
+    post: PDEL
+    weight: 3
+  view: NonpharyngealH
+  synapse: Electrical
+  total_nonzero_conns: 1031
+  total_weight: 1777

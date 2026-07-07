@@ -58,6 +58,28 @@ def main1():
     for c in sorted(conns.keys()):
         print(f" {cell} -> {c}: {conns[c]}")
 
+    from cect.ConnectomeView import NONPHARYNGEAL_NEURONS_HERM_VIEW as view
+    # from cect.ConnectomeView import NEURONS_VIEW as view
+
+    cds2 = my_instance.get_connectome_view(view)
+
+    print(cds2.summary())
+    ew = cds2.connections["Electrical"]
+
+    from cect.readers.VarshneyDataReader import get_instance as get_varshney_instance
+
+    var = get_varshney_instance()
+    var_non = var.get_connectome_view(view)
+    print(var_non.summary())
+    ev = var_non.connections["Electrical"]
+    diff = ew - ev
+    print(diff)
+    import numpy as np
+
+    print(np.nonzero(diff))
+    for pre, post in zip(*np.nonzero(diff)):
+        print(f"Diff: {cds2.nodes[pre]} -> {cds2.nodes[post]}: {diff[pre, post]}")
+
 
 if __name__ == "__main__":
     main1()

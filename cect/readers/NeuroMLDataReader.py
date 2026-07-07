@@ -18,9 +18,10 @@ from cect.Neurotransmitters import (
     CHEMICAL_SYN_TYPE,
     ELECTRICAL_SYN_TYPE,
 )
-from cect.Neurotransmitters import ACETYLCHOLINE
-from cect.Neurotransmitters import GABA
-
+from cect.Neurotransmitters import (
+    GENERIC_EXCITATORY_CHEM_SYN_CLASS,
+    GENERIC_INHIBITORY_CHEM_SYN_CLASS,
+)
 from pyneuroml import pynml
 import os
 
@@ -127,13 +128,13 @@ class NeuroMLDataReader(ConnectomeDataset):
                 pre = self._get_cell_name(pre_pop, conn.get_pre_cell_id())
                 post = self._get_cell_name(post_pop, conn.get_post_cell_id())
                 w = conn.get_weight()
-                synclass = ACETYLCHOLINE
+                synclass = GENERIC_EXCITATORY_CHEM_SYN_CLASS
                 if w < 0:
                     w = -1 * w
-                    synclass = GABA
+                    synclass = GENERIC_INHIBITORY_CHEM_SYN_CLASS
 
                 elif "inh_syn" in conn.post_component:
-                    synclass = GABA  # e.g. postComponent="neuron_to_neuron_inh_syn",
+                    synclass = GENERIC_INHIBITORY_CHEM_SYN_CLASS  # e.g. postComponent="neuron_to_neuron_inh_syn",
 
                 ci = ConnectionInfo(pre, post, w, CHEMICAL_SYN_TYPE, synclass)
 

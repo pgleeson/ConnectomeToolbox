@@ -314,7 +314,6 @@ def main2():
         "Witvliet5",
         "Witvliet6",
         "Yim2024",
-        "White_L4",
         "Witvliet7",
         "Witvliet8",
         "Cook2019Herm",

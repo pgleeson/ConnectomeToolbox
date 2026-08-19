@@ -28,7 +28,7 @@ WEIGHTS = WEIGHTS_0
 
 
 READER_DESCRIPTION = (
-    """Data extracted from %s Yim et al. 2024 on Dauer connectome **(Synaptic connections; Non-normalized)**"""
+    """Data extracted from %s, Yim et al. 2024 Dauer connectome **(Synaptic connections; Non-normalized)**"""
     % get_dataset_source_on_github(SYNAPTIC_CONNS_FILENAME.split("/")[-1])
 )
 

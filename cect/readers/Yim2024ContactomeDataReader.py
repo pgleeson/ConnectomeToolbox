@@ -38,8 +38,8 @@ WEIGHTS = (
 
 
 READER_DESCRIPTION = (
-    """Data extracted from %s Yim et al. 2024 on Dauer connectome **(Contactome; Normalized)**"""
-    % get_dataset_source_on_github(CONTACTOME_SYN_CLASS.split("/")[-1])
+    """Data extracted from %s, Yim et al. 2024 Dauer connectome **(Contactome; Normalized)**"""
+    % get_dataset_source_on_github(CONTACTOME_FILENAME.split("/")[-1])
 )
 
 

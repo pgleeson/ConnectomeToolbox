@@ -54,7 +54,7 @@ def get_syntype_synclass(conn_filename):
 
 
 READER_DESCRIPTION = (
-    """Data extracted from %s Yim et al. 2024 on Dauer connectome (Synaptic connections; Normalized)"""
+    """Data extracted from %s, Yim et al. 2024 Dauer connectome **(Synaptic connections; Normalized)**"""
     % get_dataset_source_on_github(SYNAPTIC_CONNS_FILENAME.split("/")[-1])
 )
 
@@ -140,7 +140,10 @@ class Yim2024DataReader(ConnectomeDataset):
                 col = 3 + j
                 val = sheet.cell(row=row, column=col).value
                 if val != 0:
-                    print_("Cell (%i,%i) [row %i, col %i] = %s" % (i, j, row, col, val))
+                    if self.verbose:
+                        print_(
+                            "Cell (%i,%i) [row %i, col %i] = %s" % (i, j, row, col, val)
+                        )
                 if val is not None:
                     self.conn_nums[conn_type][i, j] = val
 

@@ -742,6 +742,52 @@
             "Chemical": "65.23"
         }
     },
+    "Yim2024Contactome": {
+        "Raw": {
+            "Contact": "77.94"
+        },
+        "Neurons": {
+            "Contact": "80.14"
+        },
+        "NonpharyngealH": {
+            "Contact": "80.14"
+        },
+        "SensorySomaticH": {
+            "Contact": "83.79"
+        },
+        "MotorSomaticH": {
+            "Contact": "89.26"
+        },
+        "MotorMuscles": {
+            "Contact": "84.74"
+        },
+        "InterneuronsSomaticH": {
+            "Contact": "82.02"
+        }
+    },
+    "Yim2024ContactomeNonNorm": {
+        "Raw": {
+            "Contact": "77.94"
+        },
+        "Neurons": {
+            "Contact": "80.14"
+        },
+        "NonpharyngealH": {
+            "Contact": "80.14"
+        },
+        "SensorySomaticH": {
+            "Contact": "83.79"
+        },
+        "MotorSomaticH": {
+            "Contact": "89.26"
+        },
+        "MotorMuscles": {
+            "Contact": "84.74"
+        },
+        "InterneuronsSomaticH": {
+            "Contact": "82.02"
+        }
+    },
     "Wang2024Herm": {
         "Raw": {
             "Chemical": "69.07",

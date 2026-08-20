@@ -52,7 +52,7 @@ Expected number of nonzero connection weights: **586** (matches)
 
 Expected total weight of connections: **1546** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -91,7 +91,7 @@ Expected number of nonzero connection weights: **556** (matches)
 
 Expected total weight of connections: **692** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -164,7 +164,7 @@ Expected number of nonzero connection weights: **1036** (matches)
 
 Expected total weight of connections: **1782** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -245,7 +245,7 @@ Expected number of nonzero connection weights: **1031** (matches)
 
 Expected total weight of connections: **1777** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -307,7 +307,7 @@ Expected number of nonzero connection weights: **56** (matches)
 
 Expected number of nonzero connection weights: **492** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -327,7 +327,7 @@ _Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 Expected number of nonzero connection weights: **7078** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -426,7 +426,7 @@ Expected number of nonzero connection weights: **2883** (matches)
 
 Expected total weight of connections: **23313** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -475,7 +475,7 @@ Expected number of nonzero connection weights: **3482** (matches)
 
 Expected total weight of connections: **31702** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -610,7 +610,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **246** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -650,7 +650,7 @@ The M<sup>4</sup> graph is the example used in Connectome Toolbox. Values for th
 
 Expected number of nonzero connection weights: **3850** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -694,7 +694,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **164** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -724,7 +724,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **246** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -754,7 +754,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **186** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -784,7 +784,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **415** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -814,7 +814,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **578** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -844,7 +844,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **426** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -874,7 +874,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **576** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -904,7 +904,7 @@ Electrical synapse. Symmetric connectivity matrix: **True**
 
 Expected number of nonzero connection weights: **612** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -934,7 +934,7 @@ We obtained the validation values below by calling the above functions and print
 
 Expected number of nonzero connection weights: **1150** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -965,7 +965,7 @@ For each of these CSV files, the file was opened in Apple Numbers, and the weigh
 
 Expected number of nonzero connection weights: **31417** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -983,7 +983,7 @@ _Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 Expected number of nonzero connection weights: **40425** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -1006,7 +1006,7 @@ _Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 Expected number of nonzero connection weights: **53558** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -1048,7 +1048,7 @@ Each file was opened in Excel and weights of selected connections were visually 
 
 Expected number of nonzero connection weights: **2198** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -1066,7 +1066,7 @@ _Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 Expected number of nonzero connection weights: **2198** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -1086,7 +1086,7 @@ _Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 Expected number of nonzero connection weights: **12160** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -1105,7 +1105,7 @@ _Validation **PASSED** on 2026-08-19 with cect v0.3.4_
 
 Expected number of nonzero connection weights: **12160** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -1229,7 +1229,7 @@ Expected number of nonzero connection weights: **56** (matches)
 
 Expected total weight of connections: **56** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 
@@ -1335,7 +1335,7 @@ Expected number of nonzero connection weights: **56** (matches)
 
 Expected total weight of connections: **56** (matches)
 
-_Validation **PASSED** on 2026-08-19 with cect v0.3.4_
+_Validation **PASSED** on 2026-08-20 with cect v0.3.4_
 
 
 

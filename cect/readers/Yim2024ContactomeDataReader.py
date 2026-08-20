@@ -33,7 +33,7 @@ WEIGHTS_0 = (
 )
 WEIGHTS = (
     WEIGHTS_0
-    + "In this dataset, these are normalized by the standard deviation of connection weights without the top 5th percentile to remove the bias due to the big outliers"
+    + "In this dataset, these are normalized by the standard deviation of connection weights without the top 5th percentile to remove the bias due to the big outliers."
 )
 
 

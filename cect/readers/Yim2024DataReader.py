@@ -68,7 +68,7 @@ DATASET_DESCRIPTION = (
 WEIGHTS_0 = "Weights are the summed volume (nm<sup>3</sup>) of active zone material attributed to a pre/post pair."
 WEIGHTS = (
     WEIGHTS_0
-    + ". In this dataset, these are normalized by the standard deviation of connection weights without the top 5th percentile to remove the bias due to the big outliers"
+    + " In this dataset, these are normalized by the standard deviation of connection weights without the top 5th percentile to remove the bias due to the big outliers."
 )
 
 

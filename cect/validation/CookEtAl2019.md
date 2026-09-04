@@ -6,7 +6,7 @@ Three spreadsheets with these connections have been identified:
 
 Connectivity matrices were released in the following supplementary information file with the publication: [41586_2019_1352_MOESM9_ESM.xlsx](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-019-1352-7/MediaObjects/41586_2019_1352_MOESM9_ESM.xlsx).
 
-**Note:** there is a slight internal consistency issue this file - some of the male ray structural cells are named R1stL, R2stR, etc. ), but in other locations the names R1shL, R2shR, etc. are used.
+**Note:** there is a slight internal consistency issue in this file - some of the male ray structural cells are named R1stL, R2stR, etc. ), but in other locations the names R1shL, R2shR, etc. are used.
 
 
 2) WormWiring original adjacency matrices
@@ -22,6 +22,7 @@ There is also a file: Hermaphrodite and Male Connectomes (Adjacency Matrices), A
 The differences in this file are as follows: 
 
 _Hermaphrodite gap junctions_
+
 - Added: PVDL ↔ hmc: weight 400
 - Added: PVDR ↔ hmc: weight 400
 - Removed: BDUR ↔ PLMR: weight 23
@@ -31,6 +32,7 @@ _Hermaphrodite gap junctions_
     - VA09 ↔ PVCR
 
 _Male gap junctions_
+
 - Added: DD1 ↔ MVL08: weight 2
 - Removed: RIVR ↔ FLPL: weight 1
 - The following connections were not originally present in both directions (i.e. a fully symmetrical electrical connection was not present): 

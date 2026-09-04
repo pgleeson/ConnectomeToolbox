@@ -56,17 +56,17 @@ class TestExpectedConnections(unittest.TestCase):
         
 The entries below for each of the publications with data currently incorporated into the _C. elegans_ Connectome Toolbox include:
 
-- A brief description of the original publication from which the data is taken
-- Information on the supplementary data file(s) etc. from which the connectivity data were extracted
-- A list of any issues found with these data files, and what steps were taken to address these issues
-- Links to the final version of the (updated) files which have been included in the Connectome Toolbox repository (generally stored [here](https://github.com/openworm/ConnectomeToolbox/tree/main/cect/data))
+- A brief description of the original publication from which the data is taken.
+- Information on the supplementary data file(s) etc. from which the connectivity data were extracted.
+- A list of any issues found with these data files, and what steps were taken to address these issues.
+- Links to the final version of the (updated) files which have been included in the Connectome Toolbox repository (generally stored [here](https://github.com/openworm/ConnectomeToolbox/tree/main/cect/data)).
 
 The source files (e.g. Excel spreadsheets) containing the originally data were manually opened/inspected and values for specific quantities extracted (e.g. specific weight of connection between cell A and cell B, total numbers of connections found).
 
 For each individual Reader associated with a paper there will be:
 
-- A description of focus of that Reader (e.g., a specific sex or developmental stage)
-- A link to a YAML file containing the expected data for that reader, which is used to validate the data
+- A description of focus of that Reader (e.g., a specific sex or developmental stage).
+- A link to a YAML file containing the expected data for that reader (e.g. manually extracted from source Excel spreadsheets), which is used to validate the data.
 - A set of tables, one for each of the synapse types included in the data (e.g. chemical and electrical), comparing the expected data with the actual data extracted from running the equivalent call in the Connectome Toolbox API.
 
 The full suite of tests are run automatically as part of the [continuous integration (CI) tests](https://github.com/openworm/ConnectomeToolbox/actions) for the 
@@ -250,9 +250,9 @@ Successfully passing the tests on the main branch of the repository will deploy 
 
             report += f"\n### Validation tests for [{data_reader}]({ref}_data.md) \n\n"
 
-            report += f"**Description:** {description} \n\n"
+            report += f"**Reader Description:** {description} \n\n"
 
-            report += f"\n[Source YAML file with expected values]({expected_data_file_url}) \n\n"
+            report += f"\n[Source YAML file with expected values]({expected_data_file_url}). The tests below compare this list of expected values of a small number of connection weights, along with total numbers of connections in the source data files, with the actual values extracted from the Connectome Toolbox API. \n\n"
 
             for conn_list in expected_data.connection_lists:
                 syn_class = conn_list["synapse"]
@@ -272,7 +272,7 @@ Successfully passing the tests on the main branch of the repository will deploy 
                     from cect.ConnectomeView import get_view
 
                     view = get_view(view_id)
-                    view_info = f" ({view_id})\n\n\n**Note:** only cells/connections in ConnectomeView: **{view_id}** included ({view.description})"
+                    view_info = f" (view: {view_id})\n\n\n**Note:** these tests only apply to a \"view\" of the {data_reader} data, specifically only cells/connections in ConnectomeView: **{view_id}** are included. The description of this view is: {view.description}."
 
                     conn_dataset = conn_dataset.get_connectome_view(view)
 
@@ -327,7 +327,7 @@ Successfully passing the tests on the main branch of the repository will deploy 
                         else f"{self.MISMATCH}: **{num_nz_cd}**"
                     )
                     report += (
-                        "\nExpected number of nonzero connection weights: **%i** (%s)\n"
+                        "\nExpected number of nonzero connection weights: **%i** (%s).\n"
                         % (num_nz, match_info)
                     )
                 else:
@@ -343,7 +343,7 @@ Successfully passing the tests on the main branch of the repository will deploy 
                         else f"{self.MISMATCH}: **{total_w_cd}**"
                     )
                     report += (
-                        "\nExpected total weight of connections: **%g** (%s)\n"
+                        "\nExpected total weight of connections: **%g** (%s).\n"
                         % (
                             total_w,
                             match_info,
@@ -361,7 +361,7 @@ Successfully passing the tests on the main branch of the repository will deploy 
                         if num_cells == num_cells_cd
                         else f"{self.MISMATCH}: **{num_cells_cd}**"
                     )
-                    report += "\nExpected number of cells: **%i** (%s)\n" % (
+                    report += "\nExpected number of cells: **%i** (%s).\n" % (
                         num_cells,
                         match_info,
                     )

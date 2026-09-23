@@ -55,7 +55,7 @@ class TestExpectedConnections(unittest.TestCase):
 
         validation_md += """These tests aim to ensure the connectivity data accessed through the Connectome Toolbox API matches the 
  data present in the original publications. Each **Dataset** is associated with a specific publication, and each of these contains one or more **DataReaders** 
- for the connectivity data it contains (e.g. hermaphrodite or male worms).
+ for the different types of connectome data it contains (e.g. for hermaphrodite and male worms).
         
 The entries below for each of the **Datasets** currently incorporated into the _C. elegans_ Connectome Toolbox include:
 
@@ -80,14 +80,14 @@ Successfully passing the tests on the main branch of the repository will deploy 
 
         latex_md = """\\footnotesize
 \\begin{longtable}{>{\\raggedright\\arraybackslash}p{0.12\\textwidth}>{\\raggedright\\arraybackslash}p{0.16\\textwidth}>{\\raggedright\\arraybackslash}p{0.30\\textwidth}>{\\raggedright\\arraybackslash}p{0.30\\textwidth}}
-  \\caption{List of all datasets in the \\celegans{} Connectome Toolbox}\\label{tab:dataset-table}\\\\
+  \\caption{List of all datasets in the \\celegans{} Connectome Toolbox, with descriptions of their DataReaders and interpretations of connectivity weights.}\\label{tab:dataset-table}\\\\
   \\toprule%
-  \\textbf{Original publication} & \\textbf{Reference/links} & \\textbf{Description} & \\textbf{Weight} \\\\
+  \\textbf{Original publication} & \\textbf{DataReaders/links} & \\textbf{Description} & \\textbf{Weight} \\\\
   \\midrule%
   \\endfirsthead
   \\caption[]{(continued)}\\\\
   \\toprule%
-  \\textbf{Original publication} & \\textbf{Reference/links} & \\textbf{Description} & \\textbf{Weight} \\\\
+  \\textbf{Original publication} & \\textbf{DataReaders/links} & \\textbf{Description} & \\textbf{Weight} \\\\
   \\midrule%
   \\endhead
   \\midrule

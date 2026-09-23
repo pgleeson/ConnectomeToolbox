@@ -2,7 +2,7 @@
 
 These tests aim to ensure the connectivity data accessed through the Connectome Toolbox API matches the 
  data present in the original publications. Each **Dataset** is associated with a specific publication, and each of these contains one or more **DataReaders** 
- for the connectivity data it contains (e.g. hermaphrodite or male worms).
+ for the different types of connectome data it contains (e.g. for hermaphrodite and male worms).
         
 The entries below for each of the **Datasets** currently incorporated into the _C. elegans_ Connectome Toolbox include:
 

@@ -758,7 +758,7 @@ for seg in range(num_segs):
             zero = "0" if is_muscle and celltype_index < 10 else ""
             cell = "%s%s%i" % (cell_set, zero, celltype_index)
             celltype_index += 1
-            print(f"Adding {cell} at ({x},{y})")
+            # print(f"Adding {cell} at ({x},{y})")
 
             ns = NodeSet(
                 cell,

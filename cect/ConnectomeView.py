@@ -289,6 +289,15 @@ MOTORNEURONS_SOMATIC_HERM_VIEW = View(
     only_show_existing_nodes=False,
 )
 
+MOTORNEURONS_HEAD_SUBLAT_HERM_VIEW = View(
+    "MotorHeadSubLat",
+    "Motor Neurons (head & sub lat.)",
+    "All head and sublateral **hermaphrodite** motor neurons",
+    [],
+    EXC_INH_GJ_FUNC_CONT_SYN_CLASSES,
+    only_show_existing_nodes=False,
+)
+
 MOTORNEURONS_MUSCLES_VIEW = View(
     "MotorMuscles",
     "Motor Neurons and muscles",
@@ -342,6 +351,10 @@ for cell in (
             )
         if cell in SENSORY_NEURONS_NONPHARYNGEAL_COOK:
             SENSORY_NEURONS_SOMATIC_HERM_VIEW.node_sets.append(
+                NodeSet(cell, [cell], get_standard_color(cell))
+            )
+        if cell in HEAD_MOTORNEURONS_COOK + SUBLATERAL_MOTORNEURONS_COOK:
+            MOTORNEURONS_HEAD_SUBLAT_HERM_VIEW.node_sets.append(
                 NodeSet(cell, [cell], get_standard_color(cell))
             )
         if cell in MOTORNEURONS_NONPHARYNGEAL_COOK:
@@ -1329,6 +1342,7 @@ ALL_VIEWS = [
     NONPHARYNGEAL_NEURONS_HERM_VIEW,
     SENSORY_NEURONS_SOMATIC_HERM_VIEW,
     MOTORNEURONS_SOMATIC_HERM_VIEW,
+    MOTORNEURONS_HEAD_SUBLAT_HERM_VIEW,
     MOTORNEURONS_MUSCLES_VIEW,
     INTERNEURONS_SOMATIC_HERM_VIEW,
 ]
@@ -1353,6 +1367,7 @@ QUICK_VIEWS = [
     LOCOMOTION_4_VIEW,
     NONPHARYNGEAL_NEURONS_HERM_VIEW,
     MOTORNEURONS_SOMATIC_HERM_VIEW,
+    MOTORNEURONS_HEAD_SUBLAT_HERM_VIEW,
     MOTORNEURONS_MUSCLES_VIEW,
 ]
 

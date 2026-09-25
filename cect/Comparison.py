@@ -177,7 +177,7 @@ def get_matrix_markdown(
         from cect.Analysis import register_symmetry_info
 
         if symmetry:
-            percentage = extra_info.split()[-1][:-1]
+            percentage = extra_info.split("%")[0].split()[-1]
             register_symmetry_info(reader_name, view_id, synclass, percentage)
 
     except Exception as e:
